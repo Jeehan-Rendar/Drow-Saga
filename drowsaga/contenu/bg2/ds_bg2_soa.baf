@@ -1,0 +1,914 @@
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    !Global("DS_P1_DROW","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_P1_DROW","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    Global("DS_P1_DROW","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_P1_DROW","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("ViconiaMatch","GLOBAL",0)
+    Global("CheckViconiaMatch","GLOBAL",0)
+    Gender(Player1,MALE)
+    Global("DS_P1_DROW","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("CheckViconiaMatch","GLOBAL",1)
+        SetGlobal("ViconiaMatch","GLOBAL",1)
+        Continue()
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Aerie")
+    Global("DS_AERIE_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_AERIE_B","GLOBAL",1)
+        SetGlobalTimer("DS_AERIE_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_AERIE_B","GLOBAL",1)
+    GlobalTimerExpired("DS_AERIE_BT","GLOBAL")
+    !Global("AerieMatch","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_AERIE_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_AERIE_B","GLOBAL",1)
+    GlobalTimerExpired("DS_AERIE_BT","GLOBAL")
+    Global("AerieRomanceActive","GLOBAL",3)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_AERIE_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_AERIE_B","GLOBAL",1)
+    GlobalTimerExpired("DS_AERIE_BT","GLOBAL")
+    TriggerOverride("Aerie",GlobalGT("LoveTalk","LOCALS",4))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_AERIE_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_AERIE_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Aerie")
+    IsValidForPartyDialogue("Aerie")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Aerie",StartDialogOverride("DSDAERIE",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Anomen")
+    Global("DS_ANOMEN_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_ANOMEN_B","GLOBAL",1)
+        SetGlobalTimer("DS_ANOMEN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_ANOMEN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_ANOMEN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_ANOMEN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_ANOMEN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Anomen")
+    IsValidForPartyDialogue("Anomen")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Anomen",StartDialogOverride("DSDANOME",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Korgan")
+    Global("DS_KORGAN_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_KORGAN_B","GLOBAL",1)
+        SetGlobalTimer("DS_KORGAN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_KORGAN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_KORGAN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_KORGAN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_KORGAN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Korgan")
+    IsValidForPartyDialogue("Korgan")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Korgan",StartDialogOverride("DSDKORGA",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Nalia")
+    Global("DS_NALIA_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_NALIA_B","GLOBAL",1)
+        SetGlobalTimer("DS_NALIA_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_NALIA_B","GLOBAL",1)
+    GlobalTimerExpired("DS_NALIA_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_NALIA_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_NALIA_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Nalia")
+    IsValidForPartyDialogue("Nalia")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Nalia",StartDialogOverride("DSDNALIA",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Hexxat")
+    Global("DS_HEXXAT_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_HEXXAT_B","GLOBAL",1)
+        SetGlobalTimer("DS_HEXXAT_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_HEXXAT_B","GLOBAL",1)
+    GlobalTimerExpired("DS_HEXXAT_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_HEXXAT_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_HEXXAT_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Hexxat")
+    IsValidForPartyDialogue("Hexxat")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Hexxat",StartDialogOverride("DSDHEXXA",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Keldorn")
+    Global("DS_KELDORN_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_KELDORN_B","GLOBAL",1)
+        SetGlobalTimer("DS_KELDORN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_KELDORN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_KELDORN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_KELDORN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_KELDORN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Keldorn")
+    IsValidForPartyDialogue("Keldorn")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Keldorn",StartDialogOverride("DSDKELDO",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Edwin")
+    Global("DS_EDWIN_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_EDWIN_B","GLOBAL",1)
+        SetGlobalTimer("DS_EDWIN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_EDWIN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_EDWIN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_EDWIN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_EDWIN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Edwin")
+    IsValidForPartyDialogue("Edwin")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Edwin",StartDialogOverride("DSDEDWIN",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("HaerDalis")
+    Global("DS_HAERDALIS_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_HAERDALIS_B","GLOBAL",1)
+        SetGlobalTimer("DS_HAERDALIS_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_HAERDALIS_B","GLOBAL",1)
+    GlobalTimerExpired("DS_HAERDALIS_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_HAERDALIS_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_HAERDALIS_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("HaerDalis")
+    IsValidForPartyDialogue("HaerDalis")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("HaerDalis",StartDialogOverride("DSDHAERD",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Jan")
+    Global("DS_JAN_B","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_JAN_B","GLOBAL",1)
+        SetGlobalTimer("DS_JAN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_JAN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_JAN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_JAN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_JAN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Jan")
+    IsValidForPartyDialogue("Jan")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Jan",StartDialogOverride("DSDJAN",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Neera")
+    Global("DS_NEERA_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_NEERA_B","GLOBAL",1)
+        SetGlobalTimer("DS_NEERA_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_NEERA_B","GLOBAL",1)
+    GlobalTimerExpired("DS_NEERA_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_NEERA_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_NEERA_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Neera")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Neera")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Neera",StartDialogOverride("DSDNEERA",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Dorn")
+    Global("DS_DORN_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DORN_B","GLOBAL",1)
+        SetGlobalTimer("DS_DORN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_DORN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_DORN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DORN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_DORN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Dorn")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Dorn")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Dorn",StartDialogOverride("DSDDORN",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Rasaad")
+    Global("DS_RASAAD_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_RASAAD_B","GLOBAL",1)
+        SetGlobalTimer("DS_RASAAD_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_RASAAD_B","GLOBAL",1)
+    GlobalTimerExpired("DS_RASAAD_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_RASAAD_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_RASAAD_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Rasaad")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Rasaad")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Rasaad",StartDialogOverride("DSDRASAA",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Minsc")
+    Global("DS_MINSC_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_MINSC_B","GLOBAL",1)
+        SetGlobalTimer("DS_MINSC_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_MINSC_B","GLOBAL",1)
+    GlobalTimerExpired("DS_MINSC_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_MINSC_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_MINSC_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Minsc")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Minsc")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Minsc",StartDialogOverride("DSDMINSC",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Jaheira")
+    Global("DS_JAHEIRA_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",4)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_JAHEIRA_B","GLOBAL",1)
+        SetGlobalTimer("DS_JAHEIRA_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_JAHEIRA_B","GLOBAL",1)
+    GlobalTimerExpired("DS_JAHEIRA_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_JAHEIRA_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_JAHEIRA_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Jaheira")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",4)
+    IsValidForPartyDialogue("Jaheira")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Jaheira",StartDialogOverride("DSDJAHEI",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Viconia")
+    Global("DS_VICONIA_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_VICONIA_B","GLOBAL",1)
+        SetGlobalTimer("DS_VICONIA_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_VICONIA_B","GLOBAL",1)
+    GlobalTimerExpired("DS_VICONIA_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_VICONIA_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_VICONIA_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Viconia")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Viconia")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Viconia",StartDialogOverride("DSDVICON",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Imoen2")
+    Global("DS_IMOEN_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",3)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_IMOEN_B","GLOBAL",1)
+        SetGlobalTimer("DS_IMOEN_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_IMOEN_B","GLOBAL",1)
+    GlobalTimerExpired("DS_IMOEN_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_IMOEN_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_IMOEN_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Imoen2")
+    GlobalGT("Chapter","GLOBAL",3)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Imoen2")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Imoen2",StartDialogOverride("DSDIMOEN",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Yoshimo")
+    Global("DS_YOSHIMO_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",4)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_YOSHIMO_B","GLOBAL",1)
+        SetGlobalTimer("DS_YOSHIMO_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_YOSHIMO_B","GLOBAL",1)
+    GlobalTimerExpired("DS_YOSHIMO_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_YOSHIMO_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_YOSHIMO_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Yoshimo")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",4)
+    IsValidForPartyDialogue("Yoshimo")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Yoshimo",StartDialogOverride("DSDYOSHI",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Mazzy")
+    Global("DS_MAZZY_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_MAZZY_B","GLOBAL",1)
+        SetGlobalTimer("DS_MAZZY_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_MAZZY_B","GLOBAL",1)
+    GlobalTimerExpired("DS_MAZZY_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_MAZZY_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_MAZZY_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Mazzy")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Mazzy")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Mazzy",StartDialogOverride("DSDMAZZY",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Valygar")
+    Global("DS_VALYGAR_B","GLOBAL",0)
+    Global("PCSphere","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_VALYGAR_B","GLOBAL",1)
+        SetGlobalTimer("DS_VALYGAR_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_VALYGAR_B","GLOBAL",1)
+    GlobalTimerExpired("DS_VALYGAR_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_VALYGAR_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_VALYGAR_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Valygar")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    Global("PCSphere","GLOBAL",0)
+    IsValidForPartyDialogue("Valygar")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Valygar",StartDialogOverride("DSDVALYG",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Cernd")
+    Global("DS_CERND_B","GLOBAL",0)
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_CERND_B","GLOBAL",1)
+        SetGlobalTimer("DS_CERND_BT","GLOBAL",14400)
+        Continue()
+END
+
+IF
+    Global("DS_CERND_B","GLOBAL",1)
+    GlobalTimerExpired("DS_CERND_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_CERND_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_CERND_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Cernd")
+    GlobalGT("Chapter","GLOBAL",1)
+    GlobalLT("Chapter","GLOBAL",8)
+    IsValidForPartyDialogue("Cernd")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    !GlobalTimerNotExpired("DS_B_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_B_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Cernd",StartDialogOverride("DSDCERND",Player1))
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    InParty("Viconia")
+    Global("DS_VICUD_B","GLOBAL",0)
+    Global("PlayerLooksLikeDrow","GLOBAL",1)
+    AreaCheck("AR2200")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_VICUD_B","GLOBAL",1)
+        SetGlobalTimer("DS_VICUD_BT","GLOBAL",300)
+        Continue()
+END
+
+IF
+    Global("DS_VICUD_B","GLOBAL",1)
+    GlobalTimerExpired("DS_VICUD_BT","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_VICUD_B","GLOBAL",2)
+        Continue()
+END
+
+IF
+    Global("DS_VICUD_B","GLOBAL",2)
+    Global("DS_P1_DROW","GLOBAL",1)
+    Global("PlayerLooksLikeDrow","GLOBAL",1)
+    AreaCheck("AR2200")
+    InParty("Viconia")
+    IsValidForPartyDialogue("Viconia")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+THEN
+    RESPONSE #100
+        ActionOverride("Viconia",StartDialogOverride("DSDVICUD",Player1))
+        Continue()
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    Global("DS_UDSOR_B","GLOBAL",0)
+    Global("PlayerLooksLikeDrow","GLOBAL",1)
+    AreaCheck("AR2200")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UDSOR_B","GLOBAL",1)
+        Continue()
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    Global("DS_UDSOR_B","GLOBAL",1)
+    Global("PlayerLooksLikeDrow","GLOBAL",0)
+    OR(7)
+      AreaCheck("AR2100")
+      AreaCheck("AR2101")
+      AreaCheck("AR2102")
+      AreaCheck("AR2400")
+      AreaCheck("AR2401")
+      AreaCheck("AR2402")
+      AreaCheck("AR2500")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UDSOR_B","GLOBAL",2)
+        SetGlobalTimer("DS_UDSOR_BT","GLOBAL",150)
+        Continue()
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    Global("DS_UDSOR_B","GLOBAL",2)
+    GlobalTimerExpired("DS_UDSOR_BT","GLOBAL")
+    Global("PlayerLooksLikeDrow","GLOBAL",0)
+    OR(7)
+      AreaCheck("AR2100")
+      AreaCheck("AR2101")
+      AreaCheck("AR2102")
+      AreaCheck("AR2400")
+      AreaCheck("AR2401")
+      AreaCheck("AR2402")
+      AreaCheck("AR2500")
+    IsValidForPartyDialogue(Player1)
+    CombatCounter(0)
+    !ActuallyInCombat()
+    OR(2)
+      IsValidForPartyDialogue("Imoen2")
+      IsValidForPartyDialogue("Jaheira")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UDSOR_B","GLOBAL",3)
+        Continue()
+END
+
+IF
+    Global("DS_UDSOR_B","GLOBAL",3)
+    Global("DS_P1_DROW","GLOBAL",1)
+    IsValidForPartyDialogue("Imoen2")
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        ActionOverride("Imoen2",StartDialogOverride("DSDUDSOI",Player1))
+        Continue()
+END
+
+IF
+    Global("DS_UDSOR_B","GLOBAL",3)
+    Global("DS_P1_DROW","GLOBAL",1)
+    !IsValidForPartyDialogue("Imoen2")
+    IsValidForPartyDialogue("Jaheira")
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        ActionOverride("Jaheira",StartDialogOverride("DSDUDSOJ",Player1))
+        Continue()
+END
+

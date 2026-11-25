@@ -1,0 +1,41 @@
+
+IF
+    Global("DS_G1_EIRLAN","GLOBAL",1)
+THEN
+    RESPONSE #100
+        EscapeArea()
+END
+
+IF
+    GlobalLT("DS_G1","GLOBAL",3)
+    AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",3)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    !Global("DS_G_ENNEMI","LOCALS",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G_ENNEMI","LOCALS",1)
+        Enemy()
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    !See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        MoveToObject(Player1)
+END
+

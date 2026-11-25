@@ -1,0 +1,329 @@
+INCLUDE ~drowsaga/contenu/e2/ds_e2_lib.tpa~
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/lot_e2.tra~ BEGIN
+
+  OUTER_SPRINT cibles ~~
+  OUTER_SPRINT d ~~
+  OUTER_SET c26_co = 0 - 1
+  ACTION_FOR_EACH ds_k IN ~1~ ~2~ BEGIN
+    ACTION_IF (ds_k = 1) BEGIN
+      OUTER_SPRINT ds_aig ~Je suis une elfe, Coran, tout comme toi~
+      OUTER_SET r = RESOLVE_STR_REF(@123)
+    END ELSE BEGIN
+      OUTER_SPRINT ds_aig ~Coran, je suis une elfe moi aussi~
+      OUTER_SET r = RESOLVE_STR_REF(@124)
+    END
+    LAF ds_e2_cherche_rep STR_VAR dlg = ~CORANJ~ aiguille = EVAL ~%ds_aig%~ RET n RET_ARRAY ds_e2_re ds_e2_rt END
+    ACTION_IF (n > 0) BEGIN
+      OUTER_SET c26_co = $ds_e2_re(~0~)
+      OUTER_SET j = $ds_e2_rt(~0~)
+      LAF ds_e2_lit_trans INT_VAR etat = c26_co trans = j STR_VAR dlg = ~CORANJ~ RET ver_dlg ver_etat END
+      OUTER_SPRINT d ~%d% IF #T#GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN REPLY #%r% EXTERN #T#%ver_dlg%#T# %ver_etat%~
+    END ELSE BEGIN WARN ~Drow Saga E2 (R_CO0) : réplique introuvable dans CORANJ : %ds_aig%~ END
+  END
+  ACTION_IF (c26_co >= 0) BEGIN
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_c26co.d~ texte = EVAL ~EXTEND_TOP #T#CORANJ#T# %c26_co% %d% END~ END
+  END
+
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@9) requis = 1 STR_VAR cle = ~S2~ dlg = ~VICONJ~ aiguille = ~C'est une existence misérable, abbil. Si vous deviez voyager en O~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@10) requis = 1 STR_VAR cle = ~S3A~ dlg = ~VICONJ~ aiguille = ~Restez loin de moi, surfacin. Votre puanteur est insupportable~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@11) requis = 1 STR_VAR cle = ~S3B~ dlg = ~VICONJ~ aiguille = ~Les surfacins sont des imbéciles. Jacasser comme~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@12) requis = 1 STR_VAR cle = ~S4~ dlg = ~VICONJ~ aiguille = ~Cela me rend tellement heureuse de rencontrer des amis comme vous~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@13) requis = 1 STR_VAR cle = ~S5A~ dlg = ~VICONJ~ aiguille = ~Surveillez votre langue, iblith, ou je le ferai pour vous.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@14) requis = 1 STR_VAR cle = ~S5B~ dlg = ~VICONJ~ aiguille = ~Peuh, la salive vous goutte déjà des lèvres ! Allez ramper plus loin, iblith.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@15) requis = 1 STR_VAR cle = ~S5C~ dlg = ~VICONJ~ aiguille = ~Détournez le regard, iblith, je me sens sale.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@16) requis = 1 STR_VAR cle = ~S5D~ dlg = ~VICONJ~ aiguille = ~Continuez de parler, iblith, et c'est mon fléau qui répondra.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@17) requis = 1 STR_VAR cle = ~S5E~ dlg = ~VICONJ~ aiguille = ~erre, vous auriez été écorché vif.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@18) requis = 1 STR_VAR cle = ~S5F~ dlg = ~VICONJ~ aiguille = ~nous autres drows sommes experts dans l'usage des poisons~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@19) requis = 1 STR_VAR cle = ~S6A~ dlg = ~VICONJ~ aiguille = ~Votre conception toute surfacine du compagnonnage~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@20) requis = 1 STR_VAR cle = ~S6B~ dlg = ~VICONJ~ aiguille = ~je reconnais que je suis drow, et que je pense différemment de vous~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@21) requis = 1 STR_VAR cle = ~S6C~ dlg = ~VICONJ~ aiguille = ~Votre soeur, dites-vous ? De l'attachement ?~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@22) requis = 1 STR_VAR cle = ~S6D~ dlg = ~VICONJ~ aiguille = ~Les façons de penser des surfacins sont tellement bizarres~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@24) requis = 1 STR_VAR cle = ~S7B~ dlg = ~VICONJ~ aiguille = ~J'avais oublié à quel point l'esprit des surfacins était fasciné~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@26) requis = 1 STR_VAR cle = ~S9A~ dlg = ~VICONJ~ aiguille = ~Chez les drows, nous avons un proverbe... ssussun pholor dos~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@34) requis = 1 STR_VAR cle = ~S42~ dlg = ~VICONJ~ aiguille = ~Je ne vous dirai rien, iblith. Vous ne méritez pas de savoir.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@36) requis = 1 STR_VAR cle = ~S10~ dlg = ~VICONJ~ aiguille = ~Maudit fut le jour de notre rencontre, ordure surfacine~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@43) requis = 1 STR_VAR cle = ~S11A~ dlg = ~XANJ~ aiguille = ~Il y a aussi les palais travaillés de nobles familles~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@44) requis = 1 STR_VAR cle = ~S11B~ dlg = ~XANJ~ aiguille = ~Effectivement, seuls ceux qui viennent pour affaires~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@45) requis = 1 STR_VAR cle = ~S12~ dlg = ~XANJ~ aiguille = ~ces Lames sont un don pour ceux qui ont du sang elfique~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@46) requis = 1 STR_VAR cle = ~S13~ dlg = ~XANJ~ aiguille = ~protéger la Nation Elfique des gobelins, des orques, des drows~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@47) requis = 1 STR_VAR cle = ~S14~ dlg = ~XANJ~ aiguille = ~Tôt ou tard, Evereska sera envahie. Déjà les drows~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@48) requis = 1 STR_VAR cle = ~S15~ dlg = ~XANJ~ aiguille = ~Ah, rien qui ne soit important aux yeux de ton peuple~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@52) requis = 1 STR_VAR cle = ~S17~ dlg = ~KIVANJ~ aiguille = ~Shevarash ne sourit jamais, <CHARNAME>. Il y a cinq mille ans~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@56) requis = 1 STR_VAR cle = ~S20A~ dlg = ~KIVANJ~ aiguille = ~I'quelin Mori'Quessier naa ba Mori'Quessir. Je vais laisser Viconia~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@57) requis = 1 STR_VAR cle = ~S20B~ dlg = ~VICONJ~ aiguille = ~ à apprendre l'immonde langue des fées~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@59) requis = 1 STR_VAR cle = ~S21B~ dlg = ~FALDOJ~ aiguille = ~est une bête comme les autres ! BONNE R~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@60) requis = 1 STR_VAR cle = ~S21C~ dlg = ~FALDOJ~ aiguille = ~Tu penses que les bêtes sont des êtres inférieurs ? Idiot~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@62) requis = 1 STR_VAR cle = ~S22~ dlg = ~FALDOJ~ aiguille = ~Chaque humain a une bête en lui. Dans ton cas, c'est une pie~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@63) requis = 1 STR_VAR cle = ~S23~ dlg = ~SKIEJ~ aiguille = ~Je veux voir des dragons, des tyrannoeils, des drows, même~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@64) requis = 1 STR_VAR cle = ~S24~ dlg = ~P#IMANEL~ aiguille = ~vous semblez être à la tête de ce... groupe~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@65) requis = 1 STR_VAR cle = ~S25A~ dlg = ~X#AMELIA~ aiguille = ~Regarde-toi dans le miroir, <CHARNAME>, et tu ne verras pourtant~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@66) requis = 1 STR_VAR cle = ~S25B~ dlg = ~X#AMELIA~ aiguille = ~Il n'y a pas si longtemps, tu n'étais qu'~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@71) requis = 1 STR_VAR cle = ~S27~ dlg = ~AJANTJ~ aiguille = ~N'importe quel paladin ou guerrier loyal bon peut devenir chevalier de l'Ordre~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@72) requis = 1 STR_VAR cle = ~S28~ dlg = ~KIVANJ~ aiguille = ~comme nous nierions celle des drows, si nous pouvions~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@73) requis = 1 STR_VAR cle = ~S43~ dlg = ~KIVANJ~ aiguille = ~Elle est de ma race, une elfe aquatique.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@74) requis = 1 STR_VAR cle = ~S44~ dlg = ~KIVANJ~ aiguille = ~Mes cousins les elfes aquatiques sont leurs ennemis jurés~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@75) requis = 1 STR_VAR cle = ~S45~ dlg = ~KIVANJ~ aiguille = ~je ne veux pas abandonner un individu de ma race aux Sahuagins~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@77) requis = 1 STR_VAR cle = ~S30~ dlg = ~BVICON~ aiguille = ~de ne pas avoir de sang elfe noir dans les veines~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@81) requis = 1 STR_VAR cle = ~S32B~ dlg = ~DYNAHJ~ aiguille = ~pour revenir dans la ville qui T'a vu~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@82) requis = 0 STR_VAR cle = ~S32C~ dlg = ~DYNAHJ~ aiguille = ~ces terres étranges qui T'ont vu~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@83) requis = 1 STR_VAR cle = ~S33~ dlg = ~X#DRIZZT~ aiguille = ~Heureux de vous revoir, camarade. J'ai retrouvé le journal~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@84) requis = 0 STR_VAR cle = ~S34~ dlg = ~X#GORLET~ aiguille = ~elle mourut en couches. J'étais son ami~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@85) requis = 1 STR_VAR cle = ~S35~ dlg = ~KIVANJ~ aiguille = ~Jamais je n'aurais espéré trouver une âme noble parmi ceux de votre race~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@86) requis = 1 STR_VAR cle = ~S36~ dlg = ~KAGAIJ~ aiguille = ~d'la surface, tu peux pas savoir, mais ça pue ici~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@87) requis = 1 STR_VAR cle = ~S37~ dlg = ~TAZOK~ aiguille = ~Ah ! Un seul d'entre vous est drow, les autres ont l'air faibles~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@88) requis = 1 STR_VAR cle = ~S38~ dlg = ~ENTILL~ aiguille = ~Une drow voyage avec vous ? Vous vous êtes fait des alliés~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@89) requis = 1 STR_VAR cle = ~S39~ dlg = ~XAN~ aiguille = ~Un... une drow ! Je dois être mort.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@90) requis = 1 STR_VAR cle = ~S40A~ dlg = ~BIMOEN~ aiguille = ~J'ai un peu lu sur les drows quand j'étais à Château-Suif~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@91) requis = 1 STR_VAR cle = ~S40B~ dlg = ~BIMOEN~ aiguille = ~ ne mentionnaient pas grand~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@92) requis = 1 STR_VAR cle = ~S41A~ dlg = ~BELLAM~ aiguille = ~Mince, une drow, j'y crois pas !~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@93) requis = 1 STR_VAR cle = ~S41B~ dlg = ~BKAGAI~ aiguille = ~Donc v'là une elfe noire, en chair et en os~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@94) requis = 1 STR_VAR cle = ~S41C~ dlg = ~FORTHE~ aiguille = ~sans qu'un ou deux drows ne soient impliqués~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@95) requis = 1 STR_VAR cle = ~S41D~ dlg = ~BKIVAN~ aiguille = ~Le jour où l'on se fie à un elfe noir, on est mort~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@96) requis = 1 STR_VAR cle = ~S41E~ dlg = ~BXANNN~ aiguille = ~Votre seule présence ici suggère que notre chef a perdu l'esprit~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@97) requis = 1 STR_VAR cle = ~R_BR1~ dlg = ~BRANWJ~ aiguille = ~je te trouve bien pâle, encore une fois~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@98) requis = 1 STR_VAR cle = ~R_BR2~ dlg = ~BRANWJ~ aiguille = ~Son bras, bien que large et entraîné, semble petit~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@99) requis = 1 STR_VAR cle = ~R_BR3~ dlg = ~BEDWIN~ aiguille = ~La prêtresse simiesque s'est donc trouvé un petit ami à son image~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@116) requis = 1 STR_VAR cle = ~R_SH10~ dlg = ~SHARTJ~ aiguille = ~comme un rat mort pendant que tu parles de *livres*~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@117) requis = 1 STR_VAR cle = ~R_SH11~ dlg = ~SHARTJ~ aiguille = ~Dommage que je doive me contenter du fiston~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@120) requis = 1 STR_VAR cle = ~R_SH7~ dlg = ~SHARTJ~ aiguille = ~plus particulièrement la pétasse drow~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@121) requis = 1 STR_VAR cle = ~R_SH12~ dlg = ~SHARTJ~ aiguille = ~La drow *m'a* dit qu'elle pouvait t'avoir quand elle voulait~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@122) requis = 1 STR_VAR cle = ~R_BR10~ dlg = ~BBRANW~ aiguille = ~Tu as un goût bien particulier pour les femmes déjà en couple~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@125) requis = 1 STR_VAR cle = ~R_CO1~ dlg = ~CORANJ~ aiguille = ~En effet. Je vois que tu as un savoir acceptable des manières elfiques.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@126) requis = 1 STR_VAR cle = ~R_CO2~ dlg = ~CORANJ~ aiguille = ~Si je n'étais pas un elfe, ma douce, je serais joyeusement retourné à ma couche~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@129) requis = 1 STR_VAR cle = ~R_CO4~ dlg = ~CORANJ~ aiguille = ~Ce sont les Guerres de la Couronne, Dame Chance.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@139) requis = 1 STR_VAR cle = ~R_XA2~ dlg = ~XANJ~ aiguille = ~Tu as reçu une éducation parmi les humains, bien loin des terres elfiques~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@140) requis = 1 STR_VAR cle = ~R_XA3~ dlg = ~XANJ~ aiguille = ~Alors Gorion ne t'a pas expliqué. Il est naturel pour les elfes de partager leurs esprits~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@141) requis = 1 STR_VAR cle = ~R_XA4~ dlg = ~XANJ~ aiguille = ~Tu as donc tant de souvenirs que tu te refuserais une nouvelle expérience~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@142) requis = 1 STR_VAR cle = ~R_XA5~ dlg = ~XANJ~ aiguille = ~J'ai eu une vision très troublante la nuit dernière, une... une vision de toi~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@143) requis = 1 STR_VAR cle = ~R_XA6~ dlg = ~XANJ~ aiguille = ~C'est effectivement une coutume au sein de notre peuple. En revanche~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@144) requis = 1 STR_VAR cle = ~R_XA7~ dlg = ~XANJ~ aiguille = ~Maintenant, je me suis condamné en aimant une N'Tel'Quess~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@145) requis = 1 STR_VAR cle = ~R_XA8~ dlg = ~XANJ~ aiguille = ~Plus que cela : je fais partie de l'Esprit Elfique, et toi pas~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@146) requis = 1 STR_VAR cle = ~R_XA9~ dlg = ~XANJ~ aiguille = ~Tu es une Tel'Quess, tu ne peux pas te tuer !~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@147) requis = 1 STR_VAR cle = ~R_XA10~ dlg = ~XANJ~ aiguille = ~Tu ne vois donc pas que tu brûles deux fois plus fort et deux fois plus vite que moi ?~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@149) requis = 1 STR_VAR cle = ~R_XA12~ dlg = ~XANJ~ aiguille = ~J'adore te regarder lorsque tu es dans ta rêverie~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@150) requis = 1 STR_VAR cle = ~R_XA13~ dlg = ~XANJ~ aiguille = ~C'est peut-être le sang des Tel'Quessir qui coule dans tes veines qui te protège~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@151) requis = 1 STR_VAR cle = ~R_XA14~ dlg = ~XANJ~ aiguille = ~Je te rejoins dans ta rêverie... et je me réveille à côté de ton corps sans vie~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@152) requis = 1 STR_VAR cle = ~R_XA15~ dlg = ~XANJ~ aiguille = ~là où le sang elfique n'est pas dilué~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@153) requis = 1 STR_VAR cle = ~R_XA16~ dlg = ~XANJ~ aiguille = ~Moi non plus. Mais c'est une vieille et belle coutume de notre Peuple~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@154) requis = 1 STR_VAR cle = ~R_XA17~ dlg = ~XANJ~ aiguille = ~Est-ce que tu savais que notre Peuple a un chant pour chaque phénomène~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@155) requis = 1 STR_VAR cle = ~R_XA18~ dlg = ~XANJ~ aiguille = ~Notre peuple accorde trop d'importance à la beauté, à l'amour et au rire~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@156) requis = 1 STR_VAR cle = ~R_XA19~ dlg = ~XANJ~ aiguille = ~e ne pas tomber dans ce piège. Je t'aime, mais je vais continuer cette lutte~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@157) requis = 1 STR_VAR cle = ~R_XA20~ dlg = ~XANJ~ aiguille = ~Tu trouves ma souffrance poétique ?~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@158) requis = 1 STR_VAR cle = ~R_XA21~ dlg = ~XANJ~ aiguille = ~si je meurs, on te laissera entrer dans Evereska~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@159) requis = 1 STR_VAR cle = ~R_XA22~ dlg = ~XANJ~ aiguille = ~C'est un tel bonheur d'entrer en rêverie à côté de toi, et de s'immerger~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@160) requis = 1 STR_VAR cle = ~R_XA23~ dlg = ~BXANNN~ aiguille = ~Cela me fait peur de concéder ce point à la drow~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@161) requis = 1 STR_VAR cle = ~R_XA24~ dlg = ~BXANNN~ aiguille = ~il est absolument utopique de penser que je parlerai de mes sentiments avec une drow~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@165) requis = 1 STR_VAR cle = ~R_XA25~ dlg = ~QUAYLJ~ aiguille = ~ doit y avoir quelque chose de spécial chez toi.~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@166) requis = 1 STR_VAR cle = ~R_XA26~ dlg = ~EDWINJ~ aiguille = ~Seule une jeune fille aussi naïve que toi supposerait une telle chose~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@167) requis = 1 STR_VAR cle = ~R_XA27~ dlg = ~EDWINJ~ aiguille = ~Comment vas-tu survivre sans mes illustres talents~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@168) requis = 1 STR_VAR cle = ~L1~ dlg = ~IMOEN2~ aiguille = ~Tu as l'air plutôt pâle, comme si tu avais vu un fantôme~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@169) requis = 1 STR_VAR cle = ~L2~ dlg = ~VICONI~ aiguille = ~de respect pour vous, rivvin, d'oser parler avant vous~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@171) requis = 1 STR_VAR cle = ~TRI1~ dlg = ~AJANTJ~ aiguille = ~je pensais que vous aviez été élev~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@172) requis = 1 STR_VAR cle = ~TRI2~ dlg = ~CORANJ~ aiguille = ~Qui ne l'est pas ? Du calme~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@173) requis = 1 STR_VAR cle = ~TRI3~ dlg = ~SHARTJ~ aiguille = ~Si tu veux coucher avec quelqu'un qui change d'avis~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@174) requis = 1 STR_VAR cle = ~A2A~ dlg = ~AJANTJ~ aiguille = ~défende cet honorable drow~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@175) requis = 1 STR_VAR cle = ~A2B~ dlg = ~AJANTJ~ aiguille = ~défende ce vaillant drow~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@176) requis = 1 STR_VAR cle = ~A3~ dlg = ~AJANTJ~ aiguille = ~Ne soyez pas trompé~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@177) requis = 1 STR_VAR cle = ~AL1~ dlg = ~BIMOEN~ aiguille = ~Il n'y avait pas beaucoup d'autres enfants à Château-Suif~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@178) requis = 1 STR_VAR cle = ~CO1~ dlg = ~BCORAN~ aiguille = ~Ne te fais pas prendre~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@179) requis = 1 STR_VAR cle = ~CO2~ dlg = ~BCORAN~ aiguille = ~chercher un drow rigide et traditionaliste~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@180) requis = 1 STR_VAR cle = ~D1~ dlg = ~BVICON~ aiguille = ~Shar m'a acceptée sans faire cas de ma couleur de peau~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@181) requis = 1 STR_VAR cle = ~E1~ dlg = ~EDWINJ~ aiguille = ~dans une meule de foin.) Il n'est pas nécessaire~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@182) requis = 1 STR_VAR cle = ~EL1~ dlg = ~ELDOTJ~ aiguille = ~où la connaissance se cache et s'éteint~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@183) requis = 1 STR_VAR cle = ~F1~ dlg = ~BDYNAH~ aiguille = ~C'est triste quand quelqu'un grandit loin de son peuple~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@184) requis = 1 STR_VAR cle = ~T1~ dlg = ~BFALDO~ aiguille = ~Le sang drow fait un bon terreau~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@185) requis = 1 STR_VAR cle = ~G1~ dlg = ~BGARRI~ aiguille = ~Ce n'est pas vrai. La musique peut inspirer~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@186) requis = 1 STR_VAR cle = ~I1~ dlg = ~IMOEN2~ aiguille = ~plutôt effrayant !~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@187) requis = 1 STR_VAR cle = ~J1~ dlg = ~BJAHEI~ aiguille = ~Qu'en est-il d'Eilistraée, alors~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@188) requis = 1 STR_VAR cle = ~J2~ dlg = ~BIMOEN~ aiguille = ~cette habitude insupportable de laisser traîner ses vêtements~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@189) requis = 1 STR_VAR cle = ~KH1A~ dlg = ~BKHALI~ aiguille = ~L'intérêt d'un de vos semblables~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@190) requis = 1 STR_VAR cle = ~KH1B~ dlg = ~BVICON~ aiguille = ~je ne suis pas parmi les miens, pour l'instant~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@191) requis = 1 STR_VAR cle = ~MI1~ dlg = ~BMINSC~ aiguille = ~C'est un elfe à la peau sombre qui nous l'a donné~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@192) requis = 1 STR_VAR cle = ~MO1~ dlg = ~BMONTA~ aiguille = ~Mais je ne serais pas le seul à la rejoindre~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@193) requis = 1 STR_VAR cle = ~Q1~ dlg = ~BQUAYL~ aiguille = ~Si tu es une elfe noire typique~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@194) requis = 1 STR_VAR cle = ~SAF1~ dlg = ~BSAFAN~ aiguille = ~Je ne connais pas grand-chose de la culture des elfes noirs~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@195) requis = 1 STR_VAR cle = ~N1~ dlg = ~XANJ~ aiguille = ~l'appel de votre sang elfique~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@196) requis = 1 STR_VAR cle = ~N4A~ dlg = ~BJAHEI~ aiguille = ~Comme peut l'être ta race, en sus~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@197) requis = 1 STR_VAR cle = ~N4B~ dlg = ~BJAHEI~ aiguille = ~plus fous que ceux de ta race~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@198) requis = 1 STR_VAR cle = ~N5A~ dlg = ~BBRANW~ aiguille = ~tactiques timorées de tes semblables~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@199) requis = 1 STR_VAR cle = ~N5B~ dlg = ~BBRANW~ aiguille = ~prédomine dans les rapports de ta race~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@200) requis = 1 STR_VAR cle = ~N6~ dlg = ~BXANNN~ aiguille = ~Les drows tissent des mensonges comme les araignées~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@201) requis = 1 STR_VAR cle = ~N7~ dlg = ~BSHART~ aiguille = ~Si tous les elfes noirs sont aussi bêtes~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@202) requis = 1 STR_VAR cle = ~N8~ dlg = ~SHARTJ~ aiguille = ~exilent les plus faibles d'entre eux à la surface~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@203) requis = 1 STR_VAR cle = ~N9~ dlg = ~BDYNAH~ aiguille = ~fonctionne toujours comme celui d'un drow~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@204) requis = 1 STR_VAR cle = ~N10~ dlg = ~XANJ~ aiguille = ~pas même si tu étais la fille de Lolth~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@205) requis = 1 STR_VAR cle = ~N11~ dlg = ~XANJ~ aiguille = ~ne permettraient qu'une Enfant de Bhaal entre~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@208) requis = 1 STR_VAR cle = ~N13~ dlg = ~BJAHEI~ aiguille = ~Dis-moi, drow, as-tu tué qui que ce soit~ cibles = EVAL ~%cibles%~ RET cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@209) requis = 1 STR_VAR cle = ~N14~ dlg = ~BJAHEI~ aiguille = ~Ainsi soit-il, drow. Si tu ne veux pas de mes conseils~ cibles = EVAL ~%cibles%~ RET cibles END
+
+  LAF ds_e2_cherche_rep STR_VAR dlg = ~VICONJ~ aiguille = ~Qu'est-ce que ça fait, d'être une drow, Viconia~ RET n RET_ARRAY ds_e2_re ds_e2_rt END
+  ACTION_IF (n > 0) BEGIN
+    OUTER_SET e2_vic_pid = $ds_e2_re(~0~)
+    OUTER_SET k = n - 1
+    OUTER_SET e2_vic_pos = $ds_e2_rt(~%k%~)
+    COMPILE EVALUATE_BUFFER ~drowsaga/contenu/e2/ds_e2_menzo.d~
+    LAF ds_e2_masque STR_VAR cle = ~S1~ dlg = ~VICONJ~ aiguille = ~Qu'est-ce que ça fait, d'être une drow, Viconia~ END
+  END ELSE BEGIN WARN ~Drow Saga E2 (S1) : question « Comment sont les drows » introuvable~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~VICONJ~ aiguille = ~brûlante oppression de votre... lumière du jour~ RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n > 0) BEGIN
+    LAF ds_e2_nb STR_VAR dlg = ~VICONJ~ RET ns END
+    OUTER_SET e2_lum = ns
+    COMPILE EVALUATE_BUFFER ~drowsaga/contenu/e2/ds_e2_lum.d~
+    OUTER_FOR (k = 0; k < n; ++k) BEGIN
+      OUTER_SET s = $ds_e2_et(~%k%~)
+      LAF ds_e2_cible INT_VAR etat = s netat = e2_lum STR_VAR dlg = ~VICONJ~ ndlg = ~VICONJ~ cibles = EVAL ~%cibles%~ RET cibles END
+    END
+  END ELSE BEGIN WARN ~Drow Saga E2 (S9B) : réplique « brûlante oppression » introuvable~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~XANJ~ aiguille = ~Il y a des jardins en terrasse~ RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n > 0) BEGIN
+    OUTER_SET e2_xan_jardins = $ds_e2_et(~0~)
+    LAF ds_e2_nb STR_VAR dlg = ~XANJ~ RET ns END
+    OUTER_SET e2_ever = ns
+    COMPILE EVALUATE_BUFFER ~drowsaga/contenu/e2/ds_e2_ever.d~
+    ACTION_FOR_EACH ds_aig IN ~Mais ne t'attends pas à être le bienvenu, pour un étranger~ ~Mais ne t'attends pas à ce qu'un~ BEGIN
+      LAF ds_e2_cherche STR_VAR dlg = ~XANJ~ aiguille = EVAL ~%ds_aig%~ RET n RET_ARRAY ds_e2_et END
+      ACTION_IF (n = 0) BEGIN WARN ~Drow Saga E2 (S11) : réplique introuvable : %ds_aig%~ END
+      OUTER_FOR (k = 0; k < n; ++k) BEGIN
+        OUTER_SET s = $ds_e2_et(~%k%~)
+        LAF ds_e2_cible INT_VAR etat = s netat = e2_ever STR_VAR dlg = ~XANJ~ ndlg = ~XANJ~ cibles = EVAL ~%cibles%~ RET cibles END
+      END
+    END
+  END ELSE BEGIN WARN ~Drow Saga E2 (S11) : description des jardins introuvable~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~KIVANJ~ aiguille = ~*sourit* Pour un rat de bibliothèque vous êtes très~ RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n > 0) BEGIN
+    OUTER_SET e2_kiv_pc1 = $ds_e2_et(~0~)
+    LAF ds_e2_lit_etat INT_VAR etat = e2_kiv_pc1 STR_VAR dlg = ~KIVANJ~ RET e2_kiv_trig = trig END
+    ACTION_IF NOT (~%e2_kiv_trig%~ STRING_EQUAL ~~) BEGIN
+      COMPILE EVALUATE_BUFFER ~drowsaga/contenu/e2/ds_e2_feu.d~
+    END ELSE BEGIN WARN ~Drow Saga E2 (S18) : premier échange de Kivan sans déclencheur~ END
+  END ELSE BEGIN WARN ~Drow Saga E2 (S18) : premier échange de Kivan introuvable~ END
+
+  LAF ds_e2_cherche_rep STR_VAR dlg = ~KIVANJ~ aiguille = ~Pouvez-vous me dire quelque chose en ~ RET n RET_ARRAY ds_e2_re ds_e2_rt END
+  ACTION_IF (n > 0) BEGIN
+    OUTER_SET e2_kiv_pid = $ds_e2_re(~0~)
+    OUTER_SET k = n - 1
+    OUTER_SET e2_kiv_pos = $ds_e2_rt(~%k%~)
+    LAF ds_e2_masque STR_VAR cle = ~S19~ dlg = ~KIVANJ~ aiguille = ~Pouvez-vous me dire quelque chose en ~ cond = ~OR(2) !GlobalGT("DS_P1_DROW","GLOBAL",0) Global("DS_E2_KIVELF","GLOBAL",1)~ END
+    COMPILE EVALUATE_BUFFER ~drowsaga/contenu/e2/ds_e2_elf.d~
+  END ELSE BEGIN WARN ~Drow Saga E2 (S19) : question « en elfique » introuvable~ END
+
+  LAF ds_e2_nb STR_VAR dlg = ~YESLIJ~ RET e2_yes = ns END
+  LAF ds_e2_nb STR_VAR dlg = ~KAGAIJ~ RET e2_kag = ns END
+  COMPILE ~drowsaga/contenu/e2/ds_e2_yk.d~
+  ACTION_FOR_EACH ds_q IN ~YESLIJ~ ~KAGAIJ~ BEGIN
+    ACTION_IF (~%ds_q%~ STRING_EQUAL ~YESLIJ~) BEGIN
+      OUTER_SPRINT q_aig ~Alors, Yeslick, pouvez-vous~
+      OUTER_SET q_ref = RESOLVE_STR_REF(@67)
+      OUTER_SET q_et = e2_yes OUTER_SPRINT q_var ~DS_E2_YESQ~
+    END ELSE BEGIN
+      OUTER_SPRINT q_aig ~Alors, Kagain, peux-tu~
+      OUTER_SET q_ref = RESOLVE_STR_REF(@69)
+      OUTER_SET q_et = e2_kag OUTER_SPRINT q_var ~DS_E2_KAGQ~
+    END
+    LAF ds_e2_cherche_rep STR_VAR dlg = EVAL ~%ds_q%~ aiguille = EVAL ~%q_aig%~ RET n RET_ARRAY ds_e2_re ds_e2_rt END
+    ACTION_IF (n = 0) BEGIN WARN ~Drow Saga E2 (S26) : menu de questions introuvable dans %ds_q%~ END
+    OUTER_SPRINT d ~~
+    OUTER_SET dern = 0 - 1
+    OUTER_FOR (k = n - 1; k >= 0; --k) BEGIN
+      OUTER_SET s = $ds_e2_re(~%k%~)
+      OUTER_SET j = $ds_e2_rt(~%k%~)
+      ACTION_IF (s != dern) BEGIN
+        OUTER_SET dern = s
+        OUTER_SPRINT d ~%d% EXTEND_TOP #T#%ds_q%#T# %s% #%j% IF #T#GlobalGT("DS_P1_DROW","GLOBAL",0) Global("%q_var%","GLOBAL",0)#T# THEN REPLY #%q_ref% DO #T#SetGlobal("%q_var%","GLOBAL",1)#T# GOTO %q_et% END~
+      END
+    END
+    ACTION_IF (n > 0) BEGIN
+      LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_yk.d~ texte = EVAL ~%d%~ END
+    END
+  END
+
+  OUTER_SET c26_shb2 = 0 - 1
+  OUTER_SET c26_shbp = 0 - 1
+  LAF ds_e2_cherche_rep STR_VAR dlg = ~SHARTJ~ aiguille = ~Je suis né quelque part, mais je ne sais pas où.~ RET n RET_ARRAY ds_e2_re ds_e2_rt END
+  OUTER_SET n1 = n
+  ACTION_IF (n > 0) BEGIN
+    OUTER_SET s = $ds_e2_re(~0~) OUTER_SET j = $ds_e2_rt(~0~)
+    LAF ds_e2_lit_trans INT_VAR etat = s trans = j STR_VAR dlg = ~SHARTJ~ RET ver_dlg c26_sh67 = ver_etat END
+  END
+  LAF ds_e2_cherche_rep STR_VAR dlg = ~SHARTJ~ aiguille = ~La seule chose qui m'ait préoccupé après mon départ de Château-Suif~ RET n RET_ARRAY ds_e2_re ds_e2_rt END
+  ACTION_IF (n > 0) AND (n1 > 0) BEGIN
+    OUTER_SET s = $ds_e2_re(~0~) OUTER_SET j = $ds_e2_rt(~0~)
+    LAF ds_e2_lit_trans INT_VAR etat = s trans = j STR_VAR dlg = ~SHARTJ~ RET ver_dlg c26_sh68 = ver_etat END
+    LAF ds_e2_lit_trans INT_VAR etat = c26_sh68 trans = 0 STR_VAR dlg = ~SHARTJ~ RET ver_dlg c26_sh68b = ver_etat END
+    COPY_EXISTING ~SHARTJ.dlg~ ~override~ READ_LONG 0x0c so READ_SLONG (so + c26_sh68 * 0x10) c26_pere BUT_ONLY
+    LAF ds_e2_nb STR_VAR dlg = ~SHARTJ~ RET ns END
+    OUTER_SET c26_shbp = ns
+    OUTER_SET c26_shb = ns + 1
+    OUTER_SET c26_shb2 = ns + 2
+    COMPILE EVALUATE_BUFFER ~drowsaga/contenu/e2/ds_e2_c26sh.d~
+    LAF ds_e2_cible INT_VAR etat = c26_sh68 netat = c26_shb STR_VAR dlg = ~SHARTJ~ ndlg = ~SHARTJ~ cibles = EVAL ~%cibles%~ RET cibles END
+  END ELSE BEGIN WARN ~Drow Saga E2 (R_SH12) : histoire du héros introuvable dans SHARTJ~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~CORANJ~ aiguille = ~Même elfe. Mais je veux une vie pleine~ RET n RET_ARRAY ds_e2_et END
+  OUTER_SET c26_elf = 0 - 1
+  ACTION_IF (n > 0) BEGIN OUTER_SET c26_elf = $ds_e2_et(~0~) END
+  LAF ds_e2_cherche STR_VAR dlg = ~CORANJ~ aiguille = ~Oui. Ce n'est pas forcément une mauvaise chose, car cela nous permet de ne pas nous inquiéter~ RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n > 0) AND (c26_elf >= 0) BEGIN
+    OUTER_SET s = $ds_e2_et(~0~)
+    LAF ds_e2_cible INT_VAR etat = s netat = c26_elf STR_VAR dlg = ~CORANJ~ ndlg = ~CORANJ~ cibles = EVAL ~%cibles%~ RET cibles END
+  END ELSE BEGIN WARN ~Drow Saga E2 (R_CO3) : COLT12.2 introuvable~ END
+  LAF ds_e2_masque STR_VAR cle = ~R_CO4~ dlg = ~CORANJ~ aiguille = ~* Ma vie est plus courte que la tienne, elfe~ END
+  LAF ds_e2_masque STR_VAR cle = ~R_CO5~ dlg = ~CORANJ~ aiguille = ~Peut-être est-ce une arme secrète de ton peuple~ END
+
+  LAF ds_e2_route STR_VAR cle = ~R_XA28~ dlg = ~XANJ~ de = ~bles aux blessures et au décès lorsque nous entrons en rêverie~ vers = ~Ah, la probabilité que tu la voies éveillée est proche du néant~ END
+  LAF ds_e2_route STR_VAR cle = ~R_XA29~ dlg = ~XANJ~ de = ~Si tes cauchemars sont effectivement la source de tes étranges pouvoirs~ vers = ~Je n'ai pas les compétences pour ériger un bouclier mental contre tes cauchemars~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~BVICON~ aiguille = ~Tu seras toujours aussi inflexible sur ta haine aiguisée~ RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n > 0) AND FILE_EXISTS_IN_GAME ~BXANNN.dlg~ BEGIN
+    LAF ds_e2_nb STR_VAR dlg = ~BVICON~ RET ns END
+    OUTER_SET c26_vx = ns
+    COMPILE ~drowsaga/contenu/e2/ds_e2_c26vx.d~
+    OUTER_FOR (k = 0; k < n; ++k) BEGIN
+      OUTER_SET s = $ds_e2_et(~%k%~)
+      LAF ds_e2_cible INT_VAR etat = s netat = c26_vx STR_VAR dlg = ~BVICON~ ndlg = ~BVICON~ cibles = EVAL ~%cibles%~ RET cibles END
+    END
+  END ELSE BEGIN WARN ~Drow Saga E2 (R_XA30) : bavardage de Viconia et Xan introuvable~ END
+
+  ACTION_IF (IDS_OF_SYMBOL (~gtimes~ ~BRROM_TIMER~) >= 0) AND FILE_EXISTS_IN_GAME ~BRANWJ.dlg~ BEGIN
+    COMPILE ~drowsaga/contenu/e2/ds_e2_c26br.d~
+  END
+  ACTION_IF (IDS_OF_SYMBOL (~gtimes~ ~COROM_TIMER~) >= 0) AND FILE_EXISTS_IN_GAME ~CORANJ.dlg~ BEGIN
+    COMPILE ~drowsaga/contenu/e2/ds_e2_c26co.d~
+  END
+  ACTION_IF (IDS_OF_SYMBOL (~gtimes~ ~XAROM_TIMER~) >= 0) AND FILE_EXISTS_IN_GAME ~XAN.bcs~ BEGIN
+    EXTEND_TOP ~XAN.bcs~ ~drowsaga/contenu/e2/ds_e2_c26xan.baf~
+  END
+
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@23) requis = 1 STR_VAR cle = ~S7A~ dlg = ~VICONJ~ aiguille = ~J'ai entendu parler de la façon dont les drows paient leurs dettes~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@25) requis = 1 STR_VAR cle = ~S8~ dlg = ~VICONJ~ aiguille = ~Je vous apprécie déjà, drow.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@35) requis = 1 STR_VAR cle = ~S46~ dlg = ~VICONJ~ aiguille = ~Imoen compte pour moi. C'est peut-être difficile à comprendre pour une drow~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@49) requis = 1 STR_VAR cle = ~S15A~ dlg = ~XANJ~ aiguille = ~Ah, *cette* Retraite-là ! Laisse tomber cela~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@50) requis = 1 STR_VAR cle = ~S15B~ dlg = ~XANJ~ aiguille = ~Il n'y aura plus d'elfes énervants~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@51) requis = 1 STR_VAR cle = ~S16~ dlg = ~KIVANJ~ aiguille = ~surveillez votre langue, beauté nocturne~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@58) requis = 1 STR_VAR cle = ~S21A~ dlg = ~FALDOJ~ aiguille = ~Alors tu es aveugle, druidesse. Je suis~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@61) requis = 1 STR_VAR cle = ~S21D~ dlg = ~FALDOJ~ aiguille = ~Dans ce cas je suis content d'être~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@76) requis = 1 STR_VAR cle = ~S29~ dlg = ~X#IHTIA~ aiguille = ~Vous allez être seule, oreilles-pointues~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@78) requis = 1 STR_VAR cle = ~S31A~ dlg = ~JAHEIJ~ aiguille = ~Tu vois, Gorion n'était pas mon vrai père~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@79) requis = 1 STR_VAR cle = ~S31B~ dlg = ~JAHEIJ~ aiguille = ~tu vois, Gorion écrit qu'il n'était pas mon vrai père~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@80) requis = 1 STR_VAR cle = ~S32A~ dlg = ~DYNAHJ~ aiguille = ~Les gens comme moi, on en trouve à chaque coin de rue~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@108) requis = 1 STR_VAR cle = ~R_SH1~ dlg = ~SHARTJ~ aiguille = ~Très bien. J'ignore où je suis né, et qui sont mes parents.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@109) requis = 1 STR_VAR cle = ~R_SH2~ dlg = ~SHARTJ~ aiguille = ~D'accord, d'accord ! Mais je... je n'en sais pas beaucoup. J'ignore où je suis né~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@110) requis = 1 vers = c26_shbp STR_VAR cle = ~R_SH8~ dlg = ~SHARTJ~ aiguille = ~Puisque tu insistes. Je suis né quelque part, mais je ne sais pas où.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@111) requis = 1 vers = c26_shbp STR_VAR cle = ~R_SH9~ dlg = ~SHARTJ~ aiguille = ~Je suis né quelque part, mais je ne sais pas où.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@112) requis = 1 STR_VAR cle = ~R_SH3~ dlg = ~SHARTJ~ aiguille = ~Très bien. Je viens à peine de découvrir que mon père biologique était Bhaal. Par contre, j'ignore~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@113) requis = 1 STR_VAR cle = ~R_SH4~ dlg = ~SHARTJ~ aiguille = ~La seule chose qui m'ait préoccupé après mon départ de Château-Suif~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@114) requis = 1 STR_VAR cle = ~R_SH5~ dlg = ~SHARTJ~ aiguille = ~Puisque tu insistes. Bhaal, le Seigneur du Meurtre, a mis ma mère enceinte~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@115) requis = 1 vers = c26_shb2 STR_VAR cle = ~R_SH6~ dlg = ~SHARTJ~ aiguille = ~Oui. Bhaal, le Seigneur du Meurtre, a mis ma mère enceinte~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@127) requis = 1 STR_VAR cle = ~R_CO3~ dlg = ~CORANJ~ aiguille = ~Je suis brune... mais je parie que ce n'~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@128) requis = 1 STR_VAR cle = ~R_CO6~ dlg = ~CORANJ~ aiguille = ~Les Elfes Dorés ont déclaré la guerre aux autres nations elfiques. ~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@138) requis = 1 STR_VAR cle = ~R_XA1~ dlg = ~XANJ~ aiguille = ~Gorion ne m'a jamais parlé d'eux. Je sais que je suis orpheline~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@148) requis = 1 STR_VAR cle = ~R_XA11~ dlg = ~XANJ~ aiguille = ~Je sais bien que ces noms secrets ont une importance aux yeux de notre peuple~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@170) requis = 1 STR_VAR cle = ~L3~ dlg = ~XZARJ~ aiguille = ~* Ah... Xzar, puis-je te demander~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@206) requis = 1 STR_VAR cle = ~N2~ dlg = ~BRANWJ~ aiguille = ~parler de ce drow ou allons-nous~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@207) requis = 1 STR_VAR cle = ~N3~ dlg = ~CORANJ~ aiguille = ~une elfe lége~ END
+
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%cibles%~ END
+END

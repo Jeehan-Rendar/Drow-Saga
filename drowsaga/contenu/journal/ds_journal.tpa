@@ -1,0 +1,107 @@
+INCLUDE ~drowsaga/contenu/e2/ds_e2_lib.tpa~
+DEFINE_ACTION_FUNCTION ds_jour_double
+  INT_VAR ancien = 0 nouveau = 0
+BEGIN
+  ACTION_CLEAR_ARRAY ds_jd_d
+  OUTER_SET n = 0
+  COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
+    SPRINT src ~%SOURCE_RES%~
+    TO_UPPER src
+    READ_LONG 0x08 ns
+    READ_LONG 0x0c so
+    READ_LONG 0x14 to
+    READ_LONG 0x28 ao
+    FOR (i = ns - 1; i >= 0; --i) BEGIN
+      READ_LONG (so + i * 0x10 + 0x04) ft
+      READ_LONG (so + i * 0x10 + 0x08) nt
+      FOR (j = nt - 1; j >= 0; --j) BEGIN
+        SET t = to + (ft + j) * 0x20
+        READ_LONG t fl
+        SET hit = 0
+        PATCH_IF ((fl BAND 0x10) = 0x10) BEGIN
+          READ_SLONG (t + 0x08) jr
+          PATCH_IF (jr = ancien) BEGIN SET hit = 1 END
+        END
+        PATCH_IF ((fl BAND 4) = 4) BEGIN
+          READ_LONG (t + 0x10) ai
+          READ_LONG (ao + ai * 8) o
+          READ_LONG (ao + ai * 8 + 4) l
+          READ_ASCII o ac (l)
+          PATCH_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~AddJournalEntry(%ancien%,~ ~%ac%~) >= 0) BEGIN SET hit = 1 END
+        END
+        PATCH_IF hit BEGIN
+          SPRINT $ds_jd_d(~%n%~) ~%src%~
+          SET $ds_jd_i(~%n%~) = i
+          SET $ds_jd_j(~%n%~) = j
+          SET n = n + 1
+        END
+      END
+    END
+  BUT_ONLY
+  OUTER_SPRINT d1 ~~
+  OUTER_SPRINT d2 ~~
+  OUTER_SET fait = 0
+  OUTER_FOR (k = 0; k < n; ++k) BEGIN
+    OUTER_SPRINT dlg $ds_jd_d(~%k%~)
+    OUTER_SET s = $ds_jd_i(~%k%~)
+    OUTER_SET j = $ds_jd_j(~%k%~)
+    LAF ds_e2_lit_trans INT_VAR etat = s trans = j STR_VAR dlg ajout = ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ RET corps tr ver_dlg ver_etat END
+    ACTION_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~DS_P1_DROW~ ~%tr%~) < 0) BEGIN
+      OUTER_PATCH_SAVE corps ~%corps%~ BEGIN
+        REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~JOURNAL #%ancien%~ ~JOURNAL #%nouveau%~
+        REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~AddJournalEntry(%ancien%,~ ~AddJournalEntry(%nouveau%,~
+      END
+      ACTION_IF (~%ver_dlg%~ STRING_EQUAL ~~) BEGIN
+        OUTER_SPRINT fin ~EXIT~
+      END ELSE BEGIN
+        OUTER_SPRINT fin ~EXTERN #T#%ver_dlg%#T# %ver_etat%~
+      END
+      OUTER_SPRINT d1 ~%d1% ADD_TRANS_TRIGGER #T#%dlg%#T# %s% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T# DO %j%~
+      OUTER_SPRINT d2 ~%d2% EXTEND_TOP #T#%dlg%#T# %s% #%j% %corps% %fin% END~
+      OUTER_SET fait = fait + 1
+    END
+  END
+  ACTION_IF NOT (~%d1%~ STRING_EQUAL ~~) BEGIN
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_jour1.d~ texte = EVAL ~%d1%~ END
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_jour2.d~ texte = EVAL ~%d2%~ END
+  END
+  PRINT ~Drow Saga : journal %ancien% -> %nouveau% : %fait% transition(s) doublée(s) pour le Drow~
+END
+
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/journal.tra~ BEGIN
+  OUTER_SET nv = RESOLVE_STR_REF(@1)
+  LAF ds_jour_double INT_VAR ancien = 27000 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@2)
+  LAF ds_jour_double INT_VAR ancien = 27001 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@3)
+  LAF ds_jour_double INT_VAR ancien = 27002 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@4)
+  LAF ds_jour_double INT_VAR ancien = 31952 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@5)
+  LAF ds_jour_double INT_VAR ancien = 31953 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@8)
+  LAF ds_jour_double INT_VAR ancien = 26998 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@11)
+  LAF ds_jour_double INT_VAR ancien = 30814 nouveau = nv END
+  OUTER_SET nv = RESOLVE_STR_REF(@12)
+  LAF ds_jour_double INT_VAR ancien = 26973 nouveau = nv END
+  OUTER_SET ds_j26973 = nv
+  ACTION_IF FILE_EXISTS_IN_GAME ~bgee.lua~ BEGIN
+    COPY_EXISTING ~bgee.lua~ ~override~
+      REPLACE_TEXTUALLY CASE_SENSITIVE ~\(createEntry[ 	]*([ 	]*[0-9]+,[ 	]*-?[0-9]+,[ 	]*\)26973\(,[ 	]*{},[ 	]*nil[ 	]*)\)~ ~\126973\2%WNL%    \1%ds_j26973%\2~
+    BUT_ONLY
+  END
+  ACTION_IF FILE_EXISTS_IN_GAME ~bdshapur.dlg~ BEGIN
+    ADD_JOURNAL EXISTING @6 @7 @9 @10 @13 USING ~drowsaga/tra/%LANGUAGE%/journal.tra~
+    OUTER_SET nv = RESOLVE_STR_REF(@6)
+    LAF ds_jour_double INT_VAR ancien = 61703 nouveau = nv END
+    OUTER_SET nv = RESOLVE_STR_REF(@9)
+    LAF ds_jour_double INT_VAR ancien = 61704 nouveau = nv END
+    OUTER_SET nv = RESOLVE_STR_REF(@10)
+    LAF ds_jour_double INT_VAR ancien = 58810 nouveau = nv END
+    OUTER_SET nv = RESOLVE_STR_REF(@13)
+    LAF ds_jour_double INT_VAR ancien = 61706 nouveau = nv END
+    OUTER_SET ds_j7 = RESOLVE_STR_REF(@7)
+    EXTEND_TOP ~BD5100.BCS~ ~drowsaga/contenu/journal/bd5100_j7.baf~ EVALUATE_BUFFER
+  END
+END

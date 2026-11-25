@@ -1,0 +1,370 @@
+ACTION_DEFINE_ASSOCIATIVE_ARRAY ds_fb BEGIN
+  531 , ~accueillir un elfe noir.~ => ~accueillir une elfe noire.~
+  28670 , ~vous restez attachées aux~ => ~vous restez attachée aux~
+  7367 , ~drows d'Ombreterre,~ => ~drows d'Ombre-Terre,~
+  30849 , ~dans l'Ombreterre sont~ => ~dans l'Ombre-Terre sont~
+  32380 , ~habitants d'Ombreterre connaissent~ => ~habitants d'Ombre-Terre connaissent~
+  31181 , ~spectacle de l’Outreterre~ => ~spectacle de l’Ombre-Terre~
+  31809 , ~laisser l'Ombre-terre derrière~ => ~laisser l'Ombre-Terre derrière~
+  30875 , ~Je suis sûr de ne pas comprendre~ => ~Je suis sûre de ne pas comprendre~
+  53873 , ~Ibilth~ => ~Iblith~
+  54269 , ~Arktash a compoté~ => ~Arktash a comploté~
+  54252 , ~quantité de bataille plus tard~ => ~quantité de batailles plus tard~
+  53038 , ~Avez vous déjà essayé~ => ~Avez-vous déjà essayé~
+  53164 , ~Moi non plus, en tous cas.~ => ~Moi non plus, en tout cas.~
+  54553 , ~que j'ai entendue depuis~ => ~que j'aie entendue depuis~
+  53530 , ~avoir le droit me parler~ => ~avoir le droit de me parler~
+  53660 , ~<CHARNAME>, Je... Je ne~ => ~<CHARNAME>, je... Je ne~
+  53671 , ~Bonjour <CHARNAME>. Que~ => ~Bonjour, <CHARNAME>. Que~
+  53684 , ~impossible à améliorer~ => ~impossible d'améliorer~
+  53758 , ~impossible à améliorer~ => ~impossible d'améliorer~
+  53374 , ~se profile, nous pouvons l'emporter~ => ~se profile, et nous pouvons l'emporter~
+  53385 , ~ma condition militaire~ => ~ma condition physique~
+  53437 , ~dure pour vous Rasaad,~ => ~dure pour vous, Rasaad,~
+  53454 , ~Il le faut ! En essayant~ => ~J'y tiens. En essayant~
+  54701 , ~ce genre de choses puissent l'être~ => ~ce genre de choses puisse l'être~
+  54710 , ~Plus que je l'aurais cru~ => ~Plus que je ne l'aurais cru~
+  54719 , ~votre langue traînante~ => ~votre langue bien pendue~
+  54751 , ~alors à quoi bon.~ => ~alors à quoi bon ?~
+  54771 , ~je vous le garanti.~ => ~je vous le garantis.~
+  54761 , ~J'espérais que vous remarquiez~ => ~J'espérais que vous remarqueriez~
+  54782 , ~que je ne serais pas plus en joie si je n'avais pas d'autre choix~ => ~que je serais comblé si je n'avais d'autre choix~
+  54796 , ~de mon temps. ~ => ~de mon temps.~
+  47422 , ~je n'attendais pas à~ => ~je ne m'attendais pas à~
+  40087 , ~une journée du plus~ => ~une journée de plus~
+  40088 , ~une journée du plus~ => ~une journée de plus~
+  60505 , ~ça veux dire~ => ~ça veut dire~
+  60664 , ~prompt a dénigrer~ => ~prompt à dénigrer~
+  39066 , ~nous n'aviez jamais eu~ => ~vous n'aviez jamais eu~
+  39037 , ~À quoi jouiez-vous <CHARNAME>~ => ~À quoi jouiez-vous, <CHARNAME>~
+  52094 , ~je préfèrerai ne pas mourir~ => ~je préférerais ne pas mourir~
+  30887 , ~Quelle genre de lumière~ => ~Quel genre de lumière~
+  30933 , ~envers les autres est plus belle que~ => ~envers les autres sont plus belles que~
+  30871 , ~Cela MERITE~ => ~Cela MÉRITE~
+  30873 , ~besoin de leçon en la matière~ => ~besoin d'une leçon en la matière~
+  31031 , ~Oui, Bien sûr.~ => ~Oui, bien sûr.~
+  31016 , ~que j'ai jamais vu.~ => ~que j'aie jamais vu.~
+  31014 , ~devriez-vous allez méditer~ => ~devriez-vous aller méditer~
+  28696 , ~Bien que je n'oublierai jamais la mort de mon frère, ce n'est pas~ => ~Je n'oublierai jamais la mort de mon frère, mais ce n'est pas~
+  31074 , ~Bien que je n'oublierai jamais le passé, il vaut mieux~ => ~Je n'oublierai jamais le passé, mais il vaut mieux~
+  28695 , ~Seul je ne pourrais jamais les vaincre~ => ~Seul, je ne pourrai jamais les vaincre~
+  28681 , ~Je comprends mon amie.~ => ~Je comprends, mon amie.~
+  28681 , ~Ensemble, Nous pourrions~ => ~Ensemble, nous pourrions~
+  28731 , ~Non, Je savais~ => ~Non, je savais~
+  28926 , ~racontés Algoroth~ => ~racontés Alorgoth~
+  28927 , ~Toi et Algoroth~ => ~Toi et Alorgoth~
+  28949 , ~qu'Algoroth ne m'initie~ => ~qu'Alorgoth ne m'initie~
+  28951 , ~Laquais, Tuez~ => ~Laquais, tuez~
+  28956 , ~Dites moi,~ => ~Dites-moi,~
+  28779 , ~Les habitants du crû~ => ~Les habitants du cru~
+  28779 , ~nous leurs arrachions~ => ~nous leur arrachions~
+  28798 , ~les choses aurait tourné~ => ~les choses auraient tourné~
+  28799 , ~n'est ce pas~ => ~n'est-ce pas~
+  28856 , ~n'est ce pas~ => ~n'est-ce pas~
+  30944 , ~n'est ce pas~ => ~n'est-ce pas~
+  31023 , ~n'est ce pas~ => ~n'est-ce pas~
+  28783 , ~ou quand s'est-il enfui~ => ~ou quand il s'est enfui~
+  28969 , ~Allez-vous-en Rasaad.~ => ~Allez-vous-en, Rasaad.~
+  28706 , ~apprendre leur techniques~ => ~apprendre leurs techniques~
+  28953 , ~désolé.. mon frère.... mais nos vies... comme la lune argentée.... décroissent puis disparaissent. Je me console en sachant.... que je meurs..... par ta main.~ => ~désolé... mon frère... mais nos vies... comme la lune argentée... décroissent puis disparaissent. Je me console en sachant... que je meurs... par ta main.~
+  28749 , ~toujours de  la sagesse~ => ~toujours de la sagesse~
+  27937 , ~c'est tout ce que vous avez à dire~ => ~C'est tout ce que vous avez à dire~
+  27975 , ~à une conversation,~ => ~à une conversation.~
+  28024 , ~de temps à autres~ => ~de temps à autre~
+  31706 , ~de temps à autres~ => ~de temps à autre~
+  27715 , ~A présent~ => ~À présent~
+  27967 , ~A présent~ => ~À présent~
+  28042 , ~A un chat~ => ~À un chat~
+  27998 , ~A quoi bon~ => ~À quoi bon~
+  27782 , ~m'a échappée je ne sais comment~ => ~m'a échappé je ne sais comment~
+  27761 , ~à la Haute forêt~ => ~à la Haute Forêt~
+  27778 , ~n'ont rien d'accidentelles~ => ~n'ont rien d'accidentel~
+  30408 , ~au dépend des femmes~ => ~aux dépens des femmes~
+  32164 , ~au dessus de vos soupçons~ => ~au-dessus de vos soupçons~
+  30520 , ~Dis lui~ => ~Dis-lui~
+  32162 , ~c'est de vous dont on doit~ => ~c'est de vous qu'on doit~
+  30574 , ~Ça devrait se faire tenir tranquille les autres langues.~ => ~Ça devrait faire tenir tranquilles les autres langues.~
+  32160 , ~Je dois admettre Dorn...~ => ~Je dois admettre, Dorn...~
+  28398 , ~à l'Est des mines~ => ~à l'est des mines~
+  28427 , ~à l'Est de Nashkel~ => ~à l'est de Nashkel~
+  28584 , ~à l'Est, peut-être~ => ~à l'est, peut-être~
+  28585 , ~À l'Est des mines~ => ~À l'est des mines~
+  28585 , ~jusque là~ => ~jusque-là~
+  28418 , ~m'ont trahis~ => ~m'ont trahi~
+  28419 , ~ne parlerait pas en mal~ => ~ne parleraient pas en mal~
+  28423 , ~que j'ai donné collait~ => ~que j'ai donnée collait~
+  28470 , ~Quand au présent~ => ~Quant au présent~
+  28520 , ~ce fût mon tour~ => ~ce fut mon tour~
+  28520 , ~je tuais tous ceux~ => ~je tuai tous ceux~
+  28502 , ~Me rappeler de tout cela~ => ~Me rappeler tout cela~
+  28502 , ~Parlez m'en~ => ~Parlez-m'en~
+  28339 , ~souffert de préjudices~ => ~souffert de préjugés~
+  28504 , ~Vous vous demandez toujours~ => ~vous vous demandez toujours~
+  28533 , ~Si je n'avais pas accueilli~ => ~si je n'avais pas accueilli~
+  28476 , ~Jaloux de nos butins~ => ~Jalouses de nos butins~
+  20633 , ~se ont perdu la vie~ => ~ont perdu la vie~
+  26885 , ~mines de Nashekl~ => ~mines de Nashkel~
+  26981 , ~Les vision d'un~ => ~Les visions d'un~
+  26983 , ~Les vision d'un~ => ~Les visions d'un~
+  26985 , ~Porte de Badur~ => ~Porte de Baldur~
+  26986 , ~terrorrisé~ => ~terrorisé~
+  23521 , ~une tristre nouvelle~ => ~une triste nouvelle~
+  26960 , ~Slythe et Kristin~ => ~Slythe et Krystin~
+  26960 , ~retrouver Slyhte~ => ~retrouver Slythe~
+  27162 , ~Slythe et Kristin~ => ~Slythe et Krystin~
+  27163 , ~Slythe et Kristin~ => ~Slythe et Krystin~
+  27163 , ~Il résident~ => ~Ils résident~
+  6579 , ~Trois Vielles Chopes~ => ~Trois Vieilles Chopes~
+  26932 , ~qui est sensé me révéler~ => ~qui est censé me révéler~
+  26916 , ~Clair a paru~ => ~Claire a paru~
+  26821 , ~il nous invité chez lui~ => ~il nous a invités chez lui~
+  26812 , ~personne se semble~ => ~personne ne semble~
+  26991 , ~Les investigation sur~ => ~Les investigations sur~
+  7163 , ~que je lui ai donné.~ => ~que je lui ai donnés.~
+  26881 , ~l'une des nombreux orphelins~ => ~l'une des nombreuses orphelines~
+  26882 , ~comme écorcher~ => ~comment écorcher~
+  26919 , ~quelque sirènes~ => ~quelques sirènes~
+  26920 , ~nous a récompensé avec~ => ~nous a récompensés avec~
+  27138 , ~qu'ont connus~ => ~qu'ont connues~
+  26946 , ~envers elles étaient~ => ~envers elle étaient~
+  15836 , ~que doit confronter~ => ~que doit affronter~
+  27213 , ~chevaliers fantôme ~ => ~chevaliers fantômes ~
+  27216 , ~chevaliers fantôme ~ => ~chevaliers fantômes ~
+  27217 , ~espèrer~ => ~espérer~
+  27218 , ~qui tâchera ma tunique~ => ~qui tachera ma tunique~
+  27242 , ~retouver~ => ~retrouver~
+  27294 , ~quant même~ => ~quand même~
+  27343 , ~superble~ => ~superbe~
+  27367 , ~comme il disent~ => ~comme ils disent~
+  27419 , ~nous a signalés~ => ~nous a signalé~
+  27420 , ~Quand je lui en fait part~ => ~Quand je lui en ai fait part~
+  27512 , ~ving zombies~ => ~vingt zombies~
+  29970 , ~qui m'a appris~ => ~qui m'as appris~
+  30310 , ~j'aimerai égorger~ => ~j'aimerais égorger~
+  31179 , ~d’aventurier qui ce fait un nom long de~ => ~d’aventuriers qui se fait un nom le long de~
+  31179 , ~ne les a pas vu s’échapper~ => ~ne les a pas vus s’échapper~
+  31445 , ~Les mines Nashkel~ => ~Les mines de Nashkel~
+  31450 , ~qui tirent les ficelles~ => ~qui tire les ficelles~
+  31452 , ~Bois-manteau~ => ~Bois-Manteau~
+  31454 , ~Bois-manteau~ => ~Bois-Manteau~
+  31455 , ~au siège de Poing~ => ~au siège du Poing~
+  31457 , ~Trône de fer~ => ~Trône de Fer~
+  31457 , ~Château-suif~ => ~Château-Suif~
+  31459 , ~Château-suif~ => ~Château-Suif~
+  31463 , ~Korevas~ => ~Koveras~
+  31472 , ~une bonne fois pour toute.~ => ~une bonne fois pour toutes.~
+  48425 , ~pale comme la mort~ => ~pâle comme la mort~
+  52038 , ~Pritchard Gardnerson.~ => ~Pritchard Gardnersonson.~
+  52039 , ~Pritchard Gardnerson.~ => ~Pritchard Gardnersonson.~
+  55838 , ~réussi a duper~ => ~réussi à duper~
+  56382 , ~de traquer de leur maîtresse~ => ~de traquer leur maîtresse~
+  56390 , ~qu'elle a vécu jusqu'à~ => ~qu'elle a vécue jusqu'à~
+  57702 , ~d'affiliée~ => ~d'affilée~
+  58720 , ~agissements de Corwin~ => ~agissements de Corinth~
+  58809 , ~le poussait à suivre~ => ~le poussaient à suivre~
+  58881 , ~Que-ce qui~ => ~Qu'est-ce qui~
+  58951 , ~protégerons ֤~ => ~protégerons !~
+  59170 , ~Vos avez~ => ~Vous avez~
+  49289 , ~réduit en cendre l'auberge~ => ~réduit en cendres l'auberge~
+  59638 , ~m'attendais pas à revoir,~ => ~m'attendais pas à la revoir,~
+  59714 , ~Kalid a rejoint~ => ~Khalid a rejoint~
+  66739 , ~Kalid a rejoint~ => ~Khalid a rejoint~
+  59747 , ~explorer camp des croisés~ => ~explorer le camp des croisés~
+  59439 , ~Laissez-moi vous juste vous suggérer~ => ~Laissez-moi juste vous suggérer~
+  59389 , ~vous monter COMMENT~ => ~vous montrer COMMENT~
+  60151 , ~tu as a rendu~ => ~tu as rendu~
+  59570 , ~il m'a permis de partir~ => ~elle m'a permis de partir~
+  60863 , ~plus tôt..~ => ~plus tôt.~
+  61299 , ~Nan et Perdo~ => ~Nan et Pedro~
+  61455 , ~Chacun à sa propre~ => ~Chacun a sa propre~
+  61702 , ~et ne veut plus de lui~ => ~et ne veux plus de lui~
+  61765 , ~La situation a Fort~ => ~La situation à Fort~
+  61766 , ~La situation a Fort~ => ~La situation à Fort~
+  61771 , ~donc ils ne devraient~ => ~donc elles ne devraient~
+  61450 , ~je pourrais retrouver~ => ~je pourrai retrouver~
+  61451 , ~j'aurais posé~ => ~j'aurai posé~
+  61451 , ~je pourrais retourner~ => ~je pourrai retourner~
+  61452 , ~j'aurais posé~ => ~j'aurai posé~
+  61452 , ~je pourrais retourner~ => ~je pourrai retourner~
+  61453 , ~j'aurais posé~ => ~j'aurai posé~
+  61453 , ~je pourrais retourner~ => ~je pourrai retourner~
+  61454 , ~j'aurais posé~ => ~j'aurai posé~
+  61454 , ~je pourrais retourner~ => ~je pourrai retourner~
+  61723 , ~j'aurais trouvé~ => ~j'aurai trouvé~
+  61875 , ~j'aurais les deux~ => ~j'aurai les deux~
+  61875 , ~je pourrais retourner~ => ~je pourrai retourner~
+  61584 , ~qu'il a perdu lors~ => ~qu'il a perdue lors~
+  61931 , ~dépouilles .~ => ~dépouilles.~
+  63641 , ~Si on y arrive pas~ => ~Si on n'y arrive pas~
+  66746 , ~les reste des croisés~ => ~le reste des croisés~
+  67606 , ~avec un quelqu'un comme vous~ => ~avec quelqu'un comme vous~
+  67615 , ~J-Jai~ => ~J-J'ai~
+  67643 , ~quelque comme vous~ => ~quelqu'un comme vous~
+  69217 , ~ça. !~ => ~ça !~
+  70428 , ~Heldvar n'apprécie~ => ~Helvdar n'apprécie~
+  70605 , ~Elles ne peuvent plus~ => ~Ils ne peuvent plus~
+  70643 , ~sont utilisateur~ => ~son utilisateur~
+  71134 , ~Gardernsonson~ => ~Gardnersonson~
+  71137 , ~Pritcheard~ => ~Pritchard~
+  71141 , ~dans toutes la Côte~ => ~dans toute la Côte~
+  71256 , ~De grosse traces~ => ~De grosses traces~
+  4344 , ~Nashkell~ => ~Nashkel~
+  27275 , ~Nashkell~ => ~Nashkel~
+  7163 , ~que je lui ai donné~ => ~que je lui ai donnés~
+  26846 , ~Après qu'Angelo nous ait emprisonnés~ => ~Après qu'Angelo nous a emprisonnés~
+  26853 , ~je pourrai le trouver~ => ~je pourrais le trouver~
+  26872 , ~il semble que je n'ai pas d'autre choix~ => ~il semble que je n'aie pas d'autre choix~
+  26923 , ~il sont passés à l'attaque~ => ~ils sont passés à l'attaque~
+  26956 , ~me casser les oreilles .~ => ~me casser les oreilles.~
+  26977 , ~dans la mesure ou Diarmid~ => ~dans la mesure où Diarmid~
+  26988 , ~l' île~ => ~l'île~
+  27046 , ~mettre à jour~ => ~mettre au jour~
+  27047 , ~mettre à jour~ => ~mettre au jour~
+  27053 , ~du nom de Evalt~ => ~du nom d'Evalt~
+  27090 , ~Bassillus~ => ~Bassilus~
+  27095 , ~personne ne m'a mis la main dessus~ => ~personne ne m'ait mis la main dessus~
+  27110 , ~Après que je lui aie ramené~ => ~Après que je lui ai ramené~
+  27156 , ~Après que j'aie réglé~ => ~Après que j'ai réglé~
+  27114 , ~nous a informé~ => ~nous a informés~
+  27240 , ~nous a informé~ => ~nous a informés~
+  27123 , ~et confié aux bons soins~ => ~et l'avons confié aux bons soins~
+  27206 , ~la Mise à mort~ => ~la mise à mort~
+  27213 , ~Les chevaliers fantôme~ => ~Les chevaliers fantômes~
+  27216 , ~Les chevaliers fantôme~ => ~Les chevaliers fantômes~
+  27239 , ~Laurel nous a initié~ => ~Laurel nous a initiés~
+  27244 , ~où pourrai-je bien en trouver~ => ~où pourrais-je bien en trouver~
+  27245 , ~au dessus de ses frères~ => ~au-dessus de ses frères~
+  27245 , ~mes faits d'arme,~ => ~mes faits d'armes,~
+  27299 , ~En ce moment-même~ => ~En ce moment même~
+  27341 , ~Une demie-elfe~ => ~Une demi-elfe~
+  27422 , ~au siège des Sept Soleil~ => ~au siège des Sept Soleils~
+  27458 , ~Après que nous l'ayons délivrée~ => ~Après que nous l'avons délivrée~
+  27463 , ~récupérer l'homme qu'il était du dieu qu'il espère devenir~ => ~arracher l'homme qu'il était au dieu qu'il espère devenir~
+  27474 , ~que soit le Zhentarim, ou un nouveau groupe~ => ~que le Zhentarim ou un nouveau groupe~
+  27495 , ~quelques uns~ => ~quelques-uns~
+  27498 , ~que j'ai pu rencontrer~ => ~que j'aie pu rencontrer~
+  27509 , ~toute entière~ => ~tout entière~
+  28503 , ~Il semblerait que j'ai invité~ => ~Il semblerait que j'aie invité~
+  30776 , ~les montagnes alentours~ => ~les montagnes alentour~
+  30815 , ~cruel ; Je vais~ => ~cruel ; je vais~
+  31442 , ~Peut être que~ => ~Peut-être que~
+  31461 , ~  ~ => ~ ~
+  31462 , ~  ~ => ~ ~
+  31464 , ~je devrai être en mesure~ => ~je devrais être en mesure~
+  31467 , ~Je devrai être en mesure~ => ~Je devrais être en mesure~
+  31469 , ~je doute que je serai autorisé~ => ~je doute que je sois autorisé~
+  31475 , ~je doute qu'il se rendra~ => ~je doute qu'il se rende~
+  31612 , ~après qu'un accident magique ait mutilé~ => ~après qu'un accident magique a mutilé~
+  31614 , ~hé bien~ => ~eh bien~
+  31618 , ~les gobelins-mêmes~ => ~les gobelins mêmes~
+  32134 , ~de sang froid~ => ~de sang-froid~
+  32200 , ~que nous ne lui avons pas offert~ => ~que nous ne lui avions pas offert~
+  32885 , ~Téthtoril~ => ~Tethtoril~
+  20666 , ~Slyhte~ => ~Slythe~
+  49285 , ~les échanger avec un remède~ => ~les échanger contre un remède~
+  49292 , ~Takos l'aubergiste petite-personne, était~ => ~Takos, l'aubergiste petite-personne, était~
+  50224 , ~Il semble que c'est ce Kherriun~ => ~Il semble que ce soit ce Kherriun~
+  56390 , ~qu'elle a vécu~ => ~qu'elle a vécue~
+  57236 , ~Kava souhaitait que je me fasse offense~ => ~Kava souhaitait que je l'offense~
+  58789 , ~pressé à clamer~ => ~pressé de clamer~
+  58809 , ~des raisons personnelles le poussait~ => ~des raisons personnelles le poussaient~
+  59638 , ~Je ne m'attendais pas à revoir~ => ~Je ne m'attendais pas à la revoir~
+  59624 , ~mes tâches dans la Porte de Baldur~ => ~mes tâches à la Porte de Baldur~
+  59708 , ~Là bas~ => ~Là-bas~
+  59762 , ~Jegg Sculptecolline, le forgeron~ => ~Jegg Sculptecolline, la forgeronne~
+  61451 , ~m'a raconté ces souvenirs~ => ~m'a raconté ses souvenirs~
+  61584 , ~qu'il a perdu~ => ~qu'il a perdue~
+  61585 , ~Ophyllis, le trésorier du palais m'a interpellé~ => ~Ophyllis, le trésorier du palais, m'a interpellé~
+  61594 , ~lui changer les esprits~ => ~lui changer les idées~
+  61602 , ~il a payé sa dette~ => ~elle a payé sa dette~
+  61739 , ~Une fois que j'aurais éliminé~ => ~Une fois que j'aurai éliminé~
+  61894 , ~me bloquant le passage voulaient~ => ~me bloquant le passage voulait~
+  61913 , ~ce genre de tâches évitaient~ => ~ce genre de tâches évitait~
+  62618 , ~Je n'ai pas parlé du cambriolage que j'ai empêché à Drin.~ => ~Je n'ai pas parlé à Drin du cambriolage que j'ai empêché.~
+  64423 , ~site de fouille~ => ~site de fouilles~
+  64424 , ~site de fouille~ => ~site de fouilles~
+  64440 , ~croisés disparus~ => ~croisés disparue~
+  64440 , ~l'un des officiers responsable~ => ~l'un des officiers responsables~
+  66866 , ~au magicien Teleria~ => ~à la magicienne Teleria~
+  66903 , ~Mon golem aidesiège de Vougedragon la coalition.~ => ~Mon golem aide la coalition.~
+  67112 , ~une choppe de bière~ => ~une chope de bière~
+  71316 , ~près de camp~ => ~près du camp~
+  27199 , ~Selaad~ => ~Sélaad~
+  27200 , ~Selaad~ => ~Sélaad~
+  27510 , ~l'assassinat du Duc Eltan~ => ~l'empoisonnement du Duc Eltan~
+  67129 , ~cette peau de sanglier~ => ~cette peau d'ours~
+  66016 , ~ Je devrais à présent aller parler à Wynan Hess des défenseurs.~ => ~~
+  59777 , ~Le siège de Vougedragon.~ => ~Le siège de Vougedragon~
+  59777 , ~rencontrer ces derniers~ => ~rencontrer les commandants~
+  61934 , ~Le dragon a proféré~ => ~La dragonne a proféré~
+  61941 , ~il m'a demandé~ => ~elle m'a demandé~
+END
+OUTER_SET ds_fb_nb = 0
+ACTION_PHP_EACH ds_fb AS k => neuf BEGIN
+  OUTER_SET i = k_0
+  OUTER_SPRINT vieux ~%k_1%~
+  ACTION_IF i < NEXT_STRREF BEGIN
+    OUTER_PATCH ~~ BEGIN
+      GET_STRREF i m
+      GET_STRREF_F i f
+    END
+    ACTION_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~%vieux%~ ~%m%~) >= 0) OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~%vieux%~ ~%f%~) >= 0) BEGIN
+      OUTER_PATCH_SAVE m ~%m%~ BEGIN REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~%vieux%~ ~%neuf%~ END
+      OUTER_PATCH_SAVE f ~%f%~ BEGIN REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~%vieux%~ ~%neuf%~ END
+      ACTION_GET_STRREF_S i ds_s
+      ACTION_GET_STRREF_FS i ds_sf
+      ACTION_IF (~%ds_s%~ STRING_EQUAL ~~) AND (~%ds_sf%~ STRING_EQUAL ~~) BEGIN
+        STRING_SET_EVALUATE i ~%m%~ ~%f%~
+      END ELSE ACTION_IF (~%ds_sf%~ STRING_EQUAL ~~) BEGIN
+        STRING_SET_EVALUATE i ~%m%~ [%ds_s%] ~%f%~
+      END ELSE ACTION_IF (~%ds_s%~ STRING_EQUAL ~~) BEGIN
+        STRING_SET_EVALUATE i ~%m%~ ~%f%~ [%ds_sf%]
+      END ELSE BEGIN
+        STRING_SET_EVALUATE i ~%m%~ [%ds_s%] ~%f%~ [%ds_sf%]
+      END
+      OUTER_SET ds_fb_nb = ds_fb_nb + 1
+    END
+  END
+END
+ACTION_DEFINE_ASSOCIATIVE_ARRAY ds_fbm BEGIN
+  50537 , ~m'a attaquée~ => ~m'a attaqué~
+END
+ACTION_PHP_EACH ds_fbm AS k => neuf BEGIN
+  OUTER_SET i = k_0
+  OUTER_SPRINT vieux ~%k_1%~
+  ACTION_IF i < NEXT_STRREF BEGIN
+    OUTER_PATCH ~~ BEGIN
+      GET_STRREF i m
+      GET_STRREF_F i f
+    END
+    ACTION_IF INDEX (CASE_SENSITIVE EXACT_MATCH ~%vieux%~ ~%m%~) >= 0 BEGIN
+      OUTER_PATCH_SAVE m ~%m%~ BEGIN REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~%vieux%~ ~%neuf%~ END
+      ACTION_GET_STRREF_S i ds_s
+      ACTION_GET_STRREF_FS i ds_sf
+      ACTION_IF (~%ds_s%~ STRING_EQUAL ~~) AND (~%ds_sf%~ STRING_EQUAL ~~) BEGIN
+        STRING_SET_EVALUATE i ~%m%~ ~%f%~
+      END ELSE ACTION_IF (~%ds_sf%~ STRING_EQUAL ~~) BEGIN
+        STRING_SET_EVALUATE i ~%m%~ [%ds_s%] ~%f%~
+      END ELSE ACTION_IF (~%ds_s%~ STRING_EQUAL ~~) BEGIN
+        STRING_SET_EVALUATE i ~%m%~ ~%f%~ [%ds_sf%]
+      END ELSE BEGIN
+        STRING_SET_EVALUATE i ~%m%~ [%ds_s%] ~%f%~ [%ds_sf%]
+      END
+      OUTER_SET ds_fb_nb = ds_fb_nb + 1
+    END
+  END
+END
+PRINT ~Drow Saga : %ds_fb_nb% faute(s) du jeu de base corrigée(s)~
+
+OUTER_SET ds_ub_avant = NEXT_STRREF
+OUTER_SET ds_ub = RESOLVE_STR_REF(~Triche à l'examen d'entrée
+
+I could help young Edie with a magical potion. It might count as cheating, but considering she joined the Merchants' League some might say that's part of the job...~)
+ACTION_IF ds_ub < ds_ub_avant BEGIN
+  STRING_SET_EVALUATE ds_ub ~Triche à l'examen d'entrée
+
+Je pourrais aider la jeune Edie avec une potion magique. On pourrait parler de triche, mais puisqu'elle a rejoint la Ligue des Marchands, certains diront que ça fait partie du métier...~ ~Triche à l'examen d'entrée
+
+Je pourrais aider la jeune Edie avec une potion magique. On pourrait parler de triche, mais puisqu'elle a rejoint la Ligue des Marchands, certains diront que ça fait partie du métier...~
+  PRINT ~Drow Saga : entrée de journal d'UB traduite (Edie)~
+END

@@ -1,0 +1,27 @@
+COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
+  PATCH_IF (INDEX_BUFFER (~Race(Player1,ELF)~) >= 0) AND NOT (~%SOURCE_RES%~ STRING_MATCHES_REGEXP ~^[Bb][DdPp].*~ = 0) BEGIN
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~OR(2)\([^A-Za-z]+\)Race(Player1,ELF)\([^A-Za-z]+\)Race(Player1,HALF_ELF)~ ~DSORPORTRAIT\1DSRACEELF\2Race(Player1,HALF_ELF)~
+      REPLACE_TEXTUALLY ~OR(2)\([^A-Za-z]+\)Gender(Player1,\(MALE\|FEMALE\))\([^A-Za-z!]+\)!Race(Player1,ELF)~ ~OR(3)\1Gender(Player1,\2)\3DSNEGELF Global("DS_P1_DROW","GLOBAL",1)~
+      REPLACE_TEXTUALLY ~!Race(Player1,ELF)~ ~OR(2) DSNEGELF Global("DS_P1_DROW","GLOBAL",1)~
+      REPLACE_TEXTUALLY ~Race(Player1,ELF)~ ~Race(Player1,ELF) !Global("DS_P1_DROW","GLOBAL",1)~
+      REPLACE_TEXTUALLY ~DSNEGELF~ ~!Race(Player1,ELF)~
+      REPLACE_TEXTUALLY ~DSORPORTRAIT~ ~OR(2)~
+      REPLACE_TEXTUALLY ~DSRACEELF~ ~Race(Player1,ELF)~
+    END
+  END
+BUT_ONLY
+
+ACTION_FOR_EACH ds_match IN ~X#AjantisRomanceMatch~ ~X#DynahMatch~ BEGIN
+  OUTER_SPRINT ds_pose ~SetGlobal("%ds_match%","GLOBAL",1)~
+  OUTER_SPRINT ds_test ~Global("%ds_match%","GLOBAL",0)~
+  COPY_EXISTING_REGEXP GLOB ~^.+\.bcs$~ ~override~
+    PATCH_IF (INDEX_BUFFER (~%ds_match%~) >= 0) BEGIN
+      DECOMPILE_AND_PATCH BEGIN
+        PATCH_IF (INDEX_BUFFER (EXACT_MATCH ~%ds_pose%~) >= 0) BEGIN
+          REPLACE_TEXTUALLY EXACT_MATCH ~%ds_test%~ ~%ds_test% !Global("DS_P1_DROW","GLOBAL",1)~
+        END
+      END
+    END
+  BUT_ONLY
+END

@@ -1,0 +1,1594 @@
+
+
+IF
+    Global("DS_DROW_PENDING_2","GLOBAL",1)
+    Exists(Player2)
+    !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK2_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_ID","GLOBAL",1)
+        SetGlobal("DS_DROW_FRESH_2","GLOBAL",1)
+        ActionOverride(Player2,SetGlobal("DS_DROW","LOCALS",1))
+        ApplySpellRES("DSDROWID",Player2)
+        SetGlobal("DS_DROW_PENDING_2","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_LK2_ID","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_ID","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_PENDING_2","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_PENDING_2","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_FRESH_2","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_FRESH_2","GLOBAL",0)
+        Continue()
+END
+
+IF
+    CheckSpellState(Player2,DS_DROW_PASSPORT)
+    CheckSpellState(Player2,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_2","GLOBAL",0)
+    !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK2_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player2,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        ActionOverride(Player2,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        ActionOverride(Player2,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        ActionOverride(Player2,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    CheckSpellState(Player2,DS_DROW_PASSPORT)
+    !CheckSpellState(Player2,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_2","GLOBAL",0)
+    !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK2_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    !CheckSpellState(Player2,DS_DROW_PACKAGE)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWPK",Player2)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !Global("DS_UI_DROW_2","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_2","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    Global("DS_UI_DROW_2","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_2","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    Global("DS_LK2_ST","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_ST","GLOBAL",1)
+        ChangeStat(Player2,DEX,1,ADD)
+        ChangeStat(Player2,INT,1,ADD)
+        ApplySpellRES("DSDROWPK",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK2_ST","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_ST","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    Global("DS_LK2_MR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_MR","GLOBAL",1)
+        ApplySpellRES("DSDROWMR",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK2_MR","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_MR","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    Global("DS_LK2_XP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_XP","GLOBAL",1)
+        ApplySpellRES("DSDROWXP",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK2_XP","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_XP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",0)
+    Global("DS_DROW_FRESH_BOOTSTRAP","GLOBAL",0)
+    Global("DS_DROW_PENDING","GLOBAL",0)
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK2_RP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_RP","GLOBAL",1)
+        ReputationInc(-2)
+        SetGlobal("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+        ActionOverride(Player2,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK2_RP","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_RP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ActionOverride(Player2,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+    Global("DS_LK2_TH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_TH","GLOBAL",1)
+        ApplySpellRES("DSDROWTH",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK2_TH","GLOBAL",1)
+    TriggerOverride(Player2,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK2_TH","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !CheckSpellState(Player2,DS_DROW_PASSPORT)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWID",Player2)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    LevelGT(Player2,8)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        ActionOverride(Player2,SetGlobal("DS_DROW_ACCLIMATED","LOCALS",1))
+        DisplayStringHead(Player2,@100)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player2,8)
+    !TriggerOverride(Player2,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    AreaType(OUTDOOR)
+    TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWLT",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player2,8)
+    TriggerOverride(Player2,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TriggerOverride(Player2,Global("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+THEN
+    RESPONSE #100
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+        DisplayStringHead(Player2,@101)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player2,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player2)
+        ActionOverride(Player2,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+
+IF
+    Global("DS_DROW_PENDING_3","GLOBAL",1)
+    Exists(Player3)
+    !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK3_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_ID","GLOBAL",1)
+        SetGlobal("DS_DROW_FRESH_3","GLOBAL",1)
+        ActionOverride(Player3,SetGlobal("DS_DROW","LOCALS",1))
+        ApplySpellRES("DSDROWID",Player3)
+        SetGlobal("DS_DROW_PENDING_3","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_LK3_ID","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_ID","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_PENDING_3","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_PENDING_3","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_FRESH_3","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_FRESH_3","GLOBAL",0)
+        Continue()
+END
+
+IF
+    CheckSpellState(Player3,DS_DROW_PASSPORT)
+    CheckSpellState(Player3,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_3","GLOBAL",0)
+    !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK3_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player3,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        ActionOverride(Player3,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        ActionOverride(Player3,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        ActionOverride(Player3,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    CheckSpellState(Player3,DS_DROW_PASSPORT)
+    !CheckSpellState(Player3,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_3","GLOBAL",0)
+    !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK3_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    !CheckSpellState(Player3,DS_DROW_PACKAGE)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWPK",Player3)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !Global("DS_UI_DROW_3","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_3","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    Global("DS_UI_DROW_3","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_3","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    Global("DS_LK3_ST","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_ST","GLOBAL",1)
+        ChangeStat(Player3,DEX,1,ADD)
+        ChangeStat(Player3,INT,1,ADD)
+        ApplySpellRES("DSDROWPK",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK3_ST","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_ST","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    Global("DS_LK3_MR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_MR","GLOBAL",1)
+        ApplySpellRES("DSDROWMR",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK3_MR","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_MR","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    Global("DS_LK3_XP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_XP","GLOBAL",1)
+        ApplySpellRES("DSDROWXP",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK3_XP","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_XP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",0)
+    Global("DS_DROW_FRESH_BOOTSTRAP","GLOBAL",0)
+    Global("DS_DROW_PENDING","GLOBAL",0)
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_LK3_RP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_RP","GLOBAL",1)
+        ReputationInc(-2)
+        SetGlobal("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+        ActionOverride(Player3,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK3_RP","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_RP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ActionOverride(Player3,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+    Global("DS_LK3_TH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_TH","GLOBAL",1)
+        ApplySpellRES("DSDROWTH",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK3_TH","GLOBAL",1)
+    TriggerOverride(Player3,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK3_TH","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !CheckSpellState(Player3,DS_DROW_PASSPORT)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWID",Player3)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    LevelGT(Player3,8)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        ActionOverride(Player3,SetGlobal("DS_DROW_ACCLIMATED","LOCALS",1))
+        DisplayStringHead(Player3,@100)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player3,8)
+    !TriggerOverride(Player3,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    AreaType(OUTDOOR)
+    TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWLT",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player3,8)
+    TriggerOverride(Player3,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TriggerOverride(Player3,Global("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+THEN
+    RESPONSE #100
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+        DisplayStringHead(Player3,@101)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player3,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player3)
+        ActionOverride(Player3,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+
+IF
+    Global("DS_DROW_PENDING_4","GLOBAL",1)
+    Exists(Player4)
+    !TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK4_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_ID","GLOBAL",1)
+        SetGlobal("DS_DROW_FRESH_4","GLOBAL",1)
+        ActionOverride(Player4,SetGlobal("DS_DROW","LOCALS",1))
+        ApplySpellRES("DSDROWID",Player4)
+        SetGlobal("DS_DROW_PENDING_4","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_LK4_ID","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_ID","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_PENDING_4","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_PENDING_4","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_FRESH_4","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_FRESH_4","GLOBAL",0)
+        Continue()
+END
+
+IF
+    CheckSpellState(Player4,DS_DROW_PASSPORT)
+    CheckSpellState(Player4,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_4","GLOBAL",0)
+    !TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK4_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player4,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        ActionOverride(Player4,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        ActionOverride(Player4,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        ActionOverride(Player4,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    CheckSpellState(Player4,DS_DROW_PASSPORT)
+    !CheckSpellState(Player4,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_4","GLOBAL",0)
+    !TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK4_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    !CheckSpellState(Player4,DS_DROW_PACKAGE)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWPK",Player4)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !Global("DS_UI_DROW_4","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_4","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    Global("DS_UI_DROW_4","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_4","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    Global("DS_LK4_ST","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_ST","GLOBAL",1)
+        ChangeStat(Player4,DEX,1,ADD)
+        ChangeStat(Player4,INT,1,ADD)
+        ApplySpellRES("DSDROWPK",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK4_ST","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_ST","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    Global("DS_LK4_MR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_MR","GLOBAL",1)
+        ApplySpellRES("DSDROWMR",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK4_MR","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_MR","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    Global("DS_LK4_XP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_XP","GLOBAL",1)
+        ApplySpellRES("DSDROWXP",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK4_XP","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_XP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",0)
+    Global("DS_DROW_FRESH_BOOTSTRAP","GLOBAL",0)
+    Global("DS_DROW_PENDING","GLOBAL",0)
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_LK4_RP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_RP","GLOBAL",1)
+        ReputationInc(-2)
+        SetGlobal("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+        ActionOverride(Player4,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK4_RP","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_RP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ActionOverride(Player4,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+    Global("DS_LK4_TH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_TH","GLOBAL",1)
+        ApplySpellRES("DSDROWTH",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK4_TH","GLOBAL",1)
+    TriggerOverride(Player4,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK4_TH","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !CheckSpellState(Player4,DS_DROW_PASSPORT)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWID",Player4)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    LevelGT(Player4,8)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        ActionOverride(Player4,SetGlobal("DS_DROW_ACCLIMATED","LOCALS",1))
+        DisplayStringHead(Player4,@100)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player4,8)
+    !TriggerOverride(Player4,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    AreaType(OUTDOOR)
+    TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWLT",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player4,8)
+    TriggerOverride(Player4,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TriggerOverride(Player4,Global("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+THEN
+    RESPONSE #100
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+        DisplayStringHead(Player4,@101)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player4,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player4)
+        ActionOverride(Player4,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+
+IF
+    Global("DS_DROW_PENDING_5","GLOBAL",1)
+    Exists(Player5)
+    !TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK5_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_ID","GLOBAL",1)
+        SetGlobal("DS_DROW_FRESH_5","GLOBAL",1)
+        ActionOverride(Player5,SetGlobal("DS_DROW","LOCALS",1))
+        ApplySpellRES("DSDROWID",Player5)
+        SetGlobal("DS_DROW_PENDING_5","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_LK5_ID","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_ID","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_PENDING_5","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_PENDING_5","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_FRESH_5","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_FRESH_5","GLOBAL",0)
+        Continue()
+END
+
+IF
+    CheckSpellState(Player5,DS_DROW_PASSPORT)
+    CheckSpellState(Player5,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_5","GLOBAL",0)
+    !TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK5_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player5,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        ActionOverride(Player5,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        ActionOverride(Player5,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        ActionOverride(Player5,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    CheckSpellState(Player5,DS_DROW_PASSPORT)
+    !CheckSpellState(Player5,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_5","GLOBAL",0)
+    !TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK5_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    !CheckSpellState(Player5,DS_DROW_PACKAGE)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWPK",Player5)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !Global("DS_UI_DROW_5","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_5","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    Global("DS_UI_DROW_5","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_5","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    Global("DS_LK5_ST","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_ST","GLOBAL",1)
+        ChangeStat(Player5,DEX,1,ADD)
+        ChangeStat(Player5,INT,1,ADD)
+        ApplySpellRES("DSDROWPK",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK5_ST","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_ST","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    Global("DS_LK5_MR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_MR","GLOBAL",1)
+        ApplySpellRES("DSDROWMR",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK5_MR","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_MR","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    Global("DS_LK5_XP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_XP","GLOBAL",1)
+        ApplySpellRES("DSDROWXP",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK5_XP","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_XP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",0)
+    Global("DS_DROW_FRESH_BOOTSTRAP","GLOBAL",0)
+    Global("DS_DROW_PENDING","GLOBAL",0)
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player4,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_LK5_RP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_RP","GLOBAL",1)
+        ReputationInc(-2)
+        SetGlobal("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+        ActionOverride(Player5,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK5_RP","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_RP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ActionOverride(Player5,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+    Global("DS_LK5_TH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_TH","GLOBAL",1)
+        ApplySpellRES("DSDROWTH",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK5_TH","GLOBAL",1)
+    TriggerOverride(Player5,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK5_TH","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !CheckSpellState(Player5,DS_DROW_PASSPORT)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWID",Player5)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    LevelGT(Player5,8)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        ActionOverride(Player5,SetGlobal("DS_DROW_ACCLIMATED","LOCALS",1))
+        DisplayStringHead(Player5,@100)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player5,8)
+    !TriggerOverride(Player5,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    AreaType(OUTDOOR)
+    TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWLT",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player5,8)
+    TriggerOverride(Player5,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TriggerOverride(Player5,Global("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+THEN
+    RESPONSE #100
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+        DisplayStringHead(Player5,@101)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player5,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player5)
+        ActionOverride(Player5,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+
+IF
+    Global("DS_DROW_PENDING_6","GLOBAL",1)
+    Exists(Player6)
+    !TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK6_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_ID","GLOBAL",1)
+        SetGlobal("DS_DROW_FRESH_6","GLOBAL",1)
+        ActionOverride(Player6,SetGlobal("DS_DROW","LOCALS",1))
+        ApplySpellRES("DSDROWID",Player6)
+        SetGlobal("DS_DROW_PENDING_6","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_LK6_ID","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_ID","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_PENDING_6","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_PENDING_6","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_FRESH_6","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_FRESH_6","GLOBAL",0)
+        Continue()
+END
+
+IF
+    CheckSpellState(Player6,DS_DROW_PASSPORT)
+    CheckSpellState(Player6,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_6","GLOBAL",0)
+    !TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK6_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player6,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        ActionOverride(Player6,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        ActionOverride(Player6,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        ActionOverride(Player6,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    CheckSpellState(Player6,DS_DROW_PASSPORT)
+    !CheckSpellState(Player6,DS_DROW_PACKAGE)
+    Global("DS_DROW_FRESH_6","GLOBAL",0)
+    !TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    Global("DS_LK6_ID","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_ID","GLOBAL",1)
+        ApplySpellRES("DSDROWCL",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW","LOCALS",1))
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    !CheckSpellState(Player6,DS_DROW_PACKAGE)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWPK",Player6)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !Global("DS_UI_DROW_6","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_6","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    Global("DS_UI_DROW_6","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_DROW_6","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    Global("DS_LK6_ST","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_ST","GLOBAL",1)
+        ChangeStat(Player6,DEX,1,ADD)
+        ChangeStat(Player6,INT,1,ADD)
+        ApplySpellRES("DSDROWPK",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_STATS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK6_ST","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_ST","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+    Global("DS_LK6_MR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_MR","GLOBAL",1)
+        ApplySpellRES("DSDROWMR",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_MR_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK6_MR","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW_MR_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_MR","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+    Global("DS_LK6_XP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_XP","GLOBAL",1)
+        ApplySpellRES("DSDROWXP",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_XP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK6_XP","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW_XP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_XP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",0)
+    Global("DS_DROW_FRESH_BOOTSTRAP","GLOBAL",0)
+    Global("DS_DROW_PENDING","GLOBAL",0)
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player2,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player2,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player3,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player3,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player4,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player4,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    OR(2)
+        !TriggerOverride(Player5,Global("DS_DROW","LOCALS",1))
+        TriggerOverride(Player5,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_LK6_RP","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_RP","GLOBAL",1)
+        ReputationInc(-2)
+        SetGlobal("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+        ActionOverride(Player6,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK6_RP","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_RP","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_REP_APPLIED","LOCALS",1))
+    Global("DS_DROW_REP_CAMPAIGN_APPLIED","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ActionOverride(Player6,SetGlobal("DS_DROW_REP_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+    Global("DS_LK6_TH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_TH","GLOBAL",1)
+        ApplySpellRES("DSDROWTH",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+        Continue()
+END
+
+IF
+    Global("DS_LK6_TH","GLOBAL",1)
+    TriggerOverride(Player6,Global("DS_DROW_THIEF_OFFSETS_APPLIED","LOCALS",1))
+THEN
+    RESPONSE #100
+        SetGlobal("DS_LK6_TH","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !CheckSpellState(Player6,DS_DROW_PASSPORT)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWID",Player6)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    LevelGT(Player6,8)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        ActionOverride(Player6,SetGlobal("DS_DROW_ACCLIMATED","LOCALS",1))
+        DisplayStringHead(Player6,@100)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player6,8)
+    !TriggerOverride(Player6,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    AreaType(OUTDOOR)
+    TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWLT",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_ACCLIMATED","LOCALS",1))
+    !LevelGT(Player6,8)
+    TriggerOverride(Player6,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TriggerOverride(Player6,Global("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+THEN
+    RESPONSE #100
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_NOTICE_SHOWN","LOCALS",1))
+        DisplayStringHead(Player6,@101)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    TriggerOverride(Player6,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player6,Global("DS_DROW_LIGHT_ACTIVE","LOCALS",1))
+    !TimeOfDay(DAY)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWCL",Player6)
+        ActionOverride(Player6,SetGlobal("DS_DROW_LIGHT_ACTIVE","LOCALS",0))
+        Continue()
+END
+
+IF
+    OR(5)
+        Global("DS_DROW_PENDING_2","GLOBAL",1)
+        Global("DS_DROW_PENDING_3","GLOBAL",1)
+        Global("DS_DROW_PENDING_4","GLOBAL",1)
+        Global("DS_DROW_PENDING_5","GLOBAL",1)
+        Global("DS_DROW_PENDING_6","GLOBAL",1)
+    !Global("DS_DROW_PARTY_PENDING_ARMED","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_DROW_PARTY_PENDING_TIMER","GLOBAL",12)
+        SetGlobal("DS_DROW_PARTY_PENDING_ARMED","GLOBAL",1)
+        Continue()
+END
+
+IF
+    Global("DS_DROW_PARTY_PENDING_ARMED","GLOBAL",1)
+    GlobalTimerExpired("DS_DROW_PARTY_PENDING_TIMER","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_DROW_PENDING_2","GLOBAL",0)
+        SetGlobal("DS_DROW_PENDING_3","GLOBAL",0)
+        SetGlobal("DS_DROW_PENDING_4","GLOBAL",0)
+        SetGlobal("DS_DROW_PENDING_5","GLOBAL",0)
+        SetGlobal("DS_DROW_PENDING_6","GLOBAL",0)
+        SetGlobal("DS_DROW_PARTY_PENDING_ARMED","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    TriggerOverride(Player1,Global("DS_DROW_STATS_APPLIED","LOCALS",1))
+    !CheckSpellState(Player1,DS_DROW_PACKAGE)
+THEN
+    RESPONSE #100
+        ApplySpellRES("DSDROWPK",Player1)
+        Continue()
+END
+
+IF
+    Global("DS_SOD_SAVE_IMPORT_CONTEXT","GLOBAL",1)
+    InParty(Player1)
+    !CheckSpellState(Player1,DS_DROW_PASSPORT)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_SOD_SAVE_IMPORT_CONTEXT","GLOBAL",0)
+        Continue()
+END

@@ -1,0 +1,39 @@
+OUTER_SPRINT ds_lg_rx ~\(les violait\. Ta mère\|s'imposa charnellement à elles\|Il a étudié ici, à Château-Suif, et\)~
+OUTER_SET nb = 0
+ACTION_CLEAR_ARRAY ds_sf
+OUTER_PATCH ~~ BEGIN
+  FOR (i = 0; i < NEXT_STRREF; ++i) BEGIN
+    GET_STRREF i m
+    GET_STRREF_F i f
+    PATCH_IF (INDEX (CASE_INSENSITIVE ~surfacin~ ~%m%~) >= 0) OR (INDEX (CASE_INSENSITIVE ~surfacin~ ~%f%~) >= 0)
+          OR (INDEX (CASE_SENSITIVE ~%ds_lg_rx%~ ~%m%~) >= 0) OR (INDEX (CASE_SENSITIVE ~%ds_lg_rx%~ ~%f%~) >= 0) BEGIN
+      SET $ds_sf(~%nb%~) = i
+      SET nb = nb + 1
+    END
+  END
+END
+DEFINE_ACTION_FUNCTION ds_sf_mot
+  STR_VAR t = ~~
+  RET t
+BEGIN
+  OUTER_PATCH_SAVE t ~%t%~ BEGIN
+    REPLACE_TEXTUALLY CASE_SENSITIVE ~urfacine~ ~urfacienne~
+    REPLACE_TEXTUALLY CASE_SENSITIVE ~URFACINE~ ~URFACIENNE~
+    REPLACE_TEXTUALLY CASE_SENSITIVE ~urfacin\([^g]\|$\)~ ~urfacien\1~
+    REPLACE_TEXTUALLY CASE_SENSITIVE ~URFACIN\([^G]\|$\)~ ~URFACIEN\1~
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~il recherchait des femmes de toutes les races et les violait. Ta mère était l'une de ces femmes~ ~il chercha à laisser une descendance auprès de femmes de toutes les races. Ta mère était l'une d'elles~
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~il se mit à la recherche de femmes de toutes races et s'imposa charnellement à elles. Ta mère était l'une de ces femmes~ ~il chercha à laisser une descendance auprès de femmes de toutes races. Ta mère était l'une d'elles~
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~Il a étudié ici, à Château-Suif, et~ ~Il est venu ici, à Château-Suif, consulter les prophéties, et~
+  END
+END
+OUTER_FOR (k = 0; k < nb; ++k) BEGIN
+  OUTER_SET i = $ds_sf(~%k%~)
+  OUTER_PATCH ~~ BEGIN
+    GET_STRREF i m
+    GET_STRREF_F i f
+  END
+  LAF ds_sf_mot STR_VAR t = EVAL ~%m%~ RET m = t END
+  LAF ds_sf_mot STR_VAR t = EVAL ~%f%~ RET f = t END
+  STRING_SET_EVALUATE i ~%m%~ ~%f%~
+END
+PRINT ~Drow Saga : %nb% chaîne(s) harmonisée(s) ou corrigée(s) (surfacien, lettres de Gorion)~

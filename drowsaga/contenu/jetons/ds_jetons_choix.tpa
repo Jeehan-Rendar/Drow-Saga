@@ -1,0 +1,313 @@
+OUTER_SET ds_jc_n = 104
+OUTER_SPRINT $ds_jc_o(~0~) ~<CHARNAME>, nous savions que vous aviez des pouvoirs dépassant ceux dont un <PRO_RACE> est supposé disposer. Il y avait tant de signes : vos rêves, par exemple, pleins de présages menaçants, et la magie dont vous héritiez ensuite. Et puis il y avait cet ennemi impitoyable qui s'intéressait à vous de manière inexpliquée... Mais je n'aurais jamais deviné que la source de votre force était à ce point maléfique, qu'elle émanait de Bhaal, le dieu du meurtre.~
+OUTER_SPRINT $ds_jc_m(~0~) ~<CHARNAME>, nous savions que vous aviez des pouvoirs dépassant ceux dont un elfe noir est supposé disposer. Il y avait tant de signes : vos rêves, par exemple, pleins de présages menaçants, et la magie dont vous héritiez ensuite. Et puis il y avait cet ennemi impitoyable qui s'intéressait à vous de manière inexpliquée... Mais je n'aurais jamais deviné que la source de votre force était à ce point maléfique, qu'elle émanait de Bhaal, le dieu du meurtre.~
+OUTER_SPRINT $ds_jc_f(~0~) ~<CHARNAME>, nous savions que vous aviez des pouvoirs dépassant ceux dont un elfe noir est supposé disposer. Il y avait tant de signes : vos rêves, par exemple, pleins de présages menaçants, et la magie dont vous héritiez ensuite. Et puis il y avait cet ennemi impitoyable qui s'intéressait à vous de manière inexpliquée... Mais je n'aurais jamais deviné que la source de votre force était à ce point maléfique, qu'elle émanait de Bhaal, le dieu du meurtre.~
+OUTER_SPRINT $ds_jc_o(~1~) ~Hmm ! Qui sait ? Vous feriez mieux de ne pas jouer au plus fin lorsque Tazok sera là. Les ogres n'ont pas la réputation d'apprécier les subtilités de votre humour, <RACE>.~
+OUTER_SPRINT $ds_jc_m(~1~) ~Hmm ! Qui sait ? Vous feriez mieux de ne pas jouer au plus fin lorsque Tazok sera là. Les ogres n'ont pas la réputation d'apprécier les subtilités de votre humour, l'elfe noir.~
+OUTER_SPRINT $ds_jc_f(~1~) ~Hmm ! Qui sait ? Vous feriez mieux de ne pas jouer au plus fin lorsque Tazok sera là. Les ogres n'ont pas la réputation d'apprécier les subtilités de votre humour, l'elfe noire.~
+OUTER_SPRINT $ds_jc_o(~2~) ~Bizarre, hein ? J'aurais juré que tu cherchais davantage qu'une amourette. Mais qu'est-ce qu'un halfelin sait des <PRO_RACE>s ?~
+OUTER_SPRINT $ds_jc_m(~2~) ~Bizarre, hein ? J'aurais juré que tu cherchais davantage qu'une amourette. Mais qu'est-ce qu'un halfelin sait des drows ?~
+OUTER_SPRINT $ds_jc_f(~2~) ~Bizarre, hein ? J'aurais juré que tu cherchais davantage qu'une amourette. Mais qu'est-ce qu'un halfelin sait des drows ?~
+OUTER_SPRINT $ds_jc_o(~3~) ~QUOI ? <PRO_RACE> pas pouvoir battre un ogre ! ~
+OUTER_SPRINT $ds_jc_m(~3~) ~QUOI ? Peau-noire pas pouvoir battre un ogre ! ~
+OUTER_SPRINT $ds_jc_f(~3~) ~QUOI ? Peau-noire pas pouvoir battre un ogre ! ~
+OUTER_SPRINT $ds_jc_o(~4~) ~Faible <PRO_RACE> pas pouvoir devenir chef !~
+OUTER_SPRINT $ds_jc_m(~4~) ~Faible elfe noir pas pouvoir devenir chef !~
+OUTER_SPRINT $ds_jc_f(~4~) ~Faible elfe noire pas pouvoir devenir chef !~
+OUTER_SPRINT $ds_jc_o(~5~) ~Vous être chef, maintenant. Mais ogres pas vous suivre bien longtemps. Vous être <PRO_RACE>.~
+OUTER_SPRINT $ds_jc_m(~5~) ~Vous être chef, maintenant. Mais ogres pas vous suivre bien longtemps. Vous être drow.~
+OUTER_SPRINT $ds_jc_f(~5~) ~Vous être chef, maintenant. Mais ogres pas vous suivre bien longtemps. Vous être drow.~
+OUTER_SPRINT $ds_jc_o(~6~) ~Ô Vaprak, vous aider <PRO_RACE> à trouver mon Slug. Pitié... Vous ramener Slug.~
+OUTER_SPRINT $ds_jc_m(~6~) ~Ô Vaprak, vous aider peau-noire à trouver mon Slug. Pitié... Vous ramener Slug.~
+OUTER_SPRINT $ds_jc_f(~6~) ~Ô Vaprak, vous aider peau-noire à trouver mon Slug. Pitié... Vous ramener Slug.~
+OUTER_SPRINT $ds_jc_o(~7~) ~Semahl devoir parler. <PRO_RACE> sait. Semahl sait. Âtrefroid faire choses méchantes quand penser lui seul. Lui penser Semahl pas savoir, mais Semahl connaître le mal. Âtrefroid mal. Il... Il faire du mal à Semahl. Dire à Semahl de pas dire à Auchlin et aux autres frères...~
+OUTER_SPRINT $ds_jc_m(~7~) ~Semahl devoir parler. Peau-noire sait. Semahl sait. Âtrefroid faire choses méchantes quand penser lui seul. Lui penser Semahl pas savoir, mais Semahl connaître le mal. Âtrefroid mal. Il... Il faire du mal à Semahl. Dire à Semahl de pas dire à Auchlin et aux autres frères...~
+OUTER_SPRINT $ds_jc_f(~7~) ~Semahl devoir parler. Peau-noire sait. Semahl sait. Âtrefroid faire choses méchantes quand penser lui seul. Lui penser Semahl pas savoir, mais Semahl connaître le mal. Âtrefroid mal. Il... Il faire du mal à Semahl. Dire à Semahl de pas dire à Auchlin et aux autres frères...~
+OUTER_SPRINT $ds_jc_o(~8~) ~<PRO_RACE> sait. Semahl sait. Âtrefroid faire choses méchantes quand penser lui seul. Lui penser Semahl pas savoir, mais Semahl connaître le mal. Âtrefroid mal. Il... Il faire du mal à Semahl. Dire à Semahl de pas dire à Auchlin et aux autres frères...~
+OUTER_SPRINT $ds_jc_m(~8~) ~Peau-noire sait. Semahl sait. Âtrefroid faire choses méchantes quand penser lui seul. Lui penser Semahl pas savoir, mais Semahl connaître le mal. Âtrefroid mal. Il... Il faire du mal à Semahl. Dire à Semahl de pas dire à Auchlin et aux autres frères...~
+OUTER_SPRINT $ds_jc_f(~8~) ~Peau-noire sait. Semahl sait. Âtrefroid faire choses méchantes quand penser lui seul. Lui penser Semahl pas savoir, mais Semahl connaître le mal. Âtrefroid mal. Il... Il faire du mal à Semahl. Dire à Semahl de pas dire à Auchlin et aux autres frères...~
+OUTER_SPRINT $ds_jc_o(~9~) ~Hmm... La dernière fois que j'ai regardé dans le miroir, je n'ai pas vu de poisson, ni d'elfe des mers ou d'algues. Peut-être que les <RACE>s sont également libérés par les océans...~
+OUTER_SPRINT $ds_jc_m(~9~) ~Hmm... La dernière fois que j'ai regardé dans le miroir, je n'ai pas vu de poisson, ni d'elfe des mers ou d'algues. Peut-être que l'océan libère aussi les enfants de l'Ombre-Terre...~
+OUTER_SPRINT $ds_jc_f(~9~) ~Hmm... La dernière fois que j'ai regardé dans le miroir, je n'ai pas vu de poisson, ni d'elfe des mers ou d'algues. Peut-être que l'océan libère aussi les enfants de l'Ombre-Terre...~
+OUTER_SPRINT $ds_jc_o(~10~) ~Hmm... La dernière fois que j'ai regardé dans le miroir, je n'ai pas vu de poisson, ni d'elfe des mers ou d'algues. Peut-être que les <RACE>s sont également libérés par les océans...~
+OUTER_SPRINT $ds_jc_m(~10~) ~Hmm... La dernière fois que j'ai regardé dans le miroir, je n'ai pas vu de poisson, ni d'elfe des mers ou d'algues. Peut-être que l'océan libère aussi les enfants de l'Ombre-Terre...~
+OUTER_SPRINT $ds_jc_f(~10~) ~Hmm... La dernière fois que j'ai regardé dans le miroir, je n'ai pas vu de poisson, ni d'elfe des mers ou d'algues. Peut-être que l'océan libère aussi les enfants de l'Ombre-Terre...~
+OUTER_SPRINT $ds_jc_o(~11~) ~Tu n'es pas un <RACE> ordinaire, sang de dieu, et je doute que quoi que ce soit puisse restreindre ton esprit. Dernièrement, cependant, j'ai découvert qu'il y avait autre chose qui m'affectait de la même manière paradoxale que l'océan.~
+OUTER_SPRINT $ds_jc_m(~11~) ~Tu n'es pas un elfe noir ordinaire, sang de dieu, et je doute que quoi que ce soit puisse restreindre ton esprit. Dernièrement, cependant, j'ai découvert qu'il y avait autre chose qui m'affectait de la même manière paradoxale que l'océan.~
+OUTER_SPRINT $ds_jc_f(~11~) ~Tu n'es pas une elfe noire ordinaire, sang de dieu, et je doute que quoi que ce soit puisse restreindre ton esprit. Dernièrement, cependant, j'ai découvert qu'il y avait autre chose qui m'affectait de la même manière paradoxale que l'océan.~
+OUTER_SPRINT $ds_jc_o(~12~) ~Hmm... Il était temps, <RACE>. Apportez moi un autre pichet de bière.~
+OUTER_SPRINT $ds_jc_m(~12~) ~Hmm... Il était temps, l'elfe noir. Apportez moi un autre pichet de bière.~
+OUTER_SPRINT $ds_jc_f(~12~) ~Hmm... Il était temps, l'elfe noire. Apportez moi un autre pichet de bière.~
+OUTER_SPRINT $ds_jc_o(~13~) ~Hmm... Il était temps, <RACE>. Apportez moi un autre pichet de bière.~
+OUTER_SPRINT $ds_jc_m(~13~) ~Hmm... Il était temps, l'elfe noir. Apportez moi un autre pichet de bière.~
+OUTER_SPRINT $ds_jc_f(~13~) ~Hmm... Il était temps, l'elfe noire. Apportez moi un autre pichet de bière.~
+OUTER_SPRINT $ds_jc_o(~14~) ~Écoutez attentivement, <RACE>. Si vous continuez à me harceler, je vais vous briser le cou à mains nues. Partez. Maintenant.~
+OUTER_SPRINT $ds_jc_m(~14~) ~Écoutez attentivement, drow. Si vous continuez à me harceler, je vais vous briser le cou à mains nues. Partez. Maintenant.~
+OUTER_SPRINT $ds_jc_f(~14~) ~Écoutez attentivement, drow. Si vous continuez à me harceler, je vais vous briser le cou à mains nues. Partez. Maintenant.~
+OUTER_SPRINT $ds_jc_o(~15~) ~Peut-être que je manque de doigté, <PRO_RACE>, mais c'est pour ça que je vous accompagne à travers cette côte isolée. La femme qui possède les informations s'appelle Taris. La dernière fois que je l'ai vue, elle était à Nashkel en train de chercher son mari.~
+OUTER_SPRINT $ds_jc_m(~15~) ~Peut-être que je manque de doigté, drow, mais c'est pour ça que je vous accompagne à travers cette côte isolée. La femme qui possède les informations s'appelle Taris. La dernière fois que je l'ai vue, elle était à Nashkel en train de chercher son mari.~
+OUTER_SPRINT $ds_jc_f(~15~) ~Peut-être que je manque de doigté, drow, mais c'est pour ça que je vous accompagne à travers cette côte isolée. La femme qui possède les informations s'appelle Taris. La dernière fois que je l'ai vue, elle était à Nashkel en train de chercher son mari.~
+OUTER_SPRINT $ds_jc_o(~16~) ~Hmm... avez-vous perdu votre goût pour la vengeance, <PRO_RACE> ? Je ne pensais pas que vous déclineriez un défi. Jusqu'à présent vous avez démontré de bonnes capacités à diriger.~
+OUTER_SPRINT $ds_jc_m(~16~) ~Hmm... avez-vous perdu votre goût pour la vengeance ? Je ne pensais pas que vous déclineriez un défi. Jusqu'à présent vous avez démontré de bonnes capacités à diriger.~
+OUTER_SPRINT $ds_jc_f(~16~) ~Hmm... avez-vous perdu votre goût pour la vengeance ? Je ne pensais pas que vous déclineriez un défi. Jusqu'à présent vous avez démontré de bonnes capacités à diriger.~
+OUTER_SPRINT $ds_jc_o(~17~) ~Silence, <PRO_RACE>. Vous avez demandé à connaître cette histoire. La raconter fait remonter la rage qui m'habitait alors, donc ne m'interrompez pas. Et écoutez attentivement, car je ne raconterai la fin qu'une seule fois.~
+OUTER_SPRINT $ds_jc_m(~17~) ~Silence, elfe noir. Vous avez demandé à connaître cette histoire. La raconter fait remonter la rage qui m'habitait alors, donc ne m'interrompez pas. Et écoutez attentivement, car je ne raconterai la fin qu'une seule fois.~
+OUTER_SPRINT $ds_jc_f(~17~) ~Silence, elfe noire. Vous avez demandé à connaître cette histoire. La raconter fait remonter la rage qui m'habitait alors, donc ne m'interrompez pas. Et écoutez attentivement, car je ne raconterai la fin qu'une seule fois.~
+OUTER_SPRINT $ds_jc_o(~18~) ~Bonjour, <PRO_RACE>. Heureux de vous rencontrer.~
+OUTER_SPRINT $ds_jc_m(~18~) ~Bonjour. Heureux de vous rencontrer.~
+OUTER_SPRINT $ds_jc_f(~18~) ~Bonjour. Heureux de vous rencontrer.~
+OUTER_SPRINT $ds_jc_o(~19~) ~Ah... Tu veux dire qu'un <PRO_RACE> ne serait pas le bienvenu à Evereska ?~
+OUTER_SPRINT $ds_jc_m(~19~) ~Ah... Tu veux dire qu'un drow ne serait pas le bienvenu à Evereska ?~
+OUTER_SPRINT $ds_jc_f(~19~) ~Ah... Tu veux dire qu'un drow ne serait pas le bienvenu à Evereska ?~
+OUTER_SPRINT $ds_jc_o(~20~) ~Eh bien, si par quelque miracle, nous parvenons à survivre, je devrais pouvoir obtenir l'autorisation de t'escorter dans certaines parties d'Evereska. Mais ne t'attends pas à ce qu'un <PRO_RACE> soit le bienvenu.~
+OUTER_SPRINT $ds_jc_m(~20~) ~Eh bien, si par quelque miracle, nous parvenons à survivre, je devrais pouvoir obtenir l'autorisation de t'escorter dans certaines parties d'Evereska. Mais ne t'attends pas à ce qu'un elfe noir soit le bienvenu.~
+OUTER_SPRINT $ds_jc_f(~20~) ~Eh bien, si par quelque miracle, nous parvenons à survivre, je devrais pouvoir obtenir l'autorisation de t'escorter dans certaines parties d'Evereska. Mais ne t'attends pas à ce qu'un elfe noir soit le bienvenu.~
+OUTER_SPRINT $ds_jc_o(~21~) ~Ah... Tu veux dire que les <PRO_RACE>s ne sont pas les bienvenus à Evereska ?~
+OUTER_SPRINT $ds_jc_m(~21~) ~Ah... Tu veux dire que les drows ne sont pas les bienvenus à Evereska ?~
+OUTER_SPRINT $ds_jc_f(~21~) ~Ah... Tu veux dire que les drows ne sont pas les bienvenus à Evereska ?~
+OUTER_SPRINT $ds_jc_o(~22~) ~Je crois que Balthazar est allé un peu trop loin. Vous croyez vraiment qu'il faut autant de gardes pour arrêter un seul enfant de Bhaal <PRO_RACE> ?~
+OUTER_SPRINT $ds_jc_m(~22~) ~Je crois que Balthazar est allé un peu trop loin. Vous croyez vraiment qu'il faut autant de gardes pour arrêter un seul enfant de Bhaal, drow de surcroît ?~
+OUTER_SPRINT $ds_jc_f(~22~) ~Je crois que Balthazar est allé un peu trop loin. Vous croyez vraiment qu'il faut autant de gardes pour arrêter un seul enfant de Bhaal, drow de surcroît ?~
+OUTER_SPRINT $ds_jc_o(~23~) ~Heurrr... vous... vous <PRO_RACE> pas attaquer ?~
+OUTER_SPRINT $ds_jc_m(~23~) ~Heurrr... vous... vous elfe noir pas attaquer ?~
+OUTER_SPRINT $ds_jc_f(~23~) ~Heurrr... vous... vous elfe noire pas attaquer ?~
+OUTER_SPRINT $ds_jc_o(~24~) ~Heurrr... vous... vous <RACE> pas attaquer ?~
+OUTER_SPRINT $ds_jc_m(~24~) ~Heurrr... vous... vous drow pas attaquer ?~
+OUTER_SPRINT $ds_jc_f(~24~) ~Heurrr... vous... vous drow pas attaquer ?~
+OUTER_SPRINT $ds_jc_o(~25~) ~Et à propos des autres... Qui êtes-vous <PRO_RACE> ? J'imagine que Raelis ne vous a pas engagés dans l'espoir de la sauver ? ~
+OUTER_SPRINT $ds_jc_m(~25~) ~Et à propos des autres... Et vous, l'elfe noir, qui êtes-vous ? J'imagine que Raelis ne vous a pas engagés dans l'espoir de la sauver ? ~
+OUTER_SPRINT $ds_jc_f(~25~) ~Et à propos des autres... Et vous, l'elfe noire, qui êtes-vous ? J'imagine que Raelis ne vous a pas engagés dans l'espoir de la sauver ? ~
+OUTER_SPRINT $ds_jc_o(~26~) ~Avez-vous déjà entendu l'expression « sain comme un <RACE> vigoureux » ? Non ? Ça ne m'étonne pas. Ils se portent bien et vous de même.~
+OUTER_SPRINT $ds_jc_m(~26~) ~Avez-vous déjà entendu l'expression « sain comme un drow vigoureux » ? Non ? Ça ne m'étonne pas. Ils se portent bien et vous de même.~
+OUTER_SPRINT $ds_jc_f(~26~) ~Avez-vous déjà entendu l'expression « sain comme un drow vigoureux » ? Non ? Ça ne m'étonne pas. Ils se portent bien et vous de même.~
+OUTER_SPRINT $ds_jc_o(~27~) ~Bien, nous verrons combien de temps votre épée résistera à ma magie. Mais assez radoté ! Vous, là, <PRO_RACE>, vous semblez être responsable. Finissons-en.~
+OUTER_SPRINT $ds_jc_m(~27~) ~Bien, nous verrons combien de temps votre épée résistera à ma magie. Mais assez radoté ! Vous, là, l'elfe noir, vous semblez être responsable. Finissons-en.~
+OUTER_SPRINT $ds_jc_f(~27~) ~Bien, nous verrons combien de temps votre épée résistera à ma magie. Mais assez radoté ! Vous, là, l'elfe noire, vous semblez être responsable. Finissons-en.~
+OUTER_SPRINT $ds_jc_o(~28~) ~La reconnaissance par des étrangers dans la rue ! Les oiseaux doivent déjà chanter vos exploits, camarade. Bientôt, il n'y aura pas <PRO_RACE> plus célèbre que vous dans les royaumes. Si vous survivez, bien entendu.~
+OUTER_SPRINT $ds_jc_m(~28~) ~La reconnaissance par des étrangers dans la rue ! Les oiseaux doivent déjà chanter vos exploits, camarade. Bientôt, même Drizzt Do'Urden ne sera plus le drow le plus célèbre des royaumes. Si vous survivez, bien entendu.~
+OUTER_SPRINT $ds_jc_f(~28~) ~La reconnaissance par des étrangers dans la rue ! Les oiseaux doivent déjà chanter vos exploits, camarade. Bientôt, même Drizzt Do'Urden ne sera plus le drow le plus célèbre des royaumes. Si vous survivez, bien entendu.~
+OUTER_SPRINT $ds_jc_o(~29~) ~Pitié, pas tuer moi, <RACE> ! Je travaille juste dans fosse ! Moi pas détester vous ! Pas vous faire de mal !~
+OUTER_SPRINT $ds_jc_m(~29~) ~Pitié, pas tuer moi, peau-noire ! Je travaille juste dans fosse ! Moi pas détester vous ! Pas vous faire de mal !~
+OUTER_SPRINT $ds_jc_f(~29~) ~Pitié, pas tuer moi, peau-noire ! Je travaille juste dans fosse ! Moi pas détester vous ! Pas vous faire de mal !~
+OUTER_SPRINT $ds_jc_o(~30~) ~Voilà qui est infiniment bon de votre part, <RACE>. À présent, me voilà libre de poursuivre joyeusement mon chemin... jusqu'à ce que je retrouve à nouveau la voie des limbes. *soupire* Rien n'est pire qu'un hiatus entropique.~
+OUTER_SPRINT $ds_jc_m(~30~) ~Voilà qui est infiniment bon de votre part. À présent, me voilà libre de poursuivre joyeusement mon chemin... jusqu'à ce que je retrouve à nouveau la voie des limbes. *soupire* Rien n'est pire qu'un hiatus entropique.~
+OUTER_SPRINT $ds_jc_f(~30~) ~Voilà qui est infiniment bon de votre part. À présent, me voilà libre de poursuivre joyeusement mon chemin... jusqu'à ce que je retrouve à nouveau la voie des limbes. *soupire* Rien n'est pire qu'un hiatus entropique.~
+OUTER_SPRINT $ds_jc_o(~31~) ~Vous avez signé votre perte, <RACE>, en pénétrant dans notre domaine. Cette sphère ne vous protégera jamais de la souffrance éternelle que nous vous offrons.~
+OUTER_SPRINT $ds_jc_m(~31~) ~Vous avez signé votre perte, enfant des ténèbres, en pénétrant dans notre domaine. Cette sphère ne vous protégera jamais de la souffrance éternelle que nous vous offrons.~
+OUTER_SPRINT $ds_jc_f(~31~) ~Vous avez signé votre perte, enfant des ténèbres, en pénétrant dans notre domaine. Cette sphère ne vous protégera jamais de la souffrance éternelle que nous vous offrons.~
+OUTER_SPRINT $ds_jc_o(~32~) ~Les mortels ne sont pas les seuls à être frappés de stupidité, après tout. La magie qui me retient ici a déjà commencé à se dissiper. Merci pour vos efforts, <PRO_RACE> ! Vous m'avez été très utile.~
+OUTER_SPRINT $ds_jc_m(~32~) ~Les mortels ne sont pas les seuls à être frappés de stupidité, après tout. La magie qui me retient ici a déjà commencé à se dissiper. Merci pour vos efforts, drow ! Vous m'avez été très utile.~
+OUTER_SPRINT $ds_jc_f(~32~) ~Les mortels ne sont pas les seuls à être frappés de stupidité, après tout. La magie qui me retient ici a déjà commencé à se dissiper. Merci pour vos efforts, drow ! Vous m'avez été très utile.~
+OUTER_SPRINT $ds_jc_o(~33~) ~Vous devriez regarder de plus près, <PRO_RACE>.~
+OUTER_SPRINT $ds_jc_m(~33~) ~Vous devriez regarder de plus près, elfe noir.~
+OUTER_SPRINT $ds_jc_f(~33~) ~Vous devriez regarder de plus près, elfe noire.~
+OUTER_SPRINT $ds_jc_o(~34~) ~Je suis Korkorran. Vous vous permettez d'entrer dans ma demeure sans mon invitation, <PRO_RACE>. J'espère que vous avez une bonne raison pour cela.~
+OUTER_SPRINT $ds_jc_m(~34~) ~Je suis Korkorran. Vous vous permettez d'entrer dans ma demeure sans mon invitation, drow. J'espère que vous avez une bonne raison pour cela.~
+OUTER_SPRINT $ds_jc_f(~34~) ~Je suis Korkorran. Vous vous permettez d'entrer dans ma demeure sans mon invitation, drow. J'espère que vous avez une bonne raison pour cela.~
+OUTER_SPRINT $ds_jc_o(~35~) ~Je vous laisserai partir, <PRO_RACE>, à condition que vous livriez un message à votre maître.~
+OUTER_SPRINT $ds_jc_m(~35~) ~Je vous laisserai partir, à condition que vous livriez un message à votre maître.~
+OUTER_SPRINT $ds_jc_f(~35~) ~Je vous laisserai partir, à condition que vous livriez un message à votre maître.~
+OUTER_SPRINT $ds_jc_o(~36~) ~Je vous ai demandé de quitter cet endroit, <PRO_RACE>. Vous auriez dû écouter.~
+OUTER_SPRINT $ds_jc_m(~36~) ~Je vous ai demandé de quitter cet endroit, elfe noir. Vous auriez dû écouter.~
+OUTER_SPRINT $ds_jc_f(~36~) ~Je vous ai demandé de quitter cet endroit, elfe noire. Vous auriez dû écouter.~
+OUTER_SPRINT $ds_jc_o(~37~) ~Il n'y aura aucun repos pour vous, <PRO_RACE>, pas même dans la mort !~
+OUTER_SPRINT $ds_jc_m(~37~) ~Il n'y aura aucun repos pour vous, drow, pas même dans la mort !~
+OUTER_SPRINT $ds_jc_f(~37~) ~Il n'y aura aucun repos pour vous, drow, pas même dans la mort !~
+OUTER_SPRINT $ds_jc_o(~38~) ~Il n'y aura aucun repos pour vous, <PRO_RACE>, pas même dans la mort !~
+OUTER_SPRINT $ds_jc_m(~38~) ~Il n'y aura aucun repos pour vous, drow, pas même dans la mort !~
+OUTER_SPRINT $ds_jc_f(~38~) ~Il n'y aura aucun repos pour vous, drow, pas même dans la mort !~
+OUTER_SPRINT $ds_jc_o(~39~) ~Rejoignez votre traînée de vampire en enfer, <PRO_RACE> !~
+OUTER_SPRINT $ds_jc_m(~39~) ~Rejoignez votre traînée de vampire en enfer, créature des ténèbres !~
+OUTER_SPRINT $ds_jc_f(~39~) ~Rejoignez votre traînée de vampire en enfer, créature des ténèbres !~
+OUTER_SPRINT $ds_jc_o(~40~) ~C'était un plaisir d'avoir fait affaire avec vous, <PRO_RACE>.~
+OUTER_SPRINT $ds_jc_m(~40~) ~C'était un plaisir d'avoir fait affaire avec vous.~
+OUTER_SPRINT $ds_jc_f(~40~) ~C'était un plaisir d'avoir fait affaire avec vous.~
+OUTER_SPRINT $ds_jc_o(~41~) ~Je ne perdrai pas plus de ressources à cause de votre vandalisme, <PRO_RACE>. Partez et ne revenez jamais.~
+OUTER_SPRINT $ds_jc_m(~41~) ~Je ne perdrai pas plus de ressources à cause de votre vandalisme. Partez et ne revenez jamais.~
+OUTER_SPRINT $ds_jc_f(~41~) ~Je ne perdrai pas plus de ressources à cause de votre vandalisme. Partez et ne revenez jamais.~
+OUTER_SPRINT $ds_jc_o(~42~) ~Partez, <PRO_RACE>. Il n'est pas trop tard... pas encore...~
+OUTER_SPRINT $ds_jc_m(~42~) ~Partez, drow. Il n'est pas trop tard... pas encore...~
+OUTER_SPRINT $ds_jc_f(~42~) ~Partez, drow. Il n'est pas trop tard... pas encore...~
+OUTER_SPRINT $ds_jc_o(~43~) ~Ah ! Vous êtes stupide, <PRO_RACE>. Vous n'avez aucune idée du prix qu'ont payé ceux qui ont fait confiance à Hexxat.~
+OUTER_SPRINT $ds_jc_m(~43~) ~Ah ! Vous êtes stupide, elfe noir. Vous n'avez aucune idée du prix qu'ont payé ceux qui ont fait confiance à Hexxat.~
+OUTER_SPRINT $ds_jc_f(~43~) ~Ah ! Vous êtes stupide, elfe noire. Vous n'avez aucune idée du prix qu'ont payé ceux qui ont fait confiance à Hexxat.~
+OUTER_SPRINT $ds_jc_o(~44~) ~RÉFLÉCHIR ? Pas l'temps d'réfléchir, <PRO_RACE> ! Nous avons une montagne à libérer.~
+OUTER_SPRINT $ds_jc_m(~44~) ~RÉFLÉCHIR ? Pas l'temps d'réfléchir, l'elfe noir ! Nous avons une montagne à libérer.~
+OUTER_SPRINT $ds_jc_f(~44~) ~RÉFLÉCHIR ? Pas l'temps d'réfléchir, l'elfe noire ! Nous avons une montagne à libérer.~
+OUTER_SPRINT $ds_jc_o(~45~) ~En quoi est-ce plus une abomination qu'un enfant de Bhaal <PRO_RACE> ? Bhaal était un dieu totalement maléfique, et son sang est abominable sous quelle forme que ce soit.~
+OUTER_SPRINT $ds_jc_m(~45~) ~En quoi est-ce plus une abomination qu'un enfant de Bhaal né d'une drow ? Bhaal était un dieu totalement maléfique, et son sang est abominable sous quelle forme que ce soit.~
+OUTER_SPRINT $ds_jc_f(~45~) ~En quoi est-ce plus une abomination qu'une enfant de Bhaal née d'une drow ? Bhaal était un dieu totalement maléfique, et son sang est abominable sous quelle forme que ce soit.~
+OUTER_SPRINT $ds_jc_o(~46~) ~Ha ! Si ce n'est pas un misérable spécimen <RACE>, en grande tenue d'aventurier ! HA, HA ! Votre maman vous a laissé sortir de ses jupons, petit ? Mieux vaudrait que vous y retourniez, maintenant !~
+OUTER_SPRINT $ds_jc_m(~46~) ~Ha ! Si ce n'est pas un misérable spécimen d'elfe noir, en grande tenue d'aventurier ! HA, HA ! Votre maman vous a laissé sortir de ses jupons, petit ? Mieux vaudrait que vous y retourniez, maintenant !~
+OUTER_SPRINT $ds_jc_f(~46~) ~Ha ! Si ce n'est pas un misérable spécimen d'elfe noire, en grande tenue d'aventurier ! HA, HA ! Votre maman vous a laissé sortir de ses jupons, petit ? Mieux vaudrait que vous y retourniez, maintenant !~
+OUTER_SPRINT $ds_jc_o(~47~) ~ASSEZ, malédiction ! Vos chamailleries me fatiguent ! Quant à vous, <RACE>... vous feriez mieux d'aller où vous serez mieux accueilli. Cette taverne est tout juste assez grande pour nous, et personne d'autre.~
+OUTER_SPRINT $ds_jc_m(~47~) ~ASSEZ, malédiction ! Vos chamailleries me fatiguent ! Quant à vous, le drow... vous feriez mieux d'aller où vous serez mieux accueilli. Cette taverne est tout juste assez grande pour nous, et personne d'autre.~
+OUTER_SPRINT $ds_jc_f(~47~) ~ASSEZ, malédiction ! Vos chamailleries me fatiguent ! Quant à vous, la drow... vous feriez mieux d'aller où vous serez mieux accueilli. Cette taverne est tout juste assez grande pour nous, et personne d'autre.~
+OUTER_SPRINT $ds_jc_o(~48~) ~Vous pouvez prendre votre verre et vous l'mettre où j'pense, <RACE> ! Je vais pas trinquer avec une espèce de freluquet tremblotant dans mon propre bar, alors dégagez !~
+OUTER_SPRINT $ds_jc_m(~48~) ~Vous pouvez prendre votre verre et vous l'mettre où j'pense ! Je vais pas trinquer avec une espèce de freluquet tremblotant dans mon propre bar, alors dégagez !~
+OUTER_SPRINT $ds_jc_f(~48~) ~Vous pouvez prendre votre verre et vous l'mettre où j'pense ! Je vais pas trinquer avec une espèce de freluquet tremblotant dans mon propre bar, alors dégagez !~
+OUTER_SPRINT $ds_jc_o(~49~) ~Bien sûr que oui, Brennan ! On fête quelque chose, et que j'sois maudit si je bois pendant qu'de sales <RACE>s viennent me puer dans les narines ! Maintenant dégagez, <RACE>, avant de goûter à ma hache !!~
+OUTER_SPRINT $ds_jc_m(~49~) ~Bien sûr que oui, Brennan ! On fête quelque chose, et que j'sois maudit si je bois pendant qu'de sales peaux-noires viennent me puer dans les narines ! Maintenant dégagez, avant de goûter à ma hache !!~
+OUTER_SPRINT $ds_jc_f(~49~) ~Bien sûr que oui, Brennan ! On fête quelque chose, et que j'sois maudit si je bois pendant qu'de sales peaux-noires viennent me puer dans les narines ! Maintenant dégagez, avant de goûter à ma hache !!~
+OUTER_SPRINT $ds_jc_o(~50~) ~Ahhh ! Regardez-moi ça, un charmant spécimen de la race des <RACE>s qui vient voir une vieille femme dans la forêt ! Vous devez venir pour mes potions, comme les autres ?~
+OUTER_SPRINT $ds_jc_m(~50~) ~Ahhh ! Regardez-moi ça, un charmant spécimen de la race des drows qui vient voir une vieille femme dans la forêt ! Vous devez venir pour mes potions, comme les autres ?~
+OUTER_SPRINT $ds_jc_f(~50~) ~Ahhh ! Regardez-moi ça, un charmant spécimen de la race des drows qui vient voir une vieille femme dans la forêt ! Vous devez venir pour mes potions, comme les autres ?~
+OUTER_SPRINT $ds_jc_o(~51~) ~J'appartiens au peuple des <PRO_RACE>s, rien de plus.~
+OUTER_SPRINT $ds_jc_m(~51~) ~Je suis drow, rien de plus.~
+OUTER_SPRINT $ds_jc_f(~51~) ~Je suis drow, rien de plus.~
+OUTER_SPRINT $ds_jc_o(~52~) ~Nous toujours chassés ! Nous plus supporter ! Attaquer <PRO_RACE> ! Tuer !~
+OUTER_SPRINT $ds_jc_m(~52~) ~Nous toujours chassés ! Nous plus supporter ! Attaquer peau-noire ! Tuer !~
+OUTER_SPRINT $ds_jc_f(~52~) ~Nous toujours chassés ! Nous plus supporter ! Attaquer peau-noire ! Tuer !~
+OUTER_SPRINT $ds_jc_o(~53~) ~Vous devoir tuer ogrons, <RACE> ! Le petit homme doit être protégé ! Allez tuer ogrons, Madulf blessé. Madulf rester et protéger petit humain.~
+OUTER_SPRINT $ds_jc_m(~53~) ~Vous devoir tuer ogrons, elfe noir ! Le petit homme doit être protégé ! Allez tuer ogrons, Madulf blessé. Madulf rester et protéger petit humain.~
+OUTER_SPRINT $ds_jc_f(~53~) ~Vous devoir tuer ogrons, elfe noire ! Le petit homme doit être protégé ! Allez tuer ogrons, Madulf blessé. Madulf rester et protéger petit humain.~
+OUTER_SPRINT $ds_jc_o(~54~) ~Vous devoir tuer ogrons ! Madulf essayé, mais Madulf blessé. Madulf empêcher ogrons passer ici... Allez, <RACE>... allez tuer ogrons ! Protéger village humain !~
+OUTER_SPRINT $ds_jc_m(~54~) ~Vous devoir tuer ogrons ! Madulf essayé, mais Madulf blessé. Madulf empêcher ogrons passer ici... Allez... allez tuer ogrons ! Protéger village humain !~
+OUTER_SPRINT $ds_jc_f(~54~) ~Vous devoir tuer ogrons ! Madulf essayé, mais Madulf blessé. Madulf empêcher ogrons passer ici... Allez... allez tuer ogrons ! Protéger village humain !~
+OUTER_SPRINT $ds_jc_o(~55~) ~Ogrons morts ? Vous faire bon travail, <RACE>. Vous tuer tous ces ogrons... Madulf essayer, mais amis lui blessés et en fuite... Puis petit humain venir, et Madulf protéger lui.~
+OUTER_SPRINT $ds_jc_m(~55~) ~Ogrons morts ? Vous faire bon travail, drow. Vous tuer tous ces ogrons... Madulf essayer, mais amis lui blessés et en fuite... Puis petit humain venir, et Madulf protéger lui.~
+OUTER_SPRINT $ds_jc_f(~55~) ~Ogrons morts ? Vous faire bon travail, drow. Vous tuer tous ces ogrons... Madulf essayer, mais amis lui blessés et en fuite... Puis petit humain venir, et Madulf protéger lui.~
+OUTER_SPRINT $ds_jc_o(~56~) ~Ogrons morts ? Vous faire bon travail, <RACE>. Vous tuer tous ces ogrons... Madulf essayer, mais amis lui blessés et en fuite dans les collines.~
+OUTER_SPRINT $ds_jc_m(~56~) ~Ogrons morts ? Vous faire bon travail, drow. Vous tuer tous ces ogrons... Madulf essayer, mais amis lui blessés et en fuite dans les collines.~
+OUTER_SPRINT $ds_jc_f(~56~) ~Ogrons morts ? Vous faire bon travail, drow. Vous tuer tous ces ogrons... Madulf essayer, mais amis lui blessés et en fuite dans les collines.~
+OUTER_SPRINT $ds_jc_o(~57~) ~Heu... oui, très honorable Ixilthetocal. Un merveilleux spécimen de la race des... heu... <PRO_RACE>s.~
+OUTER_SPRINT $ds_jc_m(~57~) ~Heu... oui, très honorable Ixilthetocal. Un merveilleux spécimen de la race des... heu... drows.~
+OUTER_SPRINT $ds_jc_f(~57~) ~Heu... oui, très honorable Ixilthetocal. Un merveilleux spécimen de la race des... heu... drows.~
+OUTER_SPRINT $ds_jc_o(~58~) ~Oh, des promesses, toujours des promesses. Grande est votre sournoiserie, <RACE>, mais mon œil est plus gros que toute votre tête.~
+OUTER_SPRINT $ds_jc_m(~58~) ~Oh, des promesses, toujours des promesses. Grande est votre sournoiserie, drow, mais mon œil est plus gros que toute votre tête.~
+OUTER_SPRINT $ds_jc_f(~58~) ~Oh, des promesses, toujours des promesses. Grande est votre sournoiserie, drow, mais mon œil est plus gros que toute votre tête.~
+OUTER_SPRINT $ds_jc_o(~59~) ~La très sainte Senityili est morte, mais elle a fait le bon choix. C'est de vous que parle la prophétie de Sekolah. Puisse la fortune suivre vos pas, <RACE>.~
+OUTER_SPRINT $ds_jc_m(~59~) ~La très sainte Senityili est morte, mais elle a fait le bon choix. C'est de vous que parle la prophétie de Sekolah. Puisse la fortune suivre vos pas, drow.~
+OUTER_SPRINT $ds_jc_f(~59~) ~La très sainte Senityili est morte, mais elle a fait le bon choix. C'est de vous que parle la prophétie de Sekolah. Puisse la fortune suivre vos pas, drow.~
+OUTER_SPRINT $ds_jc_o(~60~) ~C'est vous dont parlait la prophétie de Sekolah. Puisse la fortune vous accompagner, <RACE>.~
+OUTER_SPRINT $ds_jc_m(~60~) ~C'est vous dont parlait la prophétie de Sekolah. Puisse la fortune vous accompagner, drow.~
+OUTER_SPRINT $ds_jc_f(~60~) ~C'est vous dont parlait la prophétie de Sekolah. Puisse la fortune vous accompagner, drow.~
+OUTER_SPRINT $ds_jc_o(~61~) ~Les exilés méritaient leur destin, et nous resterons forts maintenant qu'ils sont partis. Vous avez bien agi, <RACE>... pour une bête de la surface.~
+OUTER_SPRINT $ds_jc_m(~61~) ~Les exilés méritaient leur destin, et nous resterons forts maintenant qu'ils sont partis. Vous avez bien agi, drow... pour une bête de la surface.~
+OUTER_SPRINT $ds_jc_f(~61~) ~Les exilés méritaient leur destin, et nous resterons forts maintenant qu'ils sont partis. Vous avez bien agi, drow... pour une bête de la surface.~
+OUTER_SPRINT $ds_jc_o(~62~) ~Si vous avez l'intention d'aller au-delà de ce point, <RACE> de la surface, il vaudrait mieux que vous sachiez que cette zone ne fait plus véritablement partie de la Cité-des-Cavernes.~
+OUTER_SPRINT $ds_jc_m(~62~) ~Si vous avez l'intention d'aller au-delà de ce point, drow de la surface, il vaudrait mieux que vous sachiez que cette zone ne fait plus véritablement partie de la Cité-des-Cavernes.~
+OUTER_SPRINT $ds_jc_f(~62~) ~Si vous avez l'intention d'aller au-delà de ce point, drow de la surface, il vaudrait mieux que vous sachiez que cette zone ne fait plus véritablement partie de la Cité-des-Cavernes.~
+OUTER_SPRINT $ds_jc_o(~63~) ~Vous avez rendu un grand service à mon peuple, <PRO_RACE> !~
+OUTER_SPRINT $ds_jc_m(~63~) ~Vous avez rendu un grand service à mon peuple, drow !~
+OUTER_SPRINT $ds_jc_f(~63~) ~Vous avez rendu un grand service à mon peuple, drow !~
+OUTER_SPRINT $ds_jc_o(~64~) ~Nous vous sommes redevables, <PRO_RACE>. Nous n'avons pas l'habitude des gens de votre espèce mais nous vous accueillons avec joie parmi nous. Et, étant touché par cette bataille, vous avez fait bien plus que ce que nous vous avions demandé.~
+OUTER_SPRINT $ds_jc_m(~64~) ~Nous vous sommes redevables, drow. Nous n'avons pas l'habitude des gens de votre espèce mais nous vous accueillons avec joie parmi nous. Et, étant touché par cette bataille, vous avez fait bien plus que ce que nous vous avions demandé.~
+OUTER_SPRINT $ds_jc_f(~64~) ~Nous vous sommes redevables, drow. Nous n'avons pas l'habitude des gens de votre espèce mais nous vous accueillons avec joie parmi nous. Et, étant touché par cette bataille, vous avez fait bien plus que ce que nous vous avions demandé.~
+OUTER_SPRINT $ds_jc_o(~65~) ~Vous êtes les envoyés de la prophétie de Sekolah. Notre race a une bonne mémoire, <RACE>... et la Cité-des-Cavernes ne vous oubliera jamais.~
+OUTER_SPRINT $ds_jc_m(~65~) ~Vous êtes les envoyés de la prophétie de Sekolah. Notre race a une bonne mémoire, drow... et la Cité-des-Cavernes ne vous oubliera jamais.~
+OUTER_SPRINT $ds_jc_f(~65~) ~Vous êtes les envoyés de la prophétie de Sekolah. Notre race a une bonne mémoire, drow... et la Cité-des-Cavernes ne vous oubliera jamais.~
+OUTER_SPRINT $ds_jc_o(~66~) ~Parlez au très honoré prince, <RACE>, pas à moi.~
+OUTER_SPRINT $ds_jc_m(~66~) ~Parlez au très honoré prince, drow, pas à moi.~
+OUTER_SPRINT $ds_jc_f(~66~) ~Parlez au très honoré prince, drow, pas à moi.~
+OUTER_SPRINT $ds_jc_o(~67~) ~Eh bien, <PRO_RACE> ? Accepterez-vous de relever semblable défi ? Affronterez-vous volontiers la créature de mon choix, parmi mes esclaves en provenance de la surface ?... Et nous verrons si vous survivrez...~
+OUTER_SPRINT $ds_jc_m(~67~) ~Eh bien, drow ? Accepterez-vous de relever semblable défi ? Affronterez-vous volontiers la créature de mon choix, parmi mes esclaves en provenance de la surface ?... Et nous verrons si vous survivrez...~
+OUTER_SPRINT $ds_jc_f(~67~) ~Eh bien, drow ? Accepterez-vous de relever semblable défi ? Affronterez-vous volontiers la créature de mon choix, parmi mes esclaves en provenance de la surface ?... Et nous verrons si vous survivrez...~
+OUTER_SPRINT $ds_jc_o(~68~) ~Sekolah exige à la fois opiniâtreté, force et indépendance ! Mais il ne réclame point que l'on se montre stupide... Les prêtresses se chargeront donc de vous porter assistance avant l'affrontement, <PRO_RACE> de la surface.~
+OUTER_SPRINT $ds_jc_m(~68~) ~Sekolah exige à la fois opiniâtreté, force et indépendance ! Mais il ne réclame point que l'on se montre stupide... Les prêtresses se chargeront donc de vous porter assistance avant l'affrontement, drow de la surface.~
+OUTER_SPRINT $ds_jc_f(~68~) ~Sekolah exige à la fois opiniâtreté, force et indépendance ! Mais il ne réclame point que l'on se montre stupide... Les prêtresses se chargeront donc de vous porter assistance avant l'affrontement, drow de la surface.~
+OUTER_SPRINT $ds_jc_o(~69~) ~Mais du repos ? N'y comptez point. Ici, nous n'éprouvons qu'aversion pour les pouvoirs magiques, <PRO_RACE>. Et quand bien même, le temps vous manquerait pour que quiconque vous les enseigne. Les soins devraient donc amplement suffire.~
+OUTER_SPRINT $ds_jc_m(~69~) ~Mais du repos ? N'y comptez point. Ici, nous n'éprouvons qu'aversion pour les pouvoirs magiques, drow. Et quand bien même, le temps vous manquerait pour que quiconque vous les enseigne. Les soins devraient donc amplement suffire.~
+OUTER_SPRINT $ds_jc_f(~69~) ~Mais du repos ? N'y comptez point. Ici, nous n'éprouvons qu'aversion pour les pouvoirs magiques, drow. Et quand bien même, le temps vous manquerait pour que quiconque vous les enseigne. Les soins devraient donc amplement suffire.~
+OUTER_SPRINT $ds_jc_o(~70~) ~Toutes mes félicitations, <PRO_RACE> de la surface ! Votre puissance n'est certes pas négligeable... de surcroît, c'est donc bien Sekolah qui vous a dépêché jusqu'à nous.~
+OUTER_SPRINT $ds_jc_m(~70~) ~Toutes mes félicitations, drow de la surface ! Votre puissance n'est certes pas négligeable... de surcroît, c'est donc bien Sekolah qui vous a dépêché jusqu'à nous.~
+OUTER_SPRINT $ds_jc_f(~70~) ~Toutes mes félicitations, drow de la surface ! Votre puissance n'est certes pas négligeable... de surcroît, c'est donc bien Sekolah qui vous a dépêché jusqu'à nous.~
+OUTER_SPRINT $ds_jc_o(~71~) ~Il ne dépend désormais que de vous, <PRO_RACE> de la surface ! Je ne doute pas qu'il vous répugne d'aider une race telle que la nôtre, mais je gage cependant qu'une petite tuerie ne sera pas pour vous déplaire.~
+OUTER_SPRINT $ds_jc_m(~71~) ~Il ne dépend désormais que de vous, drow de la surface ! Je ne doute pas qu'il vous répugne d'aider une race telle que la nôtre, mais je gage cependant qu'une petite tuerie ne sera pas pour vous déplaire.~
+OUTER_SPRINT $ds_jc_f(~71~) ~Il ne dépend désormais que de vous, drow de la surface ! Je ne doute pas qu'il vous répugne d'aider une race telle que la nôtre, mais je gage cependant qu'une petite tuerie ne sera pas pour vous déplaire.~
+OUTER_SPRINT $ds_jc_o(~72~) ~Ayez donc la bonté de traquer pour moi le chef de ces rebelles, <PRO_RACE>... Apportez-moi son cœur et je vous couvrirai d'or !~
+OUTER_SPRINT $ds_jc_m(~72~) ~Ayez donc la bonté de traquer pour moi le chef de ces rebelles, drow... Apportez-moi son cœur et je vous couvrirai d'or !~
+OUTER_SPRINT $ds_jc_f(~72~) ~Ayez donc la bonté de traquer pour moi le chef de ces rebelles, drow... Apportez-moi son cœur et je vous couvrirai d'or !~
+OUTER_SPRINT $ds_jc_o(~73~) ~Eh bien... qu'en dites-vous, <PRO_RACE> de la surface, héraut de Sekolah ?~
+OUTER_SPRINT $ds_jc_m(~73~) ~Eh bien... qu'en dites-vous, drow de la surface, héraut de Sekolah ?~
+OUTER_SPRINT $ds_jc_f(~73~) ~Eh bien... qu'en dites-vous, drow de la surface, héraut de Sekolah ?~
+OUTER_SPRINT $ds_jc_o(~74~) ~Oui, c'est juste... Villynaty ! Toujours est-il que vous trouverez ces rebelles hors des murs de la cité. Pour vous, <PRO_RACE>, ce devrait être une promenade de santé.~
+OUTER_SPRINT $ds_jc_m(~74~) ~Oui, c'est juste... Villynaty ! Toujours est-il que vous trouverez ces rebelles hors des murs de la cité. Pour vous, drow, ce devrait être une promenade de santé.~
+OUTER_SPRINT $ds_jc_f(~74~) ~Oui, c'est juste... Villynaty ! Toujours est-il que vous trouverez ces rebelles hors des murs de la cité. Pour vous, drow, ce devrait être une promenade de santé.~
+OUTER_SPRINT $ds_jc_o(~75~) ~Prisonnier ? *ricane* Voyons... Sekolah a mis sa confiance en vous, <PRO_RACE> de la surface. C'est la prophétie elle-même qui vous a dépêché jusqu'à nous !~
+OUTER_SPRINT $ds_jc_m(~75~) ~Prisonnier ? *ricane* Voyons... Sekolah a mis sa confiance en vous, drow de la surface. C'est la prophétie elle-même qui vous a dépêché jusqu'à nous !~
+OUTER_SPRINT $ds_jc_f(~75~) ~Prisonnier ? *ricane* Voyons... Sekolah a mis sa confiance en vous, drow de la surface. C'est la prophétie elle-même qui vous a dépêché jusqu'à nous !~
+OUTER_SPRINT $ds_jc_o(~76~) ~D'ici là, vous êtes libre de vous rendre où bon vous semble dans la Cité-des-Cavernes. Allez-y, brave <PRO_RACE>.~
+OUTER_SPRINT $ds_jc_m(~76~) ~D'ici là, vous êtes libre de vous rendre où bon vous semble dans la Cité-des-Cavernes. Allez-y, brave drow.~
+OUTER_SPRINT $ds_jc_f(~76~) ~D'ici là, vous êtes libre de vous rendre où bon vous semble dans la Cité-des-Cavernes. Allez-y, brave drow.~
+OUTER_SPRINT $ds_jc_o(~77~) ~Mais non, voyons, nous ne comptions pas nous délecter de votre chair, <PRO_RACE> ! Loin de nous semblables projets ! Vous n'aviez tout de même pas l'intention de déguster ma créature, Baron ?~
+OUTER_SPRINT $ds_jc_m(~77~) ~Mais non, voyons, nous ne comptions pas nous délecter de votre chair, drow ! Loin de nous semblables projets ! Vous n'aviez tout de même pas l'intention de déguster ma créature, Baron ?~
+OUTER_SPRINT $ds_jc_f(~77~) ~Mais non, voyons, nous ne comptions pas nous délecter de votre chair, drow ! Loin de nous semblables projets ! Vous n'aviez tout de même pas l'intention de déguster ma créature, Baron ?~
+OUTER_SPRINT $ds_jc_o(~78~) ~Comment ? Vous... vous m'avez donc trahi, <PRO_RACE> ! Cela ne se peut !~
+OUTER_SPRINT $ds_jc_m(~78~) ~Comment ? Vous... vous m'avez donc trahi, drow ! Cela ne se peut !~
+OUTER_SPRINT $ds_jc_f(~78~) ~Comment ? Vous... vous m'avez donc trahi, drow ! Cela ne se peut !~
+OUTER_SPRINT $ds_jc_o(~79~) ~Je savais que l'on ne pouvait guère se fier à ma grande prêtresse lorsqu'elle parlait au nom du Père-Requin. J'ai su deviner sa traîtrise, <PRO_RACE> ! Mais Senityili a trouvé la mort... J'avais donc raison ! J'avais raison depuis le début !~
+OUTER_SPRINT $ds_jc_m(~79~) ~Je savais que l'on ne pouvait guère se fier à ma grande prêtresse lorsqu'elle parlait au nom du Père-Requin. J'ai su deviner sa traîtrise, drow ! Mais Senityili a trouvé la mort... J'avais donc raison ! J'avais raison depuis le début !~
+OUTER_SPRINT $ds_jc_f(~79~) ~Je savais que l'on ne pouvait guère se fier à ma grande prêtresse lorsqu'elle parlait au nom du Père-Requin. J'ai su deviner sa traîtrise, drow ! Mais Senityili a trouvé la mort... J'avais donc raison ! J'avais raison depuis le début !~
+OUTER_SPRINT $ds_jc_o(~80~) ~À présent... allez massacrer ce rebelle, <PRO_RACE> de la surface. Tout ce sang répandu m'a décidément ouvert l'appétit. *ricane*~
+OUTER_SPRINT $ds_jc_m(~80~) ~À présent... allez massacrer ce rebelle, drow de la surface. Tout ce sang répandu m'a décidément ouvert l'appétit. *ricane*~
+OUTER_SPRINT $ds_jc_f(~80~) ~À présent... allez massacrer ce rebelle, drow de la surface. Tout ce sang répandu m'a décidément ouvert l'appétit. *ricane*~
+OUTER_SPRINT $ds_jc_o(~81~) ~Voilà qui se révèle infiniment cruel de votre part, <PRO_RACE>. J'aime pourtant ce trait de votre caractère ! Cela dit, c'est assommant, à la longue. Alors cette fois, allez donc traquer ce rebelle ou il se pourrait fort que je me contrarie.~
+OUTER_SPRINT $ds_jc_m(~81~) ~Voilà qui se révèle infiniment cruel de votre part, drow. J'aime pourtant ce trait de votre caractère ! Cela dit, c'est assommant, à la longue. Alors cette fois, allez donc traquer ce rebelle ou il se pourrait fort que je me contrarie.~
+OUTER_SPRINT $ds_jc_f(~81~) ~Voilà qui se révèle infiniment cruel de votre part, drow. J'aime pourtant ce trait de votre caractère ! Cela dit, c'est assommant, à la longue. Alors cette fois, allez donc traquer ce rebelle ou il se pourrait fort que je me contrarie.~
+OUTER_SPRINT $ds_jc_o(~82~) ~Ah ! Vous êtes-vous déjà égaré dans l'Ombre-Terre pour que vous reveniez à moi ? *ricane* Désirez-vous tant que l'un de mes sujets vous consomme pour le dîner ? Allez ! Déguerpissez, <RACE> de la surface !~
+OUTER_SPRINT $ds_jc_m(~82~) ~Ah ! Vous êtes-vous déjà égaré dans l'Ombre-Terre pour que vous reveniez à moi ? *ricane* Désirez-vous tant que l'un de mes sujets vous consomme pour le dîner ? Allez ! Déguerpissez, drow de la surface !~
+OUTER_SPRINT $ds_jc_f(~82~) ~Ah ! Vous êtes-vous déjà égaré dans l'Ombre-Terre pour que vous reveniez à moi ? *ricane* Désirez-vous tant que l'un de mes sujets vous consomme pour le dîner ? Allez ! Déguerpissez, drow de la surface !~
+OUTER_SPRINT $ds_jc_o(~83~) ~Avant votre départ, laissez-moi donc vous offrir quelques babioles en provenance de la surface. Elles font partie de mon trésor, mais je vous les cèderai volontiers en gage de remerciement pour votre aide inestimable. Allez-y, à présent ! Et adieu donc, <PRO_RACE> !~
+OUTER_SPRINT $ds_jc_m(~83~) ~Avant votre départ, laissez-moi donc vous offrir quelques babioles en provenance de la surface. Elles font partie de mon trésor, mais je vous les cèderai volontiers en gage de remerciement pour votre aide inestimable. Allez-y, à présent ! Et adieu donc, drow !~
+OUTER_SPRINT $ds_jc_f(~83~) ~Avant votre départ, laissez-moi donc vous offrir quelques babioles en provenance de la surface. Elles font partie de mon trésor, mais je vous les cèderai volontiers en gage de remerciement pour votre aide inestimable. Allez-y, à présent ! Et adieu donc, drow !~
+OUTER_SPRINT $ds_jc_o(~84~) ~Par Sekolah, <PRO_RACE> ! Vous m'avez trahie ? Pourquoi avez-vous fait ça ? En quoi cela peut-il vous servir ?~
+OUTER_SPRINT $ds_jc_m(~84~) ~Par Sekolah, drow ! Vous m'avez trahie ? Pourquoi avez-vous fait ça ? En quoi cela peut-il vous servir ?~
+OUTER_SPRINT $ds_jc_f(~84~) ~Par Sekolah, drow ! Vous m'avez trahie ? Pourquoi avez-vous fait ça ? En quoi cela peut-il vous servir ?~
+OUTER_SPRINT $ds_jc_o(~85~) ~Vous nous avez conduits vers une mort lente et dégradante, <PRO_RACE> ! Nous allons nous affaiblir et dépérir sous le règne de notre roi dément !~
+OUTER_SPRINT $ds_jc_m(~85~) ~Vous nous avez conduits vers une mort lente et dégradante, drow ! Nous allons nous affaiblir et dépérir sous le règne de notre roi dément !~
+OUTER_SPRINT $ds_jc_f(~85~) ~Vous nous avez conduits vers une mort lente et dégradante, drow ! Nous allons nous affaiblir et dépérir sous le règne de notre roi dément !~
+OUTER_SPRINT $ds_jc_o(~86~) ~Qu'en dites-vous, <PRO_RACE> ? Vous n'avez certainement pas d'affection pour ce fou de roi. Aidez-nous, pour que nous ne succombions pas aux créatures de l'Ombre-Terre !~
+OUTER_SPRINT $ds_jc_m(~86~) ~Qu'en dites-vous, drow ? Vous n'avez certainement pas d'affection pour ce fou de roi. Aidez-nous, pour que nous ne succombions pas aux créatures de l'Ombre-Terre !~
+OUTER_SPRINT $ds_jc_f(~86~) ~Qu'en dites-vous, drow ? Vous n'avez certainement pas d'affection pour ce fou de roi. Aidez-nous, pour que nous ne succombions pas aux créatures de l'Ombre-Terre !~
+OUTER_SPRINT $ds_jc_o(~87~) ~Mais si vous rendez compte de ceci au roi... je ne pourrai vous en empêcher, <PRO_RACE>. Je serai condamnée, et sans doute la cité également, mais je ne vous arrêterai pas pour autant.~
+OUTER_SPRINT $ds_jc_m(~87~) ~Mais si vous rendez compte de ceci au roi... je ne pourrai vous en empêcher, drow. Je serai condamnée, et sans doute la cité également, mais je ne vous arrêterai pas pour autant.~
+OUTER_SPRINT $ds_jc_f(~87~) ~Mais si vous rendez compte de ceci au roi... je ne pourrai vous en empêcher, drow. Je serai condamnée, et sans doute la cité également, mais je ne vous arrêterai pas pour autant.~
+OUTER_SPRINT $ds_jc_o(~88~) ~Quoi qu'il en soit, je vous demande d'aller parler au prince. Peut-être... peut-être trouvera-t-il de quoi vous récompenser. Je... je vous en supplie, <PRO_RACE> ! Ne laissez pas ce fou qui est notre roi détruire mon peuple !~
+OUTER_SPRINT $ds_jc_m(~88~) ~Quoi qu'il en soit, je vous demande d'aller parler au prince. Peut-être... peut-être trouvera-t-il de quoi vous récompenser. Je... je vous en supplie, drow ! Ne laissez pas ce fou qui est notre roi détruire mon peuple !~
+OUTER_SPRINT $ds_jc_f(~88~) ~Quoi qu'il en soit, je vous demande d'aller parler au prince. Peut-être... peut-être trouvera-t-il de quoi vous récompenser. Je... je vous en supplie, drow ! Ne laissez pas ce fou qui est notre roi détruire mon peuple !~
+OUTER_SPRINT $ds_jc_o(~89~) ~Vous revenez enfin, <PRO_RACE> de la surface. Venez-vous pour me railler, ou avez-vous changé d'avis ? Irez-vous parler au prince comme je vous l'ai demandé ?~
+OUTER_SPRINT $ds_jc_m(~89~) ~Vous revenez enfin, drow de la surface. Venez-vous pour me railler, ou avez-vous changé d'avis ? Irez-vous parler au prince comme je vous l'ai demandé ?~
+OUTER_SPRINT $ds_jc_f(~89~) ~Vous revenez enfin, drow de la surface. Venez-vous pour me railler, ou avez-vous changé d'avis ? Irez-vous parler au prince comme je vous l'ai demandé ?~
+OUTER_SPRINT $ds_jc_o(~90~) ~Déjà de retour ? N'avez-vous pas encore parlé au prince ? Quelque chose ne va pas, <PRO_RACE> de la surface ? N'avez-vous pas trouvé le chemin ?~
+OUTER_SPRINT $ds_jc_m(~90~) ~Déjà de retour ? N'avez-vous pas encore parlé au prince ? Quelque chose ne va pas, drow de la surface ? N'avez-vous pas trouvé le chemin ?~
+OUTER_SPRINT $ds_jc_f(~90~) ~Déjà de retour ? N'avez-vous pas encore parlé au prince ? Quelque chose ne va pas, drow de la surface ? N'avez-vous pas trouvé le chemin ?~
+OUTER_SPRINT $ds_jc_o(~91~) ~Alors il n'y a plus aucun espoir pour mon peuple. Vous avez l'orbe... les exilés essayeront de vous parler. Le choix vous appartient, <PRO_RACE>.~
+OUTER_SPRINT $ds_jc_m(~91~) ~Alors il n'y a plus aucun espoir pour mon peuple. Vous avez l'orbe... les exilés essayeront de vous parler. Le choix vous appartient, drow.~
+OUTER_SPRINT $ds_jc_f(~91~) ~Alors il n'y a plus aucun espoir pour mon peuple. Vous avez l'orbe... les exilés essayeront de vous parler. Le choix vous appartient, drow.~
+OUTER_SPRINT $ds_jc_o(~92~) ~Vous arrivez trop tard, <RACE> de la surface. Vous avez déjà accompli la tâche que vous avait confiée le roi... nous n'avons donc plus de raison de nous parler.~
+OUTER_SPRINT $ds_jc_m(~92~) ~Vous arrivez trop tard, drow de la surface. Vous avez déjà accompli la tâche que vous avait confiée le roi... nous n'avons donc plus de raison de nous parler.~
+OUTER_SPRINT $ds_jc_f(~92~) ~Vous arrivez trop tard, drow de la surface. Vous avez déjà accompli la tâche que vous avait confiée le roi... nous n'avons donc plus de raison de nous parler.~
+OUTER_SPRINT $ds_jc_o(~93~) ~Vous nous avez conduits vers une mort lente et dégradante, <PRO_RACE> ! Nous allons nous affaiblir et dépérir sous le règne de notre roi dément !~
+OUTER_SPRINT $ds_jc_m(~93~) ~Vous nous avez conduits vers une mort lente et dégradante, drow ! Nous allons nous affaiblir et dépérir sous le règne de notre roi dément !~
+OUTER_SPRINT $ds_jc_f(~93~) ~Vous nous avez conduits vers une mort lente et dégradante, drow ! Nous allons nous affaiblir et dépérir sous le règne de notre roi dément !~
+OUTER_SPRINT $ds_jc_o(~94~) ~Nous avons un cœur, <PRO_RACE> de la surface... un cœur avec lequel vous pouvez retourner voir Ixilthetocal et déclarer que c'est celui de Villynaty. La garde de la Cité-des-Cavernes sera maîtrisée et nous pourrons attaquer.~
+OUTER_SPRINT $ds_jc_m(~94~) ~Nous avons un cœur, drow de la surface... un cœur avec lequel vous pouvez retourner voir Ixilthetocal et déclarer que c'est celui de Villynaty. La garde de la Cité-des-Cavernes sera maîtrisée et nous pourrons attaquer.~
+OUTER_SPRINT $ds_jc_f(~94~) ~Nous avons un cœur, drow de la surface... un cœur avec lequel vous pouvez retourner voir Ixilthetocal et déclarer que c'est celui de Villynaty. La garde de la Cité-des-Cavernes sera maîtrisée et nous pourrons attaquer.~
+OUTER_SPRINT $ds_jc_o(~95~) ~C'est le seul moyen de sauver notre peuple, <PRO_RACE>. Je prie pour que vous soyez vraiment la personne envoyée par Sekolah... et que nous soyons tous victorieux.~
+OUTER_SPRINT $ds_jc_m(~95~) ~C'est le seul moyen de sauver notre peuple, drow. Je prie pour que vous soyez vraiment la personne envoyée par Sekolah... et que nous soyons tous victorieux.~
+OUTER_SPRINT $ds_jc_f(~95~) ~C'est le seul moyen de sauver notre peuple, drow. Je prie pour que vous soyez vraiment la personne envoyée par Sekolah... et que nous soyons tous victorieux.~
+OUTER_SPRINT $ds_jc_o(~96~) ~Je prie pour votre victoire, <RACE>. Vous devez faire vite, de peur que le roi n'apprenne votre entrevue avec Villynaty !~
+OUTER_SPRINT $ds_jc_m(~96~) ~Je prie pour votre victoire, drow. Vous devez faire vite, de peur que le roi n'apprenne votre entrevue avec Villynaty !~
+OUTER_SPRINT $ds_jc_f(~96~) ~Je prie pour votre victoire, drow. Vous devez faire vite, de peur que le roi n'apprenne votre entrevue avec Villynaty !~
+OUTER_SPRINT $ds_jc_o(~97~) ~Je vais prendre la place de ma mère et devenir la grande prêtresse de Villynaty pendant qu'il reconstruit la Cité-des-Cavernes. Bravo, <RACE>... que Sekolah vous accorde la force pour les services que vous nous avez rendus.~
+OUTER_SPRINT $ds_jc_m(~97~) ~Je vais prendre la place de ma mère et devenir la grande prêtresse de Villynaty pendant qu'il reconstruit la Cité-des-Cavernes. Bravo, drow... que Sekolah vous accorde la force pour les services que vous nous avez rendus.~
+OUTER_SPRINT $ds_jc_f(~97~) ~Je vais prendre la place de ma mère et devenir la grande prêtresse de Villynaty pendant qu'il reconstruit la Cité-des-Cavernes. Bravo, drow... que Sekolah vous accorde la force pour les services que vous nous avez rendus.~
+OUTER_SPRINT $ds_jc_o(~98~) ~Et vous... oui, c'est à VOUS que je m'adresse, <PRO_RACE> ! Qu'en pensez-vous donc ? Vous estimez-vous plus digne d'intérêt qu'un misérable crabe de mer, hein ? Pensez-vous être réellement celui dont la prophétie a fait mention ?~
+OUTER_SPRINT $ds_jc_m(~98~) ~Et vous... oui, c'est à VOUS que je m'adresse, petit drow ! Qu'en pensez-vous donc ? Vous estimez-vous plus digne d'intérêt qu'un misérable crabe de mer, hein ? Pensez-vous être réellement celui dont la prophétie a fait mention ?~
+OUTER_SPRINT $ds_jc_f(~98~) ~Et vous... oui, c'est à VOUS que je m'adresse, petite drow ! Qu'en pensez-vous donc ? Vous estimez-vous plus digne d'intérêt qu'un misérable crabe de mer, hein ? Pensez-vous être réellement celui dont la prophétie a fait mention ?~
+OUTER_SPRINT $ds_jc_o(~99~) ~Ah ! Mais tout cela me semble plein de promesses. Il ne m'était pas venu à l'esprit que nous avions besoin d'un tel secours, mais après tout, on ne sait jamais quand un succulent représentant des <PRO_RACE>s peut tomber à point nommé !~
+OUTER_SPRINT $ds_jc_m(~99~) ~Ah ! Mais tout cela me semble plein de promesses. Il ne m'était pas venu à l'esprit que nous avions besoin d'un tel secours, mais après tout, on ne sait jamais quand un succulent représentant des elfes des profondeurs peut tomber à point nommé !~
+OUTER_SPRINT $ds_jc_f(~99~) ~Ah ! Mais tout cela me semble plein de promesses. Il ne m'était pas venu à l'esprit que nous avions besoin d'un tel secours, mais après tout, on ne sait jamais quand une succulente représentante des elfes des profondeurs peut tomber à point nommé !~
+OUTER_SPRINT $ds_jc_o(~100~) ~Vous ignorez donc si vous valez plus qu'un misérable crabe de mer ? J'ai bien envie de vous goûter pour en juger moi-même. Mais après tout, il se pourrait qu'un succulent représentant des <PRO_RACE>s tombe à point nommé...~
+OUTER_SPRINT $ds_jc_m(~100~) ~Vous ignorez donc si vous valez plus qu'un misérable crabe de mer ? J'ai bien envie de vous goûter pour en juger moi-même. Mais après tout, il se pourrait qu'un succulent représentant des elfes des profondeurs tombe à point nommé...~
+OUTER_SPRINT $ds_jc_f(~100~) ~Vous ignorez donc si vous valez plus qu'un misérable crabe de mer ? J'ai bien envie de vous goûter pour en juger moi-même. Mais après tout, il se pourrait qu'une succulente représentante des elfes des profondeurs tombe à point nommé...~
+OUTER_SPRINT $ds_jc_o(~101~) ~Allons, à présent ! Acceptez-vous donc, succulent représentant des <PRO_RACE>s... Ou bien... *hi hi !* Allez-vous refuser ?~
+OUTER_SPRINT $ds_jc_m(~101~) ~Allons, à présent ! Acceptez-vous donc, succulent représentant des elfes des profondeurs... Ou bien... *hi hi !* Allez-vous refuser ?~
+OUTER_SPRINT $ds_jc_f(~101~) ~Allons, à présent ! Acceptez-vous donc, succulente représentante des elfes des profondeurs... Ou bien... *hi hi !* Allez-vous refuser ?~
+OUTER_SPRINT $ds_jc_o(~102~) ~Vous n'avez pas autorité, être de la surface. Je ne parlerai qu'avec celui qui prend les décisions... le représentant du peuple <PRO_RACE> avec qui je me suis entretenu auparavant. Et c'est tout.~
+OUTER_SPRINT $ds_jc_m(~102~) ~Vous n'avez pas autorité, être de la surface. Je ne parlerai qu'avec celui qui prend les décisions... le drow avec qui je me suis entretenue auparavant. Et c'est tout.~
+OUTER_SPRINT $ds_jc_f(~102~) ~Vous n'avez pas autorité, être de la surface. Je ne parlerai qu'avec celle qui prend les décisions... la drow avec qui je me suis entretenue auparavant. Et c'est tout.~
+OUTER_SPRINT $ds_jc_o(~103~) ~Certes, votre très honorable grandeur. Leur chef, que voici, est ce qu'ils appellent un « <PRO_RACE> ».~
+OUTER_SPRINT $ds_jc_m(~103~) ~Certes, votre très honorable grandeur. Leur chef, que voici, est... *Elle hésite.* ...est un drow. Je sais ce que cela signifie pour nous tous. Mais mes augures sont formels : il a grandi parmi les habitants de la surface, et c'est de la surface qu'il nous arrive, comme le Père-Requin l'avait annoncé.~
+OUTER_SPRINT $ds_jc_f(~103~) ~Certes, votre très honorable grandeur. Leur chef, que voici, est... *Elle hésite.* ...est une drow. Je sais ce que cela signifie pour nous tous. Mais mes augures sont formels : elle a grandi parmi les habitants de la surface, et c'est de la surface qu'elle nous arrive, comme le Père-Requin l'avait annoncé.~

@@ -1,0 +1,163 @@
+
+ACTION_IF NOT FILE_EXISTS ~override/ds_jetons.txt~ BEGIN
+<<<<<<<< .../drowsaga-inlined/ds_jetons_vide.txt
+>>>>>>>>
+  COPY ~.../drowsaga-inlined/ds_jetons_vide.txt~ ~override/ds_jetons.txt~
+END
+ACTION_CLEAR_ARRAY ds_jet_fait
+ACTION_IF FILE_EXISTS ~override/ds_jetons.txt~ BEGIN
+  COPY ~override/ds_jetons.txt~ ~override/ds_jetons.txt~
+    REPLACE_EVALUATE ~\([^ \r\n]+\) \([0-9]+\)~ BEGIN SET $ds_jet_fait(~%MATCH1%~ ~%MATCH2%~) = 1 END ~%MATCH0%~
+  BUT_ONLY
+END
+ACTION_CLEAR_ARRAY ds_jr_d
+ACTION_CLEAR_ARRAY ds_js_d
+OUTER_SET nr = 0
+OUTER_SET nse = 0
+COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
+  SPRINT src ~%SOURCE_RES%~
+  TO_UPPER src
+  READ_LONG 0x08 ns
+  PATCH_IF VARIABLE_IS_SET $ds_jet_excl(~%src%~) BEGIN SET ns = 0 END
+  READ_LONG 0x0c so
+  READ_LONG 0x14 to
+  FOR (i = ns - 1; i >= 0; --i) BEGIN
+    READ_SLONG (so + i * 0x10) sr
+    PATCH_IF (sr >= 0) BEGIN
+      GET_STRREF sr m
+      GET_STRREF_F sr f
+      PATCH_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~<RACE>~ ~%m%~) >= 0) OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~<PRO_RACE>~ ~%m%~) >= 0)
+            OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~<RACE>~ ~%f%~) >= 0) OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~<PRO_RACE>~ ~%f%~) >= 0) BEGIN
+       PATCH_IF NOT VARIABLE_IS_SET $ds_jet_fait(~%src%~ ~%i%~) BEGIN
+        SPRINT $ds_js_d(~%nse%~) ~%src%~
+        SET $ds_js_i(~%nse%~) = i
+        SET $ds_js_r(~%nse%~) = sr
+        SET nse = nse + 1
+       END
+      END
+    END
+    READ_LONG (so + i * 0x10 + 0x04) ft
+    READ_LONG (so + i * 0x10 + 0x08) nt
+    FOR (j = nt - 1; j >= 0; --j) BEGIN
+      SET t = to + (ft + j) * 0x20
+      READ_LONG t fl
+      PATCH_IF ((fl BAND 1) = 1) BEGIN
+        READ_SLONG (t + 0x04) rp
+        GET_STRREF rp m
+        GET_STRREF_F rp f
+        PATCH_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~<RACE>~ ~%m%~) >= 0) OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~<PRO_RACE>~ ~%m%~) >= 0)
+              OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~<RACE>~ ~%f%~) >= 0) OR (INDEX (CASE_SENSITIVE EXACT_MATCH ~<PRO_RACE>~ ~%f%~) >= 0) BEGIN
+          SPRINT $ds_jr_d(~%nr%~) ~%src%~
+          SET $ds_jr_i(~%nr%~) = i
+          SET $ds_jr_j(~%nr%~) = j
+          SET $ds_jr_r(~%nr%~) = rp
+          SET nr = nr + 1
+        END
+      END
+    END
+  END
+BUT_ONLY
+
+DEFINE_ACTION_FUNCTION ds_j_texte
+  INT_VAR sr = 0
+  RET m f
+BEGIN
+  OUTER_PATCH ~~ BEGIN
+    GET_STRREF sr m
+    GET_STRREF_F sr f
+  END
+  OUTER_PATCH_SAVE m ~%m%~ BEGIN
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~<PRO_RACE>~ ~drow~
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~<RACE>~ ~drow~
+  END
+  OUTER_PATCH_SAVE f ~%f%~ BEGIN
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~<PRO_RACE>~ ~drow~
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~<RACE>~ ~drow~
+    REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~pas un drow ordinaire~ ~pas une drow ordinaire~
+  END
+END
+
+INCLUDE ~drowsaga/contenu/jetons/ds_jetons_choix.tpa~
+OUTER_SET ds_jc_pris = 0
+DEFINE_ACTION_MACRO ds_j_choix BEGIN
+  LOCAL_SPRINT ds_jo ~~
+  LOCAL_SPRINT ds_jt ~~
+  LOCAL_SET ds_jk = 0
+  OUTER_PATCH ~~ BEGIN GET_STRREF ds_jsr ds_jo END
+  OUTER_FOR (ds_jk = 0; ds_jk < ds_jc_n; ++ds_jk) BEGIN
+    OUTER_SPRINT ds_jt $ds_jc_o(~%ds_jk%~)
+    ACTION_IF (~%ds_jo%~ STRING_EQUAL ~%ds_jt%~) BEGIN
+      OUTER_SPRINT m $ds_jc_m(~%ds_jk%~)
+      OUTER_SPRINT f $ds_jc_f(~%ds_jk%~)
+      OUTER_SET ds_jc_pris = ds_jc_pris + 1
+      OUTER_SET ds_jk = ds_jc_n
+    END
+  END
+END
+
+OUTER_SPRINT d1 ~~
+OUTER_SPRINT d2 ~~
+OUTER_FOR (k = 0; k < nr; ++k) BEGIN
+  OUTER_SPRINT dlg $ds_jr_d(~%k%~)
+  OUTER_SET s = $ds_jr_i(~%k%~)
+  OUTER_SET j = $ds_jr_j(~%k%~)
+  OUTER_SET rp = $ds_jr_r(~%k%~)
+  LAF ds_j_texte INT_VAR sr = rp RET m f END
+  OUTER_SET ds_jsr = rp
+  LAM ds_j_choix
+  LAF ds_e2_lit_trans INT_VAR etat = s trans = j STR_VAR dlg ajout = ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ RET corps tr ver_dlg ver_etat END
+  ACTION_IF (INDEX (CASE_SENSITIVE ~\(^\|[^!]\)GlobalGT("DS_P1_DROW"~ ~%tr%~) >= 0) BEGIN
+    OUTER_SPRINT d1 ~%d1% ALTER_TRANS #T#%dlg%#T# BEGIN %s% END BEGIN %j% END BEGIN "REPLY" #T#%m%#T# END~
+  END ELSE ACTION_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~!GlobalGT("DS_P1_DROW","GLOBAL",0)~ ~%tr%~) < 0) BEGIN
+    OUTER_PATCH_SAVE corps ~%corps%~ BEGIN
+      REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~REPLY #%rp%~ ~REPLY #T#%m%#T# #T#%f%#T#~
+    END
+    ACTION_IF (~%ver_dlg%~ STRING_EQUAL ~~) BEGIN
+      OUTER_SPRINT fin ~EXIT~
+    END ELSE BEGIN
+      OUTER_SPRINT fin ~EXTERN #T#%ver_dlg%#T# %ver_etat%~
+    END
+    OUTER_SPRINT d1 ~%d1% ADD_TRANS_TRIGGER #T#%dlg%#T# %s% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T# DO %j%~
+    OUTER_SPRINT d2 ~%d2% EXTEND_TOP #T#%dlg%#T# %s% #%j% %corps% %fin% END~
+  END
+END
+ACTION_IF NOT (~%d1%~ STRING_EQUAL ~~) BEGIN
+  LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_jet1.d~ texte = EVAL ~%d1%~ END
+END
+ACTION_IF NOT (~%d2%~ STRING_EQUAL ~~) BEGIN
+  LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_jet2.d~ texte = EVAL ~%d2%~ END
+END
+PRINT ~Drow Saga : %nr% réplique(s) du héros à jeton de race doublée(s) pour le Drow~
+
+OUTER_SPRINT cibles ~~
+OUTER_FOR (k = 0; k < nse; ++k) BEGIN
+  OUTER_SPRINT dlg $ds_js_d(~%k%~)
+  OUTER_SET s = $ds_js_i(~%k%~)
+  OUTER_SET sr = $ds_js_r(~%k%~)
+  LAF ds_j_texte INT_VAR sr RET m f END
+  OUTER_SET ds_jsr = sr
+  LAM ds_j_choix
+  LAF ds_e2_lit_etat INT_VAR etat = s STR_VAR dlg RET trig ns END
+  ACTION_IF (~%trig%~ STRING_EQUAL ~~) BEGIN
+    OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF #T##T# THEN BEGIN #T#DS_JET_%s%#T# SAY #T#%m%#T# #T#%f%#T# COPY_TRANS #T#%dlg%#T# %s% END END~
+  END ELSE BEGIN
+    COPY_EXISTING ~%dlg%.dlg~ ~override~
+      READ_LONG 0x0c so
+      READ_SLONG (so + s * 0x10 + 0x0c) w
+    BUT_ONLY
+    OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF WEIGHT #%w% #T#%trig% GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN BEGIN #T#DS_JET_%s%#T# SAY #T#%m%#T# #T#%f%#T# COPY_TRANS #T#%dlg%#T# %s% END END ADD_STATE_TRIGGER #T#%dlg%#T# %s% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T#~
+  END
+  LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_jet3.d~ texte = EVAL ~%d%~ END
+  APPEND_OUTER ~override/ds_jetons.txt~ ~%dlg% %s%~
+  LAF ds_e2_nb STR_VAR dlg RET ns END
+  OUTER_SET c = ns - 1
+  OUTER_SPRINT cibles ~%cibles% %dlg%.%s%=%dlg%.%c%~
+END
+PRINT ~Drow Saga : %nse% réplique(s) de personnage à jeton de race recopiée(s) pour le Drow~
+PRINT ~Drow Saga : %ds_jc_pris% réplique(s) à jeton avec un texte choisi à la main~
+ACTION_IF (nse > 0) BEGIN
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%cibles%~ END
+END
+ACTION_IF (MOD_IS_INSTALLED ~bg1npc/bg1npc.tp2~ ~0~) OR (MOD_IS_INSTALLED ~setup-bg1npc.tp2~ ~0~) BEGIN
+  APPEND_OUTER ~override/ds_jetons.txt~ ~BG1NPC_VU 0~
+END

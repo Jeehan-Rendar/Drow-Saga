@@ -1,0 +1,36 @@
+
+ACTION_IF FILE_EXISTS_IN_GAME ~scrl2j.itm~ BEGIN
+  OUTER_SET ds_lettre_drow = RESOLVE_STR_REF(@1)
+  OUTER_SET ds_lettre_orig = 0 - 1
+  COPY_EXISTING ~scrl2j.itm~ ~override~
+    READ_SLONG 0x50 ds_nid
+    READ_SLONG 0x54 ds_id
+    SET ds_src = (ds_id >= 0) ? ds_id : ds_nid
+    PATCH_IF (ds_src >= 0) BEGIN
+      GET_STRREF ds_src ds_txt
+      SPRINT ds_pre ~~
+      PATCH_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~[~ ~%ds_txt%~) = 0) BEGIN
+        SET ds_fin = INDEX (CASE_SENSITIVE EXACT_MATCH ~]~ ~%ds_txt%~)
+        PATCH_IF (ds_fin > 0) BEGIN
+          INNER_PATCH ~%ds_txt%~ BEGIN READ_ASCII 0 ds_pre (ds_fin + 1) END
+          INNER_PATCH_SAVE ds_txt ~%ds_txt%~ BEGIN DELETE_BYTES 0 (ds_fin + 1) END
+        END
+      END
+      SAY_EVALUATED 0x54 ~%ds_txt%~
+      READ_SLONG 0x54 ds_lettre_orig
+      WRITE_LONG 0x54 ds_id
+      SAY_EVALUATED 0x50 ~%ds_pre%<DSLETTRE>~
+      PATCH_IF (ds_id >= 0) BEGIN
+        SAY_EVALUATED 0x54 ~%ds_pre%<DSLETTRE>~
+      END
+    END
+  BUT_ONLY
+  ACTION_IF (ds_lettre_orig >= 0) BEGIN
+    EXTEND_TOP ~baldur.bcs~ ~drowsaga/contenu/lettre/ds_lettre.baf~ EVALUATE_BUFFER
+    ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ BEGIN
+      EXTEND_TOP ~bdbaldur.bcs~ ~drowsaga/contenu/lettre/ds_lettre.baf~ EVALUATE_BUFFER
+    END
+  END ELSE BEGIN
+    WARN ~Drow Saga : lettre de Gorion sans description, version du drow non installée~
+  END
+END

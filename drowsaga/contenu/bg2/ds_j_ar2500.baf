@@ -1,0 +1,8 @@
+IF
+  Global("RevealMap","AR2500",1)
+  Global("DS_P1_DROW","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RevealMap","AR2500",2)
+    AddJournalEntry(%ds_j11722%,INFO)
+END

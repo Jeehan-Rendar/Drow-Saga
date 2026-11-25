@@ -1,0 +1,253 @@
+
+APPEND ~SPPAIN~
+IF ~~ THEN BEGIN ds_pain_1
+  SAY @237
+  COPY_TRANS ~SPPAIN~ 14
+END
+IF ~~ THEN BEGIN ds_pain_24
+  SAY @239
+  IF ~~ THEN GOTO 25
+END
+END
+EXTEND_BOTTOM ~SPPAIN~ 12
+  IF ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+!InParty("Viconia")~ THEN GOTO ds_pain_1
+END
+ADD_TRANS_TRIGGER ~SPPAIN~ 23 ~!GlobalGT("DS_P1_DROW","GLOBAL",0)~ DO 0
+EXTEND_BOTTOM ~SPPAIN~ 23
+  IF ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+!InParty("Viconia")~ THEN GOTO ds_pain_24
+END
+
+APPEND ~BHELM~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+NumTimesTalkedTo(0)~ THEN BEGIN ds_helm_0
+  SAY @240
+  COPY_TRANS ~BHELM~ 0
+END
+END
+
+APPEND ~POSTUL3~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_POSTUL3","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @241
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_POSTUL3","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~CELVAN~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_CELVAN","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @298
+  IF ~~ THEN DO ~SetGlobal("DS_CELVAN","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~BAMNG01~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_BAMNG01","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @299
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_BAMNG01","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~BFTOWN3~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_BFTOWN3","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @300
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_BFTOWN3","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~BMTOWN3~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_BMTOWN3","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @301
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_BMTOWN3","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~BSAILOR2~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_BSAILOR2","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @302
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_BSAILOR2","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~BURCH2~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_BURCH2","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @303
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_BURCH2","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~DELTOW01~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_DELTOW01","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @304
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_DELTOW01","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~DSAILOR2~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_DSAILOR2","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @305
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_DSAILOR2","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~FFCUST04~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_FFCUST04","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @306
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_FFCUST04","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~FFCUST06~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_FFCUST06","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @307
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_FFCUST06","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~FTOWN1~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_FTOWN1","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @308
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_FTOWN1","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~GFTOWN01~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_GFTOWN01","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @309
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_GFTOWN01","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~GNOBLEM1~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_GNOBLEM1","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @310
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_GNOBLEM1","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~MTOWN4~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_MTOWN4","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @311
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_MTOWN4","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~TRGYP03~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_TRGYP03","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @312
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_TRGYP03","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~URCHIN1~
+IF WEIGHT #-9 ~GlobalGT("DS_P1_DROW","GLOBAL",0)
+RandomNum(2,1)
+Global("DS_RUE_URCHIN1","GLOBAL",0)~ THEN BEGIN ds_rue_0
+  SAY @313
+  IF ~~ THEN DO ~SetGlobal("DS_RUE_URCHIN1","GLOBAL",1)~ EXIT
+END
+END
+
+APPEND ~UDSILVER~
+IF WEIGHT #-9 ~NumTimesTalkedTo(0)
+GlobalGT("DS_P1_DROW","GLOBAL",0)~ THEN BEGIN ds_e5_ada0
+  SAY @597
+  IF ~IsValidForPartyDialogue("Viconia")~ THEN REPLY @598 EXTERN ~VICONIJ~ ds_e5_vic
+  IF ~!IsValidForPartyDialogue("Viconia") IsValidForPartyDialogue("Imoen2")~ THEN REPLY @598 EXTERN ~IMOEN2J~ ds_e5_imo
+  IF ~!IsValidForPartyDialogue("Viconia") !IsValidForPartyDialogue("Imoen2")~ THEN REPLY @598 GOTO ds_e5_ada1
+  IF ~IsValidForPartyDialogue("Viconia")~ THEN REPLY @599 EXTERN ~VICONIJ~ ds_e5_vic
+  IF ~!IsValidForPartyDialogue("Viconia") IsValidForPartyDialogue("Imoen2")~ THEN REPLY @599 EXTERN ~IMOEN2J~ ds_e5_imo
+  IF ~!IsValidForPartyDialogue("Viconia") !IsValidForPartyDialogue("Imoen2")~ THEN REPLY @599 GOTO ds_e5_ada1
+  IF ~IsValidForPartyDialogue("Viconia")~ THEN REPLY @600 EXTERN ~VICONIJ~ ds_e5_vic
+  IF ~!IsValidForPartyDialogue("Viconia") IsValidForPartyDialogue("Imoen2")~ THEN REPLY @600 EXTERN ~IMOEN2J~ ds_e5_imo
+  IF ~!IsValidForPartyDialogue("Viconia") !IsValidForPartyDialogue("Imoen2")~ THEN REPLY @600 GOTO ds_e5_ada1
+END
+IF ~~ THEN BEGIN ds_e5_ada1
+  SAY @601
+  COPY_TRANS ~UDSILVER~ 0
+END
+END
+ADD_STATE_TRIGGER ~UDSILVER~ 0 ~!GlobalGT("DS_P1_DROW","GLOBAL",0)~
+APPEND ~VICONIJ~
+IF ~~ THEN BEGIN ds_e5_vic
+  SAY @602
+  IF ~~ THEN EXTERN ~UDSILVER~ ds_e5_ada1
+END
+END
+APPEND ~IMOEN2J~
+IF ~~ THEN BEGIN ds_e5_imo
+  SAY @603
+  IF ~~ THEN EXTERN ~UDSILVER~ ds_e5_ada1
+END
+END
+
+EXTEND_TOP ~UDDROW10~ 3 #4
+  IF ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ THEN REPLY @639 GOTO ds_e5_eli
+END
+APPEND ~UDDROW10~
+IF ~~ THEN BEGIN ds_e5_eli
+  SAY @640
+  IF ~~ THEN GOTO 3
+END
+END
+
+EXTEND_TOP ~NEERA25J~ 50 #3
+  IF ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ THEN REPLY @1074 GOTO ds_rn_elt2
+END
+APPEND ~NEERA25J~
+IF ~~ THEN BEGIN ds_rn_elt2
+  SAY @1075
+  IF ~~ THEN GOTO 55
+END
+END
+
+EXTEND_TOP ~BANOMEN~ 106 #0
+  IF ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ THEN REPLY @1097 GOTO ds_ral4
+END
+APPEND ~BANOMEN~
+IF ~~ THEN BEGIN ds_ral4
+  SAY @1098
+  IF ~~ THEN GOTO 107
+END
+END
+EXTEND_TOP ~BANOMEN~ 160 #1
+  IF ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ THEN REPLY @1099 GOTO ds_ral10
+END
+APPEND ~BANOMEN~
+IF ~~ THEN BEGIN ds_ral10
+  SAY @1100
+  IF ~~ THEN GOTO 168
+END
+END

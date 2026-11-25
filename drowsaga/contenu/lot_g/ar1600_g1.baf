@@ -1,0 +1,95 @@
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",2)
+    Global("DS_G1","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,804,2174,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",1)
+        CreateCreature("DSG1ILP",[1082.2026],0)
+        CreateCreature("DSG1SAE",[1012.2066],0)
+        CreateCreature("DSG1ILY",[1152.2066],0)
+        CreateCreature("DSG1MER",[942.2106],0)
+        CreateCreature("DSG1EIR",[1222.2106],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",2)
+    Global("DS_G1","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,2194,1001,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",1)
+        CreateCreature("DSG1ILP",[2263.1029],0)
+        CreateCreature("DSG1SAE",[2193.1069],0)
+        CreateCreature("DSG1ILY",[2333.1069],0)
+        CreateCreature("DSG1MER",[2123.1109],0)
+        CreateCreature("DSG1EIR",[2403.1109],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",2)
+    Global("DS_G1","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,4976,389,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",1)
+        CreateCreature("DSG1ILP",[4628.508],0)
+        CreateCreature("DSG1SAE",[4558.548],0)
+        CreateCreature("DSG1ILY",[4698.548],0)
+        CreateCreature("DSG1MER",[4488.588],0)
+        CreateCreature("DSG1EIR",[4768.588],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",2)
+    Global("DS_G1","GLOBAL",0)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",1)
+        CreateCreature("DSG1ILP",[2658.1188],0)
+        CreateCreature("DSG1SAE",[2588.1228],0)
+        CreateCreature("DSG1ILY",[2728.1228],0)
+        CreateCreature("DSG1MER",[2518.1268],0)
+        CreateCreature("DSG1EIR",[2798.1268],0)
+END
+
+IF
+    Global("DS_G1_FINI","GLOBAL",0)
+    Global("DS_G1","GLOBAL",3)
+    Global("DS_G1_EIRLAN","GLOBAL",1)
+    Dead("DSG1ILP")
+    Dead("DSG1SAE")
+    Dead("DSG1ILY")
+    Dead("DSG1MER")
+THEN
+    RESPONSE #100
+        AddJournalEntry(@7,INFO)
+        AddexperienceParty(4000)
+        SetGlobal("DS_G1_FINI","GLOBAL",1)
+END
+
+IF
+    Global("DS_G1_FINI","GLOBAL",0)
+    Global("DS_G1","GLOBAL",3)
+    !Global("DS_G1_EIRLAN","GLOBAL",1)
+    Dead("DSG1ILP")
+    Dead("DSG1SAE")
+    Dead("DSG1ILY")
+    Dead("DSG1MER")
+    Dead("DSG1EIR")
+THEN
+    RESPONSE #100
+        AddJournalEntry(@8,INFO)
+        AddexperienceParty(4000)
+        SetGlobal("DS_G1_FINI","GLOBAL",1)
+END
+

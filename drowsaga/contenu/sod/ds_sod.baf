@@ -1,0 +1,564 @@
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    !Global("DS_P1_DROW","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_P1_DROW","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    Global("DS_P1_DROW","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_P1_DROW","GLOBAL",0)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("Corwin")
+    Global("DS_S_COR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_COR","GLOBAL",-1)
+        SetGlobalTimer("DS_S_COR_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_COR","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_COR_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_COR","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("Glint")
+    Global("DS_S_GLI","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_GLI","GLOBAL",-1)
+        SetGlobalTimer("DS_S_GLI_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_GLI","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_GLI_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_GLI","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("Voghiln")
+    Global("DS_S_VOG","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_VOG","GLOBAL",-1)
+        SetGlobalTimer("DS_S_VOG_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_VOG","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_VOG_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_VOG","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("MKHIIN")
+    Global("DS_S_MKH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_MKH","GLOBAL",-1)
+        SetGlobalTimer("DS_S_MKH_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_MKH","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_MKH_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_MKH","GLOBAL",1)
+        Continue()
+END
+
+IF
+    Global("DS_S_MKH","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_MKH","GLOBAL",-3)
+        SetGlobalTimer("DS_S_MKH_T","GLOBAL",TWO_DAYS)
+        Continue()
+END
+
+IF
+    Global("DS_S_MKH","GLOBAL",-3)
+    GlobalTimerExpired("DS_S_MKH_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_MKH","GLOBAL",3)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("BAELOTH")
+    Global("DS_S_BAE","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_BAE","GLOBAL",-1)
+        SetGlobalTimer("DS_S_BAE_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_BAE","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_BAE_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_BAE","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("MINSC")
+    Global("DS_S_MIN","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_MIN","GLOBAL",-1)
+        SetGlobalTimer("DS_S_MIN_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_MIN","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_MIN_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_MIN","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("DYNAHEIR")
+    Global("DS_S_DYN","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_DYN","GLOBAL",-1)
+        SetGlobalTimer("DS_S_DYN_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_DYN","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_DYN_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_DYN","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("JAHEIRA")
+    Global("DS_S_JAH","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_JAH","GLOBAL",-1)
+        SetGlobalTimer("DS_S_JAH_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_JAH","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_JAH_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_JAH","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("KHALID")
+    Global("DS_S_KHA","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_KHA","GLOBAL",-1)
+        SetGlobalTimer("DS_S_KHA_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_KHA","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_KHA_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_KHA","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("EDWIN")
+    Global("DS_S_EDW","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_EDW","GLOBAL",-1)
+        SetGlobalTimer("DS_S_EDW_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_EDW","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_EDW_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_EDW","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("SAFANA")
+    Global("DS_S_SAF","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_SAF","GLOBAL",-1)
+        SetGlobalTimer("DS_S_SAF_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_SAF","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_SAF_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_SAF","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("NEERA")
+    Global("DS_S_NEE","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_NEE","GLOBAL",-1)
+        SetGlobalTimer("DS_S_NEE_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_NEE","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_NEE_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_NEE","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("RASAAD")
+    Global("DS_S_RAS","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_RAS","GLOBAL",-1)
+        SetGlobalTimer("DS_S_RAS_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_RAS","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_RAS_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_RAS","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("DORN")
+    Global("DS_S_DOR","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_DOR","GLOBAL",-1)
+        SetGlobalTimer("DS_S_DOR_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_DOR","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_DOR_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_DOR","GLOBAL",1)
+        Continue()
+END
+
+IF
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("VICONIA")
+    Global("DS_S_VIC","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_VIC","GLOBAL",-1)
+        SetGlobalTimer("DS_S_VIC_T","GLOBAL",ONE_DAY)
+        Continue()
+END
+
+IF
+    Global("DS_S_VIC","GLOBAL",-1)
+    GlobalTimerExpired("DS_S_VIC_T","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobal("DS_S_VIC","GLOBAL",1)
+        Continue()
+END
+
+IF
+    Global("DS_S_BAE","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("BAELOTH")
+    IsValidForPartyDialogue("BAELOTH")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("BAELOTH",StartDialogOverride("DSSBAE",Player1))
+END
+
+IF
+    Global("DS_S_COR","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("Corwin")
+    IsValidForPartyDialogue("Corwin")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Corwin",StartDialogOverride("DSSCOR",Player1))
+END
+
+IF
+    Global("DS_S_DOR","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("DORN")
+    IsValidForPartyDialogue("DORN")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("DORN",StartDialogOverride("DSSDOR",Player1))
+END
+
+IF
+    Global("DS_S_DYN","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("DYNAHEIR")
+    IsValidForPartyDialogue("DYNAHEIR")
+    InParty("MINSC")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("DYNAHEIR",StartDialogOverride("DSSDYN",Player1))
+END
+
+IF
+    Global("DS_S_EDW","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("EDWIN")
+    IsValidForPartyDialogue("EDWIN")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("EDWIN",StartDialogOverride("DSSEDW",Player1))
+END
+
+IF
+    Global("DS_S_GLI","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("Glint")
+    IsValidForPartyDialogue("Glint")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Glint",StartDialogOverride("DSSGLI",Player1))
+END
+
+IF
+    Global("DS_S_JAH","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("JAHEIRA")
+    IsValidForPartyDialogue("JAHEIRA")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("JAHEIRA",StartDialogOverride("DSSJAH",Player1))
+END
+
+IF
+    Global("DS_S_KHA","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("KHALID")
+    IsValidForPartyDialogue("KHALID")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("KHALID",StartDialogOverride("DSSKHA",Player1))
+END
+
+IF
+    Global("DS_S_MIN","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("MINSC")
+    IsValidForPartyDialogue("MINSC")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("MINSC",StartDialogOverride("DSSMIN",Player1))
+END
+
+IF
+    OR(2)
+      Global("DS_S_MKH","GLOBAL",1)
+      Global("DS_S_MKH","GLOBAL",3)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("MKHIIN")
+    IsValidForPartyDialogue("MKHIIN")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("MKHIIN",StartDialogOverride("DSSMKH",Player1))
+END
+
+IF
+    Global("DS_S_NEE","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("NEERA")
+    IsValidForPartyDialogue("NEERA")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("NEERA",StartDialogOverride("DSSNEE",Player1))
+END
+
+IF
+    Global("DS_S_RAS","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("RASAAD")
+    IsValidForPartyDialogue("RASAAD")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("RASAAD",StartDialogOverride("DSSRAS",Player1))
+END
+
+IF
+    Global("DS_S_SAF","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("SAFANA")
+    IsValidForPartyDialogue("SAFANA")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("SAFANA",StartDialogOverride("DSSSAF",Player1))
+END
+
+IF
+    Global("DS_S_VIC","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("VICONIA")
+    IsValidForPartyDialogue("VICONIA")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("VICONIA",StartDialogOverride("DSSVIC",Player1))
+END
+
+IF
+    Global("DS_S_VOG","GLOBAL",1)
+    TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+    InParty("Voghiln")
+    IsValidForPartyDialogue("Voghiln")
+    CombatCounter(0)
+    !ActuallyInCombat()
+    IsValidForPartyDialogue(Player1)
+    !GlobalTimerNotExpired("DS_D_GAP","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)
+        ActionOverride("Voghiln",StartDialogOverride("DSSVOG",Player1))
+END

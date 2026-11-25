@@ -1,0 +1,5 @@
+APPEND ~KIVANJ~
+  IF WEIGHT #-9 ~%e2_kiv_trig% GlobalGT("DS_P1_DROW","GLOBAL",0)~ THEN BEGIN DS_E2_FEU SAY @53
+    IF ~~ THEN GOTO %e2_kiv_pc1%
+  END
+END

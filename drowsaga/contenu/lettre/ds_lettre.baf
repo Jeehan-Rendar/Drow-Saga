@@ -1,0 +1,15 @@
+IF
+  TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+THEN
+  RESPONSE #100
+    SetToken("DSLETTRE",%ds_lettre_drow%)
+    Continue()
+END
+
+IF
+  !TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))
+THEN
+  RESPONSE #100
+    SetToken("DSLETTRE",%ds_lettre_orig%)
+    Continue()
+END

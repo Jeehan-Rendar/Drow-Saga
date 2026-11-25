@@ -1,0 +1,14 @@
+IF
+  Global("EggsReplaced","GLOBAL",0)
+  OR(2)
+    Contains("misc9u","Eggs")
+    Contains("misc9v","Eggs")
+  Global("DS_P1_DROW","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("EggsReplaced","GLOBAL",1)
+    EraseJournalEntry(97319)
+    EraseJournalEntry(%ds_j97319%)
+    AddJournalEntry(%ds_j97319%,QUEST_DONE)
+    AddJournalEntry(97338,QUEST)
+END

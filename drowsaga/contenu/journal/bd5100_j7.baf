@@ -1,0 +1,12 @@
+IF
+    Global("bd_sdd318b_teens_killed","BD5100",0)
+    GlobalLT("BD_ANKHEG_KILLED_DROW","BD5100",2)
+    Global("bd_sdd318_plot","bd5100",3)
+    Dead("bdumar")
+    Dead("bdkaelet")
+    Global("DS_P1_DROW","GLOBAL",1)
+THEN
+    RESPONSE #100
+        AddJournalEntry(%ds_j7%,QUEST)
+        SetGlobal("bd_sdd318b_teens_killed","BD5100",1)
+END

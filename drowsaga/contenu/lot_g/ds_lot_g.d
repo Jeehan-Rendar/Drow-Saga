@@ -1,0 +1,203 @@
+
+BEGIN ~DSG1ILP~
+BEGIN ~DSG1SAE~
+BEGIN ~DSG1EIR~
+BEGIN ~DSG2HIL~
+BEGIN ~DSG2BRA~
+BEGIN ~DSG2PIP~
+BEGIN ~DSG2GOR~
+BEGIN ~DSG3JOR~
+BEGIN ~DSG3VIA~
+BEGIN ~DSG3VIB~
+BEGIN ~DSG3HAL~
+
+CHAIN IF ~Global("DS_G1","GLOBAL",2)~ THEN DSG1ILP g1_debut
+@12
+== DSG1ILP @13
+== DSG1SAE @14
+== DSG1ILP @15
+END
+  IF ~~ THEN REPLY @16 EXTERN DSG1ILP g1_r1
+  IF ~~ THEN REPLY @17 EXTERN DSG1ILP g1_r2
+  IF ~~ THEN REPLY @18 EXTERN DSG1ILP g1_r3
+
+CHAIN DSG1ILP g1_r1
+@19
+END
+  IF ~~ THEN EXTERN DSG1ILP g1_suite
+
+CHAIN DSG1ILP g1_r2
+@20
+END
+  IF ~~ THEN EXTERN DSG1ILP g1_suite
+
+CHAIN DSG1ILP g1_r3
+@21
+END
+  IF ~~ THEN EXTERN DSG1ILP g1_suite
+
+CHAIN DSG1ILP g1_suite
+@22
+== KIVANJ IF ~InParty("Kivan") !StateCheck("Kivan",CD_STATE_NOTVALID)~ THEN @23
+== DSG1ILP IF ~InParty("Kivan") !StateCheck("Kivan",CD_STATE_NOTVALID)~ THEN @24
+== XANJ IF ~InParty("Xan") !StateCheck("Xan",CD_STATE_NOTVALID)~ THEN @25
+== DSG1ILP IF ~InParty("Xan") !StateCheck("Xan",CD_STATE_NOTVALID)~ THEN @26
+== VICONJ IF ~InParty("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @27
+== CORANJ IF ~InParty("Coran") !StateCheck("Coran",CD_STATE_NOTVALID)~ THEN @28
+== DSG1EIR @29
+== DSG1ILP @30
+END
+  IF ~~ THEN REPLY @31 EXTERN DSG1EIR g1_part
+  IF ~~ THEN REPLY @32 EXTERN DSG1EIR g1_reste
+  IF ~~ THEN REPLY @33 EXTERN DSG1ILP g1_combat
+
+CHAIN DSG1EIR g1_part
+@34
+  DO ~SetGlobal("DS_G1_EIRLAN","GLOBAL",1)~
+== DSG1ILP @35
+END
+  IF ~~ THEN EXTERN DSG1ILP g1_combat
+
+CHAIN DSG1EIR g1_reste
+@36
+END
+  IF ~~ THEN EXTERN DSG1ILP g1_combat
+
+CHAIN DSG1ILP g1_combat
+@37
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G1","GLOBAL",3)~ EXIT
+
+CHAIN IF ~Global("DS_G2","GLOBAL",2)~ THEN DSG2HIL g2_debut
+@38
+== DSG2BRA @39
+END
+  IF ~Gender(Player1,MALE)~ THEN EXTERN DSG2PIP g2_heros
+  IF ~!Gender(Player1,MALE)~ THEN EXTERN DSG2PIP g2_heroine
+
+CHAIN DSG2PIP g2_heros
+@40
+== DSG2BRA @41
+== DSG2PIP @42
+== DSG2BRA @43
+END
+  IF ~InParty("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN EXTERN DSG2PIP g2_viconia
+  IF ~!InParty("Viconia")~ THEN EXTERN DSG2BRA g2_suite
+  IF ~InParty("Viconia") StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN EXTERN DSG2BRA g2_suite
+
+CHAIN DSG2PIP g2_heroine
+@44
+== DSG2BRA @45
+END
+  IF ~InParty("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN EXTERN DSG2PIP g2_viconia
+  IF ~!InParty("Viconia")~ THEN EXTERN DSG2BRA g2_suite
+  IF ~InParty("Viconia") StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN EXTERN DSG2BRA g2_suite
+
+CHAIN DSG2BRA g2_suite
+@46
+END
+  IF ~PartyGoldGT(99)~ THEN REPLY @47 DO ~TakePartyGold(100)~ EXTERN DSG2BRA g2_paye
+  IF ~OR(2) CheckStatGT(Player1,13,CHR) ReputationGT(Player1,13)~ THEN REPLY @48 EXTERN DSG2BRA g2_convaincu
+  IF ~CheckStatGT(Player1,15,STR)~ THEN REPLY @49 EXTERN DSG2BRA g2_impressionne
+  IF ~~ THEN REPLY @50 EXTERN DSG2BRA g2_combat
+
+CHAIN DSG2BRA g2_paye
+@51
+== DSG2GOR @52
+== DSG2BRA @53
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G2","GLOBAL",4) AddJournalEntry(@1,INFO) AddexperienceParty(2000) SetGlobal("DS_G2_FINI","GLOBAL",1)~ EXIT
+
+CHAIN DSG2BRA g2_convaincu
+@54
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G2","GLOBAL",4) AddJournalEntry(@2,INFO) AddexperienceParty(2000) SetGlobal("DS_G2_FINI","GLOBAL",1)~ EXIT
+
+CHAIN DSG2BRA g2_impressionne
+@55
+== DSG2GOR @56
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G2","GLOBAL",5)~ EXIT
+
+CHAIN DSG2BRA g2_combat
+@57
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G2","GLOBAL",3)~ EXIT
+
+CHAIN DSG2PIP g2_viconia
+@58
+== DSG2BRA @59
+== VICONJ @60
+== DSG2BRA @61
+END
+  IF ~~ THEN REPLY @62 EXTERN VICONJ g2_livree
+  IF ~~ THEN REPLY @63 EXTERN DSG2BRA g2_defendue
+  IF ~~ THEN REPLY @64 EXTERN DSG2BRA g2_prix
+
+CHAIN DSG2BRA g2_prix
+@65
+== VICONJ @66
+END
+  IF ~~ THEN REPLY @62 EXTERN VICONJ g2_livree
+  IF ~~ THEN REPLY @63 EXTERN DSG2BRA g2_defendue
+
+CHAIN VICONJ g2_livree
+@67
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G2_VICONIA_LIVREE","GLOBAL",1) SetGlobal("DS_G2","GLOBAL",4) AddJournalEntry(@5,INFO) AddexperienceParty(2000) SetGlobal("DS_G2_FINI","GLOBAL",1) LeaveParty() EscapeArea()~ EXIT
+
+CHAIN DSG2BRA g2_defendue
+@68
+== VICONJ @69
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G2_ISSUE","GLOBAL",6) SetGlobal("DS_G2","GLOBAL",3)~ EXIT
+
+CHAIN IF ~Global("DS_G3","GLOBAL",2)~ THEN DSG3JOR g3_debut
+@70
+== DSG3VIA @71
+== DSG3VIB @72
+== DSG3JOR @73
+END
+  IF ~~ THEN REPLY @74 EXTERN DSG3JOR g3_piege
+  IF ~CheckStatGT(Player1,16,STR)~ THEN REPLY @75 EXTERN DSG3JOR g3_passe
+  IF ~~ THEN REPLY @76 EXTERN DSG3JOR g3_combat
+
+CHAIN DSG3JOR g3_piege
+@77
+== DSG3HAL @78
+== DSG3HAL @79
+END
+  IF ~~ THEN REPLY @80 EXTERN DSG3HAL g3_h1
+  IF ~~ THEN REPLY @81 EXTERN DSG3HAL g3_h2
+  IF ~~ THEN REPLY @82 EXTERN DSG3HAL g3_h3
+
+CHAIN DSG3HAL g3_h1
+@83
+END
+  IF ~~ THEN EXTERN DSG3JOR g3_fin
+
+CHAIN DSG3HAL g3_h2
+@84
+END
+  IF ~~ THEN EXTERN DSG3JOR g3_fin
+
+CHAIN DSG3HAL g3_h3
+@85
+END
+  IF ~~ THEN EXTERN DSG3JOR g3_fin
+
+CHAIN DSG3JOR g3_fin
+@86
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G3","GLOBAL",4) AddJournalEntry(@9,INFO) AddexperienceParty(6000) SetGlobal("DS_G3_FINI","GLOBAL",1)~ EXIT
+
+CHAIN DSG3JOR g3_passe
+@87
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G3","GLOBAL",4) AddJournalEntry(@10,INFO) AddexperienceParty(6000) SetGlobal("DS_G3_FINI","GLOBAL",1)~ EXIT
+
+CHAIN DSG3JOR g3_combat
+@88
+END
+  IF ~~ THEN DO ~SetGlobal("DS_G3","GLOBAL",3)~ EXIT
+

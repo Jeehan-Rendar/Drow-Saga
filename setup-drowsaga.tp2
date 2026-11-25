@@ -1,0 +1,386 @@
+BACKUP ~drowsaga/backup~
+AUTHOR ~Drow Saga~
+VERSION ~1.0.0~
+README ~drowsaga/doc/LISEZMOI.txt~
+ASK_EVERY_COMPONENT
+
+ALWAYS
+  DEFINE_ACTION_FUNCTION ds_jeu_francais RET ds_fr BEGIN
+    OUTER_SET fr = 0
+    OUTER_SET en = 0
+    OUTER_PATCH ~~ BEGIN
+      FOR (i = 1; i < 3000 AND i < NEXT_STRREF; ++i) BEGIN
+        GET_STRREF i t
+        PATCH_IF (INDEX (CASE_INSENSITIVE ~ vous ~ ~%t%~) >= 0) BEGIN SET fr = fr + 1 END
+        PATCH_IF (INDEX (CASE_INSENSITIVE ~ you ~ ~%t%~) >= 0) BEGIN SET en = en + 1 END
+      END
+    END
+    OUTER_SET ds_fr = (fr > en) ? 1 : 0
+  END
+  DEFINE_ACTION_FUNCTION ds_save_index BEGIN
+    COPY ~drowsaga/lib/save_index_lua_header.txt~ ~drowsaga/generated_save_index.lua~
+
+    GET_DIRECTORY_ARRAY ds_save_dirs ~%SAVE_DIRECTORY%~ ~.*~
+    ACTION_PHP_EACH ds_save_dirs AS ds_idx => ds_save_dir BEGIN
+      ACTION_IF FILE_EXISTS ~%ds_save_dir%/BALDUR.gam~ BEGIN
+        ACTION_IF FILE_CONTAINS_EVALUATED(~%ds_save_dir%/BALDUR.gam~ ~DSDROWID~) BEGIN
+          ACTION_IF FILE_CONTAINS_EVALUATED(~%ds_save_dir%/BALDUR.gam~ ~DS_DROW_STATS_APPLIED~) BEGIN
+            APPEND_OUTER ~drowsaga/generated_save_index.lua~ ~  { path = [[%ds_save_dir%]], drow = true, early = false },~ KEEP_CRLF
+          END ELSE BEGIN
+            APPEND_OUTER ~drowsaga/generated_save_index.lua~ ~  { path = [[%ds_save_dir%]], drow = true, early = true },~ KEEP_CRLF
+          END
+        END ELSE BEGIN
+          APPEND_OUTER ~drowsaga/generated_save_index.lua~ ~  { path = [[%ds_save_dir%]], drow = false, early = false },~ KEEP_CRLF
+        END
+      END
+    END
+    APPEND_OUTER ~drowsaga/generated_save_index.lua~ ~}
+
+drowSagaFixedSaveIdentity = {}
+drowSagaFixedSaveNeedsEarlyRepair = {}
+for _, entry in ipairs(drowSagaGeneratedSaveEntries or {}) do
+  if type(entry.path) == "string" then
+    local normalized = string.gsub(entry.path, "\\", "/")
+    local basename = string.match(normalized, "([^/]+)$")
+    if basename and not (basename == "") then
+      local key = string.upper(basename)
+      drowSagaFixedSaveIdentity[key] = (entry.drow == true)
+      drowSagaFixedSaveNeedsEarlyRepair[key] = (entry.early == true)
+    end
+  end
+end~ KEEP_CRLF
+  END
+END
+
+LANGUAGE ~Francais~ ~french~ ~drowsaga/tra/french/setup.tra~
+LANGUAGE ~English~ ~english~ ~drowsaga/tra/english/setup.tra~
+
+BEGIN @1
+DESIGNATED 0
+LABEL ~DrowSaga-Core~
+
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @2
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~ OR FILE_EXISTS ~dlc/sod-dlc.disabled~) @3
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWMR.spl~
+  LPF ADD_SPELL_EFFECT
+      INT_VAR opcode=166 target=2 timing=9 parameter1=50
+  END
+BUT_ONLY
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWXP.spl~
+  LPF ADD_SPELL_EFFECT
+      INT_VAR opcode=104 target=2 timing=9 parameter1=90 parameter2=2
+  END
+BUT_ONLY
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWTH.spl~
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=90  target=2 timing=9 parameter1=5      parameter2=0 resist_dispel=2 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=92  target=2 timing=9 parameter1="-5"  parameter2=0 resist_dispel=2 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=59  target=2 timing=9 parameter1="-5"  parameter2=0 resist_dispel=2 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=275 target=2 timing=9 parameter1="-10" parameter2=0 resist_dispel=2 END
+BUT_ONLY
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWLT.spl~
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=54  target=2 timing=9 parameter1="-1" parameter2=0 resist_dispel=2 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=325 target=2 timing=9 parameter1="-1" parameter2=0 resist_dispel=2 END
+BUT_ONLY
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWCL.spl~
+  LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=1 parameter2=0 resist_dispel=2 STR_VAR resource=~DSDROWLT~ END
+BUT_ONLY
+
+DEFINE_ACTION_FUNCTION ds_splstate STR_VAR name = ~~ RET num BEGIN
+  OUTER_SET num = IDS_OF_SYMBOL (~splstate~ ~%name%~)
+  ACTION_IF (num < 0) BEGIN
+    OUTER_SET num = 0
+    COPY_EXISTING ~splstate.ids~ ~override~
+      FOR (ds_n = 247; ds_n > 126 && num = 0; ds_n = ds_n - 1) BEGIN
+        PATCH_IF (INDEX_BUFFER (CASE_INSENSITIVE EVALUATE_REGEXP ~^%ds_n%[ %TAB%]~) < 0) BEGIN
+          SET num = ds_n
+        END
+      END
+    BUT_ONLY
+    ACTION_IF (num = 0) BEGIN FAIL @4 END
+    APPEND ~splstate.ids~ ~%num% %name%~
+  END
+END
+LAF ds_splstate STR_VAR name = ~DS_DROW_PASSPORT~ RET ds_st_passport = num END
+LAF ds_splstate STR_VAR name = ~DS_DROW_PACKAGE~  RET ds_st_package = num END
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWID.spl~
+  LPF ADD_SPELL_EFFECT
+      INT_VAR opcode=328 target=2 timing=9 parameter1=0 parameter2=ds_st_passport special=1 resist_dispel=2
+  END
+BUT_ONLY
+
+COPY ~drowsaga/lib/blank.spl~ ~override/DSDROWPK.spl~
+  LPF ADD_SPELL_EFFECT
+      INT_VAR opcode=328 target=2 timing=9 parameter1=0 parameter2=ds_st_package special=1 resist_dispel=2
+  END
+BUT_ONLY
+
+COPY_EXISTING ~weapprof.2da~ ~override~
+  COUNT_2DA_COLS ds_cols
+  COUNT_2DA_ROWS ds_cols ds_rows
+  FOR (ds_r = 0; ds_r < ds_rows; ++ds_r) BEGIN
+    READ_2DA_ENTRY ds_r 1 ds_cols ds_id
+    PATCH_IF (ds_id = 125 || ds_id = 134) BEGIN
+      PATCH_IF (ds_id = 134) BEGIN SET ds_str = RESOLVE_STR_REF(@5) END
+      ELSE BEGIN SET ds_str = RESOLVE_STR_REF(@6) END
+      SET_2DA_ENTRY ds_r 2 ds_cols ds_str
+      SET_2DA_ENTRY ds_r 3 ds_cols ds_str
+      FOR (ds_c = 4; ds_c < ds_cols; ++ds_c) BEGIN
+        SET_2DA_ENTRY ds_r ds_c ds_cols 1
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+COPY_EXISTING ~profs.2da~ ~override~
+  COUNT_2DA_ROWS 3 ds_rows
+  FOR (ds_r = 0; ds_r < ds_rows; ++ds_r) BEGIN
+    READ_2DA_ENTRY ds_r 1 3 ds_first
+    PATCH_IF IS_AN_INT ds_first BEGIN
+      SET_2DA_ENTRY ds_r 1 3 (ds_first + 1)
+    END
+  END
+BUT_ONLY
+
+OUTER_SPRINT ds_txt_drow @200
+OUTER_SPRINT ds_txt_elf_or_drow @201
+OUTER_SPRINT ds_txt_elf @202
+OUTER_SPRINT ds_txt_subrace_title @203
+OUTER_SPRINT ds_txt_subraces_title @204
+OUTER_SPRINT ds_txt_choose_subrace @205
+OUTER_SPRINT ds_txt_drow_button @206
+OUTER_SPRINT ds_txt_drow_desc @207
+OUTER_SPRINT ds_txt_bio_old @208
+OUTER_SPRINT ds_txt_bio_new @209
+ACTION_GET_STRREF 15891 ds_bio_elf
+ACTION_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~%ds_txt_bio_old%~ ~%ds_bio_elf%~) < 0) BEGIN
+  OUTER_SPRINT ds_txt_bio_old ~~
+  OUTER_SPRINT ds_txt_bio_new ~~
+END
+COPY ~drowsaga/lib/DSTXT.tpl~ ~override/DSTXT.lua~ EVALUATE_BUFFER
+COPY ~drowsaga/lib/DSCOM.lua~ ~override/DSCOM.lua~
+
+EXTEND_TOP ~BALDUR.BCS~ ~drowsaga/baf/ds_locals_test.baf~
+ACTION_IF FILE_EXISTS_IN_GAME ~BDBALDUR.BCS~ BEGIN
+  EXTEND_TOP ~BDBALDUR.BCS~ ~drowsaga/baf/ds_locals_test.baf~
+END
+EXTEND_TOP ~BALDUR.BCS~ ~drowsaga/baf/ds_import_runtime.baf~
+ACTION_IF FILE_EXISTS_IN_GAME ~BDBALDUR.BCS~ BEGIN
+  EXTEND_TOP ~BDBALDUR.BCS~ ~drowsaga/baf/ds_import_runtime.baf~
+END
+EXTEND_TOP ~BALDUR.BCS~ ~drowsaga/baf/ds_party_slots.baf~
+EXTEND_TOP ~BALDUR.BCS~ ~drowsaga/baf/ds_viconia_label.baf~
+ACTION_IF FILE_EXISTS_IN_GAME ~BDBALDUR.BCS~ BEGIN
+  EXTEND_TOP ~BDBALDUR.BCS~ ~drowsaga/baf/ds_party_slots.baf~
+  EXTEND_TOP ~BDBALDUR.BCS~ ~drowsaga/baf/ds_viconia_label.baf~
+END
+ACTION_IF (GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~BALDUR25.BCS~) BEGIN
+  EXTEND_TOP ~BALDUR25.BCS~ ~drowsaga/baf/ds_locals_test.baf~
+  EXTEND_TOP ~BALDUR25.BCS~ ~drowsaga/baf/ds_import_runtime.baf~
+  EXTEND_TOP ~BALDUR25.BCS~ ~drowsaga/baf/ds_party_slots.baf~
+  EXTEND_TOP ~BALDUR25.BCS~ ~drowsaga/baf/ds_viconia_label.baf~
+END
+
+
+BEGIN @10
+DESIGNATED 10
+LABEL ~DrowSaga-UI-Vanilla~
+SUBCOMPONENT @11
+REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~0~ @12
+
+LAF ds_save_index END
+COPY ~drowsaga/generated_save_index.lua~ ~override/DSIDX.lua~
+
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
+  COPY ~drowsaga/ui/vanilla_bg2/UI.menu~ ~override/UI.menu~
+END ELSE BEGIN
+  COPY ~drowsaga/ui/vanilla/UI.menu~ ~override/UI.menu~
+END
+COPY ~drowsaga/lib/DSVAN.lua~ ~override/DSVAN.lua~
+
+BEGIN @20
+DESIGNATED 20
+LABEL ~DrowSaga-UI-InfinityUI~
+SUBCOMPONENT @11
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @21
+REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~0~ @12
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~infinity_ui.tp2~ ~0~ @22
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~rgdspbut.bam~ @24
+
+LAF ds_save_index END
+OUTER_SET ds_qcount = 0
+OUTER_SET ds_qcount_was = 0
+ACTION_IF FILE_EXISTS_IN_GAME ~savename.2da~ BEGIN
+  COPY_EXISTING ~savename.2da~ ~override~
+    READ_2DA_ENTRY 1 3 4 ds_qcount
+    PATCH_IF (ds_qcount > 4) BEGIN
+      SET ds_qcount_was = ds_qcount
+      SET_2DA_ENTRY 1 3 4 4
+      SET ds_qcount = 4
+    END
+  BUT_ONLY
+END
+ACTION_IF (ds_qcount_was > 4) BEGIN
+  PRINT @23
+END
+APPEND_OUTER ~drowsaga/generated_save_index.lua~ ~drowSagaQuickSlotCountInstalled = %ds_qcount%~ KEEP_CRLF
+COPY ~drowsaga/generated_save_index.lua~ ~override/DSIDX.lua~
+
+COPY ~drowsaga/ui/infinity_ui_14/UI.menu~ ~override/UI.menu~
+
+
+BEGIN @30
+DESIGNATED 30
+LABEL ~DrowSaga-Contenu-BG1~
+REQUIRE_PREDICATE GAME_IS ~bgee~ @31
+REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~0~ @12
+
+OUTER_SPRINT DS_DROW ~TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))~
+COMPILE EVALUATE_BUFFER ~drowsaga/contenu/ds_bg1.d~ USING ~drowsaga/tra/%LANGUAGE%/contenu_bg1.tra~
+EXTEND_BOTTOM ~BALDUR.BCS~ ~drowsaga/contenu/ds_bg1.baf~ USING ~drowsaga/tra/%LANGUAGE%/contenu_bg1.tra~
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/lettre.tra~ BEGIN
+  INCLUDE ~drowsaga/contenu/lettre/ds_lettre.tpa~
+END
+
+ACTION_IF NOT ((MOD_IS_INSTALLED ~bg1npc/bg1npc.tp2~ ~10~) OR (MOD_IS_INSTALLED ~setup-bg1npc.tp2~ ~10~)) BEGIN
+  COMPILE EVALUATE_BUFFER ~drowsaga/contenu/ds_bg1_alora_jeu.d~ USING ~drowsaga/tra/%LANGUAGE%/contenu_bg1.tra~
+END
+
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/contenu_bg1.tra~ BEGIN
+  INCLUDE ~drowsaga/contenu/ds_bg1_livre.tpa~
+END
+
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/lot_g.tra~ BEGIN
+  INCLUDE ~drowsaga/contenu/lot_g/ds_lot_g.tpa~
+END
+
+INCLUDE ~drowsaga/contenu/e2/ds_e2_lib.tpa~
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/jetons.tra~ BEGIN
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@1) requis = 1 STR_VAR cle = ~DRIZZT~ dlg = ~DRIZZT~ aiguille = ~Notre décision est prise, drow !~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@2) requis = 1 STR_VAR cle = ~VICMAL~ dlg = ~VICONJ~ aiguille = ~Vous, les drows, me rendez malade.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@3) requis = 1 STR_VAR cle = ~VICLOIN~ dlg = ~VICONJ~ aiguille = ~Restez loin de lui, drow.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@4) requis = 1 STR_VAR cle = ~VICFERM~ dlg = ~VICONJ~ aiguille = ~Fermez-la, drow. Je veux écouter ce que Rasaad a à dire.~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@5) requis = 1 STR_VAR cle = ~B1A~ dlg = ~ELMINS4~ aiguille = ~Vous n'êtes pas plus un Elminster que je suis Drizzt le Drow~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@6) requis = 1 STR_VAR cle = ~B1B~ dlg = ~ELMINS4~ aiguille = ~vous n'êtes pas plus Elminster que je ne suis Drizzt le Drow~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@5) requis = 0 STR_VAR cle = ~B1J~ dlg = ~JAHEIJ~ aiguille = ~Vous n'êtes pas plus un Elminster que je suis Drizzt le Drow~ END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@7) requis = 1 STR_VAR cle = ~B2~ dlg = ~SHVERT~ aiguille = ~Rechtez où vous êtes, pâle enfant~ cibles = ~~ RET ds_b_cibles = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@8) requis = 1 STR_VAR cle = ~B3~ dlg = ~OGRELEAD~ aiguille = ~Petits êtres rosâtres, vous allez mourir~ cibles = ~~ RET ds_b_cibles = cibles END
+  OUTER_SPRINT ds_rb ~~
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@9) requis = 1 STR_VAR cle = ~RB1~ dlg = ~VICONJ~ aiguille = ~Les femmes de mon espèce protègent~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@10) requis = 1 STR_VAR cle = ~RB1B~ dlg = ~VICONJ~ aiguille = ~leçon en la matière. Nous devrions discuter~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@11) requis = 1 STR_VAR cle = ~RB1C~ dlg = ~RASAADJ~ aiguille = ~Votre allure incite tout un chacun à vous approcher.~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@12) requis = 1 STR_VAR cle = ~RB2~ dlg = ~RASAADJ~ aiguille = ~Ceux qui demeurent dans l'Ombre~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@13) requis = 1 STR_VAR cle = ~RB3~ dlg = ~NEERAJ~ aiguille = ~pourquoi m'avez-vous aidée à échapper aux Magiciens Rouges~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@14) requis = 1 STR_VAR cle = ~RB4~ dlg = ~NEERAJ~ aiguille = ~ce qui n'est clairement pas le cas~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@15) requis = 1 STR_VAR cle = ~RB5A~ dlg = ~DORNJ~ aiguille = ~Personne n'oserait se moquer de mes origines~ cibles = EVAL ~%ds_rb%~ RET ds_rb = cibles END
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%ds_rb%~ END
+  LAF ds_e2_dit_fin INT_VAR ref = RESOLVE_STR_REF(@16) requis = 1 STR_VAR cle = ~EE1~ dlg = ~BAELOTHJ~ aiguille = ~bien trop occupés à lorgner d'anciens manuscrits~ END
+  OUTER_SPRINT ds_ee ~~
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@17) requis = 1 STR_VAR cle = ~EE2~ dlg = ~RASAAD~ aiguille = ~je peux comprendre pourquoi vous restez attach~ cibles = EVAL ~%ds_ee%~ RET ds_ee = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@18) requis = 1 STR_VAR cle = ~EE3~ dlg = ~DORN~ aiguille = ~Mon apparence effraie souvent ceux qui possèdent~ cibles = EVAL ~%ds_ee%~ RET ds_ee = cibles END
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%ds_ee%~ END
+  OUTER_SPRINT ds_ctx ~~
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@19) requis = 1 STR_VAR cle = ~CK1~ dlg = ~CADDER~ aiguille = ~Votre visage m'est familier, mais je ne me rappelle plus~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@20) requis = 1 STR_VAR cle = ~CK2~ dlg = ~CARBOS~ aiguille = ~Ouais, vous correspondez à la description~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@21) requis = 1 STR_VAR cle = ~BE1~ dlg = ~VAI~ aiguille = ~Tout le sud ne parle que de votre travail à Nashkel~ plus = ~!ReputationLT(Player1,5)~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@22) requis = 1 STR_VAR cle = ~NA1~ dlg = ~OUBLEK~ aiguille = ~je savais que la justice ne se ferait pas attendre~ plus = ~!StateCheck(Myself,STATE_CHARMED)~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@23) requis = 1 STR_VAR cle = ~PB1~ dlg = ~ALATOS~ aiguille = ~et vous faites déjà sensation~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@24) requis = 1 STR_VAR cle = ~PB2~ dlg = ~DELTHY~ aiguille = ~Tout le monde croit que vous êtes des agents amniens~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@25) requis = 1 STR_VAR cle = ~PB3~ dlg = ~NILA~ aiguille = ~vous ne ressemblez pas aux autres invités~ plus = ~!StateCheck(Myself,STATE_CHARMED)~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@26) requis = 1 STR_VAR cle = ~PB5~ dlg = ~OGRMBA~ aiguille = ~Ils collectent les êtres roses de la surface~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@27) requis = 1 STR_VAR cle = ~PB6~ dlg = ~DESTUS~ aiguille = ~Pile à l'heure. Ravi de vous rencontrer~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@28) requis = 1 STR_VAR cle = ~PB7~ dlg = ~VAIL~ aiguille = ~Je sors d'un lourd sommeil et que vois-je~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@29) requis = 1 STR_VAR cle = ~PB8~ dlg = ~LAERTA~ aiguille = ~y a un croque-mitaine qui vient regarder~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@30) requis = 1 STR_VAR cle = ~PB9~ dlg = ~GAXIR~ aiguille = ~êtes une lumière qui entre dans l'obscurité~ plus = ~!CheckStatLT(LastTalkedToBy,6,LEVEL)~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@31) requis = 1 STR_VAR cle = ~RE1~ dlg = ~DRADEE~ aiguille = ~que vous soyez un elfe amnien obèse~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@32) requis = 1 STR_VAR cle = ~RE2~ dlg = ~FORESH~ aiguille = ~Quel habit vous portez là~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@33) requis = 1 STR_VAR cle = ~RE3~ dlg = ~JOPI~ aiguille = ~tout noirs avec les cheveux verts~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_dit INT_VAR ref = RESOLVE_STR_REF(@34) requis = 1 STR_VAR cle = ~RE4~ dlg = ~SENDAI~ aiguille = ~vous les barbares du Nord~ cibles = EVAL ~%ds_ctx%~ RET ds_ctx = cibles END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@35) requis = 1 garde = 1 tete = 1 vers = 7 STR_VAR cle = ~CK3~ dlg = ~SHISTA~ aiguille = ~Comment saviez-vous que j'étais à Bois-Manteau~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@36) requis = 1 garde = 1 tete = 1 STR_VAR cle = ~CK4~ dlg = ~VOICE~ aiguille = ~Ogre ou pas, cette créature~ END
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%ds_ctx%~ END
+END
+COMPILE ~drowsaga/contenu/ds_bgee_contexte.d~ USING ~drowsaga/tra/%LANGUAGE%/jetons.tra~
+ACTION_IF FILE_EXISTS ~override/ds_jetons.txt~ BEGIN DELETE + ~override/ds_jetons.txt~ END
+INCLUDE ~drowsaga/contenu/jetons/ds_jetons.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~bdshapur.dlg~ BEGIN
+  INCLUDE ~drowsaga/contenu/sod/ds_sod.tpa~
+END
+INCLUDE ~drowsaga/contenu/journal/ds_journal.tpa~
+INCLUDE ~drowsaga/contenu/ub/ds_ub.tpa~
+ACTION_BASH_FOR ~drowsaga/contenu/e2~ ~^tmp_.*\.d$~ BEGIN DELETE + ~%BASH_FOR_FILESPEC%~ END
+ACTION_IF MOD_IS_INSTALLED ~setup-drowsaga.tp2~ ~60~ BEGIN
+  INCLUDE ~drowsaga/contenu/vocab/ds_surfacien.tpa~
+END
+
+BEGIN @50
+DESIGNATED 50
+LABEL ~DrowSaga-Correction-BG1NPC~
+REQUIRE_PREDICATE GAME_IS ~bgee~ @31
+REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~30~ @51
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~bg1npc/bg1npc.tp2~ ~0~) OR (MOD_IS_INSTALLED ~setup-bg1npc.tp2~ ~0~) @52
+
+INCLUDE ~drowsaga/contenu/e2/ds_e2_lib.tpa~
+LAF ds_e2_cherche STR_VAR dlg = ~VICONJ~ aiguille = ~apprendre sur votre monde~ RET ds_bg1npc_rev = n RET_ARRAY ds_e2_et END
+ACTION_IF (ds_bg1npc_rev = 0) BEGIN FAIL @53 END
+
+OUTER_SPRINT DS_DROW ~TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))~
+ACTION_IF (MOD_IS_INSTALLED ~bg1npc/bg1npc.tp2~ ~10~) OR (MOD_IS_INSTALLED ~setup-bg1npc.tp2~ ~10~) BEGIN
+  COMPILE EVALUATE_BUFFER ~drowsaga/contenu/ds_bg1_alora_bg1npc.d~ USING ~drowsaga/tra/%LANGUAGE%/contenu_bg1.tra~
+END
+
+INCLUDE ~drowsaga/contenu/ds_bg1_elfe.tpa~
+
+INCLUDE ~drowsaga/contenu/e2/ds_e2.tpa~
+ACTION_IF NOT (FILE_CONTAINS_EVALUATED (~override/ds_jetons.txt~ ~BG1NPC_VU~)) BEGIN
+  INCLUDE ~drowsaga/contenu/jetons/ds_jetons.tpa~
+END
+ACTION_BASH_FOR ~drowsaga/contenu/e2~ ~^tmp_.*\.d$~ BEGIN DELETE + ~%BASH_FOR_FILESPEC%~ END
+ACTION_IF MOD_IS_INSTALLED ~setup-drowsaga.tp2~ ~60~ BEGIN
+  INCLUDE ~drowsaga/contenu/vocab/ds_surfacien.tpa~
+END
+
+
+
+BEGIN @60
+DESIGNATED 60
+LABEL ~DrowSaga-Surfacien~
+REQUIRE_PREDICATE GAME_IS ~bgee~ @31
+LAF ds_jeu_francais RET ds_fr END
+ACTION_IF NOT ds_fr BEGIN FAIL @61 END
+INCLUDE ~drowsaga/contenu/vocab/ds_surfacien.tpa~
+INCLUDE ~drowsaga/contenu/fautes/ds_fautes_base.tpa~
+
+
+BEGIN @40
+DESIGNATED 40
+LABEL ~DrowSaga-Portrait-Viconia-SoD~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @2
+REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~0~ @12
+
+INCLUDE ~drowsaga/lib/ds_portrait.tpa~
+LAF ds_viconia_portrait END
+
+BEGIN @35
+DESIGNATED 200
+LABEL ~DrowSaga-Contenu-BG2~
+REQUIRE_PREDICATE GAME_IS ~bg2ee~ @36
+REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~0~ @12
+
+OUTER_SPRINT DS_DROW ~TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))~
+INCLUDE ~drowsaga/contenu/bg2/ds_bg2.tpa~
+INCLUDE ~drowsaga/contenu/bg2/ds_bebe_aerie.tpa~
+
+BEGIN @62
+DESIGNATED 260
+LABEL ~DrowSaga-Fautes-BG2~
+REQUIRE_PREDICATE GAME_IS ~bg2ee~ @36
+LAF ds_jeu_francais RET ds_fr END
+ACTION_IF NOT ds_fr BEGIN FAIL @61 END
+INCLUDE ~drowsaga/contenu/fautes/ds_fautes_bg2.tpa~

@@ -1,0 +1,56 @@
+@1 = ~Drow Saga: core, the drow as a playable race (required)~
+@2 = ~Drow Saga requires Baldur's Gate: Enhanced Edition or Baldur's Gate II: Enhanced Edition.~
+@3 = ~DLC Merger must be installed before Drow Saga (BGEE).~
+@4 = ~Drow Saga: no free number left in SPLSTATE.IDS.~
+@5 = ~Drow Saga : marque drow~
+@6 = ~Drow Saga : reserve~
+@10 = ~Base game interface~
+@11 = ~Drow Saga: interface (choose one)~
+@12 = ~Install Drow Saga - Core BGEE / SoD / BG2EE first.~
+@20 = ~Infinity UI++ 1.4 interface~
+@21 = ~Drow Saga: the Infinity UI++ adapter requires BGEE or BG2EE.~
+@22 = ~Infinity UI++ core component must be installed before the Drow Saga Infinity UI++ adapter.~
+@23 = ~Drow Saga: %ds_qcount_was% quick-save slots were set (Infinity UI++). Capped to 4: slots 5 and 6 overwrite the chapter-start saves.~
+@24 = ~Drow Saga: the Infinity UI++ adapter requires Infinity UI++ 1.4 (or newer). Update Infinity UI++, then run the installation again.~
+@30 = ~Drow Saga: BG1 and SoD, the world reacts to the drow (French text for now)~
+@31 = ~Drow Saga: the BG1 content requires Baldur's Gate: Enhanced Edition.~
+@35 = ~Drow Saga: BG2 and ToB, the world reacts to the drow (French text for now)~
+@36 = ~Drow Saga: the BG2 content requires Baldur's Gate II: Enhanced Edition.~
+@40 = ~Drow Saga: Viconia's Siege of Dragonspear portrait~
+@50 = ~Drow Saga: BG1 and SoD with BG1 NPC, companions and romances (French text for now)~
+@51 = ~Install Drow Saga - BG1 content (component 30) first.~
+@52 = ~Drow Saga: the Drow fixes for BG1 NPC Project require BG1 NPC Project, installed first.~
+@53 = ~Drow Saga: the Drow fixes for BG1 NPC Project need an up-to-date BG1 NPC Project with its revised official French translation (November 2026). Update BG1 NPC Project, then install this component.~
+@100 = ~Long years spent on the surface have slowly accustomed your eyes to its light. Its glare no longer troubles you.~
+@101 = ~The daylight assaults your eyes and blurs your vision.~
+@200 = ~Drow~
+@201 = ~Elf or Drow~
+@202 = ~Elf~
+@203 = ~SUBRACE~
+@204 = ~SUBRACES~
+@205 = ~CHOOSE A SUBRACE~
+@206 = ~DROW~
+@207 = ~DROW: Drow, or dark elves, are a branch of the elven people adapted over generations to life in the Underdark. Their dark skin, usually white hair and strong affinity for magic clearly set them apart from their surface cousins.
+
+Their society is violent, deeply hierarchical and ruled by powerful matriarchal houses. The priestesses of Lolth, the Spider Queen, hold a central place, while intrigue, rivalry and power struggles shape life in the drow cities. Weakness is seldom forgiven, and submission to this order is often a matter of survival.
+
+A few renegades, fugitives and outcasts nevertheless reject this existence and try to escape Lolth's grip by reaching the surface. Yet they rarely find true freedom there: to many surface dwellers, a drow remains a dangerous and malevolent being, condemned to live on the margins of both worlds.
+
+Drow have the following traits:
+- +2 Dexterity; -1 Constitution; +1 Intelligence.
+- 50% magic resistance.
+- +1 THAC0 with bows, long swords and short swords.
+- Infravision.
+- Receive only 90% of the experience normally gained.
+- Starting reputation reduced by 2.
+- Light sensitivity: outdoors by day, +1 THAC0 and +1 to all saving throws.
+- At level 9, acclimation to the surface permanently removes these penalties.~
+@60 = ~Drow Saga: BG1 and SoD, French text fixes (optional, install last)~
+@61 = ~Drow Saga: this component only applies to a game whose text is in French.~
+@97 = ~Drow Saga: the test tool requires component 30 (BG1 content).~
+@98 = ~Drow Saga: the test tool only works with Siege of Dragonspear.~
+@99 = ~Drow Saga - Test tool for Siege of Dragonspear (TESTING ONLY: do not install in a real game)~
+@62 = ~Drow Saga: BG2 and ToB, French text fixes (optional)~
+
+@208 = ~Elle était une elfe de la Haute-Forêt et son amie depuis plusieurs saisons.~
+@209 = ~She was a dark elf, like you, and his friend for many seasons; where she came from, Gorion never said.~

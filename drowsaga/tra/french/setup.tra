@@ -1,0 +1,56 @@
+@1 = ~Drow Saga : noyau, le drow comme race jouable (obligatoire)~
+@2 = ~Drow Saga necessite Baldur's Gate: Enhanced Edition ou Baldur's Gate II: Enhanced Edition.~
+@3 = ~DLC Merger doit etre installe avant Drow Saga (BGEE).~
+@4 = ~Drow Saga : aucun numero libre dans SPLSTATE.IDS.~
+@5 = ~Drow Saga : marque drow~
+@6 = ~Drow Saga : reserve~
+@10 = ~Interface du jeu de base~
+@11 = ~Drow Saga : interface (une au choix)~
+@12 = ~Installez d'abord Drow Saga - Core BGEE / SoD / BG2EE.~
+@20 = ~Interface Infinity UI++ 1.4~
+@21 = ~Drow Saga : l'adaptation Infinity UI++ necessite BGEE ou BG2EE.~
+@22 = ~Le composant principal d'Infinity UI++ doit etre installe avant l'adaptation Infinity UI++ de Drow Saga.~
+@23 = ~Drow Saga : %ds_qcount_was% emplacements de sauvegarde rapide etaient regles (Infinity UI++). Ramenes a 4 : les emplacements 5 et 6 ecrasent les sauvegardes de debut de chapitre.~
+@24 = ~Drow Saga : l'adaptation Infinity UI++ necessite Infinity UI++ 1.4 (ou plus recente). Mettez Infinity UI++ a jour puis relancez l'installation.~
+@30 = ~Drow Saga : BG1 et SoD, le monde réagit au drow~
+@31 = ~Drow Saga : le contenu BG1 necessite Baldur's Gate: Enhanced Edition.~
+@35 = ~Drow Saga : BG2 et ToB, le monde réagit au drow~
+@36 = ~Drow Saga : le contenu BG2 nécessite Baldur's Gate II: Enhanced Edition.~
+@40 = ~Drow Saga : portrait de Viconia de Siege of Dragonspear~
+@50 = ~Drow Saga : BG1 et SoD avec BG1 NPC, compagnons et romances~
+@51 = ~Installez d'abord Drow Saga - Contenu BG1 (composant 30).~
+@52 = ~Drow Saga : la correction Drow pour BG1 NPC Project necessite BG1 NPC Project, installe avant.~
+@53 = ~Drow Saga : la correction Drow pour BG1 NPC Project demande BG1 NPC à jour, avec sa traduction française officielle révisée (novembre 2026). Mettez BG1 NPC à jour, puis installez ce composant.~
+@100 = ~Les nombreuses années passées à la surface ont peu à peu accoutumé vos yeux à sa lumière. Son éclat ne vous gêne plus.~
+@101 = ~La lumière du jour agresse vos yeux et trouble votre vision.~
+@200 = ~Drow~
+@201 = ~Elfe ou Drow~
+@202 = ~Elfe~
+@203 = ~SOUS-RACE~
+@204 = ~SOUS-RACES~
+@205 = ~CHOISIR UNE SOUS-RACE~
+@206 = ~DROW~
+@207 = ~DROWS : Les drows, ou elfes noirs, sont une branche du peuple elfique adaptée depuis des générations à la vie dans l'Ombre-Terre. Leur peau sombre, leurs cheveux généralement blancs et leur forte affinité avec la magie les distinguent nettement de leurs cousins de la surface.
+
+Leur société est violente, profondément hiérarchisée et dominée par de puissantes maisons matriarcales. Les prêtresses de Lolth, la Reine-Araignée, y occupent une place centrale, tandis qu'intrigues, rivalités et luttes de pouvoir rythment la vie des cités drows. La faiblesse y est rarement pardonnée, et la soumission à cet ordre est souvent une question de survie.
+
+Quelques renégats, fugitifs et parias refusent pourtant cette existence et cherchent à fuir l'emprise de Lolth pour gagner la surface. Mais ils y trouvent rarement une liberté totale : pour beaucoup d'habitants de la surface, un drow reste un être dangereux et malveillant, condamné à vivre en marge des deux mondes.
+
+Les drows disposent des traits suivants :
+- +2 en Dextérité ; -1 en Constitution ; +1 en Intelligence.
+- 50 % de résistance à la magie.
+- +1 au TACO avec les arcs, les épées longues et les épées courtes.
+- Infravision.
+- Ne reçoivent que 90 % de l'expérience normalement acquise.
+- Réputation initiale réduite de 2.
+- Sensibilité à la lumière : en extérieur et de jour, +1 au TACO et +1 à tous les jets de sauvegarde.
+- Au niveau 9, l'acclimatation à la surface supprime définitivement ces pénalités.~
+@60 = ~Drow Saga : BG1 et SoD, corrections du texte français (facultatif, à installer en dernier)~
+@61 = ~Drow Saga : ce composant ne sert qu'à un jeu dont le texte est en français.~
+@97 = ~Drow Saga : l'outil de test demande le composant 30 (Contenu BG1).~
+@98 = ~Drow Saga : l'outil de test ne sert qu'avec Siege of Dragonspear.~
+@99 = ~Drow Saga - Outil de test pour Siege of Dragonspear (TESTS SEULEMENT : ne pas installer dans une vraie partie)~
+@62 = ~Drow Saga : BG2 et ToB, corrections du texte français (facultatif)~
+
+@208 = ~Elle était une elfe de la Haute-Forêt et son amie depuis plusieurs saisons.~
+@209 = ~Elle était une elfe noire, comme vous, et son amie depuis plusieurs saisons ; d'où elle venait, Gorion ne l'a jamais dit.~

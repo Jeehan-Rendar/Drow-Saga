@@ -1,0 +1,2585 @@
+
+BEGIN ~DSCVIC~
+BEGIN ~DSDAJANT~
+BEGIN ~DSDALORA~
+BEGIN ~DSDBAELO~
+BEGIN ~DSDBRANW~
+BEGIN ~DSDCORAN~
+BEGIN ~DSDDORN~
+BEGIN ~DSDDYNAH~
+BEGIN ~DSDEDWIN~
+BEGIN ~DSDELDOT~
+BEGIN ~DSDFALDO~
+BEGIN ~DSDGARRI~
+BEGIN ~DSDIMOEN~
+BEGIN ~DSDJAHEI~
+BEGIN ~DSDKAGAI~
+BEGIN ~DSDKHALI~
+BEGIN ~DSDKIVAN~
+BEGIN ~DSDMINSC~
+BEGIN ~DSDMONTA~
+BEGIN ~DSDNEERA~
+BEGIN ~DSDQUAYL~
+BEGIN ~DSDRASAA~
+BEGIN ~DSDSAFAN~
+BEGIN ~DSDSHART~
+BEGIN ~DSDSKIE~
+BEGIN ~DSDTIAX~
+BEGIN ~DSDXAN~
+BEGIN ~DSDXZAR~
+BEGIN ~DSDYESLI~
+
+APPEND ~GORION~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_GORION","GLOBAL",0) Detect(Player1)~ THEN BEGIN ds_a_gorion_0
+  SAY @1000
+  IF ~~ THEN DO ~SetGlobal("DS_A_GORION","GLOBAL",1)~ GOTO ds_a_gorion_1
+END
+END
+
+APPEND ~GORION~
+IF ~~ THEN BEGIN ds_a_gorion_1
+  SAY @1001
+  IF ~~ THEN REPLY @1002 GOTO ds_a_gorion_r0
+  IF ~~ THEN REPLY @1003 GOTO ds_a_gorion_r1
+  IF ~~ THEN REPLY @1004 GOTO ds_a_gorion_r2
+END
+END
+
+APPEND ~GORION~
+IF ~~ THEN BEGIN ds_a_gorion_r0
+  SAY @1005
+  IF ~~ THEN EXTERN ~GORION~ 0
+END
+END
+
+APPEND ~GORION~
+IF ~~ THEN BEGIN ds_a_gorion_r1
+  SAY @1006
+  IF ~~ THEN EXTERN ~GORION~ 0
+END
+END
+
+APPEND ~GORION~
+IF ~~ THEN BEGIN ds_a_gorion_r2
+  SAY @1007
+  IF ~~ THEN EXTERN ~GORION~ 0
+END
+END
+
+APPEND ~IMOEN~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_IMOEN","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_a_imoen_0
+  SAY @1008
+  IF ~~ THEN DO ~SetGlobal("DS_A_IMOEN","GLOBAL",1)~ GOTO ds_a_imoen_1
+END
+END
+
+APPEND ~IMOEN~
+IF ~~ THEN BEGIN ds_a_imoen_1
+  SAY @1009
+  IF ~~ THEN REPLY @1010 GOTO ds_a_imoen_r0
+  IF ~~ THEN REPLY @1011 GOTO ds_a_imoen_r1
+  IF ~~ THEN REPLY @1012 GOTO ds_a_imoen_r2
+END
+END
+
+APPEND ~IMOEN~
+IF ~~ THEN BEGIN ds_a_imoen_r0
+  SAY @1013
+  IF ~~ THEN EXTERN ~IMOEN~ 0
+END
+END
+
+APPEND ~IMOEN~
+IF ~~ THEN BEGIN ds_a_imoen_r1
+  SAY @1014
+  IF ~~ THEN EXTERN ~IMOEN~ 0
+END
+END
+
+APPEND ~IMOEN~
+IF ~~ THEN BEGIN ds_a_imoen_r2
+  SAY @1015
+  IF ~~ THEN EXTERN ~IMOEN~ 0
+END
+END
+
+APPEND ~INNKE2~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_WINTHROP","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_a_winthrop_0
+  SAY @1016
+  IF ~~ THEN DO ~SetGlobal("DS_A_WINTHROP","GLOBAL",1)~ GOTO ds_a_winthrop_1
+END
+END
+
+APPEND ~INNKE2~
+IF ~~ THEN BEGIN ds_a_winthrop_1
+  SAY @1017
+  IF ~~ THEN REPLY @1018 GOTO ds_a_winthrop_r0
+  IF ~~ THEN REPLY @1019 GOTO ds_a_winthrop_r1
+  IF ~~ THEN REPLY @1020 GOTO ds_a_winthrop_r2
+END
+END
+
+APPEND ~INNKE2~
+IF ~~ THEN BEGIN ds_a_winthrop_r0
+  SAY @1021
+  IF ~~ THEN EXTERN ~INNKE2~ ds_copie_innke2_0
+END
+END
+
+APPEND ~INNKE2~
+IF ~~ THEN BEGIN ds_a_winthrop_r1
+  SAY @1022
+  IF ~~ THEN EXTERN ~INNKE2~ ds_copie_innke2_0
+END
+END
+
+APPEND ~INNKE2~
+IF ~~ THEN BEGIN ds_a_winthrop_r2
+  SAY @1023
+  IF ~~ THEN EXTERN ~INNKE2~ ds_copie_innke2_0
+END
+END
+
+APPEND ~HULL~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_HULL","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_a_hull_0
+  SAY @1024
+  IF ~~ THEN DO ~SetGlobal("DS_A_HULL","GLOBAL",1)~ GOTO ds_a_hull_1
+END
+END
+
+APPEND ~HULL~
+IF ~~ THEN BEGIN ds_a_hull_1
+  SAY @1025
+  IF ~~ THEN REPLY @1026 GOTO ds_a_hull_r0
+  IF ~~ THEN REPLY @1027 GOTO ds_a_hull_r1
+  IF ~~ THEN REPLY @1028 GOTO ds_a_hull_r2
+END
+END
+
+APPEND ~HULL~
+IF ~~ THEN BEGIN ds_a_hull_r0
+  SAY @1029
+  IF ~~ THEN EXTERN ~HULL~ ds_copie_hull_1
+END
+END
+
+APPEND ~HULL~
+IF ~~ THEN BEGIN ds_a_hull_r1
+  SAY @1030
+  IF ~~ THEN EXTERN ~HULL~ ds_copie_hull_1
+END
+END
+
+APPEND ~HULL~
+IF ~~ THEN BEGIN ds_a_hull_r2
+  SAY @1031
+  IF ~~ THEN EXTERN ~HULL~ ds_copie_hull_1
+END
+END
+
+APPEND ~FULLER~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_FULLER","GLOBAL",0) !Global("HelpFuller","GLOBAL",2)~ THEN BEGIN ds_a_fuller_0
+  SAY @1032
+  IF ~~ THEN DO ~SetGlobal("DS_A_FULLER","GLOBAL",1)~ GOTO ds_a_fuller_1
+END
+END
+
+APPEND ~FULLER~
+IF ~~ THEN BEGIN ds_a_fuller_1
+  SAY @1033
+  IF ~~ THEN REPLY @1034 GOTO ds_a_fuller_r0
+  IF ~~ THEN REPLY @1035 GOTO ds_a_fuller_r1
+END
+END
+
+APPEND ~FULLER~
+IF ~~ THEN BEGIN ds_a_fuller_r0
+  SAY @1036
+  IF ~~ THEN EXTERN ~FULLER~ 0
+END
+END
+
+APPEND ~FULLER~
+IF ~~ THEN BEGIN ds_a_fuller_r1
+  SAY @1037
+  IF ~~ THEN EXTERN ~FULLER~ 0
+END
+END
+
+APPEND ~DREPPI~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_DREPPIN","GLOBAL",0) Global("TalkedToDreppin","GLOBAL",0)~ THEN BEGIN ds_a_dreppin_0
+  SAY @1038
+  IF ~~ THEN DO ~SetGlobal("DS_A_DREPPIN","GLOBAL",1)~ GOTO ds_a_dreppin_1
+END
+END
+
+APPEND ~DREPPI~
+IF ~~ THEN BEGIN ds_a_dreppin_1
+  SAY @1039
+  IF ~~ THEN REPLY @1040 GOTO ds_a_dreppin_r0
+  IF ~~ THEN REPLY @1041 GOTO ds_a_dreppin_r1
+END
+END
+
+APPEND ~DREPPI~
+IF ~~ THEN BEGIN ds_a_dreppin_r0
+  SAY @1042
+  IF ~~ THEN EXTERN ~DREPPI~ ds_copie_dreppi_2
+END
+END
+
+APPEND ~DREPPI~
+IF ~~ THEN BEGIN ds_a_dreppin_r1
+  SAY @1043
+  IF ~~ THEN EXTERN ~DREPPI~ ds_copie_dreppi_2
+END
+END
+
+APPEND ~PHLYDI~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_PHLYDIA","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_a_phlydia_0
+  SAY @1044
+  IF ~~ THEN DO ~SetGlobal("DS_A_PHLYDIA","GLOBAL",1)~ GOTO ds_a_phlydia_1
+END
+END
+
+APPEND ~PHLYDI~
+IF ~~ THEN BEGIN ds_a_phlydia_1
+  SAY @1045
+  IF ~~ THEN REPLY @1046 GOTO ds_a_phlydia_r0
+  IF ~~ THEN REPLY @1047 GOTO ds_a_phlydia_r1
+  IF ~~ THEN REPLY @1048 GOTO ds_a_phlydia_r2
+END
+END
+
+APPEND ~PHLYDI~
+IF ~~ THEN BEGIN ds_a_phlydia_r0
+  SAY @1049
+  IF ~~ THEN DO ~GiveItemCreate("DSBOOK1",LastTalkedToBy,0,0,0)~ EXTERN ~PHLYDI~ ds_copie_phlydi_3
+END
+END
+
+APPEND ~PHLYDI~
+IF ~~ THEN BEGIN ds_a_phlydia_r1
+  SAY @1050
+  IF ~~ THEN DO ~GiveItemCreate("DSBOOK1",LastTalkedToBy,0,0,0)~ EXTERN ~PHLYDI~ ds_copie_phlydi_3
+END
+END
+
+APPEND ~PHLYDI~
+IF ~~ THEN BEGIN ds_a_phlydia_r2
+  SAY @1051
+  IF ~~ THEN EXTERN ~PHLYDI~ ds_copie_phlydi_3
+END
+END
+
+APPEND ~JONDAL~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_JONDAL","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_a_jondal_0
+  SAY @1052
+  IF ~~ THEN DO ~SetGlobal("DS_A_JONDAL","GLOBAL",1)~ GOTO ds_a_jondal_1
+END
+END
+
+APPEND ~JONDAL~
+IF ~~ THEN BEGIN ds_a_jondal_1
+  SAY @1053
+  IF ~~ THEN REPLY @1054 GOTO ds_a_jondal_r0
+  IF ~~ THEN REPLY @1055 GOTO ds_a_jondal_r1
+END
+END
+
+APPEND ~JONDAL~
+IF ~~ THEN BEGIN ds_a_jondal_r0
+  SAY @1056
+  IF ~!Class(Player1,MONK)~ THEN EXTERN ~JONDAL~ ds_copie_jondal_4
+  IF ~Class(Player1,MONK)~ THEN EXTERN ~JONDAL~ ds_copie_jondal_5
+END
+END
+
+APPEND ~JONDAL~
+IF ~~ THEN BEGIN ds_a_jondal_r1
+  SAY @1057
+  IF ~!Class(Player1,MONK)~ THEN EXTERN ~JONDAL~ ds_copie_jondal_4
+  IF ~Class(Player1,MONK)~ THEN EXTERN ~JONDAL~ ds_copie_jondal_5
+END
+END
+
+APPEND ~REEVOR~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_REEVOR","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_a_reevor_0
+  SAY @1058
+  IF ~~ THEN DO ~SetGlobal("DS_A_REEVOR","GLOBAL",1)~ GOTO ds_a_reevor_1
+END
+END
+
+APPEND ~REEVOR~
+IF ~~ THEN BEGIN ds_a_reevor_1
+  SAY @1059
+  IF ~~ THEN REPLY @1060 GOTO ds_a_reevor_r0
+  IF ~~ THEN REPLY @1061 GOTO ds_a_reevor_r1
+  IF ~~ THEN REPLY @1062 GOTO ds_a_reevor_r2
+END
+END
+
+APPEND ~REEVOR~
+IF ~~ THEN BEGIN ds_a_reevor_r0
+  SAY @1063
+  IF ~~ THEN EXTERN ~REEVOR~ 0
+END
+END
+
+APPEND ~REEVOR~
+IF ~~ THEN BEGIN ds_a_reevor_r1
+  SAY @1064
+  IF ~~ THEN EXTERN ~REEVOR~ 0
+END
+END
+
+APPEND ~REEVOR~
+IF ~~ THEN BEGIN ds_a_reevor_r2
+  SAY @1065
+  IF ~~ THEN EXTERN ~REEVOR~ 0
+END
+END
+
+EXTEND_BOTTOM ~KARAN~ 0
+  IF ~%DS_DROW% Global("DS_A_KARAN","GLOBAL",0)~ THEN DO ~SetGlobal("DS_A_KARAN","GLOBAL",1)~ GOTO ds_a_karan_0
+END
+
+APPEND ~KARAN~
+IF ~~ THEN BEGIN ds_a_karan_0
+  SAY @1066
+  IF ~~ THEN GOTO ds_a_karan_1
+END
+END
+
+APPEND ~KARAN~
+IF ~~ THEN BEGIN ds_a_karan_1
+  SAY @1067
+  IF ~~ THEN REPLY @1068 GOTO ds_a_karan_r0
+  IF ~~ THEN REPLY @1069 GOTO ds_a_karan_r1
+  IF ~~ THEN REPLY @1070 GOTO ds_a_karan_r2
+END
+END
+
+APPEND ~KARAN~
+IF ~~ THEN BEGIN ds_a_karan_r0
+  SAY @1071
+  IF ~~ THEN EXTERN ~KARAN~ ds_copie_karan_6
+END
+END
+
+APPEND ~KARAN~
+IF ~~ THEN BEGIN ds_a_karan_r1
+  SAY @1072
+  IF ~~ THEN EXTERN ~KARAN~ ds_copie_karan_6
+END
+END
+
+APPEND ~KARAN~
+IF ~~ THEN BEGIN ds_a_karan_r2
+  SAY @1073
+  IF ~~ THEN EXTERN ~KARAN~ ds_copie_karan_6
+END
+END
+
+EXTEND_BOTTOM ~TETHTO2~ 1
+  IF ~%DS_DROW% Global("DS_A_TETHTORIL","GLOBAL",0)~ THEN DO ~SetGlobal("DS_A_TETHTORIL","GLOBAL",1)~ GOTO ds_a_tethtoril_0
+END
+
+APPEND ~TETHTO2~
+IF ~~ THEN BEGIN ds_a_tethtoril_0
+  SAY @1074
+  IF ~~ THEN GOTO ds_a_tethtoril_1
+END
+END
+
+APPEND ~TETHTO2~
+IF ~~ THEN BEGIN ds_a_tethtoril_1
+  SAY @1075
+  IF ~~ THEN REPLY @1076 GOTO ds_a_tethtoril_r0
+  IF ~~ THEN REPLY @1077 GOTO ds_a_tethtoril_r1
+  IF ~~ THEN REPLY @1078 GOTO ds_a_tethtoril_r2
+END
+END
+
+APPEND ~TETHTO2~
+IF ~~ THEN BEGIN ds_a_tethtoril_r0
+  SAY @1079
+  COPY_TRANS ~TETHTO2~ 1
+END
+END
+
+APPEND ~TETHTO2~
+IF ~~ THEN BEGIN ds_a_tethtoril_r1
+  SAY @1080
+  COPY_TRANS ~TETHTO2~ 1
+END
+END
+
+APPEND ~TETHTO2~
+IF ~~ THEN BEGIN ds_a_tethtoril_r2
+  SAY @1081
+  COPY_TRANS ~TETHTO2~ 1
+END
+END
+
+APPEND ~WINTHR3~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_A_FAUXWINTHROP","GLOBAL",0)~ THEN BEGIN ds_a_fauxwinthrop_0
+  SAY @1082
+  IF ~~ THEN REPLY @1083 DO ~SetGlobal("DS_A_FAUXWINTHROP","GLOBAL",1) ApplySpell(Myself,DOPPLEGANGER_CHANGE_DEFAULT_LESSER)~ EXIT
+  IF ~~ THEN REPLY @1084 DO ~SetGlobal("DS_A_FAUXWINTHROP","GLOBAL",1) ApplySpell(Myself,DOPPLEGANGER_CHANGE_DEFAULT_LESSER)~ EXIT
+END
+END
+
+INTERJECT_COPY_TRANS ~ULRAUN~ 4 ~DS_A_ULRAUNT~
+  == ~ULRAUN~ IF ~%DS_DROW%~ THEN @1085
+  == ~ULRAUN~ @1086
+END
+
+INTERJECT_COPY_TRANS ~ULRAUN~ 5 ~DS_A_ULRAUNT~
+  == ~ULRAUN~ IF ~%DS_DROW%~ THEN @1087
+  == ~ULRAUN~ @1088
+END
+
+INTERJECT_COPY_TRANS ~FLAM2~ 0 ~DS_C_FLAM2~
+  == ~FLAM2~ IF ~%DS_DROW%~ THEN @1091
+  == ~FLAM2~ @1092
+  == ~VICONI~ @1093
+END
+
+INTERJECT ~FLAM2~ 3 ~DS_C_FLAM2_LIVRE~
+  == ~FLAM2~ IF ~%DS_DROW%~ THEN @1094
+END IF ~~ THEN DO ~Enemy()~ EXIT
+
+ADD_TRANS_TRIGGER ~VICONI~ 0 ~!%DS_DROW%~ DO 0
+EXTEND_BOTTOM ~VICONI~ 0
+  IF ~%DS_DROW%~ THEN REPLY #529 GOTO ds_f_viconi_2
+END
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_f_viconi_2
+  SAY @1095
+  COPY_TRANS ~VICONI~ 2
+END
+END
+
+APPEND ~VICONI~
+IF WEIGHT #-1 ~%DS_DROW% Dead("FlamingFist2") Global("DS_C_FLAM2_LIVRE","GLOBAL",1)~ THEN BEGIN ds_f_viconi_livree
+  SAY @1096
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
+END
+END
+
+APPEND ~VICONI~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_C_VICONIA","GLOBAL",0) !NumberOfTimesTalkedTo(0) Dead("FlamingFist2") Global("DS_C_FLAM2_LIVRE","GLOBAL",0) ReactionGT(LastTalkedToBy,HOSTILE_UPPER)~ THEN BEGIN ds_c_viconia_0
+  SAY @1097
+  IF ~~ THEN DO ~SetGlobal("DS_C_VICONIA","GLOBAL",1)~ GOTO ds_c_viconia_1
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_1
+  SAY @1098
+  IF ~~ THEN REPLY @1099 GOTO ds_c_viconia_r0
+  IF ~~ THEN REPLY @1100 GOTO ds_c_viconia_r1
+  IF ~~ THEN REPLY @1101 GOTO ds_c_viconia_r2
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_r0
+  SAY @1102
+  IF ~~ THEN EXTERN ~VICONI~ ds_c_viconia_fin
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_r1
+  SAY @1103
+  IF ~~ THEN EXTERN ~VICONI~ ds_c_viconia_fin
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_r2
+  SAY @1104
+  IF ~~ THEN EXTERN ~VICONI~ ds_c_viconia_fin
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_fin
+  SAY @1105
+  IF ~~ THEN REPLY @1106 GOTO ds_c_viconia_rec0
+  IF ~~ THEN REPLY @1107 GOTO ds_c_viconia_rec1
+  IF ~~ THEN REPLY @1108 GOTO ds_c_viconia_rec2
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_rec0
+  SAY @1109
+  COPY_TRANS ~VICONI~ 8
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_rec1
+  SAY @1110
+  COPY_TRANS ~VICONI~ 9
+END
+END
+
+APPEND ~VICONI~
+IF ~~ THEN BEGIN ds_c_viconia_rec2
+  SAY @1111
+  COPY_TRANS ~VICONI~ 8
+END
+END
+
+APPEND ~VICONP~
+IF WEIGHT #-1 ~%DS_DROW% !HappinessLT(Myself,UNHAPPY_ANGRY_BOUNDARY) Global("KickedOut","LOCALS",0)~ THEN BEGIN ds_c_viconp_0
+  SAY @1112
+  COPY_TRANS ~VICONP~ 0
+END
+IF WEIGHT #-1 ~%DS_DROW% HappinessLT(Myself,UNHAPPY_ANGRY_BOUNDARY)~ THEN BEGIN ds_c_viconp_1
+  SAY @1113
+  COPY_TRANS ~VICONP~ 1
+END
+IF WEIGHT #-1 ~%DS_DROW% !HappinessLT(Myself,UNHAPPY_ANGRY_BOUNDARY) Global("KickedOut","LOCALS",1)~ THEN BEGIN ds_c_viconp_2
+  SAY @1114
+  IF ~~ THEN REPLY @1115 GOTO 3
+  IF ~~ THEN REPLY @1116 GOTO ds_c_viconp_4
+END
+IF ~~ THEN BEGIN ds_c_viconp_4
+  SAY @1117
+  COPY_TRANS ~VICONP~ 4
+END
+END
+
+APPEND ~DRIZZT~
+IF WEIGHT #2 ~%DS_DROW% Global("DS_C_DRIZZT","GLOBAL",0) IsGabber(Player1) Global("HelpDrizzt","GLOBAL",1) Global("DrizztGnolls","GLOBAL",12)~ THEN BEGIN ds_c_drizzt_0
+  SAY @1118
+  IF ~~ THEN REPLY @1119 DO ~SetGlobal("DS_C_DRIZZT","GLOBAL",1)~ GOTO ds_c_drizzt_r0
+  IF ~~ THEN REPLY @1120 DO ~SetGlobal("DS_C_DRIZZT","GLOBAL",1)~ GOTO ds_c_drizzt_r1
+  IF ~~ THEN REPLY @1121 DO ~SetGlobal("DS_C_DRIZZT","GLOBAL",1)~ GOTO ds_c_drizzt_r2
+END
+END
+
+APPEND ~DRIZZT~
+IF ~~ THEN BEGIN ds_c_drizzt_r0
+  SAY @1122
+  IF ~~ THEN EXTERN ~DRIZZT~ ds_c_drizzt_fin
+END
+END
+
+APPEND ~DRIZZT~
+IF ~~ THEN BEGIN ds_c_drizzt_r1
+  SAY @1123
+  IF ~~ THEN EXTERN ~DRIZZT~ ds_c_drizzt_fin
+END
+END
+
+APPEND ~DRIZZT~
+IF ~~ THEN BEGIN ds_c_drizzt_r2
+  SAY @1124
+  IF ~~ THEN EXTERN ~DRIZZT~ ds_c_drizzt_fin
+END
+END
+
+APPEND ~DRIZZT~
+IF ~~ THEN BEGIN ds_c_drizzt_fin
+  SAY @1125
+  IF ~~ THEN EXTERN ~DRIZZT~ ds_copie_drizzt_7
+END
+END
+
+ADD_TRANS_TRIGGER ~BAELOTH~ 2 ~!%DS_DROW%~ DO 0 1
+EXTEND_BOTTOM ~BAELOTH~ 2
+  IF ~%DS_DROW%~ THEN REPLY #31863 GOTO ds_c_baeloth_0
+  IF ~%DS_DROW%~ THEN REPLY #31864 GOTO ds_c_baelotb_0
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_f_baeloth_19
+  SAY @1128
+  IF ~~ THEN REPLY #31914 GOTO 20
+  IF ~~ THEN REPLY @1126 GOTO 28
+END
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 3 ~!%DS_DROW%~ DO 1 2 4 5
+EXTEND_BOTTOM ~BAELOTH~ 3
+  IF ~%DS_DROW% !InParty("NEERA")~ THEN REPLY #31867 GOTO ds_c_baeloth_4
+  IF ~%DS_DROW% !InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+  IF ~%DS_DROW% InParty("NEERA")~ THEN REPLY #31867 GOTO ds_c_baeloth_4
+  IF ~%DS_DROW% InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 4 ~!%DS_DROW%~ DO 2 5
+EXTEND_BOTTOM ~BAELOTH~ 4
+  IF ~%DS_DROW% !InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+  IF ~%DS_DROW% InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 5 ~!%DS_DROW%~ DO 1 3
+EXTEND_BOTTOM ~BAELOTH~ 5
+  IF ~%DS_DROW% !InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+  IF ~%DS_DROW% InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 6 ~!%DS_DROW%~ DO 2 5
+EXTEND_BOTTOM ~BAELOTH~ 6
+  IF ~%DS_DROW% !InParty("VICONIA")~ THEN REPLY @1126 GOTO 28
+  IF ~%DS_DROW% InParty("VICONIA")~ THEN REPLY @1126 EXTERN ~VICONJ~ 33
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 9 ~!%DS_DROW%~ DO 2
+EXTEND_BOTTOM ~BAELOTH~ 9
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 10 ~!%DS_DROW%~ DO 1 3
+EXTEND_BOTTOM ~BAELOTH~ 10
+  IF ~%DS_DROW% !InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+  IF ~%DS_DROW% InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 11 ~!%DS_DROW%~ DO 2 5
+EXTEND_BOTTOM ~BAELOTH~ 11
+  IF ~%DS_DROW% !InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+  IF ~%DS_DROW% InParty("NEERA")~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 12 ~!%DS_DROW%~ DO 2
+EXTEND_BOTTOM ~BAELOTH~ 12
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 13 ~!%DS_DROW%~ DO 2
+EXTEND_BOTTOM ~BAELOTH~ 13
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 18 ~!%DS_DROW%~ DO 0 2
+EXTEND_BOTTOM ~BAELOTH~ 18
+  IF ~%DS_DROW%~ THEN REPLY #31911 GOTO ds_f_baeloth_19
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 19 ~!%DS_DROW%~ DO 1
+EXTEND_BOTTOM ~BAELOTH~ 19
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 20 ~!%DS_DROW%~ DO 1
+EXTEND_BOTTOM ~BAELOTH~ 20
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 21 ~!%DS_DROW%~ DO 5
+EXTEND_BOTTOM ~BAELOTH~ 21
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 23 ~!%DS_DROW%~ DO 0
+EXTEND_BOTTOM ~BAELOTH~ 23
+  IF ~%DS_DROW%~ THEN REPLY @1127 GOTO 24
+END
+ADD_TRANS_TRIGGER ~BAELOTH~ 26 ~!%DS_DROW%~ DO 2
+EXTEND_BOTTOM ~BAELOTH~ 26
+  IF ~%DS_DROW%~ THEN REPLY @1126 GOTO 28
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_0
+  SAY @1129
+  IF ~~ THEN GOTO ds_c_baeloth_1
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_1
+  SAY @1130
+  IF ~~ THEN REPLY @1131 GOTO ds_c_baeloth_r0
+  IF ~~ THEN REPLY @1132 GOTO ds_c_baeloth_r1
+  IF ~~ THEN REPLY @1133 GOTO ds_c_baeloth_r2
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_r0
+  SAY @1134
+  IF ~~ THEN EXTERN ~BAELOTH~ ds_c_baeloth_fin
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_r1
+  SAY @1135
+  IF ~~ THEN EXTERN ~BAELOTH~ ds_c_baeloth_fin
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_r2
+  SAY @1136
+  IF ~~ THEN EXTERN ~BAELOTH~ ds_c_baeloth_fin
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_fin
+  SAY @1137
+  COPY_TRANS_LATE ~BAELOTH~ 3
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baeloth_4
+  SAY @1138
+  COPY_TRANS_LATE ~BAELOTH~ 4
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baelotb_0
+  SAY @1139
+  IF ~~ THEN GOTO ds_c_baelotb_1
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baelotb_1
+  SAY @1140
+  IF ~~ THEN REPLY @1141 GOTO ds_c_baelotb_r0
+  IF ~~ THEN REPLY @1142 GOTO ds_c_baelotb_r1
+  IF ~~ THEN REPLY @1143 GOTO ds_c_baelotb_r2
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baelotb_r0
+  SAY @1144
+  IF ~~ THEN EXTERN ~BAELOTH~ 6
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baelotb_r1
+  SAY @1145
+  IF ~~ THEN EXTERN ~BAELOTH~ 6
+END
+END
+
+APPEND ~BAELOTH~
+IF ~~ THEN BEGIN ds_c_baelotb_r2
+  SAY @1146
+  IF ~~ THEN EXTERN ~BAELOTH~ 6
+END
+END
+
+APPEND ~DSCVIC~
+IF ~Global("DS_C_VB","GLOBAL",1)~ THEN BEGIN ds_c_vic3a_0
+  SAY @1147
+  IF ~~ THEN REPLY @1148 DO ~SetGlobal("DS_C_VB","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3a_r0
+  IF ~~ THEN REPLY @1149 DO ~SetGlobal("DS_C_VB","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3a_r1
+  IF ~~ THEN REPLY @1150 DO ~SetGlobal("DS_C_VB","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3a_r2
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3a_r0
+  SAY @1151
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3a_r1
+  SAY @1152
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3a_r2
+  SAY @1153
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~Global("DS_C_VB","GLOBAL",3)~ THEN BEGIN ds_c_vic3b_0
+  SAY @1154
+  IF ~~ THEN DO ~SetGlobal("DS_C_VB","GLOBAL",4) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3b_1
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3b_1
+  SAY @1155
+  IF ~~ THEN REPLY @1156 GOTO ds_c_vic3b_r0
+  IF ~~ THEN REPLY @1157 GOTO ds_c_vic3b_r1
+  IF ~~ THEN REPLY @1158 GOTO ds_c_vic3b_r2
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3b_r0
+  SAY @1159
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3b_r1
+  SAY @1160
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3b_r2
+  SAY @1161
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~Global("DS_C_VB","GLOBAL",5)~ THEN BEGIN ds_c_vic3c_0
+  SAY @1162
+  IF ~~ THEN REPLY @1163 DO ~SetGlobal("DS_C_VB","GLOBAL",6) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3c_r0
+  IF ~~ THEN REPLY @1164 DO ~SetGlobal("DS_C_VB","GLOBAL",6) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3c_r1
+  IF ~~ THEN REPLY @1165 DO ~SetGlobal("DS_C_VB","GLOBAL",6) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3c_r2
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3c_r0
+  SAY @1166
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3c_r1
+  SAY @1167
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3c_r2
+  SAY @1168
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~Global("DS_C_VB","GLOBAL",7)~ THEN BEGIN ds_c_vic3d_0
+  SAY @1169
+  IF ~~ THEN DO ~SetGlobal("DS_C_VB","GLOBAL",8) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_c_vic3d_1
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3d_1
+  SAY @1170
+  IF ~~ THEN GOTO ds_c_vic3d_2
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3d_2
+  SAY @1171
+  IF ~~ THEN REPLY @1172 GOTO ds_c_vic3d_r0
+  IF ~~ THEN REPLY @1173 GOTO ds_c_vic3d_r1
+  IF ~~ THEN REPLY @1174 GOTO ds_c_vic3d_r2
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3d_r0
+  SAY @1175
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3d_r1
+  SAY @1176
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSCVIC~
+IF ~~ THEN BEGIN ds_c_vic3d_r2
+  SAY @1177
+  IF ~~ THEN EXIT
+END
+END
+
+INTERJECT_COPY_TRANS ~FRIEND~ 0 ~DS_B_PORTIER~
+  == ~FRIEND~ IF ~%DS_DROW%~ THEN @1178
+END
+
+INTERJECT_COPY_TRANS ~TARNES~ 0 ~DS_B_TARNESH~
+  == ~TARNES~ IF ~%DS_DROW%~ THEN @1179
+END
+
+APPEND ~NESSIE~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_nessie_0
+  SAY @1180
+  COPY_TRANS ~NESSIE~ 0
+END
+END
+
+APPEND ~UNSHEY~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_UNSHEY","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_unshey_0
+  SAY @1181
+  IF ~~ THEN DO ~SetGlobal("DS_B_UNSHEY","GLOBAL",1)~ GOTO ds_b_unshey_1
+END
+END
+
+APPEND ~UNSHEY~
+IF ~~ THEN BEGIN ds_b_unshey_1
+  SAY @1182
+  IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER)~ THEN EXTERN ~UNSHEY~ 1
+  IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN EXTERN ~UNSHEY~ 0
+END
+END
+
+APPEND ~GELLAN~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_GELLANA","GLOBAL",0) IsGabber(Player1) !PartyHasItem("MISC13")~ THEN BEGIN ds_b_gellana_0
+  SAY @1183
+  IF ~~ THEN DO ~SetGlobal("DS_B_GELLANA","GLOBAL",1)~ GOTO ds_b_gellana_1
+END
+END
+
+APPEND ~GELLAN~
+IF ~~ THEN BEGIN ds_b_gellana_1
+  SAY @1184
+  IF ~~ THEN REPLY @1185 GOTO ds_b_gellana_r0
+  IF ~~ THEN REPLY @1186 GOTO ds_b_gellana_r1
+  IF ~~ THEN REPLY @1187 GOTO ds_b_gellana_r2
+END
+END
+
+APPEND ~GELLAN~
+IF ~~ THEN BEGIN ds_b_gellana_r0
+  SAY @1188
+  COPY_TRANS ~GELLAN~ 0
+END
+END
+
+APPEND ~GELLAN~
+IF ~~ THEN BEGIN ds_b_gellana_r1
+  SAY @1189
+  COPY_TRANS ~GELLAN~ 0
+END
+END
+
+APPEND ~GELLAN~
+IF ~~ THEN BEGIN ds_b_gellana_r2
+  SAY @1190
+  COPY_TRANS ~GELLAN~ 0
+END
+END
+
+APPEND ~LANDRI~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_LANDRIN","GLOBAL",0) NumberOfTimesTalkedTo(0) !StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN ds_b_landrin_0
+  SAY @1191
+  IF ~~ THEN DO ~SetGlobal("DS_B_LANDRIN","GLOBAL",1)~ GOTO ds_b_landrin_1
+END
+END
+
+APPEND ~LANDRI~
+IF ~~ THEN BEGIN ds_b_landrin_1
+  SAY @1192
+  IF ~ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)~ THEN EXTERN ~LANDRI~ ds_copie_landri_8
+  IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~ THEN EXTERN ~LANDRI~ ds_copie_landri_9
+  IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN EXTERN ~LANDRI~ ds_copie_landri_10
+END
+END
+
+APPEND ~TOWNCR~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_CRIEUR","GLOBAL",0) !StateCheck(Myself,STATE_CHARMED) !Dead("Bassilus") !CheckStatLT(LastTalkedToBy(Myself),6,REPUTATION)~ THEN BEGIN ds_b_crieur_0
+  SAY @1193
+  IF ~~ THEN DO ~SetGlobal("DS_B_CRIEUR","GLOBAL",1)~ GOTO ds_b_crieur_1
+END
+END
+
+APPEND ~TOWNCR~
+IF ~~ THEN BEGIN ds_b_crieur_1
+  SAY @1194
+  IF ~~ THEN EXTERN ~TOWNCR~ 0
+END
+END
+
+APPEND ~MTOWBE~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_BEREGOST_H","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_beregost_h_0
+  SAY @1195
+  IF ~~ THEN DO ~SetGlobal("DS_B_BEREGOST_H","LOCALS",1)~ EXIT
+END
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_BEREGOST_H","LOCALS",0) RandomNum(3,2)~ THEN BEGIN ds_b_beregost_h_1
+  SAY @1196
+  IF ~~ THEN DO ~SetGlobal("DS_B_BEREGOST_H","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~FTOWBE~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_BEREGOST_F","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_beregost_f_0
+  SAY @1197
+  IF ~~ THEN DO ~SetGlobal("DS_B_BEREGOST_F","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~FARMBE~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_BEREGOST_FERMIER","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_beregost_fermier_0
+  SAY @1198
+  IF ~~ THEN DO ~SetGlobal("DS_B_BEREGOST_FERMIER","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~BOYBE1~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_GAMIN","GLOBAL",0) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_gamin_0
+  SAY @1199
+  IF ~~ THEN DO ~SetGlobal("DS_B_GAMIN","GLOBAL",1)~ GOTO ds_b_gamin_1
+END
+END
+
+APPEND ~BOYBE1~
+IF ~~ THEN BEGIN ds_b_gamin_1
+  SAY @1200
+  IF ~ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)~ THEN EXTERN ~BOYBE1~ 1
+  IF ~ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)~ THEN EXTERN ~BOYBE1~ 0
+END
+END
+
+APPEND ~FIREBE~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_FIREBEAD","GLOBAL",0) IsGabber(Player1) Global("TalkedToFirebead","GLOBAL",0) Global("FirebeadDone","GLOBAL",0)~ THEN BEGIN ds_b_firebead_0
+  SAY @1201
+  IF ~~ THEN DO ~SetGlobal("DS_B_FIREBEAD","GLOBAL",1)~ GOTO ds_b_firebead_1
+END
+END
+
+APPEND ~FIREBE~
+IF ~~ THEN BEGIN ds_b_firebead_1
+  SAY @1202
+  IF ~~ THEN REPLY @1203 GOTO ds_b_firebead_r0
+  IF ~~ THEN REPLY @1204 GOTO ds_b_firebead_r1
+  IF ~~ THEN REPLY @1205 GOTO ds_b_firebead_r2
+END
+END
+
+APPEND ~FIREBE~
+IF ~~ THEN BEGIN ds_b_firebead_r0
+  SAY @1206
+  IF ~~ THEN EXTERN ~FIREBE~ ds_copie_firebe_11
+END
+END
+
+APPEND ~FIREBE~
+IF ~~ THEN BEGIN ds_b_firebead_r1
+  SAY @1207
+  IF ~~ THEN EXTERN ~FIREBE~ ds_copie_firebe_11
+END
+END
+
+APPEND ~FIREBE~
+IF ~~ THEN BEGIN ds_b_firebead_r2
+  SAY @1208
+  IF ~~ THEN EXTERN ~FIREBE~ ds_copie_firebe_11
+END
+END
+
+APPEND ~BART4~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0) ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)~ THEN BEGIN ds_b_jongleur_0
+  SAY @1209
+  COPY_TRANS ~BART4~ 0
+END
+END
+
+APPEND ~MARL~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_MARL","GLOBAL",0) NumberOfTimesTalkedTo(0) !Dead("Dunkin") !StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN ds_b_marl_0
+  SAY @1210
+  IF ~~ THEN DO ~SetGlobal("DS_B_MARL","GLOBAL",1)~ EXTERN ~MARL~ ds_f_marl_1
+END
+END
+
+APPEND ~MARL~
+IF ~~ THEN BEGIN ds_f_marl_1
+  SAY @1211
+  IF ~~ THEN REPLY #2397 GOTO 4
+  IF ~~ THEN REPLY #2398 GOTO 3
+  IF ~~ THEN REPLY #2399 GOTO ds_f_marl_5
+  IF ~~ THEN REPLY #2400 GOTO 2
+END
+IF ~~ THEN BEGIN ds_f_marl_5
+  SAY @1212
+  COPY_TRANS ~MARL~ 5
+END
+END
+
+APPEND ~KELDDA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_KELDDATH","GLOBAL",0) IsGabber(Player1) !Dead("bassilus") !Dead("CORWYVRN")~ THEN BEGIN ds_b_kelddath_0
+  SAY @1213
+  IF ~~ THEN DO ~SetGlobal("DS_B_KELDDATH","GLOBAL",1)~ GOTO ds_b_kelddath_1
+END
+END
+
+APPEND ~KELDDA~
+IF ~~ THEN BEGIN ds_b_kelddath_1
+  SAY @1214
+  IF ~~ THEN REPLY @1215 GOTO ds_b_kelddath_r0
+  IF ~~ THEN REPLY @1216 GOTO ds_b_kelddath_r1
+  IF ~~ THEN REPLY @1217 GOTO ds_b_kelddath_r2
+END
+END
+
+APPEND ~KELDDA~
+IF ~~ THEN BEGIN ds_b_kelddath_r0
+  SAY @1218
+  COPY_TRANS ~KELDDA~ 0
+END
+END
+
+APPEND ~KELDDA~
+IF ~~ THEN BEGIN ds_b_kelddath_r1
+  SAY @1219
+  COPY_TRANS ~KELDDA~ 0
+END
+END
+
+APPEND ~KELDDA~
+IF ~~ THEN BEGIN ds_b_kelddath_r2
+  SAY @1220
+  COPY_TRANS ~KELDDA~ 0
+END
+END
+
+APPEND ~BERRUN~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_BERRUN","GLOBAL",0) NumTimesTalkedTo(0)~ THEN BEGIN ds_b_berrun_0
+  SAY @1221
+  IF ~~ THEN REPLY @1222 DO ~SetGlobal("DS_B_BERRUN","GLOBAL",1)~ GOTO ds_b_berrun_r0
+  IF ~~ THEN REPLY @1223 DO ~SetGlobal("DS_B_BERRUN","GLOBAL",1)~ GOTO ds_b_berrun_r1
+  IF ~~ THEN REPLY @1224 DO ~SetGlobal("DS_B_BERRUN","GLOBAL",1)~ GOTO ds_b_berrun_r2
+END
+END
+
+APPEND ~BERRUN~
+IF ~~ THEN BEGIN ds_b_berrun_r0
+  SAY @1225
+  IF ~True()~ THEN EXTERN ~BERRUN~ ds_copie_berrun_12
+  IF ~InParty("MONTARON") !Dead("Montaron")~ THEN EXTERN ~BERRUN~ 3
+  IF ~InParty("XZAR") !Dead("Xzar")~ THEN EXTERN ~BERRUN~ 2
+  IF ~InParty("KHALID") !Dead("Khalid")~ THEN EXTERN ~BERRUN~ ds_copie_berrun_13
+  IF ~InParty("JAHEIRA") !Dead("Jaheira")~ THEN EXTERN ~BERRUN~ ds_copie_berrun_14
+END
+END
+
+APPEND ~BERRUN~
+IF ~~ THEN BEGIN ds_b_berrun_r1
+  SAY @1226
+  IF ~True()~ THEN EXTERN ~BERRUN~ ds_copie_berrun_12
+  IF ~InParty("MONTARON") !Dead("Montaron")~ THEN EXTERN ~BERRUN~ 3
+  IF ~InParty("XZAR") !Dead("Xzar")~ THEN EXTERN ~BERRUN~ 2
+  IF ~InParty("KHALID") !Dead("Khalid")~ THEN EXTERN ~BERRUN~ ds_copie_berrun_13
+  IF ~InParty("JAHEIRA") !Dead("Jaheira")~ THEN EXTERN ~BERRUN~ ds_copie_berrun_14
+END
+END
+
+APPEND ~BERRUN~
+IF ~~ THEN BEGIN ds_b_berrun_r2
+  SAY @1227
+  IF ~True()~ THEN EXTERN ~BERRUN~ ds_copie_berrun_12
+  IF ~InParty("MONTARON") !Dead("Montaron")~ THEN EXTERN ~BERRUN~ 3
+  IF ~InParty("XZAR") !Dead("Xzar")~ THEN EXTERN ~BERRUN~ 2
+  IF ~InParty("KHALID") !Dead("Khalid")~ THEN EXTERN ~BERRUN~ ds_copie_berrun_13
+  IF ~InParty("JAHEIRA") !Dead("Jaheira")~ THEN EXTERN ~BERRUN~ ds_copie_berrun_14
+END
+END
+
+APPEND ~NOOBER~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_NOOBER","GLOBAL",0) IsGabber(Player1) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_noober_0
+  SAY @1228
+  IF ~~ THEN DO ~SetGlobal("DS_B_NOOBER","GLOBAL",1)~ GOTO ds_b_noober_1
+END
+END
+
+APPEND ~NOOBER~
+IF ~~ THEN BEGIN ds_b_noober_1
+  SAY @1229
+  IF ~~ THEN REPLY @1230 GOTO ds_b_noober_r0
+  IF ~~ THEN REPLY @1231 GOTO ds_b_noober_r1
+  IF ~~ THEN REPLY @1232 GOTO ds_b_noober_r2
+END
+END
+
+APPEND ~NOOBER~
+IF ~~ THEN BEGIN ds_b_noober_r0
+  SAY @1233
+  IF ~~ THEN EXTERN ~NOOBER~ 1
+END
+END
+
+APPEND ~NOOBER~
+IF ~~ THEN BEGIN ds_b_noober_r1
+  SAY @1234
+  IF ~~ THEN EXTERN ~NOOBER~ 1
+END
+END
+
+APPEND ~NOOBER~
+IF ~~ THEN BEGIN ds_b_noober_r2
+  SAY @1235
+  IF ~~ THEN EXTERN ~NOOBER~ 1
+END
+END
+
+APPEND ~VOLO~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_VOLO","GLOBAL",0) IsGabber(Player1) NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_volo_0
+  SAY @1236
+  IF ~~ THEN DO ~SetGlobal("DS_B_VOLO","GLOBAL",1)~ GOTO ds_b_volo_1
+END
+END
+
+APPEND ~VOLO~
+IF ~~ THEN BEGIN ds_b_volo_1
+  SAY @1237
+  IF ~~ THEN REPLY @1238 GOTO ds_b_volo_r0
+  IF ~~ THEN REPLY @1239 GOTO ds_b_volo_r1
+  IF ~~ THEN REPLY @1240 GOTO ds_b_volo_r2
+END
+END
+
+APPEND ~VOLO~
+IF ~~ THEN BEGIN ds_b_volo_r0
+  SAY @1241
+  COPY_TRANS ~VOLO~ 0
+END
+END
+
+APPEND ~VOLO~
+IF ~~ THEN BEGIN ds_b_volo_r1
+  SAY @1242
+  COPY_TRANS ~VOLO~ 0
+END
+END
+
+APPEND ~VOLO~
+IF ~~ THEN BEGIN ds_b_volo_r2
+  SAY @1243
+  COPY_TRANS ~VOLO~ 0
+END
+END
+
+APPEND ~MTOWNA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_NASHKEL_H","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_nashkel_h_0
+  SAY @1244
+  IF ~~ THEN DO ~SetGlobal("DS_B_NASHKEL_H","LOCALS",1)~ EXIT
+END
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_NASHKEL_H","LOCALS",0) RandomNum(3,2)~ THEN BEGIN ds_b_nashkel_h_1
+  SAY @1245
+  IF ~~ THEN DO ~SetGlobal("DS_B_NASHKEL_H","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~FTOWNA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_NASHKEL_F","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_nashkel_f_0
+  SAY @1246
+  IF ~~ THEN DO ~SetGlobal("DS_B_NASHKEL_F","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~CHILNA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_FOIRE","LOCALS",0) RandomNum(2,1)~ THEN BEGIN ds_b_foire_0
+  SAY @1247
+  IF ~~ THEN DO ~SetGlobal("DS_B_FOIRE","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~HICK~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_GARNISON","GLOBAL",0) !StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN ds_b_garnison_0
+  SAY @1248
+  IF ~~ THEN DO ~SetGlobal("DS_B_GARNISON","GLOBAL",1)~ GOTO ds_b_garnison_1
+END
+END
+
+APPEND ~HICK~
+IF ~~ THEN BEGIN ds_b_garnison_1
+  SAY @1249
+  IF ~~ THEN REPLY @1250 GOTO ds_b_garnison_r0
+  IF ~~ THEN REPLY @1251 GOTO ds_b_garnison_r1
+  IF ~~ THEN REPLY @1252 GOTO ds_b_garnison_r2
+END
+END
+
+APPEND ~HICK~
+IF ~~ THEN BEGIN ds_b_garnison_r0
+  SAY @1253
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~HICK~
+IF ~~ THEN BEGIN ds_b_garnison_r1
+  SAY @1254
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~HICK~
+IF ~~ THEN BEGIN ds_b_garnison_r2
+  SAY @1255
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~AMNIS~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_GARDE_AMNIEN","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_garde_amnien_0
+  SAY @1256
+  IF ~~ THEN DO ~SetGlobal("DS_B_GARDE_AMNIEN","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~INNKN2~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_aubergiste_nashkel_0
+  SAY @1257
+  COPY_TRANS ~INNKN2~ 0
+END
+END
+
+EXTEND_BOTTOM ~THALAN~ 0
+  IF ~%DS_DROW% Global("DS_B_THALANTYR","GLOBAL",0)~ THEN DO ~SetGlobal("DS_B_THALANTYR","GLOBAL",1)~ GOTO ds_b_thalantyr_0
+END
+
+APPEND ~THALAN~
+IF ~~ THEN BEGIN ds_b_thalantyr_0
+  SAY @1258
+  IF ~~ THEN GOTO ds_b_thalantyr_1
+END
+END
+
+APPEND ~THALAN~
+IF ~~ THEN BEGIN ds_b_thalantyr_1
+  SAY @1259
+  IF ~~ THEN REPLY @1260 GOTO ds_b_thalantyr_r0
+  IF ~~ THEN REPLY @1261 GOTO ds_b_thalantyr_r1
+  IF ~~ THEN REPLY @1262 GOTO ds_b_thalantyr_r2
+END
+END
+
+APPEND ~THALAN~
+IF ~~ THEN BEGIN ds_b_thalantyr_r0
+  SAY @1263
+  COPY_TRANS ~THALAN~ 0
+END
+END
+
+APPEND ~THALAN~
+IF ~~ THEN BEGIN ds_b_thalantyr_r1
+  SAY @1264
+  COPY_TRANS ~THALAN~ 0
+END
+END
+
+APPEND ~THALAN~
+IF ~~ THEN BEGIN ds_b_thalantyr_r2
+  SAY @1265
+  COPY_TRANS ~THALAN~ 0
+END
+END
+
+APPEND ~ELMIN1~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_ELMINSTER","GLOBAL",0)~ THEN BEGIN ds_b_elminster_0
+  SAY @1266
+  IF ~~ THEN DO ~SetGlobal("DS_B_ELMINSTER","GLOBAL",1)~ GOTO ds_b_elminster_1
+END
+END
+
+APPEND ~ELMIN1~
+IF ~~ THEN BEGIN ds_b_elminster_1
+  SAY @1267
+  IF ~~ THEN REPLY @1268 GOTO ds_b_elminster_r0
+  IF ~~ THEN REPLY @1269 GOTO ds_b_elminster_r1
+  IF ~~ THEN REPLY @1270 GOTO ds_b_elminster_r2
+END
+END
+
+APPEND ~ELMIN1~
+IF ~~ THEN BEGIN ds_b_elminster_r0
+  SAY @1271
+  IF ~~ THEN EXTERN ~ELMIN1~ ds_copie_elmin1_15
+END
+END
+
+APPEND ~ELMIN1~
+IF ~~ THEN BEGIN ds_b_elminster_r1
+  SAY @1272
+  IF ~~ THEN EXTERN ~ELMIN1~ ds_copie_elmin1_15
+END
+END
+
+APPEND ~ELMIN1~
+IF ~~ THEN BEGIN ds_b_elminster_r2
+  SAY @1273
+  IF ~~ THEN EXTERN ~ELMIN1~ ds_copie_elmin1_15
+END
+END
+
+ADD_TRANS_TRIGGER ~FLAMGG~ 0 ~!%DS_DROW%~ DO 4
+EXTEND_BOTTOM ~FLAMGG~ 0
+  IF ~%DS_DROW%~ THEN REPLY #19352 DO ~TakePartyGold(6)~ GOTO ds_b_pontwyrm_0
+END
+
+APPEND ~FLAMGG~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_pontwyrm_accueil
+  SAY @1274
+  COPY_TRANS_LATE ~FLAMGG~ 0
+END
+END
+
+APPEND ~FLAMGG~
+IF ~~ THEN BEGIN ds_b_pontwyrm_0
+  SAY @1275
+  IF ~~ THEN REPLY @1276 GOTO ds_b_pontwyrm_r0
+  IF ~~ THEN REPLY @1277 GOTO ds_b_pontwyrm_r1
+  IF ~~ THEN REPLY @1278 GOTO ds_b_pontwyrm_r2
+END
+END
+
+APPEND ~FLAMGG~
+IF ~~ THEN BEGIN ds_b_pontwyrm_r0
+  SAY @1279
+  IF ~~ THEN EXTERN ~FLAMGG~ 1
+END
+END
+
+APPEND ~FLAMGG~
+IF ~~ THEN BEGIN ds_b_pontwyrm_r1
+  SAY @1280
+  IF ~~ THEN EXTERN ~FLAMGG~ 2
+END
+END
+
+APPEND ~FLAMGG~
+IF ~~ THEN BEGIN ds_b_pontwyrm_r2
+  SAY @1281
+  IF ~~ THEN EXTERN ~FLAMGG~ 1
+END
+END
+
+APPEND ~FLAM11~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_PATROUILLE","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_patrouille_0
+  SAY @1282
+  IF ~~ THEN DO ~SetGlobal("DS_B_PATROUILLE","LOCALS",1)~ EXIT
+END
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_PATROUILLE","LOCALS",0) RandomNum(3,2)~ THEN BEGIN ds_b_patrouille_1
+  SAY @1283
+  IF ~~ THEN DO ~SetGlobal("DS_B_PATROUILLE","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~MTOWBA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_PORTE_H","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_porte_h_0
+  SAY @1284
+  IF ~~ THEN DO ~SetGlobal("DS_B_PORTE_H","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~FTOWBA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_PORTE_F","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_porte_f_0
+  SAY @1285
+  IF ~~ THEN DO ~SetGlobal("DS_B_PORTE_F","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~BOYBA1~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_PORTE_GARCON","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_porte_garcon_0
+  SAY @1286
+  IF ~~ THEN DO ~SetGlobal("DS_B_PORTE_GARCON","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~NOBLBA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_NOBLE_H","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_noble_h_0
+  SAY @1287
+  IF ~~ THEN DO ~SetGlobal("DS_B_NOBLE_H","LOCALS",1)~ EXIT
+END
+END
+
+APPEND ~NOBWBA~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_B_NOBLE_F","LOCALS",0) RandomNum(3,1)~ THEN BEGIN ds_b_noble_f_0
+  SAY @1288
+  IF ~~ THEN DO ~SetGlobal("DS_B_NOBLE_F","LOCALS",1)~ EXIT
+END
+END
+
+EXTEND_BOTTOM ~ENTAR~ 0
+  IF ~%DS_DROW% Global("DS_B_ENTAR","GLOBAL",0)~ THEN DO ~SetGlobal("DS_B_ENTAR","GLOBAL",1)~ GOTO ds_b_entar_0
+END
+
+APPEND ~ENTAR~
+IF ~~ THEN BEGIN ds_b_entar_0
+  SAY @1289
+  IF ~~ THEN REPLY @1290 GOTO ds_b_entar_r0
+  IF ~~ THEN REPLY @1291 GOTO ds_b_entar_r1
+  IF ~~ THEN REPLY @1292 GOTO ds_b_entar_r2
+END
+END
+
+APPEND ~ENTAR~
+IF ~~ THEN BEGIN ds_b_entar_r0
+  SAY @1293
+  COPY_TRANS ~ENTAR~ 0
+END
+END
+
+APPEND ~ENTAR~
+IF ~~ THEN BEGIN ds_b_entar_r1
+  SAY @1294
+  COPY_TRANS ~ENTAR~ 0
+END
+END
+
+APPEND ~ENTAR~
+IF ~~ THEN BEGIN ds_b_entar_r2
+  SAY @1295
+  COPY_TRANS ~ENTAR~ 0
+END
+END
+
+INTERJECT_COPY_TRANS ~ENTAR~ 1 ~DS_B_ENTAR_SEUL~
+  == ~ENTAR~ IF ~%DS_DROW%~ THEN @1296
+END
+
+INTERJECT_COPY_TRANS ~BRANDI~ 0 ~DS_B_BRANDILAR~
+  == ~BRANDI~ IF ~%DS_DROW%~ THEN @1297
+END
+
+INTERJECT_COPY_TRANS ~BRANDI~ 1 ~DS_B_BRANDILAR~
+  == ~BRANDI~ IF ~%DS_DROW%~ THEN @1298
+END
+
+APPEND ~BART7~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0)~ THEN BEGIN ds_b_tavernier_porte_0
+  SAY @1299
+  COPY_TRANS ~BART7~ 0
+END
+END
+
+INTERJECT_COPY_TRANS ~SAREVO~ 7 ~DS_B_SAREVOK~
+  == ~SAREVO~ IF ~%DS_DROW%~ THEN @1300
+END
+
+INTERJECT_COPY_TRANS ~SAREVO~ 13 ~DS_B_SAREVOK_DUEL~
+  == ~SAREVO~ IF ~%DS_DROW%~ THEN @1301
+END
+
+EXTEND_BOTTOM ~JAHEIR~ 0
+  IF ~%DS_DROW% Global("DS_D_JAHEIRA","GLOBAL",0)~ THEN DO ~SetGlobal("DS_D_JAHEIRA","GLOBAL",1)~ GOTO ds_d_jaheira_0
+END
+
+EXTEND_BOTTOM ~JAHEIR~ 1
+  IF ~%DS_DROW% Global("DS_D_JAHEIRA","GLOBAL",0)~ THEN DO ~SetGlobal("DS_D_JAHEIRA","GLOBAL",1)~ GOTO ds_d_jaheira_0
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_0
+  SAY @1302
+  IF ~~ THEN GOTO ds_d_jaheira_1
+END
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_1
+  SAY @1303
+  IF ~~ THEN EXTERN ~KHALID~ ds_d_jaheira_2
+END
+END
+
+APPEND ~KHALID~
+IF ~~ THEN BEGIN ds_d_jaheira_2
+  SAY @1304
+  IF ~~ THEN REPLY @1305 EXTERN ~JAHEIR~ ds_d_jaheira_r0
+  IF ~~ THEN REPLY @1306 GOTO ds_d_jaheira_r1
+  IF ~~ THEN REPLY @1307 EXTERN ~JAHEIR~ ds_d_jaheira_r2
+END
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_r0
+  SAY @1308
+  COPY_TRANS ~JAHEIR~ 0
+END
+END
+
+APPEND ~KHALID~
+IF ~~ THEN BEGIN ds_d_jaheira_r1
+  SAY @1309
+  COPY_TRANS ~JAHEIR~ 0
+END
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_r2
+  SAY @1310
+  COPY_TRANS ~JAHEIR~ 0
+END
+END
+
+EXTEND_BOTTOM ~KHALID~ 4
+  IF ~%DS_DROW% Global("DS_D_JAHEIRA_K","GLOBAL",0)~ THEN DO ~SetGlobal("DS_D_JAHEIRA_K","GLOBAL",1)~ EXTERN ~JAHEIR~ ds_d_jaheira_k_0
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_k_0
+  SAY @1311
+  IF ~~ THEN GOTO ds_d_jaheira_k_1
+END
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_k_1
+  SAY @1312
+  IF ~~ THEN EXTERN ~KHALID~ ds_d_jaheira_k_2
+END
+END
+
+APPEND ~KHALID~
+IF ~~ THEN BEGIN ds_d_jaheira_k_2
+  SAY @1313
+  IF ~~ THEN REPLY @1314 EXTERN ~JAHEIR~ ds_d_jaheira_k_r0
+  IF ~~ THEN REPLY @1315 GOTO ds_d_jaheira_k_r1
+  IF ~~ THEN REPLY @1316 EXTERN ~JAHEIR~ ds_d_jaheira_k_r2
+END
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_k_r0
+  SAY @1317
+  COPY_TRANS ~KHALID~ 4
+END
+END
+
+APPEND ~KHALID~
+IF ~~ THEN BEGIN ds_d_jaheira_k_r1
+  SAY @1318
+  COPY_TRANS ~KHALID~ 4
+END
+END
+
+APPEND ~JAHEIR~
+IF ~~ THEN BEGIN ds_d_jaheira_k_r2
+  SAY @1319
+  COPY_TRANS ~KHALID~ 4
+END
+END
+
+APPEND ~KIVAN~
+IF WEIGHT #-1 ~%DS_DROW% Global("DS_D_KIVAN","GLOBAL",0) !StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN ds_d_kivan_0
+  SAY @1320
+  IF ~~ THEN DO ~SetGlobal("DS_D_KIVAN","GLOBAL",1)~ GOTO ds_d_kivan_1
+END
+END
+
+APPEND ~KIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_1
+  SAY @1321
+  IF ~~ THEN REPLY @1322 GOTO ds_d_kivan_r0
+  IF ~~ THEN REPLY @1323 GOTO ds_d_kivan_r1
+  IF ~~ THEN REPLY @1324 GOTO ds_d_kivan_r2
+END
+END
+
+APPEND ~KIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_r0
+  SAY @1325
+  IF ~ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)~ THEN EXTERN ~KIVAN~ 2
+  IF ~ReactionLT(LastTalkedToBy(Myself),FRIENDLY_LOWER) ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)~ THEN EXTERN ~KIVAN~ 1
+  IF ~ReactionGT(LastTalkedToBy(Myself),NEUTRAL_UPPER)~ THEN EXTERN ~KIVAN~ 0
+END
+END
+
+APPEND ~KIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_r1
+  SAY @1326
+  IF ~ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)~ THEN EXTERN ~KIVAN~ 2
+  IF ~ReactionLT(LastTalkedToBy(Myself),FRIENDLY_LOWER) ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)~ THEN EXTERN ~KIVAN~ 1
+  IF ~ReactionGT(LastTalkedToBy(Myself),NEUTRAL_UPPER)~ THEN EXTERN ~KIVAN~ 0
+END
+END
+
+APPEND ~KIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_r2
+  SAY @1327
+  IF ~ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)~ THEN EXTERN ~KIVAN~ 2
+  IF ~ReactionLT(LastTalkedToBy(Myself),FRIENDLY_LOWER) ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)~ THEN EXTERN ~KIVAN~ 1
+  IF ~ReactionGT(LastTalkedToBy(Myself),NEUTRAL_UPPER)~ THEN EXTERN ~KIVAN~ 0
+END
+END
+
+INTERJECT_COPY_TRANS ~KIVAN~ 10 ~DS_D_KIVAN_GROUPE~
+  == ~KIVAN~ IF ~%DS_DROW%~ THEN @1328
+END
+
+INTERJECT_COPY_TRANS ~KIVAN~ 11 ~DS_D_KIVAN_GROUPE~
+  == ~KIVAN~ IF ~%DS_DROW%~ THEN @1329
+END
+
+INTERJECT_COPY_TRANS ~KIVAN~ 12 ~DS_D_KIVAN_GROUPE~
+  == ~KIVAN~ IF ~%DS_DROW%~ THEN @1330
+END
+
+INTERJECT_COPY_TRANS ~KIVAN~ 13 ~DS_D_KIVAN_GROUPE~
+  == ~KIVAN~ IF ~%DS_DROW%~ THEN @1331
+END
+
+APPEND ~DSDIMOEN~
+IF ~Global("DS_D_IMOEN","GLOBAL",1)~ THEN BEGIN ds_d_imoen_0
+  SAY @1332
+  IF ~~ THEN DO ~SetGlobal("DS_D_IMOEN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_imoen_1
+END
+END
+
+APPEND ~DSDIMOEN~
+IF ~~ THEN BEGIN ds_d_imoen_1
+  SAY @1333
+  IF ~~ THEN REPLY @1334 GOTO ds_d_imoen_r0
+  IF ~~ THEN REPLY @1335 GOTO ds_d_imoen_r1
+  IF ~~ THEN REPLY @1336 GOTO ds_d_imoen_r2
+END
+END
+
+APPEND ~DSDIMOEN~
+IF ~~ THEN BEGIN ds_d_imoen_r0
+  SAY @1337
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDIMOEN~
+IF ~~ THEN BEGIN ds_d_imoen_r1
+  SAY @1338
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDIMOEN~
+IF ~~ THEN BEGIN ds_d_imoen_r2
+  SAY @1339
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDJAHEI~
+IF ~Global("DS_D_JAHEI","GLOBAL",1)~ THEN BEGIN ds_d_jahei_0
+  SAY @1340
+  IF ~~ THEN REPLY @1341 DO ~SetGlobal("DS_D_JAHEI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_jahei_r0
+  IF ~~ THEN REPLY @1342 DO ~SetGlobal("DS_D_JAHEI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_jahei_r1
+  IF ~~ THEN REPLY @1343 DO ~SetGlobal("DS_D_JAHEI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_jahei_r2
+END
+END
+
+APPEND ~DSDJAHEI~
+IF ~~ THEN BEGIN ds_d_jahei_r0
+  SAY @1344
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDJAHEI~
+IF ~~ THEN BEGIN ds_d_jahei_r1
+  SAY @1345
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDJAHEI~
+IF ~~ THEN BEGIN ds_d_jahei_r2
+  SAY @1346
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDKHALI~
+IF ~Global("DS_D_KHALI","GLOBAL",1)~ THEN BEGIN ds_d_khali_0
+  SAY @1347
+  IF ~~ THEN DO ~SetGlobal("DS_D_KHALI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_khali_1
+END
+END
+
+APPEND ~DSDKHALI~
+IF ~~ THEN BEGIN ds_d_khali_1
+  SAY @1348
+  IF ~~ THEN REPLY @1349 GOTO ds_d_khali_r0
+  IF ~~ THEN REPLY @1350 GOTO ds_d_khali_r1
+  IF ~~ THEN REPLY @1351 GOTO ds_d_khali_r2
+END
+END
+
+APPEND ~DSDKHALI~
+IF ~~ THEN BEGIN ds_d_khali_r0
+  SAY @1352
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDKHALI~
+IF ~~ THEN BEGIN ds_d_khali_r1
+  SAY @1353
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDKHALI~
+IF ~~ THEN BEGIN ds_d_khali_r2
+  SAY @1354
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDKIVAN~
+IF ~Global("DS_D_KIVAN","GLOBAL",1)~ THEN BEGIN ds_d_kivan_0
+  SAY @1355
+  IF ~~ THEN DO ~SetGlobal("DS_D_KIVAN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_kivan_1
+END
+END
+
+APPEND ~DSDKIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_1
+  SAY @1356
+  IF ~~ THEN REPLY @1357 GOTO ds_d_kivan_r0
+  IF ~~ THEN REPLY @1358 GOTO ds_d_kivan_r1
+  IF ~~ THEN REPLY @1359 GOTO ds_d_kivan_r2
+END
+END
+
+APPEND ~DSDKIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_r0
+  SAY @1360
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDKIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_r1
+  SAY @1361
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDKIVAN~
+IF ~~ THEN BEGIN ds_d_kivan_r2
+  SAY @1362
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDYESLI~
+IF ~Global("DS_D_YESLI","GLOBAL",1)~ THEN BEGIN ds_d_yesli_0
+  SAY @1363
+  IF ~~ THEN DO ~SetGlobal("DS_D_YESLI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_yesli_1
+END
+END
+
+APPEND ~DSDYESLI~
+IF ~~ THEN BEGIN ds_d_yesli_1
+  SAY @1364
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDMINSC~
+IF ~Global("DS_D_MINSC","GLOBAL",1)~ THEN BEGIN ds_d_minsc_0
+  SAY @1365
+  IF ~~ THEN DO ~SetGlobal("DS_D_MINSC","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_minsc_1
+END
+END
+
+APPEND ~DSDMINSC~
+IF ~~ THEN BEGIN ds_d_minsc_1
+  SAY @1366
+  IF ~~ THEN REPLY @1367 GOTO ds_d_minsc_r0
+  IF ~~ THEN REPLY @1368 GOTO ds_d_minsc_r1
+  IF ~~ THEN REPLY @1369 GOTO ds_d_minsc_r2
+END
+END
+
+APPEND ~DSDMINSC~
+IF ~~ THEN BEGIN ds_d_minsc_r0
+  SAY @1370
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDMINSC~
+IF ~~ THEN BEGIN ds_d_minsc_r1
+  SAY @1371
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDMINSC~
+IF ~~ THEN BEGIN ds_d_minsc_r2
+  SAY @1372
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDDYNAH~
+IF ~Global("DS_D_DYNAH","GLOBAL",1)~ THEN BEGIN ds_d_dynah_0
+  SAY @1373
+  IF ~~ THEN DO ~SetGlobal("DS_D_DYNAH","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDEDWIN~
+IF ~Global("DS_D_EDWIN","GLOBAL",1)~ THEN BEGIN ds_d_edwin_0
+  SAY @1374
+  IF ~~ THEN DO ~SetGlobal("DS_D_EDWIN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_edwin_1
+END
+END
+
+APPEND ~DSDEDWIN~
+IF ~~ THEN BEGIN ds_d_edwin_1
+  SAY @1375
+  IF ~~ THEN REPLY @1376 GOTO ds_d_edwin_r0
+  IF ~~ THEN REPLY @1377 GOTO ds_d_edwin_r1
+  IF ~~ THEN REPLY @1378 GOTO ds_d_edwin_r2
+END
+END
+
+APPEND ~DSDEDWIN~
+IF ~~ THEN BEGIN ds_d_edwin_r0
+  SAY @1379
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDEDWIN~
+IF ~~ THEN BEGIN ds_d_edwin_r1
+  SAY @1380
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDEDWIN~
+IF ~~ THEN BEGIN ds_d_edwin_r2
+  SAY @1381
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDXZAR~
+IF ~Global("DS_D_XZAR","GLOBAL",1)~ THEN BEGIN ds_d_xzar_0
+  SAY @1382
+  IF ~~ THEN DO ~SetGlobal("DS_D_XZAR","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDMONTA~
+IF ~Global("DS_D_MONTA","GLOBAL",1)~ THEN BEGIN ds_d_monta_0
+  SAY @1383
+  IF ~~ THEN DO ~SetGlobal("DS_D_MONTA","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDQUAYL~
+IF ~Global("DS_D_QUAYL","GLOBAL",1)~ THEN BEGIN ds_d_quayl_0
+  SAY @1384
+  IF ~~ THEN DO ~SetGlobal("DS_D_QUAYL","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDTIAX~
+IF ~Global("DS_D_TIAX","GLOBAL",1)~ THEN BEGIN ds_d_tiax_0
+  SAY @1385
+  IF ~~ THEN DO ~SetGlobal("DS_D_TIAX","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDGARRI~
+IF ~Global("DS_D_GARRI","GLOBAL",1)~ THEN BEGIN ds_d_garri_0
+  SAY @1386
+  IF ~~ THEN DO ~SetGlobal("DS_D_GARRI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDELDOT~
+IF ~Global("DS_D_ELDOT","GLOBAL",1)~ THEN BEGIN ds_d_eldot_0
+  SAY @1387
+  IF ~~ THEN DO ~SetGlobal("DS_D_ELDOT","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDKAGAI~
+IF ~Global("DS_D_KAGAI","GLOBAL",1)~ THEN BEGIN ds_d_kagai_0
+  SAY @1388
+  IF ~~ THEN DO ~SetGlobal("DS_D_KAGAI","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDFALDO~
+IF ~Global("DS_D_FALDO","GLOBAL",1)~ THEN BEGIN ds_d_faldo_0
+  SAY @1389
+  IF ~~ THEN DO ~SetGlobal("DS_D_FALDO","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDSKIE~
+IF ~Global("DS_D_SKIE","GLOBAL",1)~ THEN BEGIN ds_d_skie_0
+  SAY @1390
+  IF ~~ THEN DO ~SetGlobal("DS_D_SKIE","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDAJANT~
+IF ~Global("DS_D_AJANT","GLOBAL",1)~ THEN BEGIN ds_d_ajant_0
+  SAY @1391
+  IF ~~ THEN DO ~SetGlobal("DS_D_AJANT","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_ajant_1
+END
+END
+
+APPEND ~DSDAJANT~
+IF ~~ THEN BEGIN ds_d_ajant_1
+  SAY @1392
+  IF ~~ THEN REPLY @1393 GOTO ds_d_ajant_r0
+  IF ~~ THEN REPLY @1394 GOTO ds_d_ajant_r1
+  IF ~~ THEN REPLY @1395 GOTO ds_d_ajant_r2
+END
+END
+
+APPEND ~DSDAJANT~
+IF ~~ THEN BEGIN ds_d_ajant_r0
+  SAY @1396
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDAJANT~
+IF ~~ THEN BEGIN ds_d_ajant_r1
+  SAY @1397
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDAJANT~
+IF ~~ THEN BEGIN ds_d_ajant_r2
+  SAY @1398
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDBRANW~
+IF ~Global("DS_D_BRANW","GLOBAL",1)~ THEN BEGIN ds_d_branw_0
+  SAY @1399
+  IF ~~ THEN DO ~SetGlobal("DS_D_BRANW","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDCORAN~
+IF ~Global("DS_D_CORAN","GLOBAL",1)~ THEN BEGIN ds_d_coran_0
+  SAY @1400
+  IF ~~ THEN DO ~SetGlobal("DS_D_CORAN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDSAFAN~
+IF ~Global("DS_D_SAFAN","GLOBAL",1)~ THEN BEGIN ds_d_safan_0
+  SAY @1401
+  IF ~~ THEN DO ~SetGlobal("DS_D_SAFAN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDALORA~
+IF ~Global("DS_D_ALORA","GLOBAL",1)~ THEN BEGIN ds_d_alora_0
+  SAY @1402
+  IF ~~ THEN DO ~SetGlobal("DS_D_ALORA","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DSDXAN~
+IF ~Global("DS_D_XAN","GLOBAL",1)~ THEN BEGIN ds_d_xan_0
+  SAY @1403
+  IF ~~ THEN DO ~SetGlobal("DS_D_XAN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_xan_1
+END
+END
+
+APPEND ~DSDXAN~
+IF ~~ THEN BEGIN ds_d_xan_1
+  SAY @1404
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDBAELO~
+IF ~Global("DS_D_BAELO","GLOBAL",1)~ THEN BEGIN ds_d_baelo_0
+  SAY @1405
+  IF ~~ THEN DO ~SetGlobal("DS_D_BAELO","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_baelo_1
+END
+END
+
+APPEND ~DSDBAELO~
+IF ~~ THEN BEGIN ds_d_baelo_1
+  SAY @1406
+  IF ~~ THEN REPLY @1407 GOTO ds_d_baelo_r0
+  IF ~~ THEN REPLY @1408 GOTO ds_d_baelo_r1
+  IF ~~ THEN REPLY @1409 GOTO ds_d_baelo_r2
+END
+END
+
+APPEND ~DSDBAELO~
+IF ~~ THEN BEGIN ds_d_baelo_r0
+  SAY @1410
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDBAELO~
+IF ~~ THEN BEGIN ds_d_baelo_r1
+  SAY @1411
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDBAELO~
+IF ~~ THEN BEGIN ds_d_baelo_r2
+  SAY @1412
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDDORN~
+IF ~Global("DS_D_DORN","GLOBAL",1)~ THEN BEGIN ds_d_dorn_0
+  SAY @1413
+  IF ~~ THEN DO ~SetGlobal("DS_D_DORN","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_dorn_1
+END
+END
+
+APPEND ~DSDDORN~
+IF ~~ THEN BEGIN ds_d_dorn_1
+  SAY @1414
+  IF ~~ THEN REPLY @1415 GOTO ds_d_dorn_r0
+  IF ~~ THEN REPLY @1416 GOTO ds_d_dorn_r1
+  IF ~~ THEN REPLY @1417 GOTO ds_d_dorn_r2
+END
+END
+
+APPEND ~DSDDORN~
+IF ~~ THEN BEGIN ds_d_dorn_r0
+  SAY @1418
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDDORN~
+IF ~~ THEN BEGIN ds_d_dorn_r1
+  SAY @1419
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDDORN~
+IF ~~ THEN BEGIN ds_d_dorn_r2
+  SAY @1420
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDRASAA~
+IF ~Global("DS_D_RASAA","GLOBAL",1)~ THEN BEGIN ds_d_rasaa_0
+  SAY @1421
+  IF ~~ THEN DO ~SetGlobal("DS_D_RASAA","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_rasaa_1
+END
+END
+
+APPEND ~DSDRASAA~
+IF ~~ THEN BEGIN ds_d_rasaa_1
+  SAY @1422
+  IF ~~ THEN REPLY @1423 GOTO ds_d_rasaa_r0
+  IF ~~ THEN REPLY @1424 GOTO ds_d_rasaa_r1
+  IF ~~ THEN REPLY @1425 GOTO ds_d_rasaa_r2
+END
+END
+
+APPEND ~DSDRASAA~
+IF ~~ THEN BEGIN ds_d_rasaa_r0
+  SAY @1426
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDRASAA~
+IF ~~ THEN BEGIN ds_d_rasaa_r1
+  SAY @1427
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDRASAA~
+IF ~~ THEN BEGIN ds_d_rasaa_r2
+  SAY @1428
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDNEERA~
+IF ~Global("DS_D_NEERA","GLOBAL",1)~ THEN BEGIN ds_d_neera_0
+  SAY @1429
+  IF ~~ THEN DO ~SetGlobal("DS_D_NEERA","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ GOTO ds_d_neera_1
+END
+END
+
+APPEND ~DSDNEERA~
+IF ~~ THEN BEGIN ds_d_neera_1
+  SAY @1430
+  IF ~~ THEN REPLY @1431 GOTO ds_d_neera_r0
+  IF ~~ THEN REPLY @1432 GOTO ds_d_neera_r1
+  IF ~~ THEN REPLY @1433 GOTO ds_d_neera_r2
+END
+END
+
+APPEND ~DSDNEERA~
+IF ~~ THEN BEGIN ds_d_neera_r0
+  SAY @1434
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDNEERA~
+IF ~~ THEN BEGIN ds_d_neera_r1
+  SAY @1435
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDNEERA~
+IF ~~ THEN BEGIN ds_d_neera_r2
+  SAY @1436
+  IF ~~ THEN EXIT
+END
+END
+
+APPEND ~DSDSHART~
+IF ~Global("DS_D_SHART","GLOBAL",1)~ THEN BEGIN ds_d_shart_0
+  SAY @1437
+  IF ~~ THEN DO ~SetGlobal("DS_D_SHART","GLOBAL",2) SetGlobalTimer("DS_D_GAP","GLOBAL",EIGHT_HOURS)~ EXIT
+END
+END
+
+APPEND ~DYNAHE~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0) InParty("Minsc")~ THEN BEGIN ds_f_dynahe_0
+  SAY @1438
+  COPY_TRANS ~DYNAHE~ 0
+END
+END
+
+APPEND ~DYNAHE~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0) InParty("EDWIN")~ THEN BEGIN ds_f_dynahe_7
+  SAY @1439
+  COPY_TRANS ~DYNAHE~ 7
+END
+END
+
+APPEND ~DYNAHE~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0) !InParty("MINSC") !InParty("EDWIN")~ THEN BEGIN ds_f_dynahe_21
+  SAY @1440
+  COPY_TRANS ~DYNAHE~ 21
+END
+END
+
+APPEND ~YESLIC~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0) ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)~ THEN BEGIN ds_f_yeslic_1
+  SAY @1441
+  COPY_TRANS ~YESLIC~ 1
+END
+END
+
+APPEND ~YESLIC~
+IF WEIGHT #-1 ~%DS_DROW% NumberOfTimesTalkedTo(0) ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)~ THEN BEGIN ds_f_yeslic_2
+  SAY @1442
+  COPY_TRANS ~YESLIC~ 2
+END
+END
+
+APPEND ~SKIE~
+IF WEIGHT #-1 ~%DS_DROW% !Detect("Eldoth") NumTimesTalkedTo(0)~ THEN BEGIN ds_f_skie_1
+  SAY @1443
+  COPY_TRANS ~SKIE~ 1
+END
+END
+
+APPEND ~SKIE~
+IF ~~ THEN BEGIN ds_f_skie_2
+  SAY @1444
+  COPY_TRANS ~SKIE~ 2
+END
+END
+ALTER_TRANS ~SKIE~ BEGIN ds_f_skie_1 END BEGIN 1 END BEGIN "EPILOGUE" ~GOTO ds_f_skie_2~ END
+
+APPEND ~DORN~
+IF WEIGHT #-1 ~%DS_DROW% NumTimesTalkedTo(0) AreaCheck("AR2301")~ THEN BEGIN ds_f_dorn_0
+  SAY @1445
+  IF ~~ THEN GOTO ds_f_dorn_1
+END
+IF ~~ THEN BEGIN ds_f_dorn_1
+  SAY @1446
+  COPY_TRANS ~DORN~ 0
+END
+IF WEIGHT #-1 ~%DS_DROW% NumTimesTalkedToGT(0) AreaCheck("AR2301") Global("DORNPLOT","GLOBAL",1) !InParty("DORN") Global("DORNINPARTY","GLOBAL",0)~ THEN BEGIN ds_f_dorn_2
+  SAY @1447
+  COPY_TRANS ~DORN~ 2
+END
+END
+
+INTERJECT_COPY_TRANS ~QUAYLE~ 0 ~DS_E_QUAYLE~
+  == ~QUAYLE~ IF ~%DS_DROW%~ THEN @1448
+END
+
+INTERJECT_COPY_TRANS ~TIAX~ 0 ~DS_E_TIAX~
+  == ~TIAX~ IF ~%DS_DROW%~ THEN @1449
+END
+
+INTERJECT_COPY_TRANS ~TIAX~ 1 ~DS_E_TIAX~
+  == ~TIAX~ IF ~%DS_DROW%~ THEN @1449
+END
+
+INTERJECT_COPY_TRANS ~TIAX~ 3 ~DS_E_TIAX~
+  == ~TIAX~ IF ~%DS_DROW%~ THEN @1449
+END
+
+INTERJECT_COPY_TRANS ~GARRIC~ 0 ~DS_E_GARRIC~
+  == ~GARRIC~ IF ~%DS_DROW%~ THEN @1450
+END
+
+INTERJECT_COPY_TRANS ~ELDOTH~ 0 ~DS_E_ELDOTH~
+  == ~ELDOTH~ IF ~%DS_DROW%~ THEN @1451
+END
+
+INTERJECT_COPY_TRANS ~ELDOTH~ 1 ~DS_E_ELDOTH~
+  == ~ELDOTH~ IF ~%DS_DROW%~ THEN @1451
+END
+
+INTERJECT_COPY_TRANS ~FALDOR~ 0 ~DS_E_FALDOR~
+  == ~FALDOR~ IF ~%DS_DROW%~ THEN @1452
+END
+
+INTERJECT_COPY_TRANS ~FALDOR~ 1 ~DS_E_FALDOR~
+  == ~FALDOR~ IF ~%DS_DROW%~ THEN @1452
+END
+
+INTERJECT_COPY_TRANS ~SKIE~ 0 ~DS_E_SKIE~
+  == ~SKIE~ IF ~%DS_DROW%~ THEN @1453
+END
+
+INTERJECT_COPY_TRANS ~SAFANA~ 0 ~DS_E_SAFANA~
+  == ~SAFANA~ IF ~%DS_DROW%~ THEN @1454
+END
+
+INTERJECT_COPY_TRANS ~SAFANA~ 13 ~DS_E_SAFANA~
+  == ~SAFANA~ IF ~%DS_DROW%~ THEN @1454
+END
+
+INTERJECT_COPY_TRANS ~SHARTE~ 0 ~DS_E_SHARTE~
+  == ~SHARTE~ IF ~%DS_DROW%~ THEN @1456
+END
+
+INTERJECT_COPY_TRANS ~SHARTE~ 14 ~DS_E_SHARTE~
+  == ~SHARTE~ IF ~%DS_DROW%~ THEN @1456
+END
+
+INTERJECT_COPY_TRANS ~XAN~ 0 ~DS_E_XAN~
+  == ~XAN~ IF ~%DS_DROW%~ THEN @1457
+END
+
+INTERJECT_COPY_TRANS ~XAN~ 1 ~DS_E_XAN~
+  == ~XAN~ IF ~%DS_DROW%~ THEN @1457
+END
+
+INTERJECT_COPY_TRANS ~XAN~ 3 ~DS_E_XAN~
+  == ~XAN~ IF ~%DS_DROW%~ THEN @1457
+END
+
+INTERJECT_COPY_TRANS ~MINSC~ 0 ~DS_E_MINSC~
+  == ~MINSC~ IF ~%DS_DROW%~ THEN @1458
+END
+
+INTERJECT_COPY_TRANS ~MINSC~ 1 ~DS_E_MINSC~
+  == ~MINSC~ IF ~%DS_DROW%~ THEN @1458
+END
+
+INTERJECT_COPY_TRANS ~MINSC~ 3 ~DS_E_MINSC~
+  == ~MINSC~ IF ~%DS_DROW%~ THEN @1458
+END
+
+INTERJECT_COPY_TRANS ~AJANTI~ 0 ~DS_E_AJANTI~
+  == ~AJANTI~ IF ~%DS_DROW%~ THEN @1459
+END
+
+INTERJECT_COPY_TRANS ~XZAR~ 0 ~DS_E_XZAR~
+  == ~XZAR~ IF ~%DS_DROW%~ THEN @1460
+END
+
+INTERJECT_COPY_TRANS ~XZAR~ 1 ~DS_E_XZAR~
+  == ~XZAR~ IF ~%DS_DROW%~ THEN @1460
+END
+
+INTERJECT_COPY_TRANS ~XZAR~ 2 ~DS_E_XZAR~
+  == ~XZAR~ IF ~%DS_DROW%~ THEN @1460
+END
+
+INTERJECT_COPY_TRANS ~MONTAR~ 11 ~DS_E_MONTAR~
+  == ~MONTAR~ IF ~%DS_DROW%~ THEN @1461
+END
+
+INTERJECT_COPY_TRANS ~BRANWE~ 0 ~DS_E_BRANWE~
+  == ~BRANWE~ IF ~%DS_DROW%~ THEN @1462
+END
+
+INTERJECT_COPY_TRANS ~CORAN~ 0 ~DS_E_CORAN~
+  == ~CORAN~ IF ~%DS_DROW%~ THEN @1463
+END
+
+INTERJECT_COPY_TRANS ~CORAN~ 1 ~DS_E_CORAN~
+  == ~CORAN~ IF ~%DS_DROW%~ THEN @1463
+END
+
+INTERJECT_COPY_TRANS ~CORAN~ 2 ~DS_E_CORAN~
+  == ~CORAN~ IF ~%DS_DROW%~ THEN @1463
+END
+
+INTERJECT_COPY_TRANS ~KAGAIN~ 0 ~DS_E_KAGAIN~
+  == ~KAGAIN~ IF ~%DS_DROW%~ THEN @1464
+END
+
+INTERJECT_COPY_TRANS ~EDWIN~ 0 ~DS_E_EDWIN~
+  == ~EDWIN~ IF ~%DS_DROW%~ THEN @1465
+END
+
+INTERJECT_COPY_TRANS ~EDWIN~ 1 ~DS_E_EDWIN~
+  == ~EDWIN~ IF ~%DS_DROW%~ THEN @1465
+END
+
+INTERJECT_COPY_TRANS ~EDWIN~ 2 ~DS_E_EDWIN~
+  == ~EDWIN~ IF ~%DS_DROW%~ THEN @1465
+END
+
+INTERJECT_COPY_TRANS ~EDWIN~ 9 ~DS_E_EDWIN~
+  == ~EDWIN~ IF ~%DS_DROW%~ THEN @1465
+END
+
+INTERJECT_COPY_TRANS ~DORN~ 6 ~DS_E_DORN~
+  == ~DORN~ IF ~%DS_DROW%~ THEN @1466
+END
+
+INTERJECT_COPY_TRANS ~RASAAD~ 1 ~DS_E_RASAAD~
+  == ~RASAAD~ IF ~%DS_DROW%~ THEN @1467
+END
+
+INTERJECT_COPY_TRANS ~RASAAD~ 30 ~DS_E_RASAAD~
+  == ~RASAAD~ IF ~%DS_DROW%~ THEN @1467
+END
+
+INTERJECT_COPY_TRANS ~NEERA~ 0 ~DS_E_NEERA~
+  == ~NEERA~ IF ~%DS_DROW%~ THEN @1468
+END
+
+APPEND ~INNKE2~
+IF ~~ THEN BEGIN ds_copie_innke2_0
+  SAY @1469
+  COPY_TRANS ~INNKE2~ 0
+END
+END
+
+APPEND ~HULL~
+IF ~~ THEN BEGIN ds_copie_hull_1
+  SAY @1470
+  COPY_TRANS ~HULL~ 0
+END
+END
+
+APPEND ~DREPPI~
+IF ~~ THEN BEGIN ds_copie_dreppi_2
+  SAY @1471
+  COPY_TRANS ~DREPPI~ 0
+END
+END
+
+APPEND ~PHLYDI~
+IF ~~ THEN BEGIN ds_copie_phlydi_3
+  SAY @1472
+  COPY_TRANS ~PHLYDI~ 0
+END
+END
+
+APPEND ~JONDAL~
+IF ~~ THEN BEGIN ds_copie_jondal_4
+  SAY @1473
+  COPY_TRANS ~JONDAL~ 0
+END
+END
+
+APPEND ~JONDAL~
+IF ~~ THEN BEGIN ds_copie_jondal_5
+  SAY @1474
+  COPY_TRANS ~JONDAL~ 5
+END
+END
+
+APPEND ~KARAN~
+IF ~~ THEN BEGIN ds_copie_karan_6
+  SAY @1475
+  COPY_TRANS ~KARAN~ 0
+END
+END
+
+APPEND ~DRIZZT~
+IF ~~ THEN BEGIN ds_copie_drizzt_7
+  SAY @1476
+  COPY_TRANS ~DRIZZT~ 6
+END
+END
+
+APPEND ~LANDRI~
+IF ~~ THEN BEGIN ds_copie_landri_8
+  SAY @1477
+  COPY_TRANS ~LANDRI~ 2
+END
+END
+
+APPEND ~LANDRI~
+IF ~~ THEN BEGIN ds_copie_landri_9
+  SAY @1478
+  COPY_TRANS ~LANDRI~ 1
+END
+END
+
+APPEND ~LANDRI~
+IF ~~ THEN BEGIN ds_copie_landri_10
+  SAY @1479
+  COPY_TRANS ~LANDRI~ 0
+END
+END
+
+APPEND ~FIREBE~
+IF ~~ THEN BEGIN ds_copie_firebe_11
+  SAY @1480
+  COPY_TRANS ~FIREBE~ 3
+END
+END
+
+APPEND ~BERRUN~
+IF ~~ THEN BEGIN ds_copie_berrun_12
+  SAY @1481
+  COPY_TRANS ~BERRUN~ 19
+END
+END
+
+APPEND ~BERRUN~
+IF ~~ THEN BEGIN ds_copie_berrun_13
+  SAY @1482
+  COPY_TRANS ~BERRUN~ 1
+END
+END
+
+APPEND ~BERRUN~
+IF ~~ THEN BEGIN ds_copie_berrun_14
+  SAY @1483
+  COPY_TRANS ~BERRUN~ 0
+END
+END
+
+APPEND ~ELMIN1~
+IF ~~ THEN BEGIN ds_copie_elmin1_15
+  SAY @1484
+  COPY_TRANS ~ELMIN1~ 0
+END
+END
+

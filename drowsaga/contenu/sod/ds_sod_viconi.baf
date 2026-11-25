@@ -1,0 +1,9 @@
+IF
+    Global("bd_viconia_romancecheck","global",0)
+    Gender(Player1,MALE)
+    InParty(Myself)
+    GlobalGT("DS_P1_DROW","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("bd_viconia_romancecheck","global",1)
+END

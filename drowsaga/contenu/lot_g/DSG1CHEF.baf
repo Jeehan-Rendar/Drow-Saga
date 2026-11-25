@@ -1,0 +1,73 @@
+
+IF
+    GlobalLT("DS_G1","GLOBAL",3)
+    AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",3)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    !Global("DS_G_ENNEMI","LOCALS",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G_ENNEMI","LOCALS",1)
+        Enemy()
+END
+
+IF
+    Global("DS_G1","GLOBAL",1)
+    See(Player1)
+    Range(Player1,20)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G1","GLOBAL",2)
+        StartDialogNoSet(Player1)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_SILENCE_15_FOOT)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_SILENCE_15_FOOT)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_HOLD_PERSON)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_BLESS)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_BLESS)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    Global("DS_G1","GLOBAL",3)
+    !See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        MoveToObject(Player1)
+END
+

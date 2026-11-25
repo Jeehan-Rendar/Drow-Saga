@@ -1,0 +1,11 @@
+IF
+  Global("DS_P1_DROW","GLOBAL",1)
+  Global("DrowCityHostile","GLOBAL",1)
+  Global("DS_JRN_UD","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("DS_JRN_UD","GLOBAL",1)
+    EraseJournalEntry(%ds_j61412%)
+    EraseJournalEntry(%ds_j7148%)
+    Continue()
+END

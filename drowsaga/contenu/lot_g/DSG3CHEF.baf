@@ -1,0 +1,53 @@
+
+IF
+    GlobalLT("DS_G3","GLOBAL",3)
+    AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",3)
+END
+
+IF
+    Global("DS_G3","GLOBAL",3)
+    !Global("DS_G_ENNEMI","LOCALS",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G_ENNEMI","LOCALS",1)
+        Enemy()
+END
+
+IF
+    Global("DS_G3","GLOBAL",4)
+THEN
+    RESPONSE #100
+        EscapeArea()
+END
+
+IF
+    Global("DS_G3","GLOBAL",1)
+    See(Player1)
+    Range(Player1,20)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",2)
+        StartDialogNoSet(Player1)
+END
+
+IF
+    Global("DS_G3","GLOBAL",3)
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    Global("DS_G3","GLOBAL",3)
+    !See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        MoveToObject(Player1)
+END
+

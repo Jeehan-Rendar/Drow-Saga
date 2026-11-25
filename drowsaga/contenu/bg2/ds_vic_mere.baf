@@ -1,0 +1,22 @@
+IF
+  InParty(Myself)
+  RealGlobalTimerExpired("ViconiaRomance","GLOBAL")
+  Global("LoveTalk","LOCALS",59)
+  Global("DS_VIC_MERE","GLOBAL",0)
+  GlobalGT("DS_P1_DROW","GLOBAL",0)
+  !Global("ViconiaRomanceActive","GLOBAL",0)
+  !Global("ViconiaRomanceActive","GLOBAL",3)
+  Global("ViconiaMatch","GLOBAL",1)
+  !AreaCheck("AR1300")
+  !AreaType(DUNGEON)
+  See(Player1)
+  CombatCounter(0)
+  !See([ENEMY])
+  !Range([NEUTRAL],10)
+THEN
+  RESPONSE #100
+    SetGlobal("DS_VIC_MERE","GLOBAL",1)
+    RealSetGlobalTimer("ViconiaRomance","GLOBAL",TEN_HOURS)
+    PlaySong(40)
+    StartDialogOverride("DSDVICMR",Player1)
+END

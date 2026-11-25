@@ -1,0 +1,24 @@
+IF
+  InParty(Myself)
+  GlobalGT("DS_P1_DROW","GLOBAL",0)
+  Global("AnomenMatch","GLOBAL",1)
+  Global("LoveTalk","LOCALS",1)
+  Global("DS_ANOMEN_B","GLOBAL",1)
+  RealGlobalTimerExpired("AnomenRomance","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("DS_ANOMEN_B","GLOBAL",2)
+    RealSetGlobalTimer("AnomenRomance","GLOBAL",60)
+END
+
+IF
+  InParty(Myself)
+  GlobalGT("DS_P1_DROW","GLOBAL",0)
+  Global("AnomenMatch","GLOBAL",1)
+  Global("LoveTalk","LOCALS",1)
+  GlobalLT("DS_ANOMEN_B","GLOBAL",3)
+  RealGlobalTimerExpired("AnomenRomance","GLOBAL")
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("AnomenRomance","GLOBAL",60)
+END

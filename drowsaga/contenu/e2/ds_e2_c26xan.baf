@@ -1,0 +1,8 @@
+IF
+  Global("X#XALoveTalk","GLOBAL",48)
+  GlobalGT("DS_P1_DROW","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("X#XALoveTalk","GLOBAL",49)
+    RealSetGlobalTimer("X#XALoveTalkTime","GLOBAL",XAROM_TIMER)
+END

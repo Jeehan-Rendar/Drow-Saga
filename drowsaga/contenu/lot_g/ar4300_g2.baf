@@ -1,0 +1,86 @@
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",1)
+    Global("DS_G2","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,3954,52,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G2","GLOBAL",1)
+        CreateCreature("DSG2HIL",[3679.330],0)
+        CreateCreature("DSG2BRA",[3609.370],0)
+        CreateCreature("DSG2GOR",[3749.370],0)
+        CreateCreature("DSG2PIP",[3539.410],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",1)
+    Global("DS_G2","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,293,3770,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G2","GLOBAL",1)
+        CreateCreature("DSG2HIL",[567.3491],0)
+        CreateCreature("DSG2BRA",[497.3531],0)
+        CreateCreature("DSG2GOR",[637.3531],0)
+        CreateCreature("DSG2PIP",[427.3571],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",1)
+    Global("DS_G2","GLOBAL",0)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G2","GLOBAL",1)
+        CreateCreature("DSG2HIL",[2123.1911],0)
+        CreateCreature("DSG2BRA",[2053.1951],0)
+        CreateCreature("DSG2GOR",[2193.1951],0)
+        CreateCreature("DSG2PIP",[1983.1991],0)
+END
+
+IF
+    Global("DS_G2_FINI","GLOBAL",0)
+    Global("DS_G2","GLOBAL",5)
+    Dead("DSG2GOR")
+THEN
+    RESPONSE #100
+        AddJournalEntry(@3,INFO)
+        AddexperienceParty(2000)
+        SetGlobal("DS_G2_FINI","GLOBAL",1)
+END
+
+IF
+    Global("DS_G2_FINI","GLOBAL",0)
+    Global("DS_G2","GLOBAL",3)
+    Global("DS_G2_ISSUE","GLOBAL",6)
+    Dead("DSG2HIL")
+    Dead("DSG2BRA")
+    Dead("DSG2GOR")
+    Dead("DSG2PIP")
+THEN
+    RESPONSE #100
+        AddJournalEntry(@6,INFO)
+        AddexperienceParty(2000)
+        SetGlobal("DS_G2_FINI","GLOBAL",1)
+END
+
+IF
+    Global("DS_G2_FINI","GLOBAL",0)
+    Global("DS_G2","GLOBAL",3)
+    !Global("DS_G2_ISSUE","GLOBAL",6)
+    Dead("DSG2HIL")
+    Dead("DSG2BRA")
+    Dead("DSG2GOR")
+    Dead("DSG2PIP")
+THEN
+    RESPONSE #100
+        AddJournalEntry(@4,INFO)
+        AddexperienceParty(2000)
+        SetGlobal("DS_G2_FINI","GLOBAL",1)
+END
+

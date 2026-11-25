@@ -1,0 +1,227 @@
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,1405,772,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[1473.791],0)
+        CreateCreature("DSG3V1",[1403.831],0)
+        CreateCreature("DSG3V2",[1543.831],0)
+        CreateCreature("DSG3V3",[1333.871],0)
+        CreateCreature("DSG3V4",[1613.871],0)
+        CreateCreature("DSG3V5",[1433.921],0)
+        CreateCreature("DSG3HAL",[1513.921],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,1562,501,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[1607.560],0)
+        CreateCreature("DSG3V1",[1537.600],0)
+        CreateCreature("DSG3V2",[1677.600],0)
+        CreateCreature("DSG3V3",[1467.640],0)
+        CreateCreature("DSG3V4",[1747.640],0)
+        CreateCreature("DSG3V5",[1567.690],0)
+        CreateCreature("DSG3HAL",[1647.690],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,2310,612,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[2242.655],0)
+        CreateCreature("DSG3V1",[2172.695],0)
+        CreateCreature("DSG3V2",[2312.695],0)
+        CreateCreature("DSG3V3",[2102.735],0)
+        CreateCreature("DSG3V4",[2382.735],0)
+        CreateCreature("DSG3V5",[2202.785],0)
+        CreateCreature("DSG3HAL",[2282.785],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,2604,796,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[2492.811],0)
+        CreateCreature("DSG3V1",[2422.851],0)
+        CreateCreature("DSG3V2",[2562.851],0)
+        CreateCreature("DSG3V3",[2352.891],0)
+        CreateCreature("DSG3V4",[2632.891],0)
+        CreateCreature("DSG3V5",[2452.941],0)
+        CreateCreature("DSG3HAL",[2532.941],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,2640,1130,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[2523.1095],0)
+        CreateCreature("DSG3V1",[2453.1135],0)
+        CreateCreature("DSG3V2",[2593.1135],0)
+        CreateCreature("DSG3V3",[2383.1175],0)
+        CreateCreature("DSG3V4",[2663.1175],0)
+        CreateCreature("DSG3V5",[2483.1225],0)
+        CreateCreature("DSG3HAL",[2563.1225],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,821,1355,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[977.1286],0)
+        CreateCreature("DSG3V1",[907.1326],0)
+        CreateCreature("DSG3V2",[1047.1326],0)
+        CreateCreature("DSG3V3",[837.1366],0)
+        CreateCreature("DSG3V4",[1117.1366],0)
+        CreateCreature("DSG3V5",[937.1416],0)
+        CreateCreature("DSG3HAL",[1017.1416],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,2987,872,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[2818.876],0)
+        CreateCreature("DSG3V1",[2748.916],0)
+        CreateCreature("DSG3V2",[2888.916],0)
+        CreateCreature("DSG3V3",[2678.956],0)
+        CreateCreature("DSG3V4",[2958.956],0)
+        CreateCreature("DSG3V5",[2778.1006],0)
+        CreateCreature("DSG3HAL",[2858.1006],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+    NearLocation(Player1,582,1166,40)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[774.1126],0)
+        CreateCreature("DSG3V1",[704.1166],0)
+        CreateCreature("DSG3V2",[844.1166],0)
+        CreateCreature("DSG3V3",[634.1206],0)
+        CreateCreature("DSG3V4",[914.1206],0)
+        CreateCreature("DSG3V5",[734.1256],0)
+        CreateCreature("DSG3HAL",[814.1256],0)
+END
+
+IF
+    Global("DS_P1_DROW","GLOBAL",1)
+    GlobalGT("Chapter","GLOBAL",6)
+    Global("DS_G3","GLOBAL",0)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3","GLOBAL",1)
+        CreateCreature("DSG3JOR",[1863.900],0)
+        CreateCreature("DSG3V1",[1793.940],0)
+        CreateCreature("DSG3V2",[1933.940],0)
+        CreateCreature("DSG3V3",[1723.980],0)
+        CreateCreature("DSG3V4",[2003.980],0)
+        CreateCreature("DSG3V5",[1823.1030],0)
+        CreateCreature("DSG3HAL",[1903.1030],0)
+END
+
+IF
+    Dead("DSG3JOR")
+    !Global("DS_G3_REP_OR","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3_REP_OR","GLOBAL",1)
+        ReputationInc(-1)
+END
+
+IF
+    Dead("DSG3V1")
+    !Global("DS_G3_REP_V1","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3_REP_V1","GLOBAL",1)
+        ReputationInc(-1)
+END
+
+IF
+    Dead("DSG3V2")
+    !Global("DS_G3_REP_V2","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3_REP_V2","GLOBAL",1)
+        ReputationInc(-1)
+END
+
+IF
+    Dead("DSG3V3")
+    !Global("DS_G3_REP_V3","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3_REP_V3","GLOBAL",1)
+        ReputationInc(-1)
+END
+
+IF
+    Dead("DSG3V4")
+    !Global("DS_G3_REP_V4","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3_REP_V4","GLOBAL",1)
+        ReputationInc(-1)
+END
+
+IF
+    Dead("DSG3V5")
+    !Global("DS_G3_REP_V5","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_G3_REP_V5","GLOBAL",1)
+        ReputationInc(-1)
+END
+
+IF
+    Global("DS_G3_FINI","GLOBAL",0)
+    Global("DS_G3","GLOBAL",3)
+    Dead("DSG3JOR")
+THEN
+    RESPONSE #100
+        AddJournalEntry(@11,INFO)
+        AddexperienceParty(6000)
+        SetGlobal("DS_G3_FINI","GLOBAL",1)
+END
+

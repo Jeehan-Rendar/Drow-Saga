@@ -1,0 +1,8 @@
+INCLUDE ~drowsaga/contenu/e2/ds_e2_lib.tpa~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ubnimfur.dlg~ BEGIN
+  WITH_TRA ~drowsaga/tra/%LANGUAGE%/ub.tra~ BEGIN
+    LAF ds_e2_dit_fin INT_VAR ref = RESOLVE_STR_REF(@1) STR_VAR cle = ~UB_NIM2~ dlg = ~UBNIMFUR~ aiguille = ~Merci, votre aide est arrivée à point nommé. De sacrés chiens~ END
+    LAF ds_e2_dit_fin INT_VAR ref = RESOLVE_STR_REF(@2) STR_VAR cle = ~UB_NIM3~ dlg = ~UBNIMFUR~ aiguille = ~Je ne vous conseille pas de vous mettre entre un chasseur elfe et ses chiens~ END
+  END
+END

@@ -1,0 +1,16 @@
+
+IF
+    Global("DS_G3","GLOBAL",3)
+THEN
+    RESPONSE #100
+        RunAwayFrom(Player1,45)
+        EscapeArea()
+END
+
+IF
+    Global("DS_G3","GLOBAL",4)
+THEN
+    RESPONSE #100
+        EscapeArea()
+END
+

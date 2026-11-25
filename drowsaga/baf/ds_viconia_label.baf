@@ -1,0 +1,126 @@
+
+IF
+    OR(2)
+      Name("Viconia",Player1)
+      Name("Baeloth",Player1)
+    !Global("DS_UI_VIC_1","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_1","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !Name("Viconia",Player1)
+    !Name("Baeloth",Player1)
+    Global("DS_UI_VIC_1","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_1","GLOBAL",0)
+        Continue()
+END
+
+IF
+    OR(2)
+      Name("Viconia",Player2)
+      Name("Baeloth",Player2)
+    !Global("DS_UI_VIC_2","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_2","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !Name("Viconia",Player2)
+    !Name("Baeloth",Player2)
+    Global("DS_UI_VIC_2","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_2","GLOBAL",0)
+        Continue()
+END
+
+IF
+    OR(2)
+      Name("Viconia",Player3)
+      Name("Baeloth",Player3)
+    !Global("DS_UI_VIC_3","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_3","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !Name("Viconia",Player3)
+    !Name("Baeloth",Player3)
+    Global("DS_UI_VIC_3","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_3","GLOBAL",0)
+        Continue()
+END
+
+IF
+    OR(2)
+      Name("Viconia",Player4)
+      Name("Baeloth",Player4)
+    !Global("DS_UI_VIC_4","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_4","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !Name("Viconia",Player4)
+    !Name("Baeloth",Player4)
+    Global("DS_UI_VIC_4","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_4","GLOBAL",0)
+        Continue()
+END
+
+IF
+    OR(2)
+      Name("Viconia",Player5)
+      Name("Baeloth",Player5)
+    !Global("DS_UI_VIC_5","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_5","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !Name("Viconia",Player5)
+    !Name("Baeloth",Player5)
+    Global("DS_UI_VIC_5","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_5","GLOBAL",0)
+        Continue()
+END
+
+IF
+    OR(2)
+      Name("Viconia",Player6)
+      Name("Baeloth",Player6)
+    !Global("DS_UI_VIC_6","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_6","GLOBAL",1)
+        Continue()
+END
+
+IF
+    !Name("Viconia",Player6)
+    !Name("Baeloth",Player6)
+    Global("DS_UI_VIC_6","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("DS_UI_VIC_6","GLOBAL",0)
+        Continue()
+END

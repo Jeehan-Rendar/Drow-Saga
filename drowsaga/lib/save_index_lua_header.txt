@@ -1,0 +1,3 @@
+-- Drow Saga ZN: generated at install time from existing BGEE/SoD saves.
+-- Read-only index. The save files themselves are never modified.
+drowSagaGeneratedSaveEntries = {
