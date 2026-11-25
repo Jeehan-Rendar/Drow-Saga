@@ -1,3 +1,5 @@
+<p align="center"><img src="pics/banniere.jpg" alt="Drow Saga, Baldur's Gate I & II"></p>
+
 # Drow Saga
 
 Drow Saga fait du drow une race jouable dans **Baldur's Gate : Enhanced Edition** (avec **Siege of Dragonspear**) et **Baldur's Gate II : Enhanced Edition** (avec **Throne of Bhaal**), et réécrit une grande partie de l'aventure pour un héros ou une héroïne drow : de Château-Suif aux épilogues de ToB, le monde, les compagnons et leurs romances réagissent à qui vous êtes.
