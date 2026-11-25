@@ -70,5 +70,5 @@ Ouvrez un ticket dans les [Issues](https://github.com/Jeehan-Rendar/Drow-Saga/is
 - **Le code et les textes de Drow Saga** sont libres d'usage et d'adaptation, à condition de citer Drow Saga et son auteur (dans l'esprit de la licence [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)).
 - **Fichiers tiers**, qui restent la propriété de leurs auteurs et ne sont pas couverts par cette licence :
   - les fichiers d'interface du jeu de base (`drowsaga/ui/vanilla*/UI.menu`, adaptés) et les portraits de Viconia de Siege of Dragonspear (`drowsaga/portraits`) : Beamdog ;
-  - le fichier d'interface d'Infinity UI++ (`drowsaga/ui/infinity_ui_14/UI.menu`, adapté) : l'auteur d'Infinity UI++.
+  - le fichier d'interface d'Infinity UI++ (`drowsaga/ui/infinity_ui_14/UI.menu`, adapté) : Renegade0 sur GitHub, Pecca sur les forums de Beamdog.
 - **Remerciements** : l'équipe de BG1 NPC Project, The Gibberlings Three, et les auteurs de WeiDU.
