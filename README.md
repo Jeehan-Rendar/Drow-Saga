@@ -6,7 +6,7 @@ Le héros reste celui du jeu : un enfant recueilli par Gorion et élevé à Châ
 
 Le drow est une sous-race de l'elfe : choisissez Elfe à la création, puis « Choisir une sous-race » (interface du jeu de base) ou « Sous-races » (Infinity UI++). Le contenu est écrit en français ; la version anglaise viendra plus tard.
 
-**Version actuelle : 1.0.0** — téléchargez le paquet dans les [versions publiées](https://github.com/Jeehan-Rendar/Drow-Saga/releases).
+**Version actuelle : 1.0.1** — téléchargez le paquet dans les [versions publiées](https://github.com/Jeehan-Rendar/Drow-Saga/releases).
 
 ## Traits du drow
 

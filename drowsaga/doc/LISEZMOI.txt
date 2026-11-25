@@ -128,6 +128,7 @@ LIMITES CONNUES
 
 
 SIGNALER UN PROBLÈME
-Rendez-vous sur la page GitHub du mod.
+Ouvrez un ticket sur la page GitHub du mod :
+https://github.com/Jeehan-Rendar/Drow-Saga/issues
 Notez le jeu (BGEE, SoD, BG2 ou ToB), l'interface, ce que vous avez fait, ce
 que vous avez vu, et joignez une capture d'écran.

@@ -16,11 +16,11 @@ Quelques renégats, fugitifs et parias refusent pourtant cette existence et cher
 Les drows disposent des traits suivants :
 - +2 en Dextérité ; -1 en Constitution ; +1 en Intelligence.
 - 50 % de résistance à la magie.
-- +1 au TACO avec les arcs, les épées longues et les épées courtes.
+- +1 au TAC0 avec les arcs, les épées longues et les épées courtes.
 - Infravision.
 - Ne reçoivent que 90 % de l'expérience normalement acquise.
 - Réputation initiale réduite de 2.
-- Sensibilité à la lumière : en extérieur et de jour, +1 au TACO et +1 à tous les jets de sauvegarde.
+- Sensibilité à la lumière : en extérieur et de jour, +1 au TAC0 et +1 à tous les jets de sauvegarde.
 - Au niveau 9, l'acclimatation à la surface supprime définitivement ces pénalités.]],
 }
 if not drowSagaTextLoaded then
