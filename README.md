@@ -1,4 +1,4 @@
-<p align="center"><img src="pics/banniere.jpg" alt="Drow Saga, Baldur's Gate I & II"></p>
+<p align="center"><img src="pics/banniere_cadre.jpg" alt="Drow Saga, Baldur's Gate I & II"></p>
 
 # Drow Saga
 
