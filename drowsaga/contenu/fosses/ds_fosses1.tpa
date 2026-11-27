@@ -1,0 +1,75 @@
+
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bpbaelot.dlg~ BEGIN
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@8) requis = 1 STR_VAR cle = ~FP_BE0~ dlg = ~BPBELLOW~ aiguille = ~Votre ami est un champignon parlant géant~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@12) requis = 1 STR_VAR cle = ~FP_TH0~ dlg = ~BPTHARDE~ aiguille = ~tout naturel pour un esclave de l'elfe noir~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@13) requis = 1 STR_VAR cle = ~FP_TH1~ dlg = ~BPTHARDE~ aiguille = ~De bien grands mots pour un esclave de l'elfe noir~ END
+
+  OUTER_SPRINT ds_fp ~~
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@2) STR_VAR cle = ~BA71~ dlg = ~BPBAELOT~ aiguille = ~C'est un terrible cliché, indigne de~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@3) STR_VAR cle = ~BA50~ dlg = ~BPBAELOT~ aiguille = ~pour introduire les combattants, mais~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@5) STR_VAR cle = ~BA21~ dlg = ~BPBAELOT~ aiguille = ~Comment est-il arrivé là, je n'en sais rien~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@6) STR_VAR cle = ~BA33~ dlg = ~BPBAELOT~ aiguille = ~les rites funéraires que votre culture préconise~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@7) STR_VAR cle = ~BE0~ dlg = ~BPBELLOW~ aiguille = ~Bienvenue, êtres de la surface~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@9) STR_VAR cle = ~BE1~ dlg = ~BPBELLOW~ aiguille = ~Je ne suis pas surpris que vous n'en ayez pas déjà rencontré~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@10) STR_VAR cle = ~BE25~ dlg = ~BPBELLOW~ aiguille = ~il trouva son peuple massacré~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@11) STR_VAR cle = ~BE28~ dlg = ~BPBELLOW~ aiguille = ~Le Concocteur avait raison depuis le début~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@14) STR_VAR cle = ~TH1~ dlg = ~BPTHARDE~ aiguille = ~Avec des intrus de la surface~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@15) STR_VAR cle = ~TH3~ dlg = ~BPTHARDE~ aiguille = ~Vous avez bien vu que c'était un elfe noir~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@16) STR_VAR cle = ~TH6~ dlg = ~BPTHARDE~ aiguille = ~Vos flatteries sonnent comme celles de l'elfe noir~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@17) STR_VAR cle = ~DI15~ dlg = ~BPDINGUE~ aiguille = ~en territoire duergar que ce maudit drow~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@18) STR_VAR cle = ~MA25~ dlg = ~BPMAGDA~ aiguille = ~nous libérer de ce drow dément~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@19) STR_VAR cle = ~TS3~ dlg = ~BPTHESP~ aiguille = ~juger sur la seule apparence~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@20) STR_VAR cle = ~EL2~ dlg = ~BPELAN~ aiguille = ~jaillir des étincelles du silex~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@21) STR_VAR cle = ~NA15~ dlg = ~BPNAJIM~ aiguille = ~un portail qui vous ramènera à la surface~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%ds_fp%~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~BPBAELOT~ aiguille = ~Ah, ce groupe. Ils sont enfin réveillés~ RET n RET_ARRAY ds_e2_et END
+  LAF ds_e2_cherche STR_VAR dlg = ~BPBAELOT~ aiguille = ~Vous pouvez aussi me remercier, puisque vos pathétiques vies~ RET n1 = n RET_ARRAY ds_fp_v = ds_e2_et END
+  ACTION_IF (n = 1) AND (n1 = 1) BEGIN
+    OUTER_SET s0 = $ds_e2_et(~0~)
+    OUTER_SET s1 = $ds_fp_v(~0~)
+    OUTER_SET r = RESOLVE_STR_REF(@1)
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_fp_acc.d~ texte = EVAL
+      ~APPEND #T#BPBAELOT#T# IF #T##T# THEN BEGIN #T#DS_FP_ACCUEIL#T# SAY #%r% IF #T##T# THEN GOTO %s1% END END
+       ADD_TRANS_TRIGGER #T#BPBAELOT#T# %s0% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T# DO 0
+       EXTEND_BOTTOM #T#BPBAELOT#T# %s0% IF #T#GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN DO #T#SetGlobal("BLACK_PITS","GLOBAL",1)#T# GOTO DS_FP_ACCUEIL END~ END
+    PRINT ~Drow Saga Fosses (ACCUEIL) : BPBAELOT %s0% -> réplique ajoutée -> %s1%~
+  END ELSE BEGIN
+    WARN ~Drow Saga Fosses (ACCUEIL) : accueil de Baeloth introuvable (%n%, %n1%)~
+  END
+
+  OUTER_SPRINT ds_fp_fin ~~
+  COPY_EXISTING ~bpnajim.dlg~ ~override~
+    PATCH_IF (INDEX_BUFFER (CASE_SENSITIVE EXACT_MATCH ~"BPENDA"~) >= 0) BEGIN
+      SPRINT ds_fp_fin ~BPENDA~
+    END ELSE PATCH_IF (INDEX_BUFFER (CASE_SENSITIVE EXACT_MATCH ~"BPEND"~) >= 0) BEGIN
+      SPRINT ds_fp_fin ~BPEND~
+    END
+  BUT_ONLY
+  ACTION_IF (~%ds_fp_fin%~ STRING_EQUAL ~~) BEGIN
+    WARN ~Drow Saga Fosses (FIN) : écran de fin introuvable dans le dialogue de Najim, laissé tel quel~
+  END ELSE ACTION_IF NOT FILE_EXISTS_IN_GAME ~%ds_fp_fin%.2da~ BEGIN
+    PRINT ~Drow Saga Fosses (FIN) : %ds_fp_fin%.2da absent du jeu, écran de fin laissé tel quel~
+  END ELSE BEGIN
+    OUTER_SET r = RESOLVE_STR_REF(@22)
+    OUTER_SET ok = 0
+    COPY_EXISTING ~%ds_fp_fin%.2da~ ~override/dsfpend.2da~
+      REPLACE_EVALUATE CASE_SENSITIVE ~^DEFAULT\([ %TAB%]+\)\([0-9]+\)\([ %TAB%]+\)\([0-9]+\)~ BEGIN
+        GET_STRREF MATCH2 t
+        PATCH_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~portail tourbillonnant~ ~%t%~) >= 0) BEGIN
+          SET ok = 1
+        END
+      END ~DEFAULT%MATCH1%%r%%MATCH3%%r%~
+    BUT_ONLY
+    ACTION_IF ok BEGIN
+      OUTER_SPRINT de ~"%ds_fp_fin%"~
+      LAF ds_e2_rep INT_VAR ref = 0 - 1 requis = 1 STR_VAR cle = ~FP_FIN1~ dlg = ~BPNAJIM~ aiguille = ~Najim, je suis prêt à partir~ remp_de = EVAL ~%de%~ remp_vers = ~"DSFPEND"~ END
+      LAF ds_e2_rep INT_VAR ref = 0 - 1 requis = 1 STR_VAR cle = ~FP_FIN2~ dlg = ~BPNAJIM~ aiguille = ~Oui, je désire m'en aller~ remp_de = EVAL ~%de%~ remp_vers = ~"DSFPEND"~ END
+      PRINT ~Drow Saga Fosses (FIN) : écran de fin du drow (DSFPEND, d'après %ds_fp_fin%)~
+    END ELSE BEGIN
+      WARN ~Drow Saga Fosses (FIN) : texte de fin de %ds_fp_fin%.2DA non reconnu, écran de fin laissé tel quel~
+      DELETE ~override/dsfpend.2da~
+    END
+  END
+END

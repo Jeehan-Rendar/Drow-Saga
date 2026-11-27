@@ -138,14 +138,19 @@ OUTER_FOR (k = 0; k < nse; ++k) BEGIN
   OUTER_SET ds_jsr = sr
   LAM ds_j_choix
   LAF ds_e2_lit_etat INT_VAR etat = s STR_VAR dlg RET trig ns END
+  OUTER_SPRINT snd ~~
+  ACTION_IF VARIABLE_IS_SET $ds_j_son(~%sr%~) BEGIN
+    OUTER_SPRINT snd $ds_j_son(~%sr%~)
+    OUTER_SPRINT snd ~ [%snd%]~
+  END
   ACTION_IF (~%trig%~ STRING_EQUAL ~~) BEGIN
-    OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF #T##T# THEN BEGIN #T#DS_JET_%s%#T# SAY #T#%m%#T# #T#%f%#T# COPY_TRANS #T#%dlg%#T# %s% END END~
+    OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF #T##T# THEN BEGIN #T#DS_JET_%s%#T# SAY #T#%m%#T#%snd% #T#%f%#T#%snd% COPY_TRANS #T#%dlg%#T# %s% END END~
   END ELSE BEGIN
     COPY_EXISTING ~%dlg%.dlg~ ~override~
       READ_LONG 0x0c so
       READ_SLONG (so + s * 0x10 + 0x0c) w
     BUT_ONLY
-    OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF WEIGHT #%w% #T#%trig% GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN BEGIN #T#DS_JET_%s%#T# SAY #T#%m%#T# #T#%f%#T# COPY_TRANS #T#%dlg%#T# %s% END END ADD_STATE_TRIGGER #T#%dlg%#T# %s% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T#~
+    OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF WEIGHT #%w% #T#%trig% GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN BEGIN #T#DS_JET_%s%#T# SAY #T#%m%#T#%snd% #T#%f%#T#%snd% COPY_TRANS #T#%dlg%#T# %s% END END ADD_STATE_TRIGGER #T#%dlg%#T# %s% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T#~
   END
   LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_jet3.d~ texte = EVAL ~%d%~ END
   APPEND_OUTER ~override/ds_jetons.txt~ ~%dlg% %s%~

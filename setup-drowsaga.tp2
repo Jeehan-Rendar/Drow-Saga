@@ -1,6 +1,6 @@
 BACKUP ~drowsaga/backup~
 AUTHOR ~Drow Saga~
-VERSION ~1.0.1~
+VERSION ~1.0.2~
 README ~drowsaga/doc/LISEZMOI.txt~
 ASK_EVERY_COMPONENT
 
@@ -307,6 +307,9 @@ WITH_TRA ~drowsaga/tra/%LANGUAGE%/jetons.tra~ BEGIN
   LAF ds_e2_redirige STR_VAR cibles = EVAL ~%ds_ctx%~ END
 END
 COMPILE ~drowsaga/contenu/ds_bgee_contexte.d~ USING ~drowsaga/tra/%LANGUAGE%/jetons.tra~
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/fosses1.tra~ BEGIN
+  INCLUDE ~drowsaga/contenu/fosses/ds_fosses1.tpa~
+END
 ACTION_IF FILE_EXISTS ~override/ds_jetons.txt~ BEGIN DELETE + ~override/ds_jetons.txt~ END
 INCLUDE ~drowsaga/contenu/jetons/ds_jetons.tpa~
 ACTION_IF FILE_EXISTS_IN_GAME ~bdshapur.dlg~ BEGIN
@@ -376,6 +379,9 @@ REQUIRE_COMPONENT ~setup-drowsaga.tp2~ ~0~ @12
 OUTER_SPRINT DS_DROW ~TriggerOverride(Player1,Global("DS_DROW","LOCALS",1))~
 INCLUDE ~drowsaga/contenu/bg2/ds_bg2.tpa~
 INCLUDE ~drowsaga/contenu/bg2/ds_bebe_aerie.tpa~
+WITH_TRA ~drowsaga/tra/%LANGUAGE%/fosses2.tra~ BEGIN
+  INCLUDE ~drowsaga/contenu/fosses/ds_fosses2.tpa~
+END
 
 BEGIN @62
 DESIGNATED 260

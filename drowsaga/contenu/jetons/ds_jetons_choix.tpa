@@ -1,4 +1,4 @@
-OUTER_SET ds_jc_n = 104
+OUTER_SET ds_jc_n = 114
 OUTER_SPRINT $ds_jc_o(~0~) ~<CHARNAME>, nous savions que vous aviez des pouvoirs dépassant ceux dont un <PRO_RACE> est supposé disposer. Il y avait tant de signes : vos rêves, par exemple, pleins de présages menaçants, et la magie dont vous héritiez ensuite. Et puis il y avait cet ennemi impitoyable qui s'intéressait à vous de manière inexpliquée... Mais je n'aurais jamais deviné que la source de votre force était à ce point maléfique, qu'elle émanait de Bhaal, le dieu du meurtre.~
 OUTER_SPRINT $ds_jc_m(~0~) ~<CHARNAME>, nous savions que vous aviez des pouvoirs dépassant ceux dont un elfe noir est supposé disposer. Il y avait tant de signes : vos rêves, par exemple, pleins de présages menaçants, et la magie dont vous héritiez ensuite. Et puis il y avait cet ennemi impitoyable qui s'intéressait à vous de manière inexpliquée... Mais je n'aurais jamais deviné que la source de votre force était à ce point maléfique, qu'elle émanait de Bhaal, le dieu du meurtre.~
 OUTER_SPRINT $ds_jc_f(~0~) ~<CHARNAME>, nous savions que vous aviez des pouvoirs dépassant ceux dont un elfe noir est supposé disposer. Il y avait tant de signes : vos rêves, par exemple, pleins de présages menaçants, et la magie dont vous héritiez ensuite. Et puis il y avait cet ennemi impitoyable qui s'intéressait à vous de manière inexpliquée... Mais je n'aurais jamais deviné que la source de votre force était à ce point maléfique, qu'elle émanait de Bhaal, le dieu du meurtre.~
@@ -311,3 +311,75 @@ OUTER_SPRINT $ds_jc_f(~102~) ~Vous n'avez pas autorité, être de la surface. Je
 OUTER_SPRINT $ds_jc_o(~103~) ~Certes, votre très honorable grandeur. Leur chef, que voici, est ce qu'ils appellent un « <PRO_RACE> ».~
 OUTER_SPRINT $ds_jc_m(~103~) ~Certes, votre très honorable grandeur. Leur chef, que voici, est... *Elle hésite.* ...est un drow. Je sais ce que cela signifie pour nous tous. Mais mes augures sont formels : il a grandi parmi les habitants de la surface, et c'est de la surface qu'il nous arrive, comme le Père-Requin l'avait annoncé.~
 OUTER_SPRINT $ds_jc_f(~103~) ~Certes, votre très honorable grandeur. Leur chef, que voici, est... *Elle hésite.* ...est une drow. Je sais ce que cela signifie pour nous tous. Mais mes augures sont formels : elle a grandi parmi les habitants de la surface, et c'est de la surface qu'elle nous arrive, comme le Père-Requin l'avait annoncé.~
+OUTER_SPRINT $ds_jc_o(~104~) ~Toutes mes excuses, <RACE> ! Je perds rarement mon sang froid en public. C'est juste que je suis si.... impressionné par vos exploits que j'ai du mal à m'exprimer. Je devrais être content car, avec vous, j'ai créé le spectacle de divertissement ultime !~
+OUTER_SPRINT $ds_jc_m(~104~) ~Toutes mes excuses, cher compatriote ! Je perds rarement mon sang froid en public. C'est juste que je suis si.... impressionné par vos exploits que j'ai du mal à m'exprimer. Je devrais être content car, avec vous, j'ai créé le spectacle de divertissement ultime !~
+OUTER_SPRINT $ds_jc_f(~104~) ~Toutes mes excuses, chère compatriote ! Je perds rarement mon sang froid en public. C'est juste que je suis si.... impressionné par vos exploits que j'ai du mal à m'exprimer. Je devrais être content car, avec vous, j'ai créé le spectacle de divertissement ultime !~
+OUTER_SPRINT $ds_jc_o(~105~) ~Hum... On dirait que j'ai de nouveau mal calculé. Ce petit jeu commence à me fatiguer. Du vent, <RACE> ! Vous m'ennuyez vraiment.~
+OUTER_SPRINT $ds_jc_m(~105~) ~Hum... On dirait que j'ai de nouveau mal calculé. Ce petit jeu commence à me fatiguer. Du vent, parvenu des profondeurs ! Vous m'ennuyez vraiment.~
+OUTER_SPRINT $ds_jc_f(~105~) ~Hum... On dirait que j'ai de nouveau mal calculé. Ce petit jeu commence à me fatiguer. Du vent, parvenue des profondeurs ! Vous m'ennuyez vraiment.~
+OUTER_SPRINT $ds_jc_o(~106~) ~Hum... On dirait que j'ai de nouveau mal calculé. Ce petit jeu commence à me fatiguer. Du vent, <RACE> ! Vous m'ennuyez vraiment.~
+OUTER_SPRINT $ds_jc_m(~106~) ~Hum... On dirait que j'ai de nouveau mal calculé. Ce petit jeu commence à me fatiguer. Du vent, parvenu des profondeurs ! Vous m'ennuyez vraiment.~
+OUTER_SPRINT $ds_jc_f(~106~) ~Hum... On dirait que j'ai de nouveau mal calculé. Ce petit jeu commence à me fatiguer. Du vent, parvenue des profondeurs ! Vous m'ennuyez vraiment.~
+OUTER_SPRINT $ds_jc_o(~107~) ~Vos bouffonneries ont perdu leur charme depuis longtemps, <RACE>. Garaq, dégaine ta lame et entre dans l'arène avec moi. Toi et moi allons saigner ces créatures à mort. Lentement.~
+OUTER_SPRINT $ds_jc_m(~107~) ~Vos bouffonneries ont perdu leur charme depuis longtemps, mon ténébreux cousin. Garaq, dégaine ta lame et entre dans l'arène avec moi. Toi et moi allons saigner ces créatures à mort. Lentement.~
+OUTER_SPRINT $ds_jc_f(~107~) ~Vos bouffonneries ont perdu leur charme depuis longtemps, ma ténébreuse cousine. Garaq, dégaine ta lame et entre dans l'arène avec moi. Toi et moi allons saigner ces créatures à mort. Lentement.~
+OUTER_SPRINT $ds_jc_o(~108~) ~Attention, <RACE>. Puisque je suis l'invité de Baeloth, ce n'est que la courtoisie qui m'empêche d'arracher vos tendons de vos os.~
+OUTER_SPRINT $ds_jc_m(~108~) ~Attention, elfe noir. Puisque je suis l'invité de Baeloth, ce n'est que la courtoisie qui m'empêche d'arracher vos tendons de vos os.~
+OUTER_SPRINT $ds_jc_f(~108~) ~Attention, elfe noire. Puisque je suis l'invité de Baeloth, ce n'est que la courtoisie qui m'empêche d'arracher vos tendons de vos os.~
+OUTER_SPRINT $ds_jc_o(~109~) ~Vous pensez vraiment que je vais me laisser détruire par quelqu'un comme vous, quand ma liberté est à portée de main ? Allons, <RACE>. Nous sommes tous deux des créatures intelligentes (peut-être l'une plus que l'autre) et je ne désire pas vous causer de souffrance inutile. Partez, et allez accomplir les rituels mortuaires nécessaires à vos espèces, quels qu'ils soient.~
+OUTER_SPRINT $ds_jc_m(~109~) ~Vous pensez vraiment que je vais me laisser détruire par quelqu'un comme vous, quand ma liberté est à portée de main ? Allons, elfe noir. Nous sommes tous deux des créatures intelligentes (peut-être l'une plus que l'autre) et je ne désire pas vous causer de souffrance inutile. Partez, et allez accomplir les rituels mortuaires nécessaires à vos espèces, quels qu'ils soient.~
+OUTER_SPRINT $ds_jc_f(~109~) ~Vous pensez vraiment que je vais me laisser détruire par quelqu'un comme vous, quand ma liberté est à portée de main ? Allons, elfe noire. Nous sommes tous deux des créatures intelligentes (peut-être l'une plus que l'autre) et je ne désire pas vous causer de souffrance inutile. Partez, et allez accomplir les rituels mortuaires nécessaires à vos espèces, quels qu'ils soient.~
+OUTER_SPRINT $ds_jc_o(~110~) ~Je... je ferais m-m-mieux de ne pas perdre de t-temps à vous parler. Baeloth me... pu-pu-punira encore. Je suis esclave de sa volonté, <RACE>. S-s'il vous plaît, n'attirez pas son at-tt-attention sur moi.~
+OUTER_SPRINT $ds_jc_m(~110~) ~Je... je ferais m-m-mieux de ne pas perdre de t-temps à vous parler. Baeloth me... pu-pu-punira encore. Je suis esclave de sa volonté. V-vous êtes... vous êtes des siens, n'est-ce pas ? S-s'il vous plaît, n'attirez pas son at-tt-attention sur moi.~
+OUTER_SPRINT $ds_jc_f(~110~) ~Je... je ferais m-m-mieux de ne pas perdre de t-temps à vous parler. Baeloth me... pu-pu-punira encore. Je suis esclave de sa volonté. V-vous êtes... vous êtes des siens, n'est-ce pas ? S-s'il vous plaît, n'attirez pas son at-tt-attention sur moi.~
+OUTER_SPRINT $ds_jc_o(~111~) ~Écoutez, mon ami (je ne devrais pas appeler un membre des <RACE>s un ami, mais vous avez déjà tellement fait pour le moral de mon peuple), puis-je vous demander une faveur ?~
+OUTER_SPRINT $ds_jc_m(~111~) ~Écoutez, mon ami (je ne devrais pas appeler un drow un ami, moins que quiconque ici, mais vous avez déjà tellement fait pour le moral de mon peuple), puis-je vous demander une faveur ?~
+OUTER_SPRINT $ds_jc_f(~111~) ~Écoutez, mon amie (je ne devrais pas appeler une drow une amie, moins que quiconque ici, mais vous avez déjà tellement fait pour le moral de mon peuple), puis-je vous demander une faveur ?~
+OUTER_SPRINT $ds_jc_o(~112~) ~Je commence à vous envier, <RACE>. Alors que j'ai couvé ma vengeance en silence, vous avez ridiculisé Baeloth dans l'arène. Faîtes juste en sorte de ne pas dépasser les bornes et attaquer le drow vous-même.~
+OUTER_SPRINT $ds_jc_m(~112~) ~Je commence à vous envier, drow. Alors que j'ai couvé ma vengeance en silence, vous avez ridiculisé Baeloth dans l'arène. Faites juste en sorte de ne pas dépasser les bornes et de ne pas vous en prendre vous-même à votre congénère.~
+OUTER_SPRINT $ds_jc_f(~112~) ~Je commence à vous envier, drow. Alors que j'ai couvé ma vengeance en silence, vous avez ridiculisé Baeloth dans l'arène. Faites juste en sorte de ne pas dépasser les bornes et de ne pas vous en prendre vous-même à votre congénère.~
+OUTER_SPRINT $ds_jc_o(~113~) ~Ah, <CHARNAME>. Je vois que Baeloth a trouvé un autre <RACE> prometteur pour se battre dans l'arène.~
+OUTER_SPRINT $ds_jc_m(~113~) ~Ah, <CHARNAME>. Je vois que Baeloth jette maintenant les siens dans l'arène. Un drow contre les monstres d'un drow : la foule va adorer.~
+OUTER_SPRINT $ds_jc_f(~113~) ~Ah, <CHARNAME>. Je vois que Baeloth jette maintenant les siens dans l'arène. Une drow contre les monstres d'un drow : la foule va adorer.~
+ACTION_IF GAME_IS ~bgee~ BEGIN
+  OUTER_SPRINT $ds_j_son(~28353~) ~DN1~
+  OUTER_SPRINT $ds_j_son(~28359~) ~DN3~
+  OUTER_SPRINT $ds_j_son(~28404~) ~DN34~
+  OUTER_SPRINT $ds_j_son(~28434~) ~DN60~
+  OUTER_SPRINT $ds_j_son(~28515~) ~DNT141~
+  OUTER_SPRINT $ds_j_son(~28564~) ~DN7~
+  OUTER_SPRINT $ds_j_son(~29195~) ~BPL301~
+  OUTER_SPRINT $ds_j_son(~29208~) ~BPT3B402~
+  OUTER_SPRINT $ds_j_son(~29211~) ~BPT3B503~
+  OUTER_SPRINT $ds_j_son(~29326~) ~BPE108~
+  OUTER_SPRINT $ds_j_son(~29362~) ~BPE402~
+  OUTER_SPRINT $ds_j_son(~29395~) ~BPJ102~
+  OUTER_SPRINT $ds_j_son(~29477~) ~BPG301~
+  OUTER_SPRINT $ds_j_son(~29505~) ~BPG404~
+  OUTER_SPRINT $ds_j_son(~29520~) ~BPH102~
+  OUTER_SPRINT $ds_j_son(~29565~) ~BPH403~
+  OUTER_SPRINT $ds_j_son(~29577~) ~BPX101~
+  OUTER_SPRINT $ds_j_son(~29640~) ~BPX1503~
+  OUTER_SPRINT $ds_j_son(~29805~) ~BPL207~
+  OUTER_SPRINT $ds_j_son(~29868~) ~BPC201~
+  OUTER_SPRINT $ds_j_son(~29924~) ~BPI401~
+  OUTER_SPRINT $ds_j_son(~29936~) ~BPTZ105A~
+END
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
+  OUTER_SPRINT $ds_j_son(~84639~) ~OH84639~
+  OUTER_SPRINT $ds_j_son(~85491~) ~OH85491~
+  OUTER_SPRINT $ds_j_son(~85526~) ~OH85526~
+  OUTER_SPRINT $ds_j_son(~85532~) ~OH85532~
+  OUTER_SPRINT $ds_j_son(~85536~) ~OH85536~
+  OUTER_SPRINT $ds_j_son(~85553~) ~OH85553~
+  OUTER_SPRINT $ds_j_son(~85637~) ~OH85637~
+  OUTER_SPRINT $ds_j_son(~85639~) ~OH85639~
+  OUTER_SPRINT $ds_j_son(~85664~) ~OH85664~
+  OUTER_SPRINT $ds_j_son(~85743~) ~OH85743~
+  OUTER_SPRINT $ds_j_son(~85759~) ~OH85759~
+  OUTER_SPRINT $ds_j_son(~85761~) ~OH85761~
+  OUTER_SPRINT $ds_j_son(~85779~) ~OH85779~
+  OUTER_SPRINT $ds_j_son(~85784~) ~OH85784~
+  OUTER_SPRINT $ds_j_son(~95163~) ~OH95163~
+  OUTER_SPRINT $ds_j_son(~95173~) ~OH95173~
+END

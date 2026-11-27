@@ -1,0 +1,53 @@
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ohbdenna.dlg~ BEGIN
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@2) requis = 1 STR_VAR cle = ~FP2_DE~ dlg = ~OHBDENNA~ aiguille = ~même des imbéciles comme vous savent que ce ne sont que des faibles~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@4) requis = 1 STR_VAR cle = ~FP2_ST~ dlg = ~OHBSTANN~ aiguille = ~leur déesse-araignée maléfique n'a pas pu les sauver~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@12) requis = 1 STR_VAR cle = ~FP2_BE~ dlg = ~OHBBELLO~ aiguille = ~Vous autres de l'Ombre-Terre, vous ne m'inspirez pas confiance~ END
+  OUTER_SET rj = RESOLVE_STR_REF(@13)
+  LAF ds_e2_rep INT_VAR ref = 0 - 1 requis = 1 STR_VAR cle = ~FP2_GZ5a~ dlg = ~OHBGEZZT~ aiguille = ~Les sarcasmes ne sont pas nécessaires~ remp_de = ~AddJournalEntry(94814~ remp_vers = EVAL ~AddJournalEntry(%rj%~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@5) requis = 1 STR_VAR cle = ~FP2_GZ5b~ dlg = ~OHBGEZZT~ aiguille = ~Un drow sarcastique. Quel contrepied~ remp_de = ~AddJournalEntry(94814~ remp_vers = EVAL ~AddJournalEntry(%rj%~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@6) requis = 1 STR_VAR cle = ~FP2_GZ5c~ dlg = ~OHBGEZZT~ aiguille = ~et j'épargnerai votre vie, drow~ remp_de = ~AddJournalEntry(94814~ remp_vers = EVAL ~AddJournalEntry(%rj%~ END
+  LAF ds_e2_cherche STR_VAR dlg = ~OHBGEZZT~ aiguille = ~Je vous la vole~ RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n = 1) BEGIN
+    OUTER_SET s8 = $ds_e2_et(~0~)
+    OUTER_SET r = RESOLVE_STR_REF(@9)
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_fp2.d~ texte = EVAL
+      ~APPEND #T#OHBGEZZT#T# IF #T##T# THEN BEGIN #T#DS_FP2_GZ8#T# SAY #%r% COPY_TRANS #T#OHBGEZZT#T# %s8% END END~ END
+    LAF ds_e2_nb STR_VAR dlg = ~OHBGEZZT~ RET ns END
+    OUTER_SET c8 = ns - 1
+    PRINT ~Drow Saga Fosses II (GZ8) : OHBGEZZT %s8% -> copie %c8%~
+  END ELSE BEGIN
+    WARN ~Drow Saga Fosses II (GZ8) : « Je vous la vole » introuvable (%n%)~
+    OUTER_SET c8 = 0 - 1
+  END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@7) requis = 1 vers = c8 STR_VAR cle = ~FP2_GZ13~ dlg = ~OHBGEZZT~ aiguille = ~Votre superbe ne vous a pas sauvé de l'Ailée, drow~ END
+  LAF ds_e2_rep INT_VAR ref = RESOLVE_STR_REF(@8) requis = 1 vers = c8 STR_VAR cle = ~FP2_GZ18~ dlg = ~OHBGEZZT~ aiguille = ~Vous rougiriez, si vous en étiez capable~ END
+
+  OUTER_SPRINT ds_fp ~~
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@1) STR_VAR cle = ~FP2_DE46~ dlg = ~OHBDENNA~ aiguille = ~Voici ce que vous ressentirez pour les drows de la maison Aiel'for~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@3) STR_VAR cle = ~FP2_ST45~ dlg = ~OHBSTANN~ aiguille = ~D'après le programme, vous venez d'affronter des drows~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@11) STR_VAR cle = ~FP2_BE1~ dlg = ~OHBBELLO~ aiguille = ~Nous étions emprisonnés avec vous dans les Fosses de Baeloth~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@14) STR_VAR cle = ~FP2_VO~ dlg = ~OHBVOGHI~ aiguille = ~Une sorte de paladin~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@15) STR_VAR cle = ~FP2_CU22~ dlg = ~OHBCUREL~ aiguille = ~Un autre membre de notre ordre est arrivé. Dennaton affirme~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_fp_dit INT_VAR ref = RESOLVE_STR_REF(@16) STR_VAR cle = ~FP2_CU20~ dlg = ~OHBCUREL~ aiguille = ~Un autre membre de notre ordre est arrivé. Ils ont bien dit~ cibles = EVAL ~%ds_fp%~ RET ds_fp = cibles END
+  LAF ds_e2_redirige STR_VAR cibles = EVAL ~%ds_fp%~ END
+
+  LAF ds_e2_cherche STR_VAR dlg = ~OHBHORT~ aiguille = ~Hort ne parle pas à ceux qui ne portent pas de cicatrices~ RET n RET_ARRAY ds_e2_et END
+  LAF ds_e2_cherche STR_VAR dlg = ~OHBHORT~ aiguille = ~Et vous êtes une femelle~ RET n1 = n RET_ARRAY ds_fp_f = ds_e2_et END
+  LAF ds_e2_cherche STR_VAR dlg = ~OHBHORT~ aiguille = ~On DIT que vous êtes un grand guerrier~ RET n2 = n RET_ARRAY ds_fp_g = ds_e2_et END
+  ACTION_IF (n = 1) AND (n1 = 1) AND (n2 = 1) BEGIN
+    OUTER_SET s7 = $ds_e2_et(~0~)
+    OUTER_SET sf = $ds_fp_f(~0~)
+    OUTER_SET sg = $ds_fp_g(~0~)
+    OUTER_SET r = RESOLVE_STR_REF(@10)
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_fp2_hort.d~ texte = EVAL
+      ~APPEND #T#OHBHORT#T# IF #T##T# THEN BEGIN #T#DS_FP2_HORT#T# SAY #%r%
+         IF #T#Gender(Player1,FEMALE)#T# THEN GOTO %sf%
+         IF #T#!Gender(Player1,FEMALE)#T# THEN GOTO %sg% END END
+       ADD_TRANS_TRIGGER #T#OHBHORT#T# %s7% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T#
+       EXTEND_TOP #T#OHBHORT#T# %s7% IF #T#GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN GOTO DS_FP2_HORT END~ END
+    PRINT ~Drow Saga Fosses II (HORT) : OHBHORT %s7% -> réplique ajoutée -> %sf% / %sg%~
+  END ELSE BEGIN
+    WARN ~Drow Saga Fosses II (HORT) : états de Hort introuvables (%n%, %n1%, %n2%)~
+  END
+END

@@ -48,7 +48,9 @@ LES COMPOSANTS
     chasseurs de primes, Flèches Noires de Shevarash, foule en colère. Les
     compagnons du jeu réagissent eux aussi, et toutes les romances de SoD sont
     adaptées au héros drow. La lettre de Gorion et le journal racontent son
-    enfance d'elfe noir élevé à Château-Suif. Une partie avec un héros d'une
+    enfance d'elfe noir élevé à Château-Suif. Les Fosses noires ont aussi leur
+    version drow : Baeloth et ses captifs y voient un des leurs, un enfant de
+    l'Ombre-Terre devenu aventurier à la surface. Une partie avec un héros d'une
     autre race reste inchangée.
 
 50  BG1 et SoD avec BG1 NPC, compagnons et romances
@@ -68,12 +70,15 @@ LES COMPOSANTS
 
 200 BG2 et ToB, le monde réagit au drow
     Plus d'un millier de répliques, sur toute l'aventure : Irenicus et Imoen,
-    Athkatla, les quêtes hors de la ville, l'Ombre-Terre, où le héros passe enfin
-    pour l'un des siens, Suldanessellar, puis le Trône de Bhaal jusqu'aux
+    Athkatla, les quêtes hors de la ville, l'Ombre-Terre, où le héros passe
+    enfin pour l'un des siens, Suldanessellar, puis le Trône de Bhaal jusqu'aux
     épilogues. Les compagnons ont des échanges propres au héros drow, et toutes
-    les romances de BG2EE sont adaptées à qui il est. Pris en charge : Ascension (versions
-    de Gaider et de Shawne), dont les épilogues sont adaptés eux aussi. Une
-    partie avec un héros d'une autre race reste inchangée.
+    les romances de BG2EE sont adaptées à qui il est. Pris en charge : Ascension
+    (versions de Gaider et de Shawne), dont les épilogues sont adaptés eux
+    aussi. Les Fosses noires II aussi : dans l'arène de Dennaton, en Thay, on
+    acclame le « fléau des fosses de Baeloth » comme un elfe noir, jusque dans
+    le combat contre une maison drow. Une partie avec un héros d'une autre race
+    reste inchangée.
 
 260 BG2 et ToB, corrections du texte français (facultatif)
     Un millier de fautes de la traduction d'origine (orthographe, accords, mots

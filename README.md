@@ -8,7 +8,7 @@ Le héros reste celui du jeu : un enfant recueilli par Gorion et élevé à Châ
 
 Le drow est une sous-race de l'elfe : choisissez Elfe à la création, puis « Choisir une sous-race » (interface du jeu de base) ou « Sous-races » (Infinity UI++). Le contenu est écrit en français ; la version anglaise viendra plus tard.
 
-**Version actuelle : 1.0.1** — téléchargez le paquet dans les [versions publiées](https://github.com/Jeehan-Rendar/Drow-Saga/releases).
+**Version actuelle : 1.0.2** — téléchargez le paquet dans les [versions publiées](https://github.com/Jeehan-Rendar/Drow-Saga/releases).
 
 ## Traits du drow
 
@@ -26,11 +26,11 @@ Le drow est une sous-race de l'elfe : choisissez Elfe à la création, puis « C
 |---|---|---|
 | 0 | Noyau, le drow comme race jouable (obligatoire) | Les règles du drow, sans aucun dialogue. |
 | 10 ou 20 | Interface (une au choix) | 10 : l'interface du jeu de base ; 20 : Infinity UI++, compatible avec sa dernière version, la 1.4 (Infinity UI++ doit être installé avant). |
-| 30 | BG1 et SoD, le monde réagit au drow | Plus d'un millier de répliques réécrites ou ajoutées : gardes, marchands, prêtres, villageois et personnages de l'histoire remarquent le héros, s'en méfient ou s'en amusent, de Château-Suif à la Porte de Baldur, puis dans Siege of Dragonspear. Sur les routes, des embuscades attendent le drow : chasseurs de primes, Flèches Noires de Shevarash, foule en colère. Les compagnons du jeu réagissent eux aussi, et toutes les romances de SoD sont adaptées au héros drow. La lettre de Gorion et le journal racontent son enfance d'elfe noir élevé à Château-Suif. |
+| 30 | BG1 et SoD, le monde réagit au drow | Plus d'un millier de répliques réécrites ou ajoutées : gardes, marchands, prêtres, villageois et personnages de l'histoire remarquent le héros, s'en méfient ou s'en amusent, de Château-Suif à la Porte de Baldur, puis dans Siege of Dragonspear. Sur les routes, des embuscades attendent le drow : chasseurs de primes, Flèches Noires de Shevarash, foule en colère. Les compagnons du jeu réagissent eux aussi, et toutes les romances de SoD sont adaptées au héros drow. La lettre de Gorion et le journal racontent son enfance d'elfe noir élevé à Château-Suif. Les Fosses noires ont aussi leur version drow : Baeloth et ses captifs y voient un des leurs, un enfant de l'Ombre-Terre devenu aventurier à la surface. |
 | 50 | BG1 et SoD avec BG1 NPC, compagnons et romances | Pour BG1 NPC Project : les compagnons du mod parlent au héros comme à un drow, et les romances de Branwen, Shar-Teel, Coran et Xan lui sont ouvertes. Exige le 30 et une version à jour de BG1 NPC Project, avec sa traduction française officielle (novembre 2026). |
 | 60 | BG1 et SoD, corrections du texte français (facultatif, à installer en dernier) | Quelques centaines de fautes de la traduction d'origine, surtout dans le journal ; « surfacin » devient « surfacien » comme dans BG2. |
 | 40 | Portrait de Viconia de Siege of Dragonspear (facultatif) | Le portrait de SoD pour Viconia dans BG1, BG2 et l'épilogue de ToB. |
-| 200 | BG2 et ToB, le monde réagit au drow | Plus d'un millier de répliques, sur toute l'aventure : Irenicus et Imoen, Athkatla, les quêtes hors de la ville, l'Ombre-Terre, où le héros passe enfin pour l'un des siens, Suldanessellar, puis le Trône de Bhaal jusqu'aux épilogues. Les compagnons ont des échanges propres au héros drow, et toutes les romances de BG2EE sont adaptées à qui il est. Pris en charge : Ascension (versions de Gaider et de Shawne), dont les épilogues sont adaptés eux aussi. |
+| 200 | BG2 et ToB, le monde réagit au drow | Plus d'un millier de répliques, sur toute l'aventure : Irenicus et Imoen, Athkatla, les quêtes hors de la ville, l'Ombre-Terre, où le héros passe enfin pour l'un des siens, Suldanessellar, puis le Trône de Bhaal jusqu'aux épilogues. Les compagnons ont des échanges propres au héros drow, et toutes les romances de BG2EE sont adaptées à qui il est. Pris en charge : Ascension (versions de Gaider et de Shawne), dont les épilogues sont adaptés eux aussi. Les Fosses noires II aussi : dans l'arène de Dennaton, en Thay, on acclame le « fléau des fosses de Baeloth » comme un elfe noir, jusque dans le combat contre une maison drow. |
 | 260 | BG2 et ToB, corrections du texte français (facultatif) | Un millier de fautes de la traduction d'origine (orthographe, accords, mots manquants, étiquettes restées dans le texte), pour tous les héros, drow ou non. |
 
 Une partie avec un héros d'une autre race reste inchangée.

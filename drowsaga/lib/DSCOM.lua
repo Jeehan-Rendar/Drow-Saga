@@ -9,7 +9,7 @@ drowSagaTextDefault = {
 	drow_button = [[DROW]],
 	drow_desc = [[DROWS : Les drows, ou elfes noirs, sont une branche du peuple elfique adaptée depuis des générations à la vie dans l'Ombre-Terre. Leur peau sombre, leurs cheveux généralement blancs et leur forte affinité avec la magie les distinguent nettement de leurs cousins de la surface.
 
-Leur société est violente, profondément hiérarchisée et dominée par de puissantes maisons matriarcales. Les prêtresses de Lolth, la Reine-Araignée, y occupent une place centrale, tandis qu'intrigues, rivalités et luttes de pouvoir rythment la vie des cités drows. La faiblesse y est rarement pardonnée, et la soumission à cet ordre est souvent une question de survie.
+Leur société est violente, profondément hiérarchisée et dominée par de puissantes maisons matriarcales. Les prêtresses de Lolth, la Reine Araignée, y occupent une place centrale, tandis qu'intrigues, rivalités et luttes de pouvoir rythment la vie des cités drows. La faiblesse y est rarement pardonnée, et la soumission à cet ordre est souvent une question de survie.
 
 Quelques renégats, fugitifs et parias refusent pourtant cette existence et cherchent à fuir l'emprise de Lolth pour gagner la surface. Mais ils y trouvent rarement une liberté totale : pour beaucoup d'habitants de la surface, un drow reste un être dangereux et malveillant, condamné à vivre en marge des deux mondes.
 

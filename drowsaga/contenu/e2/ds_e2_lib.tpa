@@ -234,7 +234,7 @@ END
 
 DEFINE_ACTION_FUNCTION ds_e2_rep
   INT_VAR ref = 0 requis = 1 vers = 0 - 1 garde = 0 tete = 0
-  STR_VAR dlg = ~~ aiguille = ~~ cle = ~~
+  STR_VAR dlg = ~~ aiguille = ~~ cle = ~~ remp_de = ~~ remp_vers = ~~
 BEGIN
   LAF ds_e2_cherche_rep STR_VAR dlg aiguille RET n RET_ARRAY ds_e2_re ds_e2_rt END
   ACTION_IF (n = 0) AND requis BEGIN
@@ -246,6 +246,14 @@ BEGIN
     OUTER_SET s = $ds_e2_re(~%k%~)
     OUTER_SET j = $ds_e2_rt(~%k%~)
     LAF ds_e2_lit_trans INT_VAR etat = s trans = j rep = ref STR_VAR dlg ajout = ~GlobalGT("DS_P1_DROW","GLOBAL",0)~ RET corps ver_dlg ver_etat END
+    ACTION_IF NOT (~%remp_de%~ STRING_EQUAL ~~) BEGIN
+      ACTION_IF (INDEX (CASE_SENSITIVE EXACT_MATCH ~%remp_de%~ ~%corps%~) < 0) BEGIN
+        WARN ~Drow Saga E2 (%cle%) : %remp_de% absent de l'action de %dlg% %s%.%j%~
+      END
+      OUTER_PATCH_SAVE corps ~%corps%~ BEGIN
+        REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~%remp_de%~ ~%remp_vers%~
+      END
+    END
     ACTION_IF (vers >= 0) BEGIN
       OUTER_SPRINT fin ~EXTERN #T#%dlg%#T# %vers%~
     END ELSE ACTION_IF (~%ver_dlg%~ STRING_EQUAL ~~) BEGIN
@@ -380,5 +388,34 @@ BEGIN
   ACTION_IF NOT (~%d1%~ STRING_EQUAL ~~) BEGIN
     LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_red1.d~ texte = EVAL ~%d1%~ END
     LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_red2.d~ texte = EVAL ~%d2%~ END
+  END
+END
+
+DEFINE_ACTION_FUNCTION ds_fp_dit
+  INT_VAR ref = 0
+  STR_VAR dlg = ~~ aiguille = ~~ cle = ~~ cibles = ~~
+  RET cibles
+BEGIN
+  LAF ds_e2_cherche STR_VAR dlg aiguille RET n RET_ARRAY ds_e2_et END
+  ACTION_IF (n = 0) BEGIN
+    WARN ~Drow Saga Fosses (%cle%) : réplique introuvable dans %dlg% : %aiguille%~
+  END
+  OUTER_FOR (k = 0; k < n; ++k) BEGIN
+    OUTER_SET s = $ds_e2_et(~%k%~)
+    LAF ds_e2_lit_etat INT_VAR etat = s STR_VAR dlg RET trig ns END
+    ACTION_IF (~%trig%~ STRING_EQUAL ~~) BEGIN
+      OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF #T##T# THEN BEGIN #T#DS_FP_%cle%_%s%#T# SAY #%ref% COPY_TRANS #T#%dlg%#T# %s% END END~
+    END ELSE BEGIN
+      COPY_EXISTING ~%dlg%.dlg~ ~override~
+        READ_LONG 0x0c so
+        READ_SLONG (so + s * 0x10 + 0x0c) w
+      BUT_ONLY
+      OUTER_SPRINT d ~APPEND #T#%dlg%#T# IF WEIGHT #%w% #T#%trig% GlobalGT("DS_P1_DROW","GLOBAL",0)#T# THEN BEGIN #T#DS_FP_%cle%_%s%#T# SAY #%ref% COPY_TRANS #T#%dlg%#T# %s% END END ADD_STATE_TRIGGER #T#%dlg%#T# %s% #T#!GlobalGT("DS_P1_DROW","GLOBAL",0)#T#~
+    END
+    LAF ds_e2_compile STR_VAR fichier = ~drowsaga/contenu/e2/tmp_fp.d~ texte = EVAL ~%d%~ END
+    LAF ds_e2_nb STR_VAR dlg RET ns END
+    OUTER_SET c = ns - 1
+    OUTER_SPRINT cibles ~%cibles% %dlg%.%s%=%dlg%.%c%~
+    PRINT ~Drow Saga Fosses (%cle%) : %dlg% %s% -> copie %c%~
   END
 END
